@@ -1,8 +1,17 @@
 <html>
     <head>
-        <title>coba</title>
+        <title>Test euy Code Abbey</title>
     </head>
     <body>
-        <p>Random value is 257201</p>
+        <pre style="word-wrap: break-word; white-space: pre-wrap;", id="random">
+        </pre>
+        <script>
+            while (true){
+                var random = Math.floor((Math.random() * 999999) + 100000);
+                if (random % 1831 == 0){break}
+            }
+            var state = 'Random value is ' + random.toString();
+            document.getElementById("random").innerHTML = state;
+        </script>
     </body>
 </html>
