@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
         <title>Random Number</title>
     </head>
     <body>
@@ -13,16 +14,17 @@
                 <input type="text" placeholder="Maukkan Nomor" name="Number" id="Number" required>
 
                 <hr>
-                <button id="test" onclick="Random()">Submit</button>
+                <button type="button" id="test" class="submitbtn" onclick="Random()">Submit</button>
                 <p id="Hasil"></p>
             </div>
         </form>
 
         <script>
             function Random(){
+                const num = parseInt(document.getElementById("Number").value);
                 while (true){
                     var random = Math.floor((Math.random() * 999999) + 100000);
-                    if (random % 1831 == 0) break;
+                    if (random % num == 0) break;
                 }
                 var state = 'Random value is ' + random.toString();
                 document.getElementById("Hasil").innerHTML = state;
