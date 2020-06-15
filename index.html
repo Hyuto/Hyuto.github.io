@@ -21,13 +21,21 @@
 
         <script>
             function Random(){
-                const num = parseInt(document.getElementById("Number").value);
-                while (true){
-                    var random = Math.floor((Math.random() * 999999) + 100000);
-                    if (random % num == 0) break;
+                const num = document.getElementById("Number").value;
+                if(isNumeric(num)){
+                    while (true){
+                        var random = Math.floor((Math.random() * 999999) + 100000);
+                        if (random % num == 0) break;
+                    }
+                    var state = 'Random value is ' + random.toString();
+                    document.getElementById("Hasil").innerHTML = state;
+                }else{
+                    document.getElementById("Hasil").innerHTML = 'Input Error : Input mengandung Non-Numeric Element'
                 }
-                var state = 'Random value is ' + random.toString();
-                document.getElementById("Hasil").innerHTML = state;
+            }
+
+            function isNumeric(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
             }
         </script>
     </body>
