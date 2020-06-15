@@ -1,17 +1,14 @@
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
 
 .container {
   padding: 16px;
-  font-family: 'Courier New', Courier, monospace;
 }
  
 h1{
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-p{
-    font-family: 'Courier New', Courier, monospace;
 }
 
 input[type=text], input[type=Number] {
