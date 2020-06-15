@@ -14,10 +14,11 @@
 
                 <hr>
                 <p>Cuman Ngetest</p>
-                <button type="submit" class="NumberBtn">Ok</button>
+                <button id="test" onclick="Random">Submit</button>
+                <p id="Hasil"></p>
             </div>
         </form>
-        
+
         <script>
             function Random(){
                 while (true){
@@ -27,7 +28,7 @@
                 return random.toString()
             }
             var state = 'Random value is ' + Random();
-            document.getElementById("random").innerHTML = state;
+            document.getElementById("Hasil").innerHTML = state;
         </script>
     </body>
 </html>
