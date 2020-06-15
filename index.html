@@ -6,14 +6,15 @@
         <pre style="word-wrap: break-word; white-space: pre-wrap;", id="random">
         </pre>
         <script>
-            function Random(){
+            function Random(num){
                 while (true){
                     var random = Math.floor((Math.random() * 999999) + 100000);
-                    if (random % 1831 == 0) break;
+                    if (random % num == 0) break;
                 }
                 return random.toString()
             }
-            var state = 'Random value is ' + Random();
+            num = parseInt(readline())
+            var state = 'Random value is ' + Random(num);
             document.getElementById("random").innerHTML = state;
         </script>
     </body>
