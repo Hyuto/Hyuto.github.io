@@ -11,8 +11,12 @@ h1{
     text-align: center;
 }
 
-input[type=text], input[type=Number] {
-  width: 100%;
+.Number{
+  text-align: center;
+}
+
+input[type=text]{
+  width: 44%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
