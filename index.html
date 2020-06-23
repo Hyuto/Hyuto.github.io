@@ -1,45 +1,17 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <script type="text/javascript" src="index.js"></script>
-        <title>Random Number</title>
-    </head>
-    <body>
-        <form>
-            <div class="container">
-                <h1>Random Number Generator</h1>
-                <p>Isilah Ketentuan Di Bawah Ini</p>
-                <hr>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>
+        Home Page
+    </title>
+</head>
 
-                <div class="Number">
-                    <label for="Minimal"><b>Minimum</b></label>
-                    <input type="text" placeholder="Minimum" name="Minimal" id="Minimal" required>
-                    <label for="Maksimal"><b>Maksimum</b></label>
-                    <input type="text" placeholder="Maksimum" name="Maksimal" id="Maksimal" required>                    
-                </div>
-
-                <hr>
-                <button type="button" id="test" class="submitbtn" onclick="Random()">Submit</button>
-                <p id="Hasil"></p>
-            </div>
-        </form>
-
-        <script>
-            function Random(){
-                const min = document.getElementById("Minimal").value;
-                const max = document.getElementById("Maksimal").value;
-                if(isNumeric(min) && isNumeric(max)){
-                    if(parseInt(min) < parseInt(max)){
-                        let random = getRandom(parseInt(min), parseInt(max));
-                        let state = 'Random value is ' + random.toString();
-                        document.getElementById("Hasil").innerHTML = state;
-                    }else{
-                        document.getElementById("Hasil").innerHTML = 'Input Error : Nilai Minimum Lebih Besar dari Nilai Maksimum';
-                    }
-                }else{
-                    document.getElementById("Hasil").innerHTML = 'Input Error : Input mengandung Non-Numeric Element';
-                }
-            }
-        </script>
-    </body>
-</html>
+<body>
+    <h1>Daftar Isi</h1>
+    <p>Tersedia</p>
+    <hr>
+    <ul>
+        <li><a href="Random.html">Random Number Generator</a></li>
+        <li><a href="Kodingan_WordCloud.html">WordCloud Analisis Sentiment</a></li>
+    </ul>
+</body>

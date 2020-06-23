@@ -3,44 +3,11 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.container {
-  padding: 16px;
-}
- 
 h1{
     text-align: center;
 }
 
-.Number{
-  text-align: left;
-}
-
-input{
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #ddd8d8;
-}
-
 hr {
-  border: 1px solid #f1f1f1;
+  border: 2px solid #756d6d;
   margin-bottom: 25px;
-}
-
-.submitbtn {
-  font-size: 14px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.submitbtn:hover {
-  opacity:1;
 }
