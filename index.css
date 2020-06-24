@@ -17,3 +17,9 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
