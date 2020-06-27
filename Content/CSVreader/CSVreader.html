@@ -7,15 +7,25 @@
 <body>
     <script type="text/javascript">
         function run(){
-            Upload("dvCSV");
+            let sep = document.getElementById("sep").value
+            if(sep == ""){
+                alert("[INFO] : Separator is not found ,changging to default ','");
+                sep = ","
+            }
+            Upload("dvCSV", sep);
         }
     </script>
     <h1>CSV Reader</h1>
     <hr />
     <p>View your CSV table</p>
-    <input type="file" id="fileUpload" />
-    <input type="button" id="upload" value="Upload" onclick="run()" />
-    <p style="font-size: 12px;">Note : Pastikan nama file yang dimasukkan tidak mengandung karakter 'spasi'.</p>
-    <div id="dvCSV" class="table">
+    <form class="File">
+        <label for="sep">File</label>
+        <input type="file" id="fileUpload" />
+
+        <input type="text" id="sep" placeholder="Separator.."><br>
+        <p style="font-size: 12px;">Note : Make sure the entered file name does not contain 'space'.</p>
+        <input type="button" id="upload" value="Upload" onclick="run()" />
+    </form>
+    <div id="dvCSV" class="Center">
     </div>
 </body>

@@ -1,4 +1,4 @@
-function Upload(direc) {
+function Upload(direc, sep) {
     var fileUpload = document.getElementById("fileUpload");
     var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
     if (regex.test(fileUpload.value.toLowerCase())) {
@@ -8,7 +8,7 @@ function Upload(direc) {
                 var table = document.createElement("table");
                 var rows = e.target.result.split("\n");
                 for (var i = 0; i < rows.length; i++) {
-                    var cells = rows[i].split(",");
+                    var cells = rows[i].split(sep);
                     if (cells.length > 1) {
                         var row = table.insertRow(-1);
                         for (var j = 0; j < cells.length; j++) {
