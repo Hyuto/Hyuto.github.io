@@ -1,0 +1,28 @@
+#container {
+    margin: 0px auto;
+    width: 400px;
+    height: 400px;
+    border: 10px #333 solid;
+}
+
+#videoElement{
+    background-color: #666;
+    width: 400px;
+    height: 400px;
+}
+
+.Tombol{
+    padding: 8px;
+    margin: 0px auto;
+    display: table;
+}
+
+button{
+    padding: 8px;
+    float: left;
+    margin-right: 8px;
+}
+
+#Size{
+    text-align: center;
+}

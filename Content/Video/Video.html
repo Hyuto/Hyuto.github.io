@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="Video.js"></script>
+    <link rel="stylesheet" type="text/css" href="Video.css">
+    <title>Webcam Stream</title>
+</head>
+
+<body>
+    <div id="container">
+        <video autoplay="false" id="videoElement">
+        
+        </video>
+    </div>
+
+    <div class="Tombol">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <p id="Size">
+    </p>
+    
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        var startVideo = document.querySelector('#start');
+        var stopVideo = document.querySelector('#stop');
+
+        startVideo.addEventListener("click", start, true);
+        stopVideo.addEventListener("click", stop, false);
+    </script>
+</body>
