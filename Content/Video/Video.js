@@ -4,13 +4,13 @@ function start(){
         navigator.mediaDevices.getUserMedia(constraints)
             .then(function (stream) {
                 video.srcObject = stream;
-                let track = video.srcObject.getTracks()[0];
-                let {width, height} = track.getSettings();
-                document.getElementById("container").style.width = `${width}px`;
-                document.getElementById("container").style.height = `${height}px`;
-                document.getElementById("videoElement").style.width = `${width}px`;
-                document.getElementById("videoElement").style.height = `${height}px`;
-                document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${width} x ${height}`
+                video.onloadedmetadata = (event) => {
+                    document.getElementById("container").style.width = `${video.videoWidth}px`;
+                    document.getElementById("container").style.height = `${video.videoHeight}px`;
+                    document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
+                    document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
+                    document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
+                }
             })
             .catch(function (err0r) {
                 alert("Something went wrong!");
