@@ -4,13 +4,7 @@ function start(){
         navigator.mediaDevices.getUserMedia(constraints)
             .then(function (stream) {
                 video.srcObject = stream;
-                video.onloadedmetadata = (event) => {
-                    document.getElementById("container").style.width = `${video.videoWidth}px`;
-                    document.getElementById("container").style.height = `${video.videoHeight}px`;
-                    document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
-                    document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
-                    document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
-                }
+                
             })
             .catch(function (err0r) {
                 alert(`${err0r}`);
