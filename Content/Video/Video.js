@@ -13,7 +13,7 @@ function start(){
                 }
             })
             .catch(function (err0r) {
-                alert("Something went wrong!");
+                alert(`${err0r}`);
             }
         );
     }
