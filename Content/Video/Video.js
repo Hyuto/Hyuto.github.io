@@ -14,7 +14,8 @@ function start(){
             })
             .catch(function (e) {
                 if(e instanceof NotReadableError){
-                    navigator.mediaDevices.getUserMedia({video : true}).then(function(stream){
+                    navigator.mediaDevices.getUserMedia({video : true})
+                    .then(function(stream){
                         video.srcObject = stream;
                         video.onloadedmetadata = (event) => {
                             document.getElementById("container").style.width = `${video.videoWidth}px`;
@@ -23,6 +24,8 @@ function start(){
                             document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
                             document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
                         }
+                    }).catch(function(e){
+                        alert(e)
                     })
                 }else alert(`${e}`);
             }
