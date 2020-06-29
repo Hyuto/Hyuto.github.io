@@ -11,10 +11,8 @@ function start(){
                     document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
                     document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
                     document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
-                }})
-            .catch(function (e) {
-                alert(`${e}`);
-            });
+                }}
+            );
         }catch{
             navigator.mediaDevices.getUserMedia({video : true})
             .then(function (stream) {
