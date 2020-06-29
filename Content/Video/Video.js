@@ -1,7 +1,8 @@
 function start(){
     if (navigator.mediaDevices.getUserMedia) {
         let constraints = {video: {width: 9999}};
-        navigator.mediaDevices.getUserMedia(constraints)
+        try{
+            navigator.mediaDevices.getUserMedia(constraints)
             .then(function (stream) {
                 video.srcObject = stream;
                 video.onloadedmetadata = (event) => {
@@ -10,24 +11,24 @@ function start(){
                     document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
                     document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
                     document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
-                }
+                }})
+            .catch(function (e) {
+                alert(`${e}`);
+            });
+        }catch{
+            navigator.mediaDevices.getUserMedia({video : true})
+            .then(function (stream) {
+                video.srcObject = stream;
+                document.getElementById("container").style.width = `640px`;
+                document.getElementById("container").style.height = `480px`;
+                document.getElementById("videoElement").style.width = `640px`;
+                document.getElementById("videoElement").style.height = `480px`;
+                document.getElementById("Size").innerHTML = `Cant Measure Your Camera Ressolution`;
             })
             .catch(function (e) {
-                if(e instanceof NotReadableError){
-                    navigator.mediaDevices.getUserMedia({video : true})
-                    .then(function(stream){
-                        video.srcObject = stream;
-                        document.getElementById("container").style.width = `640px`;
-                        document.getElementById("container").style.height = `480px`;
-                        document.getElementById("videoElement").style.width = `640px`;
-                        document.getElementById("videoElement").style.height = `480px`;
-                        document.getElementById("Size").innerHTML = `Can't Measure Your Camera`;
-                    }).catch(function(e){
-                        alert(e)
-                    })
-                }else alert(`${e}`);
-            }
-        );
+                alert(`${e}`);
+            });
+        }
     }
 }
 
