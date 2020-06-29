@@ -1,18 +1,16 @@
 function start(){
     if (navigator.mediaDevices.getUserMedia) {
-        try{
-            navigator.mediaDevices.getUserMedia({video: {width: 9999}})
-            .then(function (stream) {
-                video.srcObject = stream;
-                video.onloadedmetadata = (event) => {
-                    document.getElementById("container").style.width = `${video.videoWidth}px`;
-                    document.getElementById("container").style.height = `${video.videoHeight}px`;
-                    document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
-                    document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
-                    document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
-                }}
-            );
-        }catch{
+        navigator.mediaDevices.getUserMedia({video: {width: 9999}})
+        .then(function (stream) {
+            video.srcObject = stream;
+            video.onloadedmetadata = (event) => {
+                document.getElementById("container").style.width = `${video.videoWidth}px`;
+                document.getElementById("container").style.height = `${video.videoHeight}px`;
+                document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
+                document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
+                document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
+            }}
+        ).catch(function(e){
             navigator.mediaDevices.getUserMedia({video : true})
             .then(function (stream) {
                 video.srcObject = stream;
@@ -22,10 +20,10 @@ function start(){
                 document.getElementById("videoElement").style.height = `480px`;
                 document.getElementById("Size").innerHTML = `Cant Measure Your Camera Ressolution`;
             })
-            .catch(function (e) {
-                alert(`${e}`);
+            .catch(function (err) {
+                alert(`${err}`);
             });
-        }
+        })
     }
 }
 
