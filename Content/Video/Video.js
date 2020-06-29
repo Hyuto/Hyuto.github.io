@@ -1,8 +1,7 @@
 function start(){
     if (navigator.mediaDevices.getUserMedia) {
-        let constraints = {video: {width: 9999}};
         try{
-            navigator.mediaDevices.getUserMedia(constraints)
+            navigator.mediaDevices.getUserMedia({video: {width: 9999}})
             .then(function (stream) {
                 video.srcObject = stream;
                 video.onloadedmetadata = (event) => {
