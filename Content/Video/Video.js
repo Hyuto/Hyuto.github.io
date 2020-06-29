@@ -17,13 +17,11 @@ function start(){
                     navigator.mediaDevices.getUserMedia({video : true})
                     .then(function(stream){
                         video.srcObject = stream;
-                        video.onloadedmetadata = (event) => {
-                            document.getElementById("container").style.width = `${video.videoWidth}px`;
-                            document.getElementById("container").style.height = `${video.videoHeight}px`;
-                            document.getElementById("videoElement").style.width = `${video.videoWidth}px`;
-                            document.getElementById("videoElement").style.height = `${video.videoHeight}px`;
-                            document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${video.videoWidth} x ${video.videoHeight}`;
-                        }
+                        document.getElementById("container").style.width = `640px`;
+                        document.getElementById("container").style.height = `480px`;
+                        document.getElementById("videoElement").style.width = `640px`;
+                        document.getElementById("videoElement").style.height = `480px`;
+                        document.getElementById("Size").innerHTML = `Can't Measure Your Camera`;
                     }).catch(function(e){
                         alert(e)
                     })
