@@ -1,13 +1,15 @@
 function start(){
     if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
+        let constraints = {video: {width: 9999}};
+        navigator.mediaDevices.getUserMedia(constraints)
             .then(function (stream) {
-                let {width, height} = stream.getTracks()[0].getSettings();
+                video.srcObject = stream;
+                let track = video.srcObject.getTracks()[0];
+                let {width, height} = track.getSettings();
                 document.getElementById("container").style.width = `${width}px`;
                 document.getElementById("container").style.height = `${height}px`;
                 document.getElementById("videoElement").style.width = `${width}px`;
                 document.getElementById("videoElement").style.height = `${height}px`;
-                video.srcObject = stream;
                 document.getElementById("Size").innerHTML = `Your Camera Ressolution is ${width} x ${height}`
             })
             .catch(function (err0r) {
