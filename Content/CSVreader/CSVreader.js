@@ -1,15 +1,19 @@
 function Upload(direc, sep) {
     var fileUpload = document.getElementById("fileUpload");
-    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-    if (regex.test(fileUpload.value.toLowerCase())) {
+    let name = fileUpload.value.toLowerCase();
+    if (name.substr(name.length-4, name.length-1) == ".csv" || name.substr(name.length-4, name.length-1) == ".txt") {
         if (typeof (FileReader) != "undefined") {
             var reader = new FileReader();
             reader.onload = function (e) {
                 var table = document.createElement("table");
                 var rows = e.target.result.split("\n");
                 for (var i = 0; i < rows.length; i++) {
-                    var cells = rows[i].split(sep);
-                    if (cells.length > 1) {
+                    var cells;
+                    if(i == 0){
+                        cells = rows[i].replace(/"/g, '').split(sep);
+                    }else{
+                        cells = rows[i].split(sep);
+                    }if (cells.length > 1) {
                         var row = table.insertRow(-1);
                         for (var j = 0; j < cells.length; j++) {
                             var cell = row.insertCell(-1);
