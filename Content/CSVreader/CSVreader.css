@@ -52,7 +52,7 @@ tr:hover{
     opacity: 1;
 }
 
-#upload{
+.Button{
     font-size: 14px;
     background-color: #4CAF50;
     color: white;
@@ -63,6 +63,6 @@ tr:hover{
     opacity: 0.9;
 }
   
-#upload:hover {
+.Button:hover {
     opacity:1;
 }

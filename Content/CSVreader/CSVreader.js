@@ -33,3 +33,8 @@ function Upload(direc, sep) {
         alert("Please upload a valid CSV file.");
     }
 }
+
+function Clear(direc){
+    var dvCSV = document.getElementById(direc);
+    dvCSV.innerHTML = null;
+}

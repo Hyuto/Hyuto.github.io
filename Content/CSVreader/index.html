@@ -14,6 +14,10 @@
             }
             Upload("dvCSV", sep);
         }
+
+        function clean(){
+            Clear("dvCSV");
+        }
     </script>
     <h1>CSV Reader</h1>
     <hr />
@@ -24,7 +28,8 @@
 
         <input type="text" id="sep" placeholder="Separator.."><br>
         <p style="font-size: 12px;">Note : You can also read a txt file with specific separator.</p>
-        <input type="button" id="upload" value="Upload" onclick="run()" />
+        <input type="button" id="upload" class="Button" value="Upload" onclick="run()" />
+        <input type="button" id="clear" class="Button" value="Clear" onclick="clean()" />
     </form>
     <script src="Upload.js"></script>
     <div id="dvCSV" class="Center">
