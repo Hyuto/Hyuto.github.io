@@ -51,3 +51,18 @@ tr:not(:nth-child(1)){
 tr:hover{
     opacity: 1;
 }
+
+#upload{
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+  
+#upload:hover {
+    opacity:1;
+}
