@@ -36,5 +36,7 @@ function Upload(direc, sep) {
 
 function Clear(direc){
     var dvCSV = document.getElementById(direc);
+    var fileUpload = document.getElementById("fileUpload");
+    fileUpload.value = null;
     dvCSV.innerHTML = null;
 }
