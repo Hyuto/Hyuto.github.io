@@ -7,16 +7,16 @@
 <body>
     <script type="text/javascript">
         function run(){
-            let sep = document.getElementById("sep").value
-            if(sep == ""){
+            let sep = document.getElementById("sep");
+            if(sep.value == ""){
                 alert("[INFO] : Separator is not found ,changging to default ','");
-                sep = ","
+                sep.value = ","
             }
-            Upload("dvCSV", sep);
+            Upload("dvCSV", sep.value);
         }
 
         function clean(){
-            Clear("dvCSV");
+            Clear("dvCSV", "sep");
         }
     </script>
     <h1>CSV Reader</h1>
