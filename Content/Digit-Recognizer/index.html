@@ -1,0 +1,11 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="model.js"></script>
+    <title>Digit Recognizer</title>
+</head>
+<body>
+    <script>
+        const model = tf.loadLayersModel('model/model.json');
+        console.log(model.summary())
+    </script>
+</body>
