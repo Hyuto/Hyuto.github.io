@@ -81,6 +81,10 @@
         canvas.onmouseup = stopDraw;
         canvas.onmouseleave = stopDraw;
         canvas.onmousemove = mouseMove;
+
+        canvas.ontouchstart = startDraw;
+        canvas.ontouchmove = mouseMove;
+        canvas.ontouchend = stopDraw;
         
     </script>
 </body>
