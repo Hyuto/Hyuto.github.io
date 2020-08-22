@@ -12,7 +12,9 @@ function startDraw() {
 function stopDraw() {
     drawing = false;
     lastPosition = null;
-    run(model.model);
+    if(onMobile){
+        run(model.model);
+    }
 }
 
 function mouseMove(evt) {
@@ -29,6 +31,9 @@ function mouseMove(evt) {
         ctx.lineWidth = 20;
         ctx.closePath();
         ctx.stroke();
+        if(!(onMobile)){
+            run(model.model);
+        }
     }
     lastPosition = pos;
 }

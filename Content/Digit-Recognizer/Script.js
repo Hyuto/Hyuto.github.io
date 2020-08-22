@@ -15,3 +15,18 @@ function preprocess(img){
 
     return batched.toFloat()
 }
+
+function run(model){
+    const canvas = document.getElementById("myCanvas");
+    const img = preprocess(canvas);
+    const out = model.predict(img);
+
+    model.prob = out.arraySync()[0];
+    model.pred = out.argMax(1).arraySync()[0];
+
+    document.getElementById("prediction").innerHTML = "Prediction : " + model.pred
+} 
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}

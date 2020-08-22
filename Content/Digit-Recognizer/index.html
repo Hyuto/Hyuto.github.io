@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
     <link rel="stylesheet" type="text/css" href="Style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
     <script src="detect-mobile.js"></script>
     <script src="Draw.js"></script>
-    <script src="Data.js"></script>
+    <script src="Script.js"></script>
+    
     <title>Digit Recognizer</title>
 </head>
 <body>
@@ -13,7 +18,8 @@
         <div id="text">
             <div id="title">Mobile Device</div>
             <p id="para">We detect that your system running on mobile, therefore prediction would be little bit slower and
-                sadly our page can only run on Google Chorme & Mozila Firefox for Mobile right now. Please tap to continue</p>
+                sadly our page don't support all mobile browser. We suggest you use Google Chorme or Mozila Firefox to run this page.<br>
+                Please tap to continue</p>
         </div>
     </div>
 
@@ -35,8 +41,9 @@
     <p id="prediction" style="text-align: center; font-size: 25px"></p>
     
     <script>
-        if(window.mobileCheck()){
-            document.getElementById("overlay").style.display = "block"
+        var onMobile = window.mobileCheck(); 
+        if(onMobile){
+            document.getElementById("overlay").style.display = "block";
         }
 
         tf.setBackend('cpu');
@@ -46,17 +53,8 @@
         model.pred = null;
         (async () => {
             model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
-            model.model.summary()
+            model.model.summary();
         })();
-        
-        function run(model){
-            const canvas = document.getElementById("myCanvas");
-            const img = preprocess(canvas);
-            const out = model.predict(img);
-            model.prob = out.arraySync()[0];
-            model.pred = out.argMax(1).arraySync()[0];
-            document.getElementById("prediction").innerHTML = "Prediction : " + model.pred
-        } 
 
         //Base canvas and dimensions
         var canvas = document.getElementById("myCanvas");
@@ -95,10 +93,6 @@
             });
             canvas.dispatchEvent(mouseEvent);
         }, false);
-
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>

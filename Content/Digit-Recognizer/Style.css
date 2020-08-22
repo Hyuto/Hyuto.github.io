@@ -21,7 +21,6 @@ canvas{
 
 .table{
     float:left;
-    margin-right: 10px;
     max-width: 50%;
   }
 
@@ -66,9 +65,9 @@ canvas{
 
 #title{
     text-align: center;
-    font-size: 70px;
+    font-size: 75px;
 }
 
 #para{
-    font-size: 30px;
+    font-size: 25px;
 }
