@@ -49,15 +49,6 @@
         var onMobile = window.mobileCheck(); 
         if(onMobile){
             document.getElementById("overlay").style.display = "block";
-
-            // Resize Canvas
-            document.getElementById("myCanvas").width = 300;
-            document.getElementById("myCanvas").height = 300;
-            document.getElementById("image").width = 300;
-            document.getElementById("image").height = 300;
-            document.getElementById("myChart").style.width = "350px";
-            document.getElementById("myChart").style.height = "350px";
-            document.getElementById("Chart").style.width = "350px";
         }
 
         tf.setBackend('cpu');
