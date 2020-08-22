@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="Draw.js"></script>
+    <script src="Data.js"></script>
+    <title>Digit Recognizer</title>
+</head>
+<body>
+    <div class="Canvas">
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+        <canvas id="image" width="400" height="400" style="border:1px solid #000000;"></canvas>
+    </div>
+    <br>
+    <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
+    <p id="prediction"></p>
+    
+    <script>
+        tf.setBackend('cpu');
+        var model = new Object;
+        model.prob = new Array(10).fill(0);
+        model.pred = null;
+        (async () => {
+            model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
+            model.model.summary()
+        })();
+        
+        function run(model){
+            const canvas = document.getElementById("myCanvas");
+            const img = preprocess(canvas);
+            const out = model.predict(img);
+            model.prob = out.arraySync()[0];
+            model.pred = out.argMax(1).arraySync()[0];
+            document.getElementById("prediction").innerHTML = "Prediction : " + model.pred
+        } 
+
+        //Base canvas and dimensions
+        var canvas = document.getElementById("myCanvas");
+        var canvas2 = document.getElementById("image");
+
+        var ctx = canvas.getContext("2d");
+        var ctx2 = canvas2.getContext("2d");
+
+        //Drawing variables
+        var lastPosition = null;
+        var drawing = false;
+
+        canvas.onmousedown = startDraw;
+        canvas.onmouseup = stopDraw;
+        canvas.onmousemove = mouseMove;
+        canvas.onmouseleave = stopDraw;
+
+        canvas.addEventListener("touchstart", function (e) {
+            mousePos = getTouchPos(canvas, e);
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousedown", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        canvas.addEventListener("touchend", function (e) {
+            var mouseEvent = new MouseEvent("mouseup", {});
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        canvas.addEventListener("touchmove", function (e) {
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script type="text/javascript" src="https://hyuto.github.io/firebase.js"></script>
+
+    <script>
+        var firebaseConfig = Connect();
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+</html>
