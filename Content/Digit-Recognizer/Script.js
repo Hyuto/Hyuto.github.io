@@ -20,7 +20,6 @@ function Clear(canvas, canvas2){
     canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
     canvas2.getContext("2d").clearRect(0, 0, canvas2.width, canvas2.height);
     document.getElementById("prediction").innerHTML = null;
-    document.getElementById("probability").innerHTML = null;
     update_chart(chart, Array(10).fill(0));
 }
 
