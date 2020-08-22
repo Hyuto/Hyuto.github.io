@@ -1,4 +1,5 @@
 function preprocess(img){
+    On("coveringImage");
     //convert the image data to a tensor 
     const tensor = tf.browser.fromPixels(img, 4).mean(2).toFloat().expandDims(-1);
     //resize to 28 X 28
@@ -11,6 +12,7 @@ function preprocess(img){
 
     // Computer Vission
     const canvas = document.getElementById("image");
+    off("coveringImage");
     tf.browser.toPixels(tensor.div(255.0), canvas);
 
     return batched.toFloat()
@@ -35,6 +37,10 @@ function run(model){
     update_chart(chart, model.prob);
 }
 
-function off() {
-    document.getElementById("overlay").style.display = "none";
+function off(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function On(id) {
+    document.getElementById(id).style.display = "block";
 }

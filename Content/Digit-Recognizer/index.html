@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="Style.css">
 
@@ -16,11 +16,11 @@
     <title>Digit Recognizer</title>
 </head>
 <body>
-    <div id="overlay" onclick="off()">
+    <div id="overlay" onclick="off('overlay')">
         <div id="text">
             <div id="title">Mobile Device</div>
             <p id="para">We detect that your system running on mobile, therefore prediction would be little bit slower and
-                sadly our page don't support all mobile browser. We suggest you use Google Chorme or Mozila Firefox to run this page.<br>
+                sadly our page don't support all mobile browser. We suggest you to use Google Chorme or Mozila Firefox to run this page.<br>
                 Please tap to continue</p>
         </div>
     </div>
@@ -31,12 +31,15 @@
 
     <div class="Canvas">
         <div class="table">
-            <p id="canvas-title">Draw Digits Here</p>
+            <p id="canvas-title">Draw Digit Here</p>
             <canvas id="myCanvas" width="250" height="250" style="border:1px solid #000000;"></canvas>
         </div>
         <div class="table">
             <p id="canvas-title">Computer Vision</p>
-            <canvas id="image" width="250" height="250" style="border:1px solid #000000;"></canvas>
+            <div class="insideWrapper">
+                <img src="./Image/Loading.gif" id="coveringImage" alt="Loading" width="250" height="250"/>
+                <canvas id="image" class="coveredCanvas" width="250" height="250"></canvas>
+            </div>
         </div>
         <div class="table" id="Chart">
             <canvas id="myChart" width="300" height="300"></canvas>
@@ -48,7 +51,7 @@
     <script>
         var onMobile = window.mobileCheck(); 
         if(onMobile){
-            document.getElementById("overlay").style.display = "block";
+            On("overlay");
         }
 
         tf.setBackend('cpu');
@@ -58,7 +61,6 @@
         model.pred = null;
         (async () => {
             model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
-            model.model.summary();
         })();
 
         //Base canvas and dimensions
