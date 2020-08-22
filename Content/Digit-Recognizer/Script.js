@@ -1,5 +1,4 @@
 function preprocess(img){
-    On("coveringImage");
     //convert the image data to a tensor 
     const tensor = tf.browser.fromPixels(img, 4).mean(2).toFloat().expandDims(-1);
     //resize to 28 X 28
@@ -12,7 +11,6 @@ function preprocess(img){
 
     // Computer Vission
     const canvas = document.getElementById("image");
-    off("coveringImage");
     tf.browser.toPixels(tensor.div(255.0), canvas);
 
     return batched.toFloat()
@@ -30,6 +28,9 @@ function run(model){
     const img = preprocess(canvas);
     const out = model.predict(img);
 
+    if(onMobile){
+        off("coveringImage");
+    }
     model.prob = out.arraySync()[0];
     model.pred = out.argMax(1).arraySync()[0];
 

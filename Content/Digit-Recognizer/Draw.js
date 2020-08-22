@@ -1,6 +1,9 @@
 //Drawing functionality
 function startDraw() {
     drawing = true;
+    if(onMobile){
+        On("coveringImage");
+    }
 }
 
 function stopDraw() {
