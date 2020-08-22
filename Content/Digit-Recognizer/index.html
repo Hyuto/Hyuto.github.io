@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
     <script src="data.js"></script>
     <title>Digit Recognizer</title>
@@ -15,7 +16,6 @@
     
     <script>
         tf.setBackend('cpu');
-
         var model = new Object;
         model.prob = new Array(10).fill(0);
         model.pred = null;
@@ -42,6 +42,12 @@
         //Base canvas and dimensions
         var canvas = document.getElementById("myCanvas");
         var canvas2 = document.getElementById("image");
+
+        canvas.width = window.screen.width * 0.2;
+        canvas.height = canvas.width;
+        canvas2.width = window.screen.width * 0.2;
+        canvas2.height = canvas2.width;
+
         var ctx = canvas.getContext("2d");
         var ctx2 = canvas2.getContext("2d");
 
