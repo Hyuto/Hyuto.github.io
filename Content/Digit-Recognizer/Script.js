@@ -33,7 +33,6 @@ function run(model){
 
     document.getElementById("prediction").innerHTML = "Prediction : " + model.pred;
     update_chart(chart, model.prob);
-    //document.getElementById("probability").innerHTML = "Probability : " + (Math.max(...model.prob) * 100).toFixed(2) + "%" 
 }
 
 function off() {
