@@ -3,21 +3,33 @@
 <head>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="detect-mobile.js"></script>
     <script src="Draw.js"></script>
     <script src="Data.js"></script>
     <title>Digit Recognizer</title>
 </head>
 <body>
-    <div class="Canvas">
-        <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
-        <canvas id="image" width="400" height="400" style="border:1px solid #000000;"></canvas>
+    <div id="overlay" onclick="off()">
+        <div id="text">
+            <div id="title">Mobile Device</div>
+            <p id="para">We detect that your system running on mobile therefore prediction would be slower.<br>Please tap to continue</p>
+        </div>
     </div>
-    <br>
+
+    <div class="Canvas">
+        <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
+        <canvas id="image" width="300" height="300" style="border:1px solid #000000;"></canvas>
+    </div>
     <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
     <p id="prediction"></p>
     
     <script>
+        if(window.mobileCheck()){
+            document.getElementById("overlay").style.display = "block"
+        }
+
         tf.setBackend('cpu');
+
         var model = new Object;
         model.prob = new Array(10).fill(0);
         model.pred = null;
@@ -45,41 +57,6 @@
         //Drawing variables
         var lastPosition = null;
         var drawing = false;
-
-        function Clear(canvas, canvas2){
-            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-            canvas2.getContext("2d").clearRect(0, 0, canvas2.width, canvas2.height);
-            document.getElementById("prediction").innerHTML = null;
-        }
-
-        //Drawing functionality
-        function startDraw() {
-            drawing = true;
-        }
-
-        function stopDraw() {
-            drawing = false;
-            lastPosition = null;
-            run(model.model);
-        }
-
-        function mouseMove(evt) {
-            var pos = {
-                x: evt.offsetX,
-                y: evt.offsetY
-                };
-            if (lastPosition !== null && drawing === true) {
-                ctx.beginPath();
-                ctx.moveTo(lastPosition.x, lastPosition.y);
-                ctx.lineTo(pos.x, pos.y);
-                ctx.lineJoin = 'round';
-                ctx.lineCap = 'round';
-                ctx.lineWidth = 20;
-                ctx.closePath();
-                ctx.stroke();
-            }
-            lastPosition = pos;
-        }
 
         canvas.onmousedown = startDraw;
         canvas.onmouseup = stopDraw;
@@ -110,12 +87,8 @@
             canvas.dispatchEvent(mouseEvent);
         }, false);
 
-        function getTouchPos(canvasDom, touchEvent) {
-            var rect = canvasDom.getBoundingClientRect();
-            return {
-                x: touchEvent.touches[0].clientX - rect.left,
-                y: touchEvent.touches[0].clientY - rect.top
-            };
+        function off() {
+            document.getElementById("overlay").style.display = "none";
         }
     </script>
 

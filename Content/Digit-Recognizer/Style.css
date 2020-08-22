@@ -1,11 +1,59 @@
 .Canvas{
-    padding: 8px;
+    padding: 12px 20px;
     margin: 0px auto;
     display: table;
 }
 
 canvas{
-    padding: 8px;
+    padding: 12px 20px;
     float: left;
     margin-right: 8px;
+}
+
+.Button{
+    margin: 0px auto;
+    display: table;
+    padding: 12px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.Button:hover {
+    opacity:1;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+
+#title{
+    text-align: center;
+    font-size: 50px;
+}
+
+#para{
+    font-size: 20px;
 }
