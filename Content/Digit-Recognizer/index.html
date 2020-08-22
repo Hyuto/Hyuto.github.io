@@ -14,22 +14,22 @@
     <p id="prediction"></p>
     
     <script>
-        var window = new Object;
-        window.prob = new Array(10).fill(0);
-        window.pred = null;
+        var model = new Object;
+        model.prob = new Array(10).fill(0);
+        model.pred = null;
 
         (async () => {
-            window.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
-            window.model.summary()
+            model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
+            model.model.summary()
         })();
         
         function run(model){
             const canvas = document.getElementById("myCanvas");
             const img = preprocess(canvas);
             const out = model.predict(img);
-            window.prob = out.arraySync()[0];
-            window.pred = out.argMax(1).arraySync()[0];
-            document.getElementById("prediction").innerHTML = "Prediction : " + window.pred
+            model.prob = out.arraySync()[0];
+            model.pred = out.argMax(1).arraySync()[0];
+            document.getElementById("prediction").innerHTML = "Prediction : " + model.pred
         }
 
         function Clear(canvas, canvas2){
@@ -72,7 +72,7 @@
                 ctx.closePath();
                 ctx.stroke();
 
-                run(window.model);
+                run(model.model);
             }
             lastPosition = pos;
         }
@@ -82,9 +82,29 @@
         canvas.onmouseleave = stopDraw;
         canvas.onmousemove = mouseMove;
 
-        canvas.ontouchstart = startDraw;
-        canvas.ontouchmove = mouseMove;
-        canvas.ontouchend = stopDraw;
+        canvas.addEventListener("touchstart", function (e) {
+            mousePos = getTouchPos(canvas, e);
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousedown", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        canvas.addEventListener("touchend", function (e) {
+            var mouseEvent = new MouseEvent("mouseup", {});
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+        
+        canvas.addEventListener("touchmove", function (e) {
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
         
     </script>
 </body>
