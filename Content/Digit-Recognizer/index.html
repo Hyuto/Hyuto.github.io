@@ -12,7 +12,8 @@
     <div id="overlay" onclick="off()">
         <div id="text">
             <div id="title">Mobile Device</div>
-            <p id="para">We detect that your system running on mobile, therefore prediction would be little bit slower.<br>Please tap to continue</p>
+            <p id="para">We detect that your system running on mobile, therefore prediction would be little bit slower and
+                sadly our page can only run on Google Chorme & Mozila Firefox for Mobile right now. Please tap to continue</p>
         </div>
     </div>
 
@@ -54,9 +55,7 @@
         //Base canvas and dimensions
         var canvas = document.getElementById("myCanvas");
         var canvas2 = document.getElementById("image");
-
         var ctx = canvas.getContext("2d");
-        var ctx2 = canvas2.getContext("2d");
 
         //Drawing variables
         var lastPosition = null;
