@@ -14,7 +14,7 @@
     <p id="prediction"></p>
     
     <script>
-        tf.setBackend('webgl');
+        tf.setBackend('wasm');
 
         var model = new Object;
         model.prob = new Array(10).fill(0);
