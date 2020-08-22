@@ -43,9 +43,9 @@
         var canvas = document.getElementById("myCanvas");
         var canvas2 = document.getElementById("image");
 
-        canvas.width = window.screen.width * 0.2;
+        canvas.width = parseInt(window.screen.width+"px", 10) * 0.2;
         canvas.height = canvas.width;
-        canvas2.width = window.screen.width * 0.2;
+        canvas2.width = parseInt(window.screen.width+"px", 10) * 0.2;
         canvas2.height = canvas2.width;
 
         var ctx = canvas.getContext("2d");
