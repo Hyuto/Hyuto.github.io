@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="Style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="detect-mobile.js"></script>
+    <script src="Chart.js"></script>
     <script src="Draw.js"></script>
     <script src="Script.js"></script>
     
@@ -29,21 +31,31 @@
 
     <div class="Canvas">
         <div class="table">
-            <p style="text-align: center; font-size: 20px">Draw Digits Here</p>
-            <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
+            <p id="canvas-title">Draw Digits Here</p>
+            <canvas id="myCanvas" width="250" height="250" style="border:1px solid #000000;"></canvas>
         </div>
         <div class="table">
-            <p style="text-align: center; font-size: 20px">Computer Vision</p>
-            <canvas id="image" width="300" height="300" style="border:1px solid #000000;"></canvas>
+            <p id="canvas-title">Computer Vision</p>
+            <canvas id="image" width="250" height="250" style="border:1px solid #000000;"></canvas>
+        </div>
+        <div class="table">
+            <canvas id="myChart" width="300" height="300"></canvas>
         </div>
     </div>
     <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
-    <p id="prediction" style="text-align: center; font-size: 25px"></p>
+    <p id="prediction" style="text-align: center; font-size: 25px;"></p>
+    <p id="probability" style="text-align: center; font-size: 16px;"></p>
     
     <script>
         var onMobile = window.mobileCheck(); 
         if(onMobile){
             document.getElementById("overlay").style.display = "block";
+
+            // Resize Canvas
+            document.getElementById("myCanvas").width = 300;
+            document.getElementById("myCanvas").height = 300;
+            document.getElementById("image").width = 300;
+            document.getElementById("image").height = 300;
         }
 
         tf.setBackend('cpu');
@@ -60,6 +72,8 @@
         var canvas = document.getElementById("myCanvas");
         var canvas2 = document.getElementById("image");
         var ctx = canvas.getContext("2d");
+        //Chart
+        var chart = makeChart();
 
         //Drawing variables
         var lastPosition = null;

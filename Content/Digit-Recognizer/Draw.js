@@ -1,9 +1,3 @@
-function Clear(canvas, canvas2){
-    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-    canvas2.getContext("2d").clearRect(0, 0, canvas2.width, canvas2.height);
-    document.getElementById("prediction").innerHTML = null;
-}
-
 //Drawing functionality
 function startDraw() {
     drawing = true;

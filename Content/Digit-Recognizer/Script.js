@@ -16,6 +16,14 @@ function preprocess(img){
     return batched.toFloat()
 }
 
+function Clear(canvas, canvas2){
+    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+    canvas2.getContext("2d").clearRect(0, 0, canvas2.width, canvas2.height);
+    document.getElementById("prediction").innerHTML = null;
+    document.getElementById("probability").innerHTML = null;
+    update_chart(chart, Array(10).fill(0));
+}
+
 function run(model){
     const canvas = document.getElementById("myCanvas");
     const img = preprocess(canvas);
@@ -24,8 +32,10 @@ function run(model){
     model.prob = out.arraySync()[0];
     model.pred = out.argMax(1).arraySync()[0];
 
-    document.getElementById("prediction").innerHTML = "Prediction : " + model.pred
-} 
+    document.getElementById("prediction").innerHTML = "Prediction : " + model.pred;
+    update_chart(chart, model.prob);
+    //document.getElementById("probability").innerHTML = "Probability : " + (Math.max(...model.prob) * 100).toFixed(2) + "%" 
+}
 
 function off() {
     document.getElementById("overlay").style.display = "none";
