@@ -2,7 +2,6 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
     <script src="data.js"></script>
     <title>Digit Recognizer</title>
 </head>
@@ -15,7 +14,6 @@
     <p id="prediction"></p>
     
     <script>
-        //tf.wasm.setWasmPaths('.')
         tf.setBackend('cpu');
 
         var model = new Object;
