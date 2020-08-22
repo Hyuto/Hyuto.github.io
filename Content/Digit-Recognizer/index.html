@@ -19,14 +19,20 @@
 
     <h1>Digit Recognizer</h1>
     <hr>
-    <p style="text-align: center;">Using Tensorflow JS to predict handdrawing digits. Model trained on 42.000 MNIST data + Augmentation with accuracy of 99.62%</p>
+    <p style="text-align: center;">Using Tensorflow JS to predict handdrawing digits. Model trained on 42.000 MNIST data + Augmentation with 99.62% of accuracy</p>
 
     <div class="Canvas">
-        <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
-        <canvas id="image" width="300" height="300" style="border:1px solid #000000;"></canvas>
+        <div class="table">
+            <p style="text-align: center; font-size: 20px">Draw Digits Here</p>
+            <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
+        </div>
+        <div class="table">
+            <p style="text-align: center; font-size: 20px">Computer Vision</p>
+            <canvas id="image" width="300" height="300" style="border:1px solid #000000;"></canvas>
+        </div>
     </div>
     <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
-    <p id="prediction"></p>
+    <p id="prediction" style="text-align: center; font-size: 25px"></p>
     
     <script>
         if(window.mobileCheck()){

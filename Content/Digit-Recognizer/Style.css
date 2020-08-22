@@ -19,6 +19,12 @@ canvas{
     margin-right: 8px;
 }
 
+.table{
+    float:left;
+    margin-right: 10px;
+    max-width: 50%;
+  }
+
 .Button{
     margin: 0px auto;
     display: table;
@@ -60,7 +66,7 @@ canvas{
 
 #title{
     text-align: center;
-    font-size: 85px;
+    font-size: 70px;
 }
 
 #para{
