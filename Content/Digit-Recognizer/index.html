@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
     <script src="data.js"></script>
     <title>Digit Recognizer</title>
 </head>
@@ -14,12 +15,12 @@
     <p id="prediction"></p>
     
     <script>
-        tf.setBackend('wasm');
+        //tf.wasm.setWasmPaths('.')
+        tf.setBackend('webgl');
 
         var model = new Object;
         model.prob = new Array(10).fill(0);
         model.pred = null;
-
         (async () => {
             model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
             model.model.summary()
@@ -57,6 +58,7 @@
         
         function stopDraw() {
             drawing = false;
+            run(model.model);
         }
 
         function mouseMove(evt) {
@@ -73,8 +75,6 @@
                 ctx.lineWidth = 15;
                 ctx.closePath();
                 ctx.stroke();
-
-                run(model.model);
             }
             lastPosition = pos;
         }
