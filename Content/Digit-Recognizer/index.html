@@ -68,7 +68,7 @@
                 ctx.lineTo(pos.x, pos.y);
                 ctx.lineJoin = 'round';
                 ctx.lineCap = 'round';
-                ctx.lineWidth = 20;
+                ctx.lineWidth = 15;
                 ctx.closePath();
                 ctx.stroke();
 
@@ -96,7 +96,7 @@
             var mouseEvent = new MouseEvent("mouseup", {});
             canvas.dispatchEvent(mouseEvent);
         }, false);
-        
+
         canvas.addEventListener("touchmove", function (e) {
             var touch = e.touches[0];
             var mouseEvent = new MouseEvent("mousemove", {
