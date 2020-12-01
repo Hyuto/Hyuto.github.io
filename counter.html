@@ -21,6 +21,10 @@
             left:50%;
             width: 50%;
             transform:translate(-50%, -50%);
+
+         }
+         .text-area{
+            background-color: rgba(0,0,0, 0.45);
          }
          .text{
             margin:0;
@@ -31,14 +35,20 @@
             background-color:rgba(0,0,0,1);
          }
          #count{
+            margin:0;
+            padding: 20px;
             color:white;
             text-align:center;
             font-size:30px;
             font-weight:800;
          }
+         .btn-area{
+            width: 80%;
+            margin: 20px auto;
+         }
          .btn{
             padding: 10px 6px;
-            margin:4px 2px;
+            margin:4px auto;
             width:100%;
             font-weight:600;
          }
@@ -64,10 +74,14 @@
    </head>
    <body>
       <div class="container">
-          <h1 class="text">Counter</h1>
-          <h3 id="count">0</h3>
-          <button id="increase" class="btn">Click Me!</button>
-          <button id="clear" class="btn">Clear</button>
+         <div class="text-area">
+            <h1 class="text">Counter</h1>
+            <h3 id="count">0</h3>
+         </div>
+         <div class="btn-area">
+            <button id="increase" class="btn">Click Me!</button>
+            <button id="clear" class="btn">Clear</button>
+         </div>
       </div>
 
       <script>
