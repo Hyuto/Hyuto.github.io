@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    
+    <title>Digit Recognizer</title>
+</head>
+<body>
+    <div id="overlay" onclick="off('overlay')">
+        <div id="text">
+            <div id="title">Mobile Device</div>
+            <p id="para">We detect that your system running on mobile, therefore prediction would be little bit slower and
+                sadly our page don't support all mobile browser. We suggest you to use Google Chorme or Mozila Firefox to run this page.<br>
+                Please tap to continue</p>
+        </div>
+    </div>
+
+    <h1>Digit Recognizer</h1>
+    <hr>
+    <p style="text-align: center;">Using Tensorflow JS to predict handdrawing digits. Model trained on 42.000 MNIST data + Augmentation with 99.62% of accuracy</p>
+
+    <div class="Canvas">
+        <div class="table">
+            <p id="canvas-title">Draw Digit Here</p>
+            <canvas id="myCanvas" width="250" height="250" style="border:1px solid #000000;"></canvas>
+        </div>
+        <div class="table">
+            <p id="canvas-title">Computer Vision</p>
+            <div class="insideWrapper">
+                <img src="./Image/Loading.gif" id="coveringImage" alt="Loading" width="250" height="250"/>
+                <canvas id="image" class="coveredCanvas" width="250" height="250"></canvas>
+            </div>
+        </div>
+        <div class="table" id="Chart">
+            <canvas id="myChart" width="300" height="300"></canvas>
+        </div>
+    </div>
+    <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
+    <p id="prediction" style="text-align: center; font-size: 25px; padding-bottom: 20px;"></p>
+    
+    <script src="../../static/js/detect-mobile.js"></script>
+    <script src="Chart.js"></script>
+    <script src="Draw.js"></script>
+    <script src="Script.js"></script>
+    <script>
+        var onMobile = window.mobileCheck(); 
+        if(onMobile){
+            On("overlay");
+        }
+
+        tf.setBackend('cpu');
+
+        var model = new Object;
+        model.prob = new Array(10).fill(0);
+        model.pred = null;
+        (async () => {
+            model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
+        })();
+
+        //Base canvas and dimensions
+        var canvas = document.getElementById("myCanvas");
+        var canvas2 = document.getElementById("image");
+        var ctx = canvas.getContext("2d");
+        //Chart
+        var chart = makeChart();
+
+        //Drawing variables
+        var lastPosition = null;
+        var drawing = false;
+
+        canvas.onmousedown = startDraw;
+        canvas.onmouseup = stopDraw;
+        canvas.onmousemove = mouseMove;
+        canvas.onmouseleave = stopDraw;
+
+        canvas.addEventListener("touchstart", function (e) {
+            mousePos = getTouchPos(canvas, e);
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousedown", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        canvas.addEventListener("touchend", function (e) {
+            var mouseEvent = new MouseEvent("mouseup", {});
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        canvas.addEventListener("touchmove", function (e) {
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script type="text/javascript" src="../../static/js/firebase.js"></script>
+
+    <script>
+        var firebaseConfig = Connect();
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+</html>

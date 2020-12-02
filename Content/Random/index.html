@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Random.css">
+        <title>Random Number</title>
+    </head>
+    <body>
+        <form>
+            <div class="container">
+                <h1>Random Number Generator</h1>
+                <p>Isilah Ketentuan Di Bawah Ini</p>
+                <hr>
+
+                <div class="Number">
+                    <label for="Minimal"><b>Minimum</b></label>
+                    <input type="text" placeholder="Minimum" name="Minimal" id="Minimal" required>
+                    <label for="Maksimal"><b>Maksimum</b></label>
+                    <input type="text" placeholder="Maksimum" name="Maksimal" id="Maksimal" required>                    
+                </div>
+
+                <hr>
+                <button type="button" id="test" class="submitbtn" onclick="Random()">Submit</button>
+                <p id="Hasil"></p>
+            </div>
+        </form>
+        
+        <script type="text/javascript" src="Random.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script type="text/javascript" src="../../static/js/firebase.js"></script>
+
+    <script>
+        var firebaseConfig = Connect();
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    </body>
+</html>

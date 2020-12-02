@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <title>
+        Home Page
+    </title>
+</head>
+
+<body>
+    <h1>Table Of Content</h1>
+    <hr>
+    <ol>
+        <li>Random Number Generator : <a href="Content/Random/">Here</a></li>
+        <li>Tensorflow EN - JA Machine Translation based Seq2seq : <a href="notebooks/Machine-Translation-EN-JP-Seq2seq-TF/">Here</a></li>
+        <li>Digit Recognizer Using Tensorflowjs : <a href="Content/Digit-Recognizer/">Here</a></li>
+        <li>CSV Reader : <a href="Content/CSVreader/">Here</a></li>
+        <li>Webcam Stream : <a href="Content/Video/">Here</a></li>
+        <li>WordCloud Analisis Sentiment : <a href="notebooks/WordCloud.html">Here</a></li>
+    </ol>
+    <hr>
+    <img src="static/images/Pemanis.gif" class="gambar" alt="Sekedar pemanis" width=300/>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script type="text/javascript" src="static/js/firebase.js"></script>
+
+    <script>
+        var firebaseConfig = Connect();
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
