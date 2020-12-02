@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSVreader.css">
-    <script type="text/javascript" src="CSVreader.js"></script>
     <title>CSV Reader</title>
 </head>
 <body>
-    <script type="text/javascript">
-        function run(){
-            let sep = document.getElementById("sep");
-            if(sep.value == ""){
-                alert("[INFO] : Separator is not found ,changging to default ','");
-                sep.value = ","
-            }
-            Upload("dvCSV", sep.value);
-        }
-
-        function clean(){
-            Clear("dvCSV", "sep");
-        }
-    </script>
     <h1>CSV Reader</h1>
     <hr />
     <p>View your CSV table</p>
@@ -34,9 +19,10 @@
     <div id="dvCSV" class="Center">
     </div>
 
+    <script type="text/javascript" src="CSVreader.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-    <script type="text/javascript" src="https://hyuto.github.io/firebase.js"></script>
+    <script type="text/javascript" src="../../static/js/firebase.js"></script>
 
     <script>
         var firebaseConfig = Connect();

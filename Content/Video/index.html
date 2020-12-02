@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-    <script type="text/javascript" src="Video.js"></script>
     <link rel="stylesheet" type="text/css" href="Video.css">
     <title>Webcam Stream</title>
 </head>
@@ -17,22 +16,12 @@
         <button id="stop">Stop</button>
     </div>
 
-    <p id="Size">
-    </p>
+    <p id="Size"></p>
     
-    <script>
-        var video = document.querySelector("#videoElement");
-
-        var startVideo = document.querySelector('#start');
-        var stopVideo = document.querySelector('#stop');
-
-        startVideo.addEventListener("click", start, true);
-        stopVideo.addEventListener("click", stop, false);
-    </script>
-
+    <script type="text/javascript" src="Video.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-    <script type="text/javascript" src="https://hyuto.github.io/firebase.js"></script>
+    <script type="text/javascript" src="../../static/js/firebase.js"></script>
 
     <script>
         var firebaseConfig = Connect();

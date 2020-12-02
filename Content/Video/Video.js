@@ -45,3 +45,10 @@ function stop(e) {
     document.getElementById("videoElement").style.width = `400px`;
     document.getElementById("videoElement").style.height = `400px`;
 }
+
+var video = document.querySelector("#videoElement");
+var startVideo = document.querySelector('#start');
+var stopVideo = document.querySelector('#stop');
+
+startVideo.addEventListener("click", start, true);
+stopVideo.addEventListener("click", stop, false);

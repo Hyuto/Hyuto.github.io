@@ -42,3 +42,16 @@ function Clear(direc, sep){
     fileUpload.value = null;
     dvCSV.innerHTML = null;
 }
+
+function run(){
+    let sep = document.getElementById("sep");
+    if(sep.value == ""){
+        alert("[INFO] : Separator is not found ,changging to default ','");
+        sep.value = ","
+    }
+    Upload("dvCSV", sep.value);
+}
+
+function clean(){
+    Clear("dvCSV", "sep");
+}

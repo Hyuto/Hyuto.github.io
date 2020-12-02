@@ -3,13 +3,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="Style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="detect-mobile.js"></script>
-    <script src="Chart.js"></script>
-    <script src="Draw.js"></script>
-    <script src="Script.js"></script>
     
     <title>Digit Recognizer</title>
 </head>
@@ -46,6 +41,10 @@
     <input type="button" id="clear" class="Button" value="Clear" onclick="Clear(canvas, canvas2)"/>
     <p id="prediction" style="text-align: center; font-size: 25px; padding-bottom: 20px;"></p>
     
+    <script src="../../static/js/detect-mobile.js"></script>
+    <script src="Chart.js"></script>
+    <script src="Draw.js"></script>
+    <script src="Script.js"></script>
     <script>
         var onMobile = window.mobileCheck(); 
         if(onMobile){
@@ -104,7 +103,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-    <script type="text/javascript" src="https://hyuto.github.io/firebase.js"></script>
+    <script type="text/javascript" src="../../static/js/firebase.js"></script>
 
     <script>
         var firebaseConfig = Connect();
