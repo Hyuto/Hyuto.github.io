@@ -1,0 +1,53 @@
+@import 'utilities';
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    color: white;
+    background-color: $main-color;
+    text-align: center;
+    padding-bottom: 20px;
+
+    h1{
+        font-size: 40px;
+        line-height: 4rem;
+        padding: 20px 20px 10px 20px;
+    }
+
+    small{
+        color: $special-color;
+        font-size: 15px;
+        padding: 9px;
+        background-color: $attachment-2-color;
+        border-radius: 5px;
+    }
+}
+
+nav{
+    background-color: $attachment-color;
+    padding: 15px;
+    width: 100%;
+
+    .container{
+        text-align: left;
+    
+        a{
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        a:active{
+            background-color: $secondary-color;
+        }
+    
+        @media(min-width: 600px){
+            a:hover{
+                background-color: $secondary-color;
+            }
+        }
+    }
+}

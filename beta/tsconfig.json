@@ -1,0 +1,13 @@
+/* 
+sass : sass --no-source-map --watch static/scss:static/css
+ts : tsc -w
+*/
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES5",
+        "outDir": "static/js",
+        "rootDir": "static/ts"
+    }
+}
