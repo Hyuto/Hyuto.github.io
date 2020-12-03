@@ -1,7 +1,22 @@
 @import 'utilities';
 
+html{
+    scroll-behavior: smooth;
+}
+
+@media(max-width: 600px){
+    .container{
+        width: 80%;
+    }
+}
+
+@media(min-width: 600px){
+    .container{
+        width: 90%;
+    }
+}
+
 .container{
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -13,6 +28,7 @@ body{
 }
 
 header{
+    position: relative;
     color: white;
     background-color: $main-color;
     text-align: center;
@@ -36,11 +52,13 @@ header{
 
 nav{
     background-color: $attachment-color;
-    padding: 15px 0;
     width: 100%;
+    padding: 7px 0;
 
     .container{
         text-align: left;
+        display: flex;
+        align-items: center;
     
         a{
             padding: 10px;
@@ -61,21 +79,39 @@ nav{
     }
 }
 
+#nav-move{
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
 section{
     background-color: white;
+    border-radius: 5px;
+    margin: 15px 0;
+    //padding: 10px;
 
-    .container{
-        p{
-            margin: 10px;
-            padding: 10px;
+    .box{
+        margin: 10px;
+        padding: 0 10px;
+
+        h1{
+            padding-top: 10px;
+            margin: 5px 0;
         }
+    }
+
+    .box:last-child{
+        padding-bottom: 10px;
     }
 }
 
 footer{
     color: white;
     background-color: $attachment-2-color;
+    position: absolute;
     width: 100%;
+    bottom: 0;
     padding: 20px 0;
 
     P{

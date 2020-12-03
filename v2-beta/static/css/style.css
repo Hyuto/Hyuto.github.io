@@ -8,8 +8,21 @@ a {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (min-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
 .container {
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -21,6 +34,7 @@ body {
 }
 
 header {
+  position: relative;
   color: white;
   background-color: #141c2a;
   text-align: center;
@@ -42,11 +56,13 @@ header small {
 
 nav {
   background-color: #df1233;
-  padding: 15px 0;
   width: 100%;
+  padding: 7px 0;
 }
 nav .container {
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 nav .container a {
   padding: 10px;
@@ -63,18 +79,35 @@ nav .container a:active {
   }
 }
 
+#nav-move {
+  display: none;
+  position: fixed;
+  top: 0;
+}
+
 section {
   background-color: white;
+  border-radius: 5px;
+  margin: 15px 0;
 }
-section .container p {
+section .box {
   margin: 10px;
-  padding: 10px;
+  padding: 0 10px;
+}
+section .box h1 {
+  padding-top: 10px;
+  margin: 5px 0;
+}
+section .box:last-child {
+  padding-bottom: 10px;
 }
 
 footer {
   color: white;
   background-color: #742433;
+  position: absolute;
   width: 100%;
+  bottom: 0;
   padding: 20px 0;
 }
 footer P {
