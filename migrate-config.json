@@ -1,0 +1,10 @@
+{
+    "excludeFolder":[
+        "ts",
+        "scss"
+    ],
+    "excludeFile":[
+        "tsconfig.json",
+        "pallete.png"
+    ]
+}
