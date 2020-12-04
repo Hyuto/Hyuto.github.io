@@ -59,20 +59,25 @@ nav{
         text-align: left;
         display: flex;
         align-items: center;
-    
-        a{
+
+        li{
+            list-style-type: none;
             padding: 10px;
-            font-weight: 550;
-            color: white;
             border-radius: 5px;
+            margin: 0 5px;
+
+            a{
+                font-weight: 550;
+                color: white;
+            }
         }
-        
-        a:active{
+
+        li:active{
             background-color: $secondary-color;
         }
     
         @media(min-width: 600px){
-            a:hover{
+            li:hover{
                 background-color: $secondary-color;
             }
         }
@@ -98,6 +103,7 @@ section{
         h1{
             padding-top: 10px;
             margin: 5px 0;
+            line-height: 30px;
         }
     }
 

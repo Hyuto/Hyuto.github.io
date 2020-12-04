@@ -64,17 +64,21 @@ nav .container {
   display: flex;
   align-items: center;
 }
-nav .container a {
+nav .container li {
+  list-style-type: none;
   padding: 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+nav .container li a {
   font-weight: 550;
   color: white;
-  border-radius: 5px;
 }
-nav .container a:active {
+nav .container li:active {
   background-color: #1c1c2b;
 }
 @media (min-width: 600px) {
-  nav .container a:hover {
+  nav .container li:hover {
     background-color: #1c1c2b;
   }
 }
@@ -97,6 +101,7 @@ section .box {
 section .box h1 {
   padding-top: 10px;
   margin: 5px 0;
+  line-height: 30px;
 }
 section .box:last-child {
   padding-bottom: 10px;
