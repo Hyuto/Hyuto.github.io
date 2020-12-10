@@ -73,7 +73,7 @@ class View{
             nav_move = document.getElementById('nav-move');
             // Placement
             this.navMove();
-        })
+        });
     }
 }
 
