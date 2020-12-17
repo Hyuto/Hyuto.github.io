@@ -120,9 +120,13 @@ footer{
     bottom: 0;
     padding: 20px 0;
 
-    P{
+    p{
         text-align: center;
         font-size: 16px;
         font-weight: 500;
     }
+}
+
+.container{
+    background-color: red;
 }
