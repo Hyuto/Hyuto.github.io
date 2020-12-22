@@ -1,35 +1,36 @@
 // Main
 // Document Element
-const body:any = document.getElementById('body');
-const foot:any = document.getElementById('foot');
-const nav:any = document.getElementById('nav');
+const body:HTMLElement = document.getElementById('body');
+const foot:HTMLElement = document.getElementById('foot');
+const nav:HTMLElement = document.getElementById('nav');
 let nav_move:any;
 
 // View 
-class View{
+class HomepageView{
     url:string;
-    data:any;
+    data:Promise<any>;
 
     constructor(url:string){
         this.url = url;
     }
 
-    GetData = async (url:string) => {
-        const data = await fetch(url).then((res) => {
+    GetData = async (url:string) : Promise<any> => {
+        return await fetch(url).then((res) => {
             return res.json();
         });
-        return data;
     }
 
     public static fillContent(content:string, url:string) : void{
-        const container:any = document.createElement('div');
-        const head:any = document.createElement('h1');
-        const text:any = document.createElement('p');
+        const container:HTMLElement = document.createElement('div');
+        const head:HTMLElement = document.createElement('h1');
+        const div:HTMLElement = document.createElement('div');
         //Set content
-        head.innerText = content;
-        text.innerHTML = `link : <a href="${url}">${content}</a>`
+        head.innerHTML = `<a href="${url}">${content}</a>`;
+        div.innerHTML = `<img src="https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_English.png" />
+                         <p>Mau ngetest</p>
+                         <a href="${url}">Readmore ..</a>`;
         container.appendChild(head);
-        container.appendChild(text);
+        container.appendChild(div);
         container.className = 'box box-1';
         //Inject to body
         body.appendChild(container);
@@ -53,6 +54,18 @@ class View{
         }
     }
 
+    async loader(){
+        const temp : Array<Promise<any>> = new Array();
+        document.querySelectorAll('img').forEach((element) => {
+            temp.push(new Promise(resolve => {
+                element.onload = () => {
+                    resolve('resolved');
+                }
+            }))
+        })
+        return Promise.all(temp);
+    }
+
     // Auto when start page
     start() : void{
         // Set Content
@@ -60,32 +73,38 @@ class View{
         this.data.then((e) => {
             e.forEach(element => {
                 // Inject to Body
-                View.fillContent(element.name, element.url);
+                HomepageView.fillContent(element.name, element.url);
             });
-        }).then(() => {
-            // Place footer
-            this.placeFooter();
-        
-            // Set moving Navbar
-            const clone = nav.cloneNode(true);
-            clone.id = "nav-move";
-            document.getElementById('navigator').appendChild(clone);
-            nav_move = document.getElementById('nav-move');
-            // Placement
-            this.navMove();
-        });
+        }).then((e) => {
+            // set loader
+            this.loader().then((e) => {
+                // Place footer
+                this.placeFooter();
+
+                // Set moving Navbar
+                const clone = nav.cloneNode(true) as HTMLElement;
+                clone.id = "nav-move";
+                document.getElementById('navigator').appendChild(clone);
+                nav_move = document.getElementById('nav-move');
+                // Placement
+                this.navMove();
+
+                document.getElementById('loader').style.display = 'none';
+            });
+        })
     }
 }
 
-// Init view and start
-const view : View = new View("https://hyuto.github.io/notebooks/API/API.json");
-view.start();
 
-// Listener
+
+// Init view and start
+const Homepageview : HomepageView = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+Homepageview.start();
+
 window.addEventListener('resize', () : void => {
-    view.placeFooter();
+    Homepageview.placeFooter();
 })
 
 window.addEventListener('scroll', () : void => {
-    view.navMove();
+    Homepageview.navMove();
 });

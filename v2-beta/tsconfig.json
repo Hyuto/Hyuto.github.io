@@ -8,6 +8,12 @@ ts : tsc -w
         "module": "commonjs",
         "target": "ES5",
         "outDir": "static/js",
-        "rootDir": "static/ts"
+        "rootDir": "static/ts",
+        "noLib": false,
+        "lib": [
+            "DOM", 
+            "ES6",
+            "ES2015.Promise"
+        ]
     }
 }

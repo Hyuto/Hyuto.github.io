@@ -10,6 +10,7 @@ a {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (max-width: 600px) {
@@ -97,11 +98,41 @@ section {
 section .box {
   margin: 10px;
   padding: 0 10px;
+  border: 1px solid balck;
 }
 section .box h1 {
   padding-top: 10px;
   margin: 5px 0;
   line-height: 30px;
+}
+section .box h1 a {
+  color: black;
+}
+section .box div {
+  margin: 5px 0;
+  width: 100%;
+}
+section .box div img {
+  width: 80%;
+  margin: auto;
+}
+section .box div p {
+  margin: 10px 0;
+}
+section .box div a {
+  font-size: 14px;
+  color: white;
+  background-color: #f7b658;
+  padding: 8px;
+  border-radius: 5px;
+}
+section .box div a:hover {
+  background-color: #141c2a;
+}
+@media (max-width: 600px) {
+  section .box div a:active {
+    background-color: #141c2a;
+  }
 }
 section .box:last-child {
   padding-bottom: 10px;

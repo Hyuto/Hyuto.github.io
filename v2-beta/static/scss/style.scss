@@ -2,6 +2,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 @media(max-width: 600px){
@@ -99,11 +100,49 @@ section{
     .box{
         margin: 10px;
         padding: 0 10px;
+        border: 1px solid balck;
 
         h1{
             padding-top: 10px;
             margin: 5px 0;
             line-height: 30px;
+
+            a{
+                color: black;
+            }
+        }
+
+        div{
+            margin: 5px 0;
+            width: 100%;
+
+            img{
+                
+                width: 80%;
+                margin: auto;
+            }
+
+            p{
+                margin: 10px 0;
+            }
+
+            a{
+                font-size: 14px;
+                color: white;
+                background-color: $special-color;
+                padding: 8px;
+                border-radius: 5px;
+            }
+
+            a:hover{
+                background-color: $main-color;
+            }
+
+            @media(max-width:600px) {
+                a:active{
+                    background-color: $main-color;
+                }
+            }
         }
     }
 

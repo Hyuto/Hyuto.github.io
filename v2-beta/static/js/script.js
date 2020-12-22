@@ -41,39 +41,36 @@ var foot = document.getElementById('foot');
 var nav = document.getElementById('nav');
 var nav_move;
 // View 
-var View = /** @class */ (function () {
-    function View(url) {
+var HomepageView = /** @class */ (function () {
+    function HomepageView(url) {
         var _this = this;
         this.GetData = function (url) { return __awaiter(_this, void 0, void 0, function () {
-            var data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, fetch(url).then(function (res) {
                             return res.json();
                         })];
-                    case 1:
-                        data = _a.sent();
-                        return [2 /*return*/, data];
+                    case 1: return [2 /*return*/, _a.sent()];
                 }
             });
         }); };
         this.url = url;
     }
-    View.fillContent = function (content, url) {
+    HomepageView.fillContent = function (content, url) {
         var container = document.createElement('div');
         var head = document.createElement('h1');
-        var text = document.createElement('p');
+        var div = document.createElement('div');
         //Set content
-        head.innerText = content;
-        text.innerHTML = "link : <a href=\"" + url + "\">" + content + "</a>";
+        head.innerHTML = "<a href=\"" + url + "\">" + content + "</a>";
+        div.innerHTML = "<img src=\"https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_English.png\" />\n                         <p>Mau ngetest</p>\n                         <a href=\"" + url + "\">Readmore ..</a>";
         container.appendChild(head);
-        container.appendChild(text);
+        container.appendChild(div);
         container.className = 'box box-1';
         //Inject to body
         body.appendChild(container);
     };
     // Footer Placing : Responsive
-    View.prototype.placeFooter = function () {
+    HomepageView.prototype.placeFooter = function () {
         if (body.offsetTop + body.offsetHeight + foot.offsetHeight > window.innerHeight) {
             foot.style.bottom = "unset";
         }
@@ -82,7 +79,7 @@ var View = /** @class */ (function () {
         }
     };
     // Moving nav when scroll
-    View.prototype.navMove = function () {
+    HomepageView.prototype.navMove = function () {
         if (window.scrollY > nav.offsetTop) {
             nav_move.style.display = "block";
         }
@@ -90,37 +87,56 @@ var View = /** @class */ (function () {
             nav_move.style.display = "none";
         }
     };
+    HomepageView.prototype.loader = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var temp;
+            return __generator(this, function (_a) {
+                temp = new Array();
+                document.querySelectorAll('img').forEach(function (element) {
+                    temp.push(new Promise(function (resolve) {
+                        element.onload = function () {
+                            resolve('resolved');
+                        };
+                    }));
+                });
+                return [2 /*return*/, Promise.all(temp)];
+            });
+        });
+    };
     // Auto when start page
-    View.prototype.start = function () {
+    HomepageView.prototype.start = function () {
         var _this = this;
         // Set Content
         this.data = this.GetData(this.url);
         this.data.then(function (e) {
             e.forEach(function (element) {
                 // Inject to Body
-                View.fillContent(element.name, element.url);
+                HomepageView.fillContent(element.name, element.url);
             });
-        }).then(function () {
-            // Place footer
-            _this.placeFooter();
-            // Set moving Navbar
-            var clone = nav.cloneNode(true);
-            clone.id = "nav-move";
-            document.getElementById('navigator').appendChild(clone);
-            nav_move = document.getElementById('nav-move');
-            // Placement
-            _this.navMove();
+        }).then(function (e) {
+            // set loader
+            _this.loader().then(function (e) {
+                // Place footer
+                _this.placeFooter();
+                // Set moving Navbar
+                var clone = nav.cloneNode(true);
+                clone.id = "nav-move";
+                document.getElementById('navigator').appendChild(clone);
+                nav_move = document.getElementById('nav-move');
+                // Placement
+                _this.navMove();
+                document.getElementById('loader').style.display = 'none';
+            });
         });
     };
-    return View;
+    return HomepageView;
 }());
 // Init view and start
-var view = new View("https://hyuto.github.io/notebooks/API/API.json");
-view.start();
-// Listener
+var Homepageview = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+Homepageview.start();
 window.addEventListener('resize', function () {
-    view.placeFooter();
+    Homepageview.placeFooter();
 });
 window.addEventListener('scroll', function () {
-    view.navMove();
+    Homepageview.navMove();
 });
