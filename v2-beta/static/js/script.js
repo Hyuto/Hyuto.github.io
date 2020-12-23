@@ -62,7 +62,7 @@ var HomepageView = /** @class */ (function () {
         var div = document.createElement('div');
         //Set content
         head.innerHTML = "<a href=\"" + url + "\">" + content + "</a>";
-        div.innerHTML = "<img src=\"https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_English.png\" />\n                         <p>Mau ngetest</p>\n                         <a href=\"" + url + "\">Readmore ..</a>";
+        div.innerHTML = "<img src=\"https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_Japanese.png\" />\n                         <p>Mau ngetest</p>\n                         <a href=\"" + url + "\">Readmore ..</a>";
         container.appendChild(head);
         container.appendChild(div);
         container.className = 'box box-1';
@@ -132,11 +132,11 @@ var HomepageView = /** @class */ (function () {
     return HomepageView;
 }());
 // Init view and start
-var Homepageview = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
-Homepageview.start();
+var View = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+View.start();
 window.addEventListener('resize', function () {
-    Homepageview.placeFooter();
+    View.placeFooter();
 });
 window.addEventListener('scroll', function () {
-    Homepageview.navMove();
+    View.navMove();
 });

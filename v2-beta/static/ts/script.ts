@@ -26,7 +26,7 @@ class HomepageView{
         const div:HTMLElement = document.createElement('div');
         //Set content
         head.innerHTML = `<a href="${url}">${content}</a>`;
-        div.innerHTML = `<img src="https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_English.png" />
+        div.innerHTML = `<img src="https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_Japanese.png" />
                          <p>Mau ngetest</p>
                          <a href="${url}">Readmore ..</a>`;
         container.appendChild(head);
@@ -95,16 +95,14 @@ class HomepageView{
     }
 }
 
-
-
 // Init view and start
-const Homepageview : HomepageView = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
-Homepageview.start();
+const View : HomepageView = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+View.start();
 
 window.addEventListener('resize', () : void => {
-    Homepageview.placeFooter();
+    View.placeFooter();
 })
 
 window.addEventListener('scroll', () : void => {
-    Homepageview.navMove();
+    View.navMove();
 });
