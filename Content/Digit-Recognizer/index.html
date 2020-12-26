@@ -57,7 +57,7 @@
         model.prob = new Array(10).fill(0);
         model.pred = null;
         (async () => {
-            model.model = await tf.loadLayersModel('https://raw.githubusercontent.com/Hyuto/Hyuto.github.io/master/Content/Digit-Recognizer/model/model.json');
+            model.model = await tf.loadLayersModel('./model/model.json');
         })();
 
         //Base canvas and dimensions
