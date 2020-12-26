@@ -33,7 +33,7 @@ def MoveDir(src:str, dst:str):
     for item in list_item:
         shutil.move(os.path.join(src, item), dst)
 
-if if __name__ == "__main__":
+if __name__ == "__main__":
     # Install coloredlogs
     install()
 

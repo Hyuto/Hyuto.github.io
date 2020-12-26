@@ -20,15 +20,19 @@ class HomepageView{
         });
     }
 
-    public static fillContent(content:string, url:string) : void{
+    public static fillContent(element) : void{
         const container:HTMLElement = document.createElement('div');
         const head:HTMLElement = document.createElement('h1');
         const div:HTMLElement = document.createElement('div');
+
+        const IMG : string = element.IMG ? `<img src="${element.IMG}" />'` : ' ';
         //Set content
-        head.innerHTML = `<a href="${url}">${content}</a>`;
-        div.innerHTML = `<img src="https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_Japanese.png" />
-                         <p>Mau ngetest</p>
-                         <a href="${url}">Readmore ..</a>`;
+        head.innerHTML = `<a href="${element.url}">${element.Title}</a>`;
+        div.innerHTML = `<div class="image">
+                            ${IMG}
+                         </div>
+                         <p>${element.SYNOPSIS}</p>
+                         <a href="${element.url}">Readmore</a>`;
         container.appendChild(head);
         container.appendChild(div);
         container.className = 'box box-1';
@@ -38,10 +42,11 @@ class HomepageView{
 
     // Footer Placing : Responsive
     placeFooter() : void{
-        if(body.offsetTop + body.offsetHeight + foot.offsetHeight > window.innerHeight){
-            foot.style.bottom = "unset";
+        const heigh_left : number = window.innerHeight - (body.offsetTop + body.offsetHeight + foot.offsetHeight);
+        if(heigh_left > 0){
+            body.style.height = `${body.offsetHeight + heigh_left - 10}px`;
         }else{
-            foot.style.bottom = "0";
+            body.style.height = `unset`
         }
     }
 
@@ -73,7 +78,7 @@ class HomepageView{
         this.data.then((e) => {
             e.forEach(element => {
                 // Inject to Body
-                HomepageView.fillContent(element.name, element.url);
+                HomepageView.fillContent(element);
             });
         }).then((e) => {
             // set loader
@@ -96,7 +101,7 @@ class HomepageView{
 }
 
 // Init view and start
-const View : HomepageView = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+const View : HomepageView = new HomepageView("https://hyuto.github.io/notebooks/API.json");
 View.start();
 
 window.addEventListener('resize', () : void => {

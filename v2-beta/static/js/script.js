@@ -56,13 +56,14 @@ var HomepageView = /** @class */ (function () {
         }); };
         this.url = url;
     }
-    HomepageView.fillContent = function (content, url) {
+    HomepageView.fillContent = function (element) {
         var container = document.createElement('div');
         var head = document.createElement('h1');
         var div = document.createElement('div');
+        var IMG = element.IMG ? "<img src=\"" + element.IMG + "\" />'" : ' ';
         //Set content
-        head.innerHTML = "<a href=\"" + url + "\">" + content + "</a>";
-        div.innerHTML = "<img src=\"https://raw.githubusercontent.com/Hyuto/notebooks/master/Machine-Translation-EN-JP-Seq2seq-TF/WC_Japanese.png\" />\n                         <p>Mau ngetest</p>\n                         <a href=\"" + url + "\">Readmore ..</a>";
+        head.innerHTML = "<a href=\"" + element.url + "\">" + element.Title + "</a>";
+        div.innerHTML = "<div class=\"image\">\n                            " + IMG + "\n                         </div>\n                         <p>" + element.SYNOPSIS + "</p>\n                         <a href=\"" + element.url + "\">Readmore</a>";
         container.appendChild(head);
         container.appendChild(div);
         container.className = 'box box-1';
@@ -71,11 +72,12 @@ var HomepageView = /** @class */ (function () {
     };
     // Footer Placing : Responsive
     HomepageView.prototype.placeFooter = function () {
-        if (body.offsetTop + body.offsetHeight + foot.offsetHeight > window.innerHeight) {
-            foot.style.bottom = "unset";
+        var heigh_left = window.innerHeight - (body.offsetTop + body.offsetHeight + foot.offsetHeight);
+        if (heigh_left > 0) {
+            body.style.height = body.offsetHeight + heigh_left - 10 + "px";
         }
         else {
-            foot.style.bottom = "0";
+            body.style.height = "unset";
         }
     };
     // Moving nav when scroll
@@ -111,7 +113,7 @@ var HomepageView = /** @class */ (function () {
         this.data.then(function (e) {
             e.forEach(function (element) {
                 // Inject to Body
-                HomepageView.fillContent(element.name, element.url);
+                HomepageView.fillContent(element);
             });
         }).then(function (e) {
             // set loader
@@ -132,7 +134,7 @@ var HomepageView = /** @class */ (function () {
     return HomepageView;
 }());
 // Init view and start
-var View = new HomepageView("https://hyuto.github.io/notebooks/API/API.json");
+var View = new HomepageView("https://hyuto.github.io/notebooks/API.json");
 View.start();
 window.addEventListener('resize', function () {
     View.placeFooter();
