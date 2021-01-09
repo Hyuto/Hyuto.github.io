@@ -5,14 +5,14 @@ ts : tsc -w
 
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "ESNext",
         "target": "ES5",
         "outDir": "static/js",
         "rootDir": "static/ts",
         "noLib": false,
         "lib": [
-            "DOM", 
-            "ES6",
+            "DOM",
+            "ESNext",
             "ES2015.Promise"
         ]
     }

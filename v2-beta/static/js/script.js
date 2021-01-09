@@ -89,12 +89,12 @@ var HomepageView = /** @class */ (function () {
             nav_move.style.display = "none";
         }
     };
-    HomepageView.prototype.loader = function () {
+    HomepageView.prototype.loader = function (winO) {
         return __awaiter(this, void 0, void 0, function () {
             var temp;
             return __generator(this, function (_a) {
                 temp = new Array();
-                document.querySelectorAll('img').forEach(function (element) {
+                document.querySelectorAll(winO).forEach(function (element) {
                     temp.push(new Promise(function (resolve) {
                         element.onload = function () {
                             resolve('resolved');
@@ -106,8 +106,9 @@ var HomepageView = /** @class */ (function () {
         });
     };
     // Auto when start page
-    HomepageView.prototype.start = function () {
+    HomepageView.prototype.start = function (watch) {
         var _this = this;
+        if (watch === void 0) { watch = 'img'; }
         // Set Content
         this.data = this.GetData(this.url);
         this.data.then(function (e) {
@@ -117,7 +118,7 @@ var HomepageView = /** @class */ (function () {
             });
         }).then(function (e) {
             // set loader
-            _this.loader().then(function (e) {
+            _this.loader(watch).then(function (e) {
                 // Place footer
                 _this.placeFooter();
                 // Set moving Navbar

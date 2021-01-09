@@ -6,7 +6,6 @@ import os, logging, shutil
 def CopyDir(src:str, dst:str, symlinks:bool=False, ignore=None):
     """
     Copy all items in src dir to dsr dir
-
     Args:
         src ([str]): Source DIR
         dst ([str]): Destination DIR
@@ -24,7 +23,6 @@ def CopyDir(src:str, dst:str, symlinks:bool=False, ignore=None):
 def MoveDir(src:str, dst:str):
     """
     Move all items in src DIR to dst DIR
-
     Args:
         src ([str]): Source DIR
         dst ([str]): Destination DIR
@@ -78,3 +76,4 @@ if __name__ == "__main__":
             shutil.rmtree(item, ignore_errors=True)
         else:
             os.remove(item)
+    

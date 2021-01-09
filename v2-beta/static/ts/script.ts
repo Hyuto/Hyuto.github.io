@@ -59,9 +59,9 @@ class HomepageView{
         }
     }
 
-    async loader(){
+    async loader(winO: any){
         const temp : Array<Promise<any>> = new Array();
-        document.querySelectorAll('img').forEach((element) => {
+        document.querySelectorAll(winO).forEach((element) => {
             temp.push(new Promise(resolve => {
                 element.onload = () => {
                     resolve('resolved');
@@ -72,7 +72,7 @@ class HomepageView{
     }
 
     // Auto when start page
-    start() : void{
+    start(watch: string = 'img') : void{
         // Set Content
         this.data = this.GetData(this.url);
         this.data.then((e) => {
@@ -82,7 +82,7 @@ class HomepageView{
             });
         }).then((e) => {
             // set loader
-            this.loader().then((e) => {
+            this.loader(watch).then((e) => {
                 // Place footer
                 this.placeFooter();
 
