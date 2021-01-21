@@ -76,4 +76,3 @@ if __name__ == "__main__":
             shutil.rmtree(item, ignore_errors=True)
         else:
             os.remove(item)
-    
