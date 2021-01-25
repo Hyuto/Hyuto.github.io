@@ -1,4 +1,4 @@
-class View{
+export class View{
     body: HTMLElement;
     foot: HTMLElement;
     nav: HTMLElement;
@@ -22,7 +22,7 @@ class View{
         const heigh_left : number = window.innerHeight - (this.body.offsetTop + 
             this.body.offsetHeight + this.foot.offsetHeight);
         if(heigh_left > 0){
-            this.body.style.height = `${this.body.offsetHeight + heigh_left - 10}px`;
+            this.body.style.minHeight = `${this.body.offsetHeight + heigh_left - 10}px`;
         }else{
             this.body.style.height = `unset`
         }
@@ -63,8 +63,7 @@ class View{
             this.navMove();
 
             document.getElementById('loader').style.display = 'none';
+            document.querySelector('html').style.overflow = 'visible';
         });
     }
 }
-
-export { View };

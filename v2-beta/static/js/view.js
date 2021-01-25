@@ -57,7 +57,7 @@ var View = /** @class */ (function () {
         var heigh_left = window.innerHeight - (this.body.offsetTop +
             this.body.offsetHeight + this.foot.offsetHeight);
         if (heigh_left > 0) {
-            this.body.style.height = this.body.offsetHeight + heigh_left - 10 + "px";
+            this.body.style.minHeight = this.body.offsetHeight + heigh_left - 10 + "px";
         }
         else {
             this.body.style.height = "unset";
@@ -102,6 +102,7 @@ var View = /** @class */ (function () {
             // Placement
             _this.navMove();
             document.getElementById('loader').style.display = 'none';
+            document.querySelector('html').style.overflow = 'visible';
         });
     };
     return View;
