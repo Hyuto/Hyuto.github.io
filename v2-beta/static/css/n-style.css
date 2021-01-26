@@ -146,11 +146,11 @@ nav .container li a {
   font-weight: 550;
   color: white;
 }
-nav .container li:active {
+nav .container li:hover {
   background-color: #1c1c2b;
 }
-@media (min-width: 600px) {
-  nav .container li:hover {
+@media (max-width: 600px) {
+  nav .container li:active {
     background-color: #1c1c2b;
   }
 }
