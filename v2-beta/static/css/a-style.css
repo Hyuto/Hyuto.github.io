@@ -133,8 +133,14 @@ nav {
 }
 nav .container {
   text-align: left;
+}
+nav .container .content {
   display: flex;
+}
+nav .container .small-view {
+  display: none;
   align-items: center;
+  justify-content: space-between;
 }
 nav .container li {
   list-style-type: none;
@@ -146,11 +152,31 @@ nav .container li a {
   font-weight: 550;
   color: white;
 }
-nav .container li:hover {
+nav .container .hamburger {
+  width: 20px;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+nav .container .hamburger .layer {
+  width: 100%;
+  margin: 3px 0;
+  padding: 2px;
+  background-color: white;
+}
+nav .container li:hover, nav .container .hamburger:hover {
   background-color: #1c1c2b;
 }
 @media (max-width: 600px) {
-  nav .container li:active {
+  nav .container .small-view {
+    display: flex;
+  }
+  nav .container .content {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+  nav .container li:active, nav .container .hamburger:active {
     background-color: #1c1c2b;
   }
 }

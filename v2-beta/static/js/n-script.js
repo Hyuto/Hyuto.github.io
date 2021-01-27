@@ -60,3 +60,11 @@ window.addEventListener('resize', function () {
 window.addEventListener('scroll', function () {
     Notebook.navMove();
 });
+/* Listener for hamburger
+const hamburger:NodeListOf<Element> = document.querySelectorAll('.hamburger');
+hamburger.forEach((e) => {
+    e.addEventListener('click', () => {
+        const content:HTMLElement = document.querySelector('.content');
+        content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+    })
+}) */

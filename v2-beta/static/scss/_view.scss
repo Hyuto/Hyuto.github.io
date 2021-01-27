@@ -54,9 +54,17 @@ nav{
 
     .container{
         text-align: left;
-        display: flex;
-        align-items: center;
 
+        .content{
+            display: flex;
+        }
+
+        .small-view{
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
         li{
             list-style-type: none;
             padding: 10px;
@@ -69,12 +77,36 @@ nav{
             }
         }
 
-        li:hover{
+        .hamburger{
+            width: 20px;
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+    
+            .layer{
+                width: 100%;
+                margin: 3px 0;
+                padding: 2px;
+                background-color: white;
+            }
+        }
+
+        li:hover, .hamburger:hover{
             background-color: $secondary-color;
         }
     
         @media(max-width: 600px){
-            li:active{
+            .small-view{
+                display: flex;
+            }
+
+            .content{
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            li:active, .hamburger:active{
                 background-color: $secondary-color;
             }
         }
