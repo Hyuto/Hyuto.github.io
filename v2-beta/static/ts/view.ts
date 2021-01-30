@@ -1,4 +1,4 @@
-export class View{
+class View{
     body: HTMLElement;
     foot: HTMLElement;
     nav: HTMLElement;
@@ -53,17 +53,21 @@ export class View{
         this.loader(watch).then((e) => {
             // Place footer
             this.placeFooter();
-
-            // Set moving Navbar
-            const clone = this.nav.cloneNode(true) as HTMLElement;
-            clone.id = "nav-move";
-            document.getElementById('navigator').appendChild(clone);
-            this.nav_move = document.getElementById('nav-move');
-            // Placement
+            // Set Nav
             this.navMove();
-
+        })
+        .then((e) => {
             document.getElementById('loader').style.display = 'none';
             document.querySelector('html').style.overflow = 'visible';
         });
     }
 }
+
+function CloneElement(element: HTMLElement, id:string ,to:string): HTMLElement{
+    const clone = element.cloneNode(true) as HTMLElement;
+    clone.id = id;
+    document.getElementById(to).appendChild(clone);
+    return document.getElementById(id);
+}
+
+export { View, CloneElement }

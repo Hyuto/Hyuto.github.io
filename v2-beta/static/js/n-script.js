@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { View } from "./view.js";
+import { View, CloneElement } from "./view.js";
 var NotebookView = /** @class */ (function (_super) {
     __extends(NotebookView, _super);
     function NotebookView() {
@@ -45,12 +45,12 @@ var NotebookView = /** @class */ (function (_super) {
     return NotebookView;
 }(View));
 // Main
-window.onunload = function () { window.scrollTo(0, 0); };
 // Document Element
 var body = document.getElementById('body');
 var foot = document.getElementById('foot');
 var nav = document.getElementById('nav');
-var nav_move;
+// Set moving Navbar
+var nav_move = CloneElement(nav, "nav-move", "navigator");
 // Init view and start
 var Notebook = new NotebookView(body, foot, nav, nav_move);
 Notebook.start();

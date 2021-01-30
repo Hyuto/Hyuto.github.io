@@ -1,4 +1,4 @@
-import { View } from "./view.js";
+import { View, CloneElement } from "./view.js";
 
 class NotebookView extends View{
     fillContent(element) : void{
@@ -34,13 +34,12 @@ class NotebookView extends View{
 }
 
 // Main
-window.onunload = function(){ window.scrollTo(0,0); }
-
 // Document Element
 const body:HTMLElement = document.getElementById('body');
 const foot:HTMLElement = document.getElementById('foot');
 const nav:HTMLElement = document.getElementById('nav');
-let nav_move:any;
+// Set moving Navbar
+const nav_move = CloneElement(nav, "nav-move", "navigator");
 
 // Init view and start
 const Notebook: NotebookView = new NotebookView(body, foot, nav, nav_move);

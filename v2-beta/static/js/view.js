@@ -94,17 +94,20 @@ var View = /** @class */ (function () {
         this.loader(watch).then(function (e) {
             // Place footer
             _this.placeFooter();
-            // Set moving Navbar
-            var clone = _this.nav.cloneNode(true);
-            clone.id = "nav-move";
-            document.getElementById('navigator').appendChild(clone);
-            _this.nav_move = document.getElementById('nav-move');
-            // Placement
+            // Set Nav
             _this.navMove();
+        })
+            .then(function (e) {
             document.getElementById('loader').style.display = 'none';
             document.querySelector('html').style.overflow = 'visible';
         });
     };
     return View;
 }());
-export { View };
+function CloneElement(element, id, to) {
+    var clone = element.cloneNode(true);
+    clone.id = id;
+    document.getElementById(to).appendChild(clone);
+    return document.getElementById(id);
+}
+export { View, CloneElement };

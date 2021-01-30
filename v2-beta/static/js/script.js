@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { View } from './view.js';
+import { View, CloneElement } from './view.js';
 var HomeView = /** @class */ (function (_super) {
     __extends(HomeView, _super);
     function HomeView() {
@@ -25,6 +25,6 @@ var HomeView = /** @class */ (function (_super) {
 var body = document.getElementById('body');
 var foot = document.getElementById('foot');
 var nav = document.getElementById('nav');
-var nav_move;
+var nav_move = CloneElement(nav, "nav-move", "navigator");
 var Home = new HomeView(body, foot, nav, nav_move);
 Home.start();
