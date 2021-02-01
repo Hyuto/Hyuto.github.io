@@ -53,11 +53,16 @@ window.addEventListener('scroll', () : void => {
     Notebook.navMove();
 });
 
-/* Listener for hamburger
-const hamburger:NodeListOf<Element> = document.querySelectorAll('.hamburger');
-hamburger.forEach((e) => {
-    e.addEventListener('click', () => {
-        const content:HTMLElement = document.querySelector('.content');
-        content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
-    })
-}) */
+/* Listener for hamburger */
+const hamburger: HTMLElement = document.querySelector('.hamburger');
+hamburger.addEventListener('click', () => {
+    const content: HTMLElement = document.querySelector('.content');
+    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+})
+
+/* Listener for moving hamburger */
+const hamburger_moving: HTMLElement = document.getElementById('hamburger-moving');
+hamburger_moving.addEventListener('click', () => {
+    const content: HTMLElement = document.getElementById('content-moving');
+    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+})

@@ -70,6 +70,7 @@ nav{
             padding: 10px;
             border-radius: 5px;
             margin: 0 5px;
+            cursor: pointer;
 
             a{
                 font-weight: 550;
@@ -82,12 +83,14 @@ nav{
             padding: 10px;
             margin: 0 5px;
             border-radius: 5px;
+            cursor: pointer;
     
             .layer{
                 width: 100%;
                 margin: 3px 0;
                 padding: 2px 0;
                 background-color: white;
+                cursor: pointer;
             }
         }
 
@@ -105,7 +108,7 @@ nav{
                 flex-direction: column;
                 text-align: center;
             }
-
+            
             li:active, .hamburger:active{
                 background-color: $secondary-color;
             }

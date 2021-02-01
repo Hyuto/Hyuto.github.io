@@ -147,6 +147,7 @@ nav .container li {
   padding: 10px;
   border-radius: 5px;
   margin: 0 5px;
+  cursor: pointer;
 }
 nav .container li a {
   font-weight: 550;
@@ -157,12 +158,14 @@ nav .container .hamburger {
   padding: 10px;
   margin: 0 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 nav .container .hamburger .layer {
   width: 100%;
   margin: 3px 0;
   padding: 2px 0;
   background-color: white;
+  cursor: pointer;
 }
 nav .container li:hover, nav .container .hamburger:hover {
   background-color: #1c1c2b;

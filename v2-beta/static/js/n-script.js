@@ -60,11 +60,15 @@ window.addEventListener('resize', function () {
 window.addEventListener('scroll', function () {
     Notebook.navMove();
 });
-/* Listener for hamburger
-const hamburger:NodeListOf<Element> = document.querySelectorAll('.hamburger');
-hamburger.forEach((e) => {
-    e.addEventListener('click', () => {
-        const content:HTMLElement = document.querySelector('.content');
-        content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
-    })
-}) */
+/* Listener for hamburger */
+var hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', function () {
+    var content = document.querySelector('.content');
+    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+});
+/* Listener for moving hamburger */
+var hamburger_moving = document.getElementById('hamburger-moving');
+hamburger_moving.addEventListener('click', function () {
+    var content = document.getElementById('content-moving');
+    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+});

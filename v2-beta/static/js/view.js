@@ -107,6 +107,8 @@ var View = /** @class */ (function () {
 function CloneElement(element, id, to) {
     var clone = element.cloneNode(true);
     clone.id = id;
+    clone.querySelector(".hamburger").id = "hamburger-moving";
+    clone.querySelector(".content").id = "content-moving";
     document.getElementById(to).appendChild(clone);
     return document.getElementById(id);
 }

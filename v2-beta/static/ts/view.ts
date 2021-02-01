@@ -66,6 +66,8 @@ class View{
 function CloneElement(element: HTMLElement, id:string ,to:string): HTMLElement{
     const clone = element.cloneNode(true) as HTMLElement;
     clone.id = id;
+    clone.querySelector(".hamburger").id = "hamburger-moving";
+    clone.querySelector(".content").id = "content-moving";
     document.getElementById(to).appendChild(clone);
     return document.getElementById(id);
 }
