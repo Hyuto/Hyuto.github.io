@@ -140,7 +140,7 @@ nav .container .content {
 nav .container .small-view {
   display: none;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 nav .container li {
   list-style-type: none;
