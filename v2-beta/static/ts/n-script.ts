@@ -38,6 +38,7 @@ class NotebookView extends View{
 const body:HTMLElement = document.getElementById('body');
 const foot:HTMLElement = document.getElementById('foot');
 const nav:HTMLElement = document.getElementById('nav');
+
 // Set moving Navbar
 const nav_move = CloneElement(nav, "nav-move", "navigator");
 
@@ -45,24 +46,11 @@ const nav_move = CloneElement(nav, "nav-move", "navigator");
 const Notebook: NotebookView = new NotebookView(body, foot, nav, nav_move);
 Notebook.start();
 
-window.addEventListener('resize', () : void => {
+window.addEventListener('resize', (): void => {
     Notebook.placeFooter();
+    Notebook._NavResize();
 })
 
-window.addEventListener('scroll', () : void => {
+window.addEventListener('scroll', (): void => {
     Notebook.navMove();
 });
-
-/* Listener for hamburger */
-const hamburger: HTMLElement = document.querySelector('.hamburger');
-hamburger.addEventListener('click', () => {
-    const content: HTMLElement = document.querySelector('.content');
-    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
-})
-
-/* Listener for moving hamburger */
-const hamburger_moving: HTMLElement = document.getElementById('hamburger-moving');
-hamburger_moving.addEventListener('click', () => {
-    const content: HTMLElement = document.getElementById('content-moving');
-    content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
-})

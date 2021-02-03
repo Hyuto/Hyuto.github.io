@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var View = /** @class */ (function () {
     function View(body, foot, nav, nav_move) {
         var _this = this;
+        // Get data from API
         this.GetData = function (url) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -72,6 +73,7 @@ var View = /** @class */ (function () {
             this.nav_move.style.display = "none";
         }
     };
+    // Async for loader to wait
     View.prototype.loader = function (winO) {
         return __awaiter(this, void 0, void 0, function () {
             var temp;
@@ -88,6 +90,25 @@ var View = /** @class */ (function () {
             });
         });
     };
+    // Hamburger Clicked Listener
+    View.prototype.HamburgerListener = function (element) {
+        var hamburger = element.querySelector('.hamburger');
+        hamburger.addEventListener('click', function () {
+            var content = element.querySelector('.content');
+            content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+        });
+    };
+    // Avoiding nav error when window resized
+    View.prototype._NavResize = function () {
+        var content = document.querySelectorAll('.content');
+        content.forEach(function (element) {
+            if (window.innerWidth > 600 && element.style.display == 'none')
+                element.style.display = 'flex';
+            if (window.innerWidth <= 600 && element.style.display == 'flex')
+                element.style.display = 'none';
+        });
+    };
+    // Main Content Placement
     View.prototype._ContentPlacement = function (watch) {
         var _this = this;
         if (watch === void 0) { watch = 'img'; }
@@ -98,6 +119,10 @@ var View = /** @class */ (function () {
             _this.navMove();
         })
             .then(function (e) {
+            // Hamburger Listener
+            _this.HamburgerListener(_this.nav);
+            _this.HamburgerListener(_this.nav_move);
+            // Close loader
             document.getElementById('loader').style.display = 'none';
             document.querySelector('html').style.overflow = 'visible';
         });
@@ -107,8 +132,6 @@ var View = /** @class */ (function () {
 function CloneElement(element, id, to) {
     var clone = element.cloneNode(true);
     clone.id = id;
-    clone.querySelector(".hamburger").id = "hamburger-moving";
-    clone.querySelector(".content").id = "content-moving";
     document.getElementById(to).appendChild(clone);
     return document.getElementById(id);
 }

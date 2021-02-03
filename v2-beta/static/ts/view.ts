@@ -11,6 +11,7 @@ class View{
         this.nav_move = nav_move;
     }
 
+    // Get data from API
     GetData = async (url:string) : Promise<any> => {
         return await fetch(url).then((res) => {
             return res.json();
@@ -37,6 +38,7 @@ class View{
         }
     }
 
+    // Async for loader to wait
     async loader(winO: any){
         const temp : Array<Promise<any>> = new Array();
         document.querySelectorAll(winO).forEach((element) => {
@@ -49,6 +51,27 @@ class View{
         return Promise.all(temp);
     }
 
+    // Hamburger Clicked Listener
+    HamburgerListener(element: HTMLElement): void{
+        const hamburger: HTMLElement = element.querySelector('.hamburger');
+        hamburger.addEventListener('click', (): void => {
+            const content: HTMLElement = element.querySelector('.content');
+            content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+        })
+    }
+
+    // Avoiding nav error when window resized
+    _NavResize(): void{
+        const content: NodeListOf<HTMLElement> = document.querySelectorAll('.content');
+        content.forEach((element: HTMLElement) => {
+            if(window.innerWidth > 600 && element.style.display == 'none')
+                element.style.display = 'flex';
+            if(window.innerWidth <= 600 && element.style.display == 'flex')
+                element.style.display = 'none';
+        })
+    }
+
+    // Main Content Placement
     _ContentPlacement(watch: string = 'img'): void{
         this.loader(watch).then((e) => {
             // Place footer
@@ -57,6 +80,10 @@ class View{
             this.navMove();
         })
         .then((e) => {
+            // Hamburger Listener
+            this.HamburgerListener(this.nav);
+            this.HamburgerListener(this.nav_move);
+            // Close loader
             document.getElementById('loader').style.display = 'none';
             document.querySelector('html').style.overflow = 'visible';
         });
@@ -66,8 +93,6 @@ class View{
 function CloneElement(element: HTMLElement, id:string ,to:string): HTMLElement{
     const clone = element.cloneNode(true) as HTMLElement;
     clone.id = id;
-    clone.querySelector(".hamburger").id = "hamburger-moving";
-    clone.querySelector(".content").id = "content-moving";
     document.getElementById(to).appendChild(clone);
     return document.getElementById(id);
 }
