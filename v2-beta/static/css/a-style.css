@@ -142,14 +142,12 @@ nav .container .small-view {
   align-items: center;
   justify-content: flex-end;
 }
-nav .container li {
+nav .container a {
   list-style-type: none;
   padding: 10px;
   border-radius: 5px;
   margin: 0 5px;
   cursor: pointer;
-}
-nav .container li a {
   font-weight: 550;
   color: white;
 }
@@ -167,7 +165,7 @@ nav .container .hamburger .layer {
   background-color: white;
   cursor: pointer;
 }
-nav .container li:hover, nav .container .hamburger:hover {
+nav .container a:hover, nav .container .hamburger:hover {
   background-color: #1c1c2b;
 }
 @media (max-width: 600px) {
@@ -178,9 +176,6 @@ nav .container li:hover, nav .container .hamburger:hover {
     display: none;
     flex-direction: column;
     text-align: center;
-  }
-  nav .container li:active, nav .container .hamburger:active {
-    background-color: #1c1c2b;
   }
 }
 

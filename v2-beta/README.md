@@ -2,7 +2,7 @@
 
 ## Todo
 
-1. Finalize nav button in scroll and no scroll mode
+1. Styling Nav
 2. Make design for Landing & About page
 3. Code Landing & About page
 4. Notebook view page

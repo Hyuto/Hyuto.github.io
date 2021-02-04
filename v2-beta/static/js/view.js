@@ -66,11 +66,21 @@ var View = /** @class */ (function () {
     };
     // Moving nav when scroll
     View.prototype.navMove = function () {
+        var content = this.nav.querySelector('.content');
+        var content_1 = this.nav_move.querySelector('.content');
         if (window.scrollY > this.nav.offsetTop) {
             this.nav_move.style.display = "block";
+            if (content.style.display == 'flex' && window.innerWidth <= 600) {
+                content.style.display = 'none';
+                content_1.style.display = 'flex';
+            }
         }
         else {
             this.nav_move.style.display = "none";
+            if (content_1.style.display == 'flex' && window.innerWidth <= 600) {
+                content_1.style.display = 'none';
+                content.style.display = 'flex';
+            }
         }
     };
     // Async for loader to wait
@@ -95,7 +105,7 @@ var View = /** @class */ (function () {
         var hamburger = element.querySelector('.hamburger');
         hamburger.addEventListener('click', function () {
             var content = element.querySelector('.content');
-            content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+            content.style.display == 'none' || content.style.display == '' ? content.style.display = 'flex' : content.style.display = 'none';
         });
     };
     // Avoiding nav error when window resized

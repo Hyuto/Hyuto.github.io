@@ -65,17 +65,14 @@ nav{
             justify-content: flex-end;
         }
         
-        li{
+        a{
             list-style-type: none;
             padding: 10px;
             border-radius: 5px;
             margin: 0 5px;
             cursor: pointer;
-
-            a{
-                font-weight: 550;
-                color: white;
-            }
+            font-weight: 550;
+            color: white;
         }
 
         .hamburger{
@@ -94,7 +91,7 @@ nav{
             }
         }
 
-        li:hover, .hamburger:hover{
+        a:hover, .hamburger:hover{
             background-color: $secondary-color;
         }
     
@@ -107,10 +104,6 @@ nav{
                 display: none;
                 flex-direction: column;
                 text-align: center;
-            }
-            
-            li:active, .hamburger:active{
-                background-color: $secondary-color;
             }
         }
     }

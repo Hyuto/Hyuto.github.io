@@ -31,10 +31,21 @@ class View{
 
     // Moving nav when scroll
     navMove() : void{
+        const content: HTMLElement = this.nav.querySelector('.content');
+        const content_1: HTMLElement = this.nav_move.querySelector('.content');
+
         if(window.scrollY > this.nav.offsetTop){
             this.nav_move.style.display = "block";
+            if(content.style.display == 'flex' && window.innerWidth <= 600){
+                content.style.display = 'none';
+                content_1.style.display = 'flex';
+            }
         }else{
             this.nav_move.style.display = "none";
+            if(content_1.style.display == 'flex' && window.innerWidth <= 600){
+                content_1.style.display = 'none';
+                content.style.display = 'flex';
+            }
         }
     }
 
@@ -56,7 +67,7 @@ class View{
         const hamburger: HTMLElement = element.querySelector('.hamburger');
         hamburger.addEventListener('click', (): void => {
             const content: HTMLElement = element.querySelector('.content');
-            content.style.display == 'none' ? content.style.display = 'flex' : content.style.display = 'none';
+            content.style.display == 'none' || content.style.display == '' ? content.style.display = 'flex' : content.style.display = 'none';
         })
     }
 
