@@ -1,7 +1,7 @@
 {
   "name": "Hyuto.github.io",
   "version": "1.0.0",
-  "description": "This res is about ot manage `my github pages`. All the Main UI goes here.",
+  "description": "Repo for Hyuto's Blog",
   "main": "index.js",
   "scripts": {
     "migrate": "python migrate.py v2-beta build",

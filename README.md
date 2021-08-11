@@ -1,21 +1,12 @@
 # hyuto.github.io
 
-This res is about ot manage `my github pages`. All the Main UI goes here. Built to learn about web development. 
+This repo is about `my github pages`. All the Main UI goes here. 
+Built to learn about web development and create my own blog.
 
 Currently run on `v1.0.0`
 
-# To - Do
-
-1. Fixing footer placement
-1. Landing Page
-1. About Page
-1. Create Content API [?]
-1. Firebase database [?]
-
 ## Planning
-- [ ] Move to `beta` at `v.2`<br>
-  to create better UI and responsive website
-- [ ] Use Javascript `frontend` framework (`Vue` | `React`)
+- [ ] Move to `beta` at `v.3` using `gatsby.js`
 
 ## Versions
 
@@ -23,20 +14,11 @@ Currently run on `v1.0.0`
 
 Built with no library & poor `HTML`, `css`, and `javascript` skills.
 
-### `v.2.0` [On Process]
+### `v.2.0` [Archived]
 
-Built with no library in order to learn `css` and `vanila javascript` better. Although it's written on `Typescript` and `Sass` :).
+Built with no library in order to learn `css` and `vanila javascript` better. 
+Although it's written on `Typescript` and `Sass` :).
 
-Building stages
+### `v.3.0` [Planning]
 
-- [x] Main UI
-- [ ] Landing Page
-- [ ] About Page
-- [x] Notebook Page
-- [x] Fetch API
-- [ ] Firebase database
-- [ ] Dark Mode
-
-### `v.3.0`
-
-Using `javascript` frontend framework.
+Using `gatsby.js` with [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) template
