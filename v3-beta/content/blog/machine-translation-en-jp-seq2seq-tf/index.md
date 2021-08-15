@@ -4,7 +4,17 @@ date: "2020-08-19T08:51:25"
 description: Machine Translation EN-JP Seq2Seq using Tensorflow 2.
 ---
 
-Hello guys, lately i've been studying about machine translation and give it a try. Most of code in this notebook is based on tensorflow tutorial on their website, you can find it [here](https://www.tensorflow.org/addons/tutorials/networks_seq2seq_nmt).
+Hello guys, lately i've been studying about machine translation and give it a try.
+
+Most of code in this notebook is based on tensorflow tutorial on their website
+[TensorFlow Addons Networks : Sequence-to-Sequence NMT with Attention Mechanism](https://www.tensorflow.org/addons/tutorials/networks_seq2seq_nmt).
+
+This notebook is basically my notebook run on [kaggle](https://www.kaggle.com/) so if you want to try
+and run the code with same environment as mine go to link bellow.
+
+Kaggle Notebook : [Machine Translation EN-JP Seq2Seq Tensorflow](https://www.kaggle.com/wahyusetianto/machine-translation-en-jp-seq2seq-tf)
+
+P.S. Don't forget to _upvote_ if you like it 😊.
 
 # English - Japanese Machine Translation
 
@@ -14,14 +24,14 @@ So in this notebook we're going to build English to Japanese machine translation
 2. Katakana
 3. Hiragana
 
-thats the insteristing part of it and so it'll be little complicated to process. So let's get started.
+that's the interesting part of it and so it'll be little complicated to process. So let's get started.
 
 # Table Of Content
 
 1. Load Dataset
 2. Text Preprocessing
-   - English missplell handling
-   - Segmentating Japanese words
+   - English misspell handling
+   - Segmenting Japanese words
    - Add BOS and EOS to train sentences
 3. Word Tokenizing
    - Word Cloud
@@ -206,7 +216,7 @@ eng_data = [CP(preprocess(x[0])) for x in data]
 jpn_data = [CP(x[1]) for x in data]
 ```
 
-### Segmentating Japanese Sentences
+### Segmenting Japanese Sentences
 
 Unlike english sentence we can tokenize it by splitting words with space just like this,
 
@@ -217,7 +227,7 @@ Output:
 ['This', 'is', 'english', 'or', 'i', 'think', 'so']
 ```
 
-but in Japanese we can't do it that way. Here we gonna use Janome Tokennizer to segmentating Japanese sentence and adding space to it so Keras Tokenizer can handle it.
+but in Japanese we can't do it that way. Here we gonna use Janome Tokenizer to segmenting Japanese sentence and adding space to it so Keras Tokenizer can handle it.
 
 ```python
 # Initialize Janome Tokenizer
@@ -252,7 +262,7 @@ print(f"Splitting to {len(eng_train)} Train data and \
 
 ### Add BOS and EOS
 
-We put BOS "Begin of Sequence" and EOS “End of Sequence" to help our decoder recognize begin and end of a sequance.
+We put BOS "Begin of Sequence" and EOS “End of Sequence" to help our decoder recognize begin and end of a sequence.
 
 ```python
 eng_train = ['bos '+ x + ' eos' for x in eng_train + ['unk unk unk']]
@@ -440,7 +450,7 @@ plt.show()
 
 based on the distplot English sentences contains about 20 - 40 words while Japanese have more wider range.
 
-Let's check their max lenght
+Let's check their max length
 
 ```python
 max_en = max([len(x) for x in data_en] + [len(x) for x in val_en])
@@ -502,7 +512,7 @@ Ty = max_len(data_jp)
 input_vocab_size = len(en_tokenizer.word_index) + 1   # English
 output_vocab_size = len(jp_tokenizer.word_index) + 1  # Japanese
 
-# Changging to TF data
+# Changing to TF data
 dataset = (tf.data.Dataset.from_tensor_slices((data_en, data_jp))
            .shuffle(BUFFER_SIZE)
            .batch(BATCH_SIZE, drop_remainder=True)
