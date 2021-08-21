@@ -7,6 +7,7 @@
     "url": "https://github.com/Hyuto/Hyuto.github.io/issues"
   },
   "dependencies": {
+    "@pauliescanlon/gatsby-remark-sticky-table": "^0.0.11",
     "gatsby": "^3.11.1",
     "gatsby-plugin-feed": "^3.11.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",

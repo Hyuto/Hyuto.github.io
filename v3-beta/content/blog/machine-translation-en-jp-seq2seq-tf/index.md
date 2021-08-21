@@ -408,9 +408,13 @@ plt.close(fig2)
 
 ## WordCloud
 
-|             English             |             Japanesse              |
-| :-----------------------------: | :--------------------------------: |
-| ![wc-english](./WC_English.png) | ![wc-japanesse](./WC_Japanese.png) |
+**English**
+
+![wc-english](./WC_English.png)
+
+**Japanese**
+
+![wc-japanese](./WC_Japanese.png)
 
 now let's transform our train sentences to sequences.
 
