@@ -1,7 +1,7 @@
 ---
-title: Machine Translation EN-JP Seq2Seq Tensorflow
+title: Machine Translation English to Japanese with Seq2Seq & Tensorflow
 date: "2020-08-19T08:51:25"
-description: Machine Translation EN-JP Seq2Seq using Tensorflow 2.
+description: Machine Translation English to Japanese using Seq2Seq & Tensorflow 2.
 ---
 
 Hello guys, lately i've been studying about machine translation and give it a try.

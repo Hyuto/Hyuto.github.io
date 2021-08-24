@@ -1,7 +1,7 @@
 ---
-title: BDC Satria Data 2020 - Catatan Cakrawala
+title: Hoax Classification - BDC Satria Data 2020
 date: "2020-10-17T00:28:47"
-description: Team Catatan Cakrawala Notebook Pada Lomba BDC Satria Data 2020.
+description: Hoax Classification Team Catatan Cakrawala Pada BDC Satria Data 2020
 ---
 
 Notebook ini adalah script yang kelompok **Catatan Cakrawala** gunakan pada saat mengikuti lomba

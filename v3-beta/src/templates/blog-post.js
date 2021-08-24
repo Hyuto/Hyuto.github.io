@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { Disqus } from "gatsby-plugin-disqus"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -38,7 +39,6 @@ const BlogPostTemplate = ({ data, location }) => {
         <ul
           style={{
             display: `flex`,
-            flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
@@ -61,6 +61,14 @@ const BlogPostTemplate = ({ data, location }) => {
         </ul>
         <Link to="/">Back to Home</Link>
       </nav>
+      <hr style={{ margin: "25px 0" }}></hr>
+      <Disqus
+        config={{
+          url: location.href,
+          identifier: location.key,
+          title: post.frontmatter.title,
+        }}
+      />
     </Layout>
   )
 }
