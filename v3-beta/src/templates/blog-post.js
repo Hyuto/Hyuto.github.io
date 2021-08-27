@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
+import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -44,22 +45,28 @@ const BlogPostTemplate = ({ data, location }) => {
             padding: 0,
           }}
         >
-          <li>
+          <li
+            style={{
+              padding: `0 5px`,
+            }}
+          >
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                &larr; {previous.frontmatter.title}
+                <FaLongArrowAltLeft /> {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} &rarr;
+                {next.frontmatter.title} <FaLongArrowAltRight />
               </Link>
             )}
           </li>
         </ul>
-        <Link to="/">Back to Home</Link>
+        <Link to="/">
+          <FaHome /> Back to Home
+        </Link>
       </nav>
       <hr style={{ margin: "25px 0" }}></hr>
       <Disqus

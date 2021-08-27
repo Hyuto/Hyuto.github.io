@@ -1,0 +1,69 @@
+.ds-wrapper {
+  .title {
+    text-align: center;
+    margin: 10px;
+    h2 {
+      margin: 5px;
+      padding: 0;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: small;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .canvas {
+      margin: 5px 0;
+    }
+
+    .chart {
+      margin: 5px 0;
+    }
+  }
+
+  .prediction {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+  }
+
+  .button {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: black;
+      font-weight: 500;
+      margin: 3px 10px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+      }
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+}

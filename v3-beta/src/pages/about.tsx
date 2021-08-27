@@ -2,6 +2,7 @@
 import * as React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -43,7 +44,7 @@ const About: React.FC<PageProps<DataProps>> = ({
 
   return (
     <Layout title={data.site.siteMetadata?.title} location={location}>
-      <Seo title={author} />
+      <Seo title={author} description={`About ${author}`} />
       <h1 className="about-title">About Me!</h1>
 
       <div className="about">
@@ -59,6 +60,11 @@ const About: React.FC<PageProps<DataProps>> = ({
             alt="Profile picture"
           />
           <h3>{author}</h3>
+          <div className="social">
+            <li className="github"><a href={github.link}><FaGithub size={25} /> </a></li>
+            <li className="linkedin"><a href={social.linkedin.link}><FaLinkedin size={25} /></a></li>
+            <li className="instagram"><a href={social.instagram.link}><FaInstagramSquare size={25} /></a></li>
+          </div>
         </div>
         <div className="desc">
           <p>
@@ -69,13 +75,10 @@ const About: React.FC<PageProps<DataProps>> = ({
             problems. I'm interested on Data Science and Web Development
           </p>
         </div>
-        <div className="social">
-          <li className="github">Github : <a href={github.link}>{github.username}</a></li>
-          <li className="linkedin">Linked in : <a href={social.linkedin.link}>{social.linkedin.username}</a></li>
-          <li className="instagram">Instagram : <a href={social.instagram.link}>{social.instagram.username}</a></li>
-        </div>
       </div>
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">
+        <span><FaHome /> Go back to the homepage</span>
+      </Link>
     </Layout>
   )
 }

@@ -21,6 +21,20 @@
 
     h3 {
       margin: 10px;
+      margin-bottom: 0;
+    }
+
+    .social {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        padding: 15px 5px;
+
+        a {
+          color: inherit;
+        }
+      }
     }
   }
 
@@ -29,10 +43,5 @@
     p {
       text-align: justify;
     }
-  }
-
-  .social {
-    margin: 0;
-    margin-bottom: 20px;
   }
 }

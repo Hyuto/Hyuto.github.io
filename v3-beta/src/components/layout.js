@@ -1,10 +1,22 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
+
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          author {
+            name
+          }
+        }
+      }
+    }
+  `)
 
   if (isRootPath) {
     header = (
@@ -24,8 +36,11 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
+      <footer style={{ textAlign: "center" }}>
+        <strong>
+          © {data.site.siteMetadata?.author.name} {new Date().getFullYear()}
+        </strong>
+        , Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby.js </a>
         and {"\u2764"}
