@@ -6,9 +6,7 @@ import { isMobile } from 'react-device-detect';
 import * as tf from '@tensorflow/tfjs';
 import Layout from "../../../components/showcase/layout"
 import './style.scss'
-
-if (isMobile)
-  tf.setBackend('cpu');
+import metadata from "../digit-recognizer-metadata.json"
 
 class ModelHandler {
   path: string;
@@ -41,24 +39,26 @@ const DigitRecognizer: React.FC<PageProps> = ({ location }) => {
   const Handler = new ModelHandler(`${location.origin}/model/digit-recognizer/model.json`);
   const canvas = useRef(null);
   const chart = useRef(null);
-  const [chartdata, setChartdata] = useState({
-    prob: Array(10).fill(0),
-    pred: ''
-  });
-  const [showChart, setShowchart] = useState('hide');
+  const [chartdata, setChartdata] = useState({ prob: Array(10).fill(0), pred: '' });
 
   useEffect(() => {
     Handler.load().then(e => {
       setModel(e);
+
+      if (isMobile)
+        tf.setBackend('cpu');
+      else
+        tf.setBackend('webgl');
     })
   }, [])
 
   return (
-    <Layout title="Digit Recognizer" description="MNIST Digit Recognizer using Tensorflow.js" >
+    <Layout title={metadata.title} description={metadata.description} >
       <div className="ds-wrapper">
         <div className="title">
           <h2>Digit Recognizer</h2>
-          <p>Using Tensorflow.js to predict handdrawing digits. Model trained on 42.000 MNIST data + Augmentation with 99.62% of accuracy</p>
+          <p>Using Tensorflow.js to predict handdrawing digits. Model trained on 42.000 MNIST data
+            + Augmentation with 99.62% of accuracy</p>
         </div>
         <div className="content">
           <ReactSketchCanvas
@@ -73,7 +73,7 @@ const DigitRecognizer: React.FC<PageProps> = ({ location }) => {
             canvasColor="black"
             ref={canvas}
           />
-          <div className={`chart ${isMobile ? showChart : 'show'}`}
+          <div className="chart"
             style={{ width: '300px', height: '250px' }}>
             <Bar data={{
               labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
@@ -127,7 +127,7 @@ const DigitRecognizer: React.FC<PageProps> = ({ location }) => {
               img.src = e;
 
               img.onload = () => {
-                const out = model.predict(Handler.preprocess(img));
+                const out = model.predict(Handler.preprocess(img)) as tf.Tensor;
                 setChartdata({
                   pred: `${out.argMax(1).arraySync()[0]}`,
                   prob: out.arraySync()[0],
@@ -143,10 +143,6 @@ const DigitRecognizer: React.FC<PageProps> = ({ location }) => {
               prob: Array(10).fill(0),
             })
           }}>clear</a>
-          <a className={`${isMobile ? 'show' : 'hide'}`} onClick={(e) => {
-            e.preventDefault();
-            setShowchart(showChart === 'hide' ? 'show' : 'hide');
-          }}>{showChart === 'hide' ? 'show' : 'hide'} probabilitiy</a>
         </div>
       </div>
     </Layout>

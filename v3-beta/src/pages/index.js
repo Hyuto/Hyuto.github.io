@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { FaTags } from "react-icons/fa"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -7,6 +8,9 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const blogs = data.allMarkdownRemark.nodes
+  const showcases = data.allShowcaseJson.edges
+
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -14,11 +18,7 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
         <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>No blog posts.</p>
       </Layout>
     )
   }
@@ -54,6 +54,12 @@ const BlogIndex = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section>
+                <div style={{ marginTop: "5px" }}>
+                  <small>
+                    <FaTags />{" "}
+                    {post.frontmatter.tags.split(", ").sort().join(" ")}
+                  </small>
+                </div>
               </article>
             </li>
           )
@@ -82,6 +88,17 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
+        }
+      }
+    }
+    allShowcaseJson(sort: { fields: date, order: DESC }) {
+      edges {
+        node {
+          description
+          date(formatString: "MMMM DD, YYYY")
+          tags
+          title
         }
       }
     }
