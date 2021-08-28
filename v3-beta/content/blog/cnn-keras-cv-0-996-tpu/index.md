@@ -2,7 +2,7 @@
 title: MNIST Digit Classifier Using Keras, Tensorflow, and TPU
 date: "2020-08-25T22:56:36"
 description: Building MNIST Digit Classifier Model Using Keras, Tensorflow, and TPU
-tags: classification, tensorflow, tpu
+tags: classification, tensorflow, tpu, image
 ---
 
 This notebook is basically my notebook run on [kaggle](https://www.kaggle.com/) so if you want to try

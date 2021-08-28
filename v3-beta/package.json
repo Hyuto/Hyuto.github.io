@@ -43,6 +43,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "gatsby-plugin-root-import": "^2.0.7",
     "prettier": "2.3.2"
   },
   "homepage": "https://hyuto.github.io/",

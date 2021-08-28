@@ -23,6 +23,12 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        showcase: `${__dirname}/content/showcase`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     {
@@ -36,7 +42,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `showcase`,
-        path: `${__dirname}/src/pages/showcase`,
+        path: `${__dirname}/content/showcase`,
       },
     },
     {

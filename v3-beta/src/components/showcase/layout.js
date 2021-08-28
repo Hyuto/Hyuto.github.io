@@ -4,9 +4,9 @@ import { FaHome } from "react-icons/fa"
 
 import Seo from "../seo"
 
-import './style.scss'
+import "./style.scss"
 
-const Layout: React.FC<{ title: string, description?: string }> = ({ title, description, children }) => {
+const Layout = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`
     query ShowcaseQuery {
       site {
@@ -25,9 +25,7 @@ const Layout: React.FC<{ title: string, description?: string }> = ({ title, desc
       <Seo title={title} description={description} />
       <header className="showcase-header">
         <div className="title-wrapper">
-          <h3>
-            Showcase
-          </h3>
+          <h3>Showcase</h3>
 
           <Link to="/" className="home">
             <FaHome size={30} />

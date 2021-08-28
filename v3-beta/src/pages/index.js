@@ -8,17 +8,42 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const blogs = data.allMarkdownRemark.nodes
-  const showcases = data.allShowcaseJson.edges
+  const posts = []
 
-  const posts = data.allMarkdownRemark.nodes
+  data.allMarkdownRemark.nodes.forEach(blog => {
+    const data = {
+      tipe: "blog",
+      title: blog.frontmatter.title || blog.fields.slug,
+      slug: blog.fields.slug,
+      link: blog.fields.slug,
+      date: blog.frontmatter.date,
+      description: blog.frontmatter.description || blog.excerpt,
+      tags: blog.frontmatter.tags.split(", ").sort().join(", "),
+    }
+
+    posts.push(data)
+  })
+
+  data.allShowcaseJson.edges.forEach(showcase => {
+    const data = {
+      tipe: "showcase",
+      title: showcase.node.title,
+      slug: showcase.node.slug,
+      link: `showcase/${showcase.node.slug}`,
+      date: showcase.node.date,
+      description: showcase.node.description,
+      tags: showcase.node.tags.sort().join(", "),
+    }
+
+    posts.push(data)
+  })
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
         <Bio />
-        <p>No blog posts.</p>
+        <p style={{ margin: "20px 0", textAlign: "center" }}>No blog posts.</p>
       </Layout>
     )
   }
@@ -28,42 +53,59 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-                <div style={{ marginTop: "5px" }}>
-                  <small>
-                    <FaTags />{" "}
-                    {post.frontmatter.tags.split(", ").sort().join(" ")}
-                  </small>
-                </div>
-              </article>
-            </li>
+        {posts
+          .sort((a, b) =>
+            Date.parse(a.date) < Date.parse(b.date)
+              ? 1
+              : Date.parse(b.date) < Date.parse(a.date)
+              ? -1
+              : 0
           )
-        })}
+          .map(post => {
+            return (
+              <li key={post.slug}>
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2 style={{ lineHeight: "1.4" }}>
+                      {post.tipe === "showcase" ? (
+                        <span
+                          style={{
+                            padding: "5px",
+                            color: "white",
+                            backgroundColor: "black",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          Showcase
+                        </span>
+                      ) : null}{" "}
+                      <Link to={post.link} itemProp="url">
+                        <span itemProp="headline">{post.title}</span>
+                      </Link>
+                    </h2>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.description,
+                      }}
+                      itemProp="description"
+                    />
+                    <small>{post.date}</small>
+                  </section>
+                  <div style={{ marginTop: "10px" }}>
+                    <small>
+                      <FaTags /> {post.tags}
+                    </small>
+                  </div>
+                </article>
+              </li>
+            )
+          })}
       </ol>
     </Layout>
   )
@@ -95,6 +137,7 @@ export const pageQuery = graphql`
     allShowcaseJson(sort: { fields: date, order: DESC }) {
       edges {
         node {
+          slug
           description
           date(formatString: "MMMM DD, YYYY")
           tags
