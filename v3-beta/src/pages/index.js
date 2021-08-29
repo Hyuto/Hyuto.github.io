@@ -1,10 +1,11 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { FaTags } from "react-icons/fa"
+import { FaTags, FaRssSquare } from "react-icons/fa"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from "components/bio"
+import Layout from "components/layout"
+import Seo from "components/seo"
+import "../index.scss"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -52,7 +53,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <div className="rss">
+        <Link to="/rss.xml" className="rss-wrapper">
+          <FaRssSquare size={25} />
+        </Link>
+      </div>
+      <ol style={{ listStyle: `none`, margin: "5px 0" }}>
         {posts
           .sort((a, b) =>
             Date.parse(a.date) < Date.parse(b.date)
@@ -64,11 +70,7 @@ const BlogIndex = ({ data, location }) => {
           .map(post => {
             return (
               <li key={post.slug}>
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
+                <article className="post-list-item" itemScope itemType="http://schema.org/Article">
                   <header>
                     <h2 style={{ lineHeight: "1.4" }}>
                       {post.tipe === "showcase" ? (

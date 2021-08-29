@@ -27,6 +27,7 @@ module.exports = {
       resolve: "gatsby-plugin-root-import",
       options: {
         showcase: `${__dirname}/content/showcase`,
+        components: `${__dirname}/src/components`,
       },
     },
     `gatsby-plugin-image`,
@@ -107,16 +108,48 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMarkdownRemark, allShowcaseJson } }) => {
+              const feeds = []
+
+              allMarkdownRemark.nodes.forEach(node => {
+                feeds.push(
+                  Object.assign({}, node.frontmatter, {
+                    description: node.excerpt,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    custom_elements: [{ "content:encoded": node.html }],
+                  })
+                )
+              })
+
+              allShowcaseJson.edges.forEach(edge => {
+                feeds.push({
+                  title: edge.node.title,
+                  date: edge.node.date,
+                  description: edge.node.description,
+                  url: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
+                  guid: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
+                  custom_elements: [
+                    {
+                      "content:encoded": `
+                        <div>
+                          <h2>${edge.node.title}</h2>
+                          <p>${edge.node.description}</p>
+                        </div>
+                      `,
+                    },
+                  ],
                 })
               })
+
+              return feeds.sort((a, b) =>
+                Date.parse(a.date) < Date.parse(b.date)
+                  ? 1
+                  : Date.parse(b.date) < Date.parse(a.date)
+                  ? -1
+                  : 0
+              )
             },
             query: `
               {
@@ -132,6 +165,17 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                    }
+                  }
+                }
+                allShowcaseJson(sort: { fields: date, order: DESC }) {
+                  edges {
+                    node {
+                      slug
+                      description
+                      date
+                      tags
+                      title
                     }
                   }
                 }

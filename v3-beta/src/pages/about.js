@@ -4,8 +4,8 @@ import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "components/layout"
+import Seo from "components/seo"
 
 import "../about.scss"
 
@@ -52,11 +52,10 @@ const About = ({ data, location }) => {
         </div>
         <div className="desc">
           <p>
-            Third year student at the State University of Jakarta majoring in
-            statistics. As a statistics student I have a lot of experience in
-            processing data to gain insights and solve problems. I have deep
-            experience in Python and R and few other programming language like
-            Javascript and C++. I love building deep learning models to solve a
+            Third year student at the State University of Jakarta majoring in statistics. As a
+            statistics student I have a lot of experience in processing data to gain insights and
+            solve problems. I have deep experience in Python and R and few other programming
+            language like Javascript and C++. I love building deep learning models to solve a
             problems. I'm interested on Data Science and Web Development
           </p>
         </div>

@@ -3,7 +3,7 @@ import { ReactSketchCanvas } from "react-sketch-canvas"
 import { Bar } from "react-chartjs-2"
 import { isMobile } from "react-device-detect"
 import * as tf from "@tensorflow/tfjs"
-import Layout from "../../../components/showcase/layout"
+import Layout from "components/showcase/layout"
 import "./style.scss"
 import metadata from "showcase/digit-recognizer.json"
 
@@ -32,9 +32,7 @@ const DigitRecognizer = ({ location }) => {
 
   useEffect(() => {
     const loadModel = async () =>
-      await tf.loadLayersModel(
-        `${location.origin}/model/digit-recognizer/model.json`
-      )
+      await tf.loadLayersModel(`${location.origin}/model/digit-recognizer/model.json`)
 
     loadModel().then(e => {
       setModel(e)
@@ -50,8 +48,8 @@ const DigitRecognizer = ({ location }) => {
         <div className="title">
           <h2>Digit Recognizer</h2>
           <p>
-            Using Tensorflow.js to predict handdrawing digits. Model trained on
-            42.000 MNIST data + Augmentation with 99.62% of accuracy
+            Using Tensorflow.js to predict handdrawing digits. Model trained on 42.000 MNIST data +
+            Augmentation with 99.62% of accuracy
           </p>
         </div>
         <div className="content">
