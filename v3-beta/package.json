@@ -21,6 +21,7 @@
     "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.11.0",
     "gatsby-plugin-sharp": "^3.11.0",
+    "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-remark-copy-linked-files": "^4.8.0",
     "gatsby-remark-images": "^5.8.0",
     "gatsby-remark-prismjs": "^5.8.0",
@@ -40,7 +41,8 @@
     "react-sketch-canvas": "^5.3.4",
     "sass": "^1.37.5",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "use-query-params": "^1.2.3"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.7",

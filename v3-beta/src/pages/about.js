@@ -3,11 +3,9 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa"
-
 import Layout from "components/layout"
 import Seo from "components/seo"
-
-import "../about.scss"
+import "main/about.scss"
 
 const About = ({ data, location }) => {
   const author = data.site.siteMetadata?.author.name
@@ -28,7 +26,7 @@ const About = ({ data, location }) => {
             src="../images/profile-pic.png"
             height={200}
             width={200}
-            quality={95}
+            quality={80}
             alt="Profile picture"
           />
           <h3>{author}</h3>

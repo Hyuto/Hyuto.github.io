@@ -36,7 +36,7 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer style={{ paddingTop: "10px", textAlign: "center" }}>
+      <footer style={{ paddingTop: isRootPath ? "10px" : "30px", textAlign: "center" }}>
         <strong>
           &copy; {new Date().getFullYear()} {data.site.siteMetadata?.author.name.toLowerCase()}
         </strong>

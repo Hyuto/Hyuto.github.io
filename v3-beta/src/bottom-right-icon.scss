@@ -1,0 +1,38 @@
+.bottom-right-icon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  z-index: 1000;
+
+  .wrapper {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      display: none;
+      margin: 0 5px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      border: 2px solid black;
+      border-radius: 5px;
+
+      &:hover {
+        .text {
+          display: block;
+        }
+      }
+    }
+  }
+}

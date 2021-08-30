@@ -16,6 +16,10 @@ P.S. Don't forget to _upvote_ if you like it 😊.
 
 This kernel is on purpose to build model for MNIST digits dataset. In this kernel we're gonna do some preprocessing then make augmentation datagen so our model didn't train on the same image data, then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for test dataset and by the end we're gonna do ensembles for the prediction.
 
+# Web App
+
+You can visit my web app for the live prediction by the best model trained on this kernel run on Tensorflow.js [Digit Recognizer](https://hyuto.github.io/showcase/digit-recognizer/).
+
 # Train on TPU!!
 
 why? Because it's **faster**. While people usually train on GPU for image related things, in this notebook we try to do things on TPU and see how it affect the Accuracy.

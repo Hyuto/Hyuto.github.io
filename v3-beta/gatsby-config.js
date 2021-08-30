@@ -23,9 +23,11 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-use-query-params",
     {
       resolve: "gatsby-plugin-root-import",
       options: {
+        main: `${__dirname}/src`,
         showcase: `${__dirname}/content/showcase`,
         components: `${__dirname}/src/components`,
       },

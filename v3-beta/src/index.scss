@@ -1,11 +1,24 @@
-.rss {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin-right: 15px;
-  margin-bottom: 10px;
+.filter {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
 
-  .rss-wrapper {
-    color: inherit;
+  span {
+    font-size: small;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+}
+
+.tags-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

@@ -1,14 +1,15 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
-import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa"
-
+import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight, FaTags } from "react-icons/fa"
 import Bio from "components/bio"
 import Layout from "components/layout"
 import Seo from "components/seo"
+import ScrollToTop from "components/scroll-up"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
+  const tags = post.frontmatter.tags.split(", ")
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
@@ -18,12 +19,26 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <ScrollToTop />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+        <div style={{ marginTop: "0", marginBottom: "20px" }}>
+          <FaTags />{" "}
+          {tags.map((e, index) => {
+            return (
+              <span key={e}>
+                <Link to={`/?tags=${e}`} className="tags-button">
+                  {e}
+                </Link>
+                {index + 1 !== tags.length ? ", " : " "}
+              </span>
+            )
+          })}
+        </div>
         <hr />
         <footer>
           <Bio />
@@ -88,6 +103,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
         description
       }
