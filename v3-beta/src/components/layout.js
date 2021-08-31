@@ -1,10 +1,10 @@
-import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+  const rootPath = `${__PATH_PREFIX__}/`;
+  const isRootPath = location.pathname === rootPath;
+  let header;
 
   const data = useStaticQuery(graphql`
     query LayoutQuery {
@@ -16,20 +16,20 @@ const Layout = ({ location, title, children }) => {
         }
       }
     }
-  `)
+  `);
 
   if (isRootPath) {
     header = (
       <h1 className="main-heading">
         <Link to="/">{title}</Link>
       </h1>
-    )
+    );
   } else {
     header = (
       <Link className="header-link-home" to="/">
         {title}
       </Link>
-    )
+    );
   }
 
   return (
@@ -46,7 +46,7 @@ const Layout = ({ location, title, children }) => {
         and {"\u2764"}
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

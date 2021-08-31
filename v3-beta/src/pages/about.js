@@ -1,16 +1,16 @@
 // If you don't want to use TypeScript you can delete this file!
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa"
-import Layout from "components/layout"
-import Seo from "components/seo"
-import "main/about.scss"
+import * as React from "react";
+import { Link, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import Layout from "components/layout";
+import Seo from "components/seo";
+import "main/about.scss";
 
 const About = ({ data, location }) => {
-  const author = data.site.siteMetadata?.author.name
-  const github = data.site.siteMetadata?.github
-  const social = data.site.siteMetadata?.social
+  const author = data.site.siteMetadata?.author.name;
+  const github = data.site.siteMetadata?.github;
+  const social = data.site.siteMetadata?.social;
 
   return (
     <Layout title={data.site.siteMetadata?.title} location={location}>
@@ -64,10 +64,10 @@ const About = ({ data, location }) => {
         </span>
       </Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 
 export const AboutQuery = graphql`
   query {
@@ -94,4 +94,4 @@ export const AboutQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { FaTags, FaRssSquare, FaWindowClose } from "react-icons/fa"
-import { useQueryParam, StringParam } from "use-query-params"
+import { useQueryParam, ArrayParam, withDefault } from "use-query-params"
 import Bio from "components/bio"
 import Layout from "components/layout"
 import Seo from "components/seo"
@@ -34,31 +34,31 @@ const BlogIndex = ({ data, location }) => {
       }
     }),
   ])
-  const [filter, setFilter] = useQueryParam("tags", StringParam)
+  const [tags, setTags] = useQueryParam("tags", withDefault(ArrayParam, []))
   const [postFiltered, setPostfiltered] = useState(posts)
 
   useEffect(() => {
-    if (filter !== undefined)
-      setPostfiltered(
-        posts.filter(e => {
-          if (e.tags.includes(filter)) return true
-          return false
-        })
-      )
-    else setPostfiltered(posts)
-  }, [filter, posts])
+    if (tags.length !== 0) {
+      setPostfiltered(posts.filter(e => tags.every(val => e.tags.includes(val))))
+    } else setPostfiltered(posts)
+  }, [tags, posts])
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={filter === undefined ? "All posts" : filter} />
+      <Seo title={tags.length === 0 ? "All posts" : tags.join(", ")} />
       <Bio />
       <div className="filter">
-        {filter !== undefined ? (
-          <span>
-            <FaWindowClose onClick={() => setFilter(undefined)} style={{ cursor: "pointer" }} />
-            {" " + filter}
-          </span>
-        ) : null}
+        {tags.length !== 0
+          ? tags.map(e => (
+              <span key={e}>
+                <FaWindowClose
+                  onClick={() => setTags(tags.filter(element => (element !== e ? true : false)))}
+                  style={{ cursor: "pointer" }}
+                />
+                {" " + e}
+              </span>
+            ))
+          : null}
       </div>
       {postFiltered.length === 0 ? (
         <p style={{ margin: "20px 0", textAlign: "center" }}>No blog posts.</p>
@@ -114,7 +114,10 @@ const BlogIndex = ({ data, location }) => {
                         {post.tags.map((e, index) => {
                           return (
                             <span key={index}>
-                              <button className="tags-button" onClick={() => setFilter(e)}>
+                              <button
+                                className="tags-button"
+                                onClick={() => (!tags.includes(e) ? setTags([...tags, e]) : null)}
+                              >
                                 {e}
                               </button>
                               {index + 1 !== post.tags.length ? ", " : " "}

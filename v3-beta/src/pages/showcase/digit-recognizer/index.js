@@ -1,46 +1,46 @@
-import React, { useState, useEffect, useRef } from "react"
-import { ReactSketchCanvas } from "react-sketch-canvas"
-import { Bar } from "react-chartjs-2"
-import { isMobile } from "react-device-detect"
-import * as tf from "@tensorflow/tfjs"
-import Layout from "components/showcase/layout"
-import "./style.scss"
-import metadata from "showcase/digit-recognizer.json"
+import React, { useState, useEffect, useRef } from "react";
+import { ReactSketchCanvas } from "react-sketch-canvas";
+import { Bar } from "react-chartjs-2";
+import { isMobile } from "react-device-detect";
+import * as tf from "@tensorflow/tfjs";
+import Layout from "components/showcase/layout";
+import "./style.scss";
+import metadata from "showcase/digit-recognizer.json";
 
 const DigitRecognizer = ({ location }) => {
-  const [model, setModel] = useState(null)
-  const [loading, setLoading] = useState("loading")
-  const canvas = useRef(null)
-  const chart = useRef(null)
+  const [model, setModel] = useState(null);
+  const [loading, setLoading] = useState("loading");
+  const canvas = useRef(null);
+  const chart = useRef(null);
   const [chartdata, setChartdata] = useState({
     prob: Array(10).fill(0),
     pred: "",
-  })
+  });
 
   const preprocess = img => {
     // convert the image data to a tensor
-    const tensor = tf.browser.fromPixels(img, 1)
+    const tensor = tf.browser.fromPixels(img, 1);
     // resize to 28 X 28
-    const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat()
+    const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
     // Normalize the image
-    const offset = tf.scalar(255.0)
-    const normalized = resized.div(offset)
+    const offset = tf.scalar(255.0);
+    const normalized = resized.div(offset);
     // Add a dimension to get a batch shape
-    const batched = normalized.expandDims()
-    return batched.toFloat()
-  }
+    const batched = normalized.expandDims();
+    return batched.toFloat();
+  };
 
   useEffect(() => {
     const loadModel = async () =>
-      await tf.loadLayersModel(`${location.origin}/model/digit-recognizer/model.json`)
+      await tf.loadLayersModel(`${location.origin}/model/digit-recognizer/model.json`);
 
     loadModel().then(e => {
-      setModel(e)
-      setLoading("ready")
-      if (isMobile) tf.setBackend("cpu")
-      else tf.setBackend("webgl")
-    })
-  }, [location])
+      setModel(e);
+      setLoading("ready");
+      if (isMobile) tf.setBackend("cpu");
+      else tf.setBackend("webgl");
+    });
+  }, [location]);
 
   return (
     <Layout title={metadata.title} description={metadata.description}>
@@ -130,20 +130,20 @@ const DigitRecognizer = ({ location }) => {
           <button
             className={loading}
             onClick={e => {
-              e.preventDefault()
+              e.preventDefault();
               if (loading === "ready") {
                 canvas.current.exportImage().then(e => {
-                  const img = new Image()
-                  img.src = e
+                  const img = new Image();
+                  img.src = e;
 
                   img.onload = () => {
-                    const out = model.predict(preprocess(img))
+                    const out = model.predict(preprocess(img));
                     setChartdata({
                       pred: `${out.argMax(1).arraySync()[0]}`,
                       prob: out.arraySync()[0],
-                    })
-                  }
-                })
+                    });
+                  };
+                });
               }
             }}
           >
@@ -152,13 +152,13 @@ const DigitRecognizer = ({ location }) => {
           <button
             className={loading}
             onClick={e => {
-              e.preventDefault()
+              e.preventDefault();
               if (loading === "ready") {
-                canvas.current.clearCanvas()
+                canvas.current.clearCanvas();
                 setChartdata({
                   pred: "",
                   prob: Array(10).fill(0),
-                })
+                });
               }
             }}
           >
@@ -167,7 +167,7 @@ const DigitRecognizer = ({ location }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default DigitRecognizer
+export default DigitRecognizer;

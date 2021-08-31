@@ -329,3 +329,18 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: ghostwhite;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 10%;
+  background-color: black;
+  border-radius: 20px;
+  border: 3px solid ghostwhite;
+}

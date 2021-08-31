@@ -1,17 +1,18 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { Disqus } from "gatsby-plugin-disqus"
-import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight, FaTags } from "react-icons/fa"
-import Bio from "components/bio"
-import Layout from "components/layout"
-import Seo from "components/seo"
-import ScrollToTop from "components/scroll-up"
+import * as React from "react";
+import { Link, graphql } from "gatsby";
+import { Disqus } from "gatsby-plugin-disqus";
+import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight, FaTags } from "react-icons/fa";
+import Bio from "components/bio";
+import Layout from "components/layout";
+import Seo from "components/seo";
+import ScrollToTop from "components/scroll-up";
+import "katex/dist/katex.min.css";
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const tags = post.frontmatter.tags.split(", ")
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const post = data.markdownRemark;
+  const tags = post.frontmatter.tags.split(", ").sort();
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = data;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -36,7 +37,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 </Link>
                 {index + 1 !== tags.length ? ", " : " "}
               </span>
-            )
+            );
           })}
         </div>
         <hr />
@@ -85,10 +86,10 @@ const BlogPostTemplate = ({ data, location }) => {
         }}
       />
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
@@ -125,4 +126,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

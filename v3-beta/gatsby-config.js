@@ -23,6 +23,13 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `black`,
+        showSpinner: true,
+      },
+    },
     "gatsby-plugin-use-query-params",
     {
       resolve: "gatsby-plugin-root-import",
@@ -71,6 +78,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
           `@pauliescanlon/gatsby-remark-sticky-table`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -111,7 +124,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark, allShowcaseJson } }) => {
-              const feeds = []
+              const feeds = [];
 
               allMarkdownRemark.nodes.forEach(node => {
                 feeds.push(
@@ -122,8 +135,8 @@ module.exports = {
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
                     custom_elements: [{ "content:encoded": node.html }],
                   })
-                )
-              })
+                );
+              });
 
               allShowcaseJson.edges.forEach(edge => {
                 feeds.push({
@@ -142,8 +155,8 @@ module.exports = {
                       `,
                     },
                   ],
-                })
-              })
+                });
+              });
 
               return feeds.sort((a, b) =>
                 Date.parse(a.date) < Date.parse(b.date)
@@ -151,7 +164,7 @@ module.exports = {
                   : Date.parse(b.date) < Date.parse(a.date)
                   ? -1
                   : 0
-              )
+              );
             },
             query: `
               {
@@ -206,4 +219,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

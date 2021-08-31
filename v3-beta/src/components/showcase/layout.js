@@ -1,10 +1,8 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { FaHome } from "react-icons/fa"
-
-import Seo from "../seo"
-
-import "./style.scss"
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import { FaHome } from "react-icons/fa";
+import Seo from "../seo";
+import "./style.scss";
 
 const Layout = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`
@@ -18,7 +16,7 @@ const Layout = ({ title, description, children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className="showcase-wrapper" data-is-root-path={false}>
@@ -43,7 +41,7 @@ const Layout = ({ title, description, children }) => {
         and {"\u2764"}
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

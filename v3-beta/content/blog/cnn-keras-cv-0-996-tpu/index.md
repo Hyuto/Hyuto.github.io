@@ -2,7 +2,7 @@
 title: MNIST Digit Classifier Using Keras, Tensorflow, and TPU
 date: "2020-08-25T22:56:36"
 description: Building MNIST Digit Classifier Model Using Keras, Tensorflow, and TPU
-tags: classification, tensorflow, tpu, image
+tags: classification, tensorflow, tpu, image, python
 ---
 
 This notebook is basically my notebook run on [kaggle](https://www.kaggle.com/) so if you want to try
@@ -226,9 +226,9 @@ BATCH_SIZE = 16 * tpu_strategy.num_replicas_in_sync
 
 # Training
 
-Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use `f(x) = 1e-3 * 0.95 ** x` for our LR Scheduler and do Checkpoint at best `val_acc` score.
+Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use $f(x) = 0.001 \times 0.95^x$ for our LR Scheduler and do Checkpoint at **best _val_acc_** score.
 
-Note that Tensorflow distribution strategy haven't supported ImageDataGenerator by this [issue](https://github.com/tensorflow/tensorflow/issues/34346) so instead use that at `fit_generator` we just have to extract Augmentation data by looping through and done training by `fit`.
+Note that Tensorflow distribution strategy haven't supported `ImageDataGenerator` by this [issue](https://github.com/tensorflow/tensorflow/issues/34346) so instead use that at `fit_generator` we just have to extract Augmentation data by looping through and done training by `fit`.
 
 ```python
 # Init
@@ -326,7 +326,7 @@ And so we've got really great CV score there. Let's check the Training History.
 
 # Ensembleing Predictions
 
-`argmax` through the prediction to get the number of class
+`np.argmax` through the prediction to get the number of class
 
 ```python
 pred = np.array([np.argmax(x) for x in pred])
