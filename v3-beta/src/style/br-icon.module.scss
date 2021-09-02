@@ -1,4 +1,4 @@
-.bottom-right-icon {
+.outerWrapper {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -6,7 +6,7 @@
   margin-bottom: 10px;
   z-index: 1000;
 
-  .wrapper {
+  .innerWrapper {
     background: none;
     color: inherit;
     border: none;

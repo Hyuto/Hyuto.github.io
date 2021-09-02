@@ -4,7 +4,7 @@ import { Bar } from "react-chartjs-2";
 import { isMobile } from "react-device-detect";
 import * as tf from "@tensorflow/tfjs";
 import Layout from "components/showcase/layout";
-import "./style.scss";
+import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
 
 const DigitRecognizer = ({ location }) => {
@@ -44,24 +44,24 @@ const DigitRecognizer = ({ location }) => {
 
   return (
     <Layout title={metadata.title} description={metadata.description}>
-      <div className="ds-wrapper">
-        <div className="title">
+      <div className={style.dsWrapper}>
+        <div className={style.title}>
           <h2>Digit Recognizer</h2>
           <p>
             Using Tensorflow.js to predict handdrawing digits. Model trained on 42.000 MNIST data +
             Augmentation with 99.62% of accuracy
           </p>
         </div>
-        <div className="content">
+        <div className={style.content}>
           <div
-            className="spinner-wrapper"
+            className={style.spinnerWrapper}
             style={{ display: loading === "ready" ? "none" : "flex" }}
           >
-            <div className="spinner"></div>
+            <div className={style.spinner}></div>
             <p>Loading model ...</p>
           </div>
           <ReactSketchCanvas
-            className="canvas"
+            className={style.canvas}
             style={{
               width: "250px",
               height: "250px",
@@ -72,7 +72,7 @@ const DigitRecognizer = ({ location }) => {
             canvasColor="black"
             ref={canvas}
           />
-          <div className="chart" style={{ width: "300px", height: "250px" }}>
+          <div className={style.chart}>
             <Bar
               data={{
                 labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -123,12 +123,12 @@ const DigitRecognizer = ({ location }) => {
             />
           </div>
         </div>
-        <div className="prediction">
+        <div className={style.prediction}>
           {chartdata.pred !== "" ? `Prediction : ${chartdata.pred}` : ""}
         </div>
-        <div className="button">
+        <div className={style.button}>
           <button
-            className={loading}
+            className={loading === "loading" ? style.loading : null}
             onClick={e => {
               e.preventDefault();
               if (loading === "ready") {
@@ -150,7 +150,7 @@ const DigitRecognizer = ({ location }) => {
             predict
           </button>
           <button
-            className={loading}
+            className={loading === "loading" ? style.loading : null}
             onClick={e => {
               e.preventDefault();
               if (loading === "ready") {

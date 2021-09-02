@@ -344,3 +344,29 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;
   border: 3px solid ghostwhite;
 }
+
+.filter {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.filter span {
+  font-size: small;
+  margin: 0 5px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.tags-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tags-button:hover {
+  text-decoration: underline;
+}

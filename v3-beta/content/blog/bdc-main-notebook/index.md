@@ -391,7 +391,7 @@ Fungsi akan mengembalikan List direktori gambar dan juga labelnya.
 
 Contoh Penggunaan
 
-```
+```python
 from RPU import ApplyAUG
 
 TRAIN_X, TRAIN_y = (
@@ -720,7 +720,7 @@ test_text = deemojized(test_text)   # Test
 
 Mengecek kata-kata yang misspell atau typo serta kata - kata singkatan.
 
-1. Membangun Vocabulary<br>
+1. Membangun Vocabulary<br />
    Membangun Vocabulary dari data untuk di cek secara **Manual**
 
 ```python
@@ -774,7 +774,7 @@ vocab[:30].style.hide_index()
 
 Dapat dilihat dari tabel diatas bahwa data terdiri dari beberapa bahasa karena terdapat beberapa kata yang bukan berasal dari bahasa Indonesia seperti `ﾟﾏﾻ`, `加油jiayou`, `হয়`, `সল`, dll.
 
-2. Mengeksport Vocabulary <br>
+2. Mengeksport Vocabulary <br />
    Mengeksport vocabulary telah dibangun kedalam file `.txt` untuk dapat dilakukan pengecekan secara manual terhadap kata-kata tersebut.
 
 ```
@@ -1764,9 +1764,9 @@ ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3
 
 Kami mendapatkan beberapa indikasi bahwa untuk mendapatkan hasil yang lebih baik perlu dilakukan penggeseran terhadap tresholdnya:
 
-1. Kelas pada label yang tidak berimbang<br>
+1. Kelas pada label yang tidak berimbang<br />
    Kelas `0` pada label memiliki frekuensi yang sangat kecil, berbeda jauh jika dibandingkan dengan pada kelas `1`. Kami menduga hal ini berpengaruh terhadap berat masing - masing kelas pada saat dilakukan pemodelan `tidak sama`.
-2. Nilai loss dan akurasi yang berbanding lurus pada saat training<br>
+2. Nilai loss dan akurasi yang berbanding lurus pada saat training<br />
    Pada saat training kami mendapatkan ketika `val_loss` (validation loss) menaik `val_accuracy` juga tetap menaik untuk beberapa saat. Hal ini cukup aneh karena seharusnya ketika nilai loss menaik maka nilai akurasi menurun. Hal ini membawa kami pada kesimpulan bahwa `threshold`-nya perlu untuk dirubah.
 
 Mengecek distribusi peluang `ensemble`

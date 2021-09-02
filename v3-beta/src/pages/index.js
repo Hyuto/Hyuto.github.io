@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react"
-import { Link, graphql } from "gatsby"
-import { FaTags, FaRssSquare, FaWindowClose } from "react-icons/fa"
-import { useQueryParam, ArrayParam, withDefault } from "use-query-params"
-import Bio from "components/bio"
-import Layout from "components/layout"
-import Seo from "components/seo"
-import "main/index.scss"
-import "main/bottom-right-icon.scss"
+import React, { useState, useEffect } from "react";
+import { Link, graphql } from "gatsby";
+import { FaTags, FaRssSquare, FaWindowClose } from "react-icons/fa";
+import { useQueryParam, ArrayParam, withDefault } from "use-query-params";
+import Bio from "components/bio";
+import Layout from "components/layout";
+import Seo from "components/seo";
+import * as rssStyle from "style/br-icon.module.scss";
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts] = useState([
-    ...data.allMarkdownRemark.nodes.map(blog => {
+    ...data.allMdx.nodes.map(blog => {
       return {
         tipe: "blog",
         title: blog.frontmatter.title || blog.fields.slug,
@@ -20,7 +19,7 @@ const BlogIndex = ({ data, location }) => {
         date: blog.frontmatter.date,
         description: blog.frontmatter.description || blog.excerpt,
         tags: blog.frontmatter.tags.split(", ").sort(),
-      }
+      };
     }),
     ...data.allShowcaseJson.edges.map(showcase => {
       return {
@@ -31,17 +30,17 @@ const BlogIndex = ({ data, location }) => {
         date: showcase.node.date,
         description: showcase.node.description,
         tags: showcase.node.tags.sort(),
-      }
+      };
     }),
-  ])
-  const [tags, setTags] = useQueryParam("tags", withDefault(ArrayParam, []))
-  const [postFiltered, setPostfiltered] = useState(posts)
+  ]);
+  const [tags, setTags] = useQueryParam("tags", withDefault(ArrayParam, []));
+  const [postFiltered, setPostfiltered] = useState(posts);
 
   useEffect(() => {
     if (tags.length !== 0) {
-      setPostfiltered(posts.filter(e => tags.every(val => e.tags.includes(val))))
-    } else setPostfiltered(posts)
-  }, [tags, posts])
+      setPostfiltered(posts.filter(e => tags.every(val => e.tags.includes(val))));
+    } else setPostfiltered(posts);
+  }, [tags, posts]);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -122,27 +121,27 @@ const BlogIndex = ({ data, location }) => {
                               </button>
                               {index + 1 !== post.tags.length ? ", " : " "}
                             </span>
-                          )
+                          );
                         })}
                       </small>
                     </div>
                   </article>
                 </li>
-              )
+              );
             })}
         </ol>
       )}
-      <div className="bottom-right-icon">
-        <Link to="/rss.xml" className="wrapper">
+      <div className={rssStyle.outerWrapper}>
+        <a href="./rss.xml" className={rssStyle.innerWrapper}>
           <FaRssSquare size={25} />
-          <span className="text">RSS</span>
-        </Link>
+          <span className={rssStyle.text}>RSS</span>
+        </a>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -151,7 +150,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
@@ -177,4 +176,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

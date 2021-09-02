@@ -23,6 +23,13 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-remark-images`,
+    `gatsby-transformer-json`,
+    "gatsby-plugin-use-query-params",
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -30,17 +37,15 @@ module.exports = {
         showSpinner: true,
       },
     },
-    "gatsby-plugin-use-query-params",
     {
       resolve: "gatsby-plugin-root-import",
       options: {
         main: `${__dirname}/src`,
+        style: `${__dirname}/src/style`,
         showcase: `${__dirname}/content/showcase`,
         components: `${__dirname}/src/components`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -63,9 +68,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        remarkPlugins: [require("remark-math")],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -78,22 +85,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              strict: `ignore`,
-            },
-          },
-          `@pauliescanlon/gatsby-remark-sticky-table`,
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -123,17 +118,17 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark, allShowcaseJson } }) => {
+            serialize: ({ query: { site, allMdx, allShowcaseJson } }) => {
               const feeds = [];
 
-              allMarkdownRemark.nodes.forEach(node => {
+              allMdx.nodes.forEach(node => {
                 feeds.push(
                   Object.assign({}, node.frontmatter, {
                     description: node.excerpt,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.body }],
                   })
                 );
               });
@@ -168,12 +163,12 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   nodes {
                     excerpt
-                    html
+                    body
                     fields {
                       slug
                     }

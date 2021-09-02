@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import Layout from "components/layout";
 import Seo from "components/seo";
-import "main/about.scss";
+import * as style from "style/about.module.scss";
 
 const About = ({ data, location }) => {
   const author = data.site.siteMetadata?.author.name;
@@ -15,12 +15,12 @@ const About = ({ data, location }) => {
   return (
     <Layout title={data.site.siteMetadata?.title} location={location}>
       <Seo title={author} description={`About ${author}`} />
-      <h1 className="about-title">About Me!</h1>
+      <h1 className={style.title}>About Me!</h1>
 
-      <div className="about">
-        <div className="header">
+      <div className={style.about}>
+        <div className={style.header}>
           <StaticImage
-            className="profile-pic"
+            className={style.profilePic}
             layout="fixed"
             formats={["png"]}
             src="../images/profile-pic.png"
@@ -30,25 +30,25 @@ const About = ({ data, location }) => {
             alt="Profile picture"
           />
           <h3>{author}</h3>
-          <div className="social">
-            <li className="github">
+          <div className={style.social}>
+            <li key="github">
               <a href={github.link}>
                 <FaGithub size={25} />{" "}
               </a>
             </li>
-            <li className="linkedin">
+            <li key="linkedin">
               <a href={social.linkedin.link}>
                 <FaLinkedin size={25} />
               </a>
             </li>
-            <li className="instagram">
+            <li key="instagram">
               <a href={social.instagram.link}>
                 <FaInstagramSquare size={25} />
               </a>
             </li>
           </div>
         </div>
-        <div className="desc">
+        <div className={style.desc}>
           <p>
             Third year student at the State University of Jakarta majoring in statistics. As a
             statistics student I have a lot of experience in processing data to gain insights and

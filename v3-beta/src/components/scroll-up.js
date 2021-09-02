@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
-import "main/bottom-right-icon.scss";
+import * as style from "style/br-icon.module.scss";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(null);
@@ -24,11 +24,11 @@ const ScrollToTop = () => {
   }, [isVisible]);
 
   return (
-    <div className="bottom-right-icon">
+    <div className={style.outerWrapper}>
       {isVisible && (
-        <button className="wrapper" onClick={scrollToTop}>
+        <button onClick={scrollToTop} className={style.innerWrapper}>
           <FaArrowCircleUp size={25} />
-          <span className="text">Go Up!</span>
+          <span className={style.text}>Go Up!</span>
         </button>
       )}
     </div>

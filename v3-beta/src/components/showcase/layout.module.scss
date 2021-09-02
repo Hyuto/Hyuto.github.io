@@ -1,4 +1,4 @@
-.showcase-wrapper {
+.showcase {
   margin: 0 10px;
   height: 100vh;
 
@@ -7,10 +7,10 @@
   justify-content: space-between;
   align-items: center;
 
-  .showcase-header {
+  .header {
     margin: 15px 0;
 
-    .title-wrapper {
+    .title {
       width: 100vw;
       display: flex;
       justify-content: space-between;
@@ -42,5 +42,9 @@
         }
       }
     }
+  }
+
+  .footer {
+    text-align: center;
   }
 }

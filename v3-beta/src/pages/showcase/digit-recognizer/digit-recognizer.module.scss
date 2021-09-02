@@ -1,4 +1,4 @@
-.ds-wrapper {
+.dsWrapper {
   .title {
     text-align: center;
     margin: 10px;
@@ -20,7 +20,7 @@
     justify-content: space-around;
     align-items: center;
 
-    .spinner-wrapper {
+    .spinnerWrapper {
       background-color: rgba($color: #ffff, $alpha: 0.5);
 
       position: absolute;
@@ -78,6 +78,8 @@
 
     .chart {
       margin: 10px 0;
+      width: 300px;
+      height: 250px;
     }
   }
 
