@@ -4,6 +4,7 @@ import { Bar } from "react-chartjs-2";
 import { isMobile } from "react-device-detect";
 import * as tf from "@tensorflow/tfjs";
 import Layout from "components/showcase/layout";
+import Loader from "components/loader/loader";
 import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
 
@@ -53,13 +54,7 @@ const DigitRecognizer = ({ location }) => {
           </p>
         </div>
         <div className={style.content}>
-          <div
-            className={style.spinnerWrapper}
-            style={{ display: loading === "ready" ? "none" : "flex" }}
-          >
-            <div className={style.spinner}></div>
-            <p>Loading model ...</p>
-          </div>
+          <Loader style={{ display: loading === "ready" ? "none" : null }}>Loading model...</Loader>
           <ReactSketchCanvas
             className={style.canvas}
             style={{

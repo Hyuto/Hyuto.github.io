@@ -5,6 +5,8 @@ description: Hoax Classification Team Catatan Cakrawala Pada BDC Satria Data 202
 tags: nlp, classification, tensorflow, python
 ---
 
+import { BarChart, PieChart } from "./plot.bdc";
+
 Notebook ini adalah script yang kelompok **Catatan Cakrawala** gunakan pada saat mengikuti lomba
 BDC Satria Data 2020 yang di selenggarakan oleh IPB dan PUSPRESNAS.
 
@@ -927,7 +929,7 @@ fig_1.update_layout(
 fig_1.show()
 ```
 
-![plotly_1](./plotly.png)
+<PieChart />
 
 Dapat dilihat bahwa kelas 1 (`Hoax`) jauh lebih banyak dari kelas 0 (`Bukan Hoax`) atau terdapat `imbalance class` pada data. Untuk penanganannya kami menggunakan `Stratify` saat melakukan `Cross Validation` sehingga proporsi pada subset `latih` dan pada subset `validasi` sama.
 
@@ -978,7 +980,7 @@ fig_2.update_layout(barmode='stack',
 fig_2.show()
 ```
 
-![plotly2](./plotly1.png)
+<BarChart />
 
 Ditinjau dari grafik diatas bahwa:
 

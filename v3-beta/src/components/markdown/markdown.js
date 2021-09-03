@@ -7,9 +7,10 @@ import "katex/dist/katex.min.css";
 
 const components = {
   div: props => {
-    if (props.className.includes("math-display")) {
-      return <TeX block math={props.children} />;
-    }
+    if (props.className !== undefined)
+      if (props.className.includes("math-display")) {
+        return <TeX block math={props.children} />;
+      }
     return <div {...props} />;
   },
   span: props => {

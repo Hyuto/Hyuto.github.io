@@ -2,12 +2,15 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { Disqus } from "gatsby-plugin-disqus";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { FaHome, FaLongArrowAltLeft, FaLongArrowAltRight, FaTags } from "react-icons/fa";
 import Bio from "components/bio";
 import Layout from "components/layout";
 import Seo from "components/seo";
 import ScrollToTop from "components/scroll-up";
 import MdXLayout from "components/markdown/markdown";
+import { FaHome } from "@react-icons/all-files/fa/FaHome";
+import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
+import { FaLongArrowAltRight } from "@react-icons/all-files/fa/FaLongArrowAltRight";
+import { FaTags } from "@react-icons/all-files/fa/FaTags";
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx;

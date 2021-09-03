@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
-import { FaTags, FaRssSquare, FaWindowClose } from "react-icons/fa";
 import { useQueryParam, ArrayParam, withDefault } from "use-query-params";
 import Bio from "components/bio";
 import Layout from "components/layout";
 import Seo from "components/seo";
+import { FaTags } from "@react-icons/all-files/fa/FaTags";
+import { FaRssSquare } from "@react-icons/all-files/fa/FaRssSquare";
+import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
 import * as rssStyle from "style/br-icon.module.scss";
 
 const BlogIndex = ({ data, location }) => {

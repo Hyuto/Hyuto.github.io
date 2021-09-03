@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-import { FaHome } from "react-icons/fa";
+import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import Seo from "../seo";
 import * as style from "./layout.module.scss";
 

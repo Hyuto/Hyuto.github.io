@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleUp } from "@react-icons/all-files/fa/FaArrowCircleUp";
 import * as style from "style/br-icon.module.scss";
 
 const ScrollToTop = () => {

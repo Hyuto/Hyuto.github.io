@@ -2,9 +2,12 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { FaHome, FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import Layout from "components/layout";
 import Seo from "components/seo";
+import { FaHome } from "@react-icons/all-files/fa/FaHome";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import * as style from "style/about.module.scss";
 
 const About = ({ data, location }) => {
