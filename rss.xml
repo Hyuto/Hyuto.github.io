@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 02 Sep 2021 06:31:11 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 03 Sep 2021 16:43:11 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
                         &lt;div&gt;
                           &lt;h2&gt;Digit Recognizer&lt;/h2&gt;
                           &lt;p&gt;MNIST Digit Recognizer using Tensorflow.js&lt;/p&gt;
@@ -2187,57 +2187,9 @@ return function MDXContent(_ref) {
   })), mdx(&quot;p&quot;, null, &quot;Menegecek frekuensi tiap kelasnya pada data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;fig_1 = go.Figure(go.Pie(labels=[&apos;Bukan Hoax&apos;, &apos;Hoax&apos;],\n                       values=train.groupby(&apos;label&apos;).size().values,\n                       textinfo=&apos;percent+label+value&apos;,\n                       textfont_color=&apos;#ffffff&apos;,\n                       marker_colors=[&apos;#0db7c5&apos;,&apos;#d03850&apos;])\n               )\nfig_1.update_layout(\n    title={\n        &apos;text&apos;: \&quot;Frekuensi Perkelasnya\&quot;,\n        &apos;y&apos;:0.93,\n        &apos;x&apos;:0.5,\n        &apos;font_size&apos;:23},\n    width=550, height=550\n)\n\nfig_1.show()\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;550px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/bc931f58b8a4d795a1ffb3524f005e0d/dd45a/plotly.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;100%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC70lEQVQ4y62U30tTYRjHJ3VXhHf9BWFkZDpdalGZWuJ0/iQUIrQEJfKiuy5CvCqIIvsF0UUpRBcJhebQIkstoWw7/tyWv0it6bac0+2cs7Odc/aN9z3b2uYZeNELD3t2zvt8zvd5nvd9NEhYoVAIO11qezVqGwQhgBW7Ew6XGw7XBpzrHqw61vF77Q/WnG7qsxwfjYlYUqAsy9hieXi8LDw+DhzLg/Vx8HpZ+FgOm1s+BAJBJSYmlpgmEUZ+pZ2mLYoAx0OSQ/Epx8Iia4HlcXvhFxoYG77ffAzXw074LHNxqnxeFovzS9jY9ILj/RBFCZo4WNi/Nb+C1P5RaN4OI6VnCG9O12E6rQDm7HIst3dAFgS6zy/JcAVFCH4BHC8gGBQVIMHIYdh16yJ29w7h6LAZGSMM9g+Mos/QBKvOACa/Gqa0AixcbUt6GmjKkRqM2p3Q9I8iZXAMaYNjOPDhG/b2jcBYdgkWbRmYvCpMnqiF6eAZODq7lQaKUlynFYWyTF/abtzBg9orOPW0G3vef8WuTybsM36BUd8IS3YZmNxKTORVgckqhbWmBbJf2Fb7aA1FHwdbRRNm04tg0RnwvK4VJR1dSDV+Rm/5ZVi1egUYtnGdAfz8TwUYFqQAw+kG3R5Mn70Ak86A8bwqzGaW4keWHq+qmzFSUIcp8pyAjlVQleaMErCTVgUoydsVSpwf1toWMFl6JYCkllsJm1ZPYUxOOVU1EYHmVoJfXFZRSGooSfTPUttdmNOLMHG8hgYRRaQRxLfWNGOqsJ76TGYpbPWtCInS9hrGfoGzzGGcKCEK8qujaojNXryGGX0jfWY6VIj11wPhdKX4YxNtebgOrpc9VCWj1SvQiBF4joGew+X2e6qDIa6GsS/cxo+Y0TfAfOQczIeLYU4vpv7kyfNYffICavc/6V2OpC95WWy8G4b9URfs95/RFAOrzn8wOaQ6E1WnTWJd4kacJEHt/icdsIlg0klqxJdl1TSTAv/H+gtFR3VoAHckIAAAAABJRU5ErkJggg==&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;plotly_1&quot;,
-    &quot;title&quot;: &quot;plotly_1&quot;,
-    &quot;src&quot;: &quot;/static/bc931f58b8a4d795a1ffb3524f005e0d/dd45a/plotly.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/bc931f58b8a4d795a1ffb3524f005e0d/c26ae/plotly.png 158w&quot;, &quot;/static/bc931f58b8a4d795a1ffb3524f005e0d/6bdcf/plotly.png 315w&quot;, &quot;/static/bc931f58b8a4d795a1ffb3524f005e0d/dd45a/plotly.png 550w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 550px) 100vw, 550px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;Dapat dilihat bahwa kelas 1 (&quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;fig_1 = go.Figure(go.Pie(labels=[&apos;Bukan Hoax&apos;, &apos;Hoax&apos;],\n                       values=train.groupby(&apos;label&apos;).size().values,\n                       textinfo=&apos;percent+label+value&apos;,\n                       textfont_color=&apos;#ffffff&apos;,\n                       marker_colors=[&apos;#0db7c5&apos;,&apos;#d03850&apos;])\n               )\nfig_1.update_layout(\n    title={\n        &apos;text&apos;: \&quot;Frekuensi Perkelasnya\&quot;,\n        &apos;y&apos;:0.93,\n        &apos;x&apos;:0.5,\n        &apos;font_size&apos;:23},\n    width=550, height=550\n)\n\nfig_1.show()\n&quot;)), mdx(PieChart, {
+    mdxType: &quot;PieChart&quot;
+  }), mdx(&quot;p&quot;, null, &quot;Dapat dilihat bahwa kelas 1 (&quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;Hoax&quot;), &quot;) jauh lebih banyak dari kelas 0 (&quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2264,57 +2216,9 @@ return function MDXContent(_ref) {
   }, &quot;# Membuat Kolom baru untuk menyimpan nilai tahun dan bulan\ntrain[&apos;year&apos;] = [i.year for i in train.tanggal]\ntrain[&apos;month&apos;] = [i.month for i in train.tanggal]\n# Grouping\ndata_waktu = (train.groupby([&apos;year&apos;, &apos;month&apos;, &apos;label&apos;]).size().reset_index()\n              .pivot_table(columns=&apos;label&apos;, index=[&apos;year&apos;,&apos;month&apos;], values=0))\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;fig_2 = go.Figure(data=[\n    go.Bar(name=&apos;Bukan Hoax&apos;,\n           x=[str(i) for i in data_waktu.index],\n           y=data_waktu[0].values,\n           marker_color=&apos;#0db7c5&apos;),\n    go.Bar(name=&apos;Hoax&apos;,\n           x=[str(i) for i in data_waktu.index],\n           y=data_waktu[1].values,\n           marker_color=&apos;#d03850&apos;)\n])\n\nfig_2.update_layout(barmode=&apos;stack&apos;,\n                  xaxis=dict(dtick=1,\n                             showgrid=False,\n                             title=&apos;(Tahun, Bulan)&apos;),\n                  legend=dict(x=0.006,y=0.97,\n                              bgcolor=&apos;rgba(255,255,255,0)&apos;,\n                              bordercolor=&apos;rgba(0,0,0,0)&apos;,\n                              font_color=&apos;#090919&apos;,\n                              font_size=14),\n                  title=dict(text=&apos;Sebaran Hoax per Waktu&apos;,\n                             x=0.5,\n                             y=0.9,\n                             font_size=23),\n                  width=1000,height=550\n                 )\n\nfig_2.show()\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;630px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/265adc441e409478fe138c4868844a9d/00d43/plotly1.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;55.06329113924051%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACQUlEQVQoz1WTTU8TURSG+XNuTdy4MBqjRk2MkSgGNBgXYohs3BgT40c0EjeYIIGNLoCGYkARKBRa6IxtaWc6Lf2YzrQz7dz5eMxMoZabvHPumXvOk/ck9w5xsgKC6Du4XM9DuC6u6+G6LkK4eJ53poYg6CvsHgqCAN/3T6DgR3kQ1Zgti0bTxDAtdKNFXTdpte3oLKyJFPacWgkChsLYbHXYl0rkVJ1SzaZU76nc6FDRu1Es693+PjqvWWhNB+VQoSiVaJt2ZCoCGpaDpDbJawZK1UKt2ahVK9r3ddxGqdk9neSqIcj/3CXzYRZ99/A/sGWLCFKqd/ow9RQcKvwfulF1FM3o5VWLUheO1vZIXn1IPbZ+1mFxwFnU0OhGuaKZ5OIJsst/kKbnKWRUVN3haFsiv7qD/GmO5JUR6ssDQDMEhiOEY9VtFEWnkK2g2pBb20MenkC68xT51jiF9X3kmR9Ib2dIj06xd+MRu5cfUI/9GgCGIzcFmuFS6UAhtok8OkVVd1A+zzN37xnTk29YGJ4g+fEb8rVRDq6Pkbr5mPSlYZIX79I449CwSMd3SK9ss7+aYGFxgxevvxCbnufV7CLnlza4EE9wbmWbd++/8v3JS5ZGJtkcm2L1/nN+3x6nsrY1CGwjZ/JIhznkbJFUXmXruMGBUiGhVEiVaxxoVXaKZdIFjZRWJV3UyB6pZPIqmb/F6M72gZ7v0w1fgucjXA8hBH7XwXc9PEfQMlq0zTZu10E4Ak+IKDqi93rCePo4/gFUgSGYtOJBjwAAAABJRU5ErkJggg==&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;plotly2&quot;,
-    &quot;title&quot;: &quot;plotly2&quot;,
-    &quot;src&quot;: &quot;/static/265adc441e409478fe138c4868844a9d/f058b/plotly1.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/265adc441e409478fe138c4868844a9d/c26ae/plotly1.png 158w&quot;, &quot;/static/265adc441e409478fe138c4868844a9d/6bdcf/plotly1.png 315w&quot;, &quot;/static/265adc441e409478fe138c4868844a9d/f058b/plotly1.png 630w&quot;, &quot;/static/265adc441e409478fe138c4868844a9d/40601/plotly1.png 945w&quot;, &quot;/static/265adc441e409478fe138c4868844a9d/00d43/plotly1.png 1000w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 630px) 100vw, 630px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;Ditinjau dari grafik diatas bahwa:&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;fig_2 = go.Figure(data=[\n    go.Bar(name=&apos;Bukan Hoax&apos;,\n           x=[str(i) for i in data_waktu.index],\n           y=data_waktu[0].values,\n           marker_color=&apos;#0db7c5&apos;),\n    go.Bar(name=&apos;Hoax&apos;,\n           x=[str(i) for i in data_waktu.index],\n           y=data_waktu[1].values,\n           marker_color=&apos;#d03850&apos;)\n])\n\nfig_2.update_layout(barmode=&apos;stack&apos;,\n                  xaxis=dict(dtick=1,\n                             showgrid=False,\n                             title=&apos;(Tahun, Bulan)&apos;),\n                  legend=dict(x=0.006,y=0.97,\n                              bgcolor=&apos;rgba(255,255,255,0)&apos;,\n                              bordercolor=&apos;rgba(0,0,0,0)&apos;,\n                              font_color=&apos;#090919&apos;,\n                              font_size=14),\n                  title=dict(text=&apos;Sebaran Hoax per Waktu&apos;,\n                             x=0.5,\n                             y=0.9,\n                             font_size=23),\n                  width=1000,height=550\n                 )\n\nfig_2.show()\n&quot;)), mdx(BarChart, {
+    mdxType: &quot;BarChart&quot;
+  }), mdx(&quot;p&quot;, null, &quot;Ditinjau dari grafik diatas bahwa:&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;53% dari keseluruhan data berasal dari tahun 2019 - 2020&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
