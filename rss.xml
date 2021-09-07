@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Sep 2021 06:26:43 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Sep 2021 07:12:05 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
                         &lt;div&gt;
                           &lt;h2&gt;Digit Recognizer&lt;/h2&gt;
                           &lt;p&gt;MNIST Digit Recognizer using Tensorflow.js&lt;/p&gt;
@@ -3782,8 +3782,8 @@ return function MDXContent(_ref) {
   }, &quot;5 rows \xD7 785 columns\n&quot;)), mdx(&quot;h1&quot;, {
     &quot;id&quot;: &quot;preprocess&quot;
   }, &quot;Preprocess&quot;), mdx(&quot;h2&quot;, {
-    &quot;id&quot;: &quot;1-specifying-x-and-y&quot;
-  }, &quot;1. Specifying X and y&quot;), mdx(&quot;p&quot;, null, &quot;for y we need to encode to one hot vector. In keras we have function &quot;, mdx(&quot;inlineCode&quot;, {
+    &quot;id&quot;: &quot;specifying-x-and-y&quot;
+  }, &quot;Specifying X and y&quot;), mdx(&quot;p&quot;, null, &quot;for y we need to encode to one hot vector. In keras we have function &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;to_categorical&quot;), &quot; for this.&quot;), mdx(&quot;p&quot;, null, &quot;Example :&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
@@ -3791,13 +3791,13 @@ return function MDXContent(_ref) {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Specifying X and y\nX = train.drop([&apos;label&apos;], axis = 1)\ny = to_categorical(train[&apos;label&apos;].values) # To Categorical y\n&quot;)), mdx(&quot;h2&quot;, {
-    &quot;id&quot;: &quot;2-normalizing-images&quot;
-  }, &quot;2. Normalizing Images&quot;), mdx(&quot;p&quot;, null, &quot;Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+    &quot;id&quot;: &quot;normalizing-images&quot;
+  }, &quot;Normalizing Images&quot;), mdx(&quot;p&quot;, null, &quot;Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Normalize\nX = X / 255.0\nX_test = test / 255.0\n&quot;)), mdx(&quot;h2&quot;, {
-    &quot;id&quot;: &quot;3-reshape&quot;
-  }, &quot;3. Reshape&quot;), mdx(&quot;p&quot;, null, &quot;Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+    &quot;id&quot;: &quot;reshape&quot;
+  }, &quot;Reshape&quot;), mdx(&quot;p&quot;, null, &quot;Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Reshape Array\nX = X.values.reshape(-1, 28, 28, 1)\nX_test = X_test.values.reshape(-1, 28, 28, 1)\n&quot;)), mdx(&quot;h2&quot;, {
