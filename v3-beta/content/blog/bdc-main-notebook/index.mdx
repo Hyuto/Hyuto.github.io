@@ -40,14 +40,6 @@ P.S. Jangan lupa untuk _upvote_ 😊.
 
 # BDC - Satria Data 2020
 
-## Daftar Isi
-
-1. [Preprocessing Data](#chapter1)
-2. [Explorasi Data](#chapter2)
-3. [Pemodelan](#chapter3)
-4. [Ensemble](#chapter4)
-5. [Kesimpulan & Saran](#chapter5)
-
 ## Task
 
 Mendeteksi apakah suatu berita adalah hoax atau bukan hoax (`Binary Classification`).
@@ -126,7 +118,7 @@ print(f'Google Cloud Storage Data Path : {GCS_PATH}')
     Using Tensorflow Version       : 2.2.0
     Google Cloud Storage Data Path : gs://kds-7a3b4bb00789754aa5925da7c7a9217df698684ced337b42a9790257
 
-# Preprocessing Data<a class="anchor" id="chapter1"></a>
+# Preprocessing Data
 
 Melakukan preprocessing data sebelum diolah
 
@@ -157,7 +149,7 @@ Mendownload fungsi yang sudah dibuat dari responsitory kami.
 !wget -q https://raw.githubusercontent.com/Hyuto/BDC-Satria-Data/master/Preprocess%20code/Preprocess.py
 ```
 
-## Data Gambar<a class="anchor" id="chapter1_1"></a>
+## Data Gambar
 
 Melakukan preprocessing pada data gambar
 
@@ -179,7 +171,7 @@ TRAIN_IMG = [TRAIN_PATH + x for x in train['nama file gambar'].values]
 TEST_IMG = [TEST_PATH + x for x in test['nama file gambar'].values]
 ```
 
-## Checking Missing File<a class="anchor" id="chapter1_1_1"></a>
+## Checking Missing File
 
 Mengecek apakah ada file yang hilang / tidak bisa terbaca pada direktori gambar.
 
@@ -310,7 +302,7 @@ show_images(TRAIN_X, TRAIN_y)
 
 Dapat dilihat gambar memiliki resolusi yang `berbeda - beda`.
 
-### Preprocess and Resizing<a class="anchor" id="chapter1_1_2"></a>
+### Preprocess and Resizing
 
 Untuk mengatasi data gambar dengan resolusi yang berbeda - beda maka dilakukan dengan metode croping pada bagian `center` gambar dan `resizing` gambar tersebut ke ukuran yang di tetapkan.
 
@@ -336,7 +328,7 @@ show_images(TRAIN_X, TRAIN_y, load_and_preprocess_image)
 
 ![png](output_31_0.png)
 
-### Image Augmentation<a class="anchor" id="chapter1_1_3"></a>
+### Image Augmentation
 
 Karena data yang ada tidak seimbang maka perlu dilakukan penambahan data. Metode yang digunakan untuk menambahkan data yaitu augmentasi data gambar pada kelas yang sedikit dengan melakukan `random rotation`.
 
@@ -382,7 +374,7 @@ for i in random.sample(TRAIN_X, 2):
 
 ![png](output_36_1.png)
 
-### Up Sampling Data<a class="anchor" id="chapter1_1_4"></a>
+### Up Sampling Data
 
 Mengapply Preprocess & Augmentasi ke data gambar dan menyimpan gambar pada direktori baru.
 Menggunakan Fungsi tambahan yang sudah di download pada file `RPU.py`
@@ -423,7 +415,7 @@ Note : Up Sample data pada Notebook ini didapatkan dengan command berikut
                 SIZE:512 TEST_SIZE:0.15 UP_SAMPLES:0.5-1-2 UP_SAMPLE_CLASS:0
 ```
 
-## Data Text<a class="anchor" id="chapter1_2"></a>
+## Data Text
 
 Melakukan preprocessing pada data text.
 
@@ -449,7 +441,7 @@ train.head()
 | 550 | 1     | 2020-07-08 00:00:00 | ini bukan politik, tapi kenyataan Pak Jokowi b... | Maaf Mas2 dan Mbak2, ini bukan politik, tapi k... | 550.png          | ini bukan politik, tapi kenyataan pak jokowi b... |
 | 681 | 1     | 2020-06-24 00:00:00 | Foto Kadrun kalo lihat foto ini panas dingin      | Kadrun kalo lihat foto ini panas dingin . .       | 681.jpg          | foto kadrun kalo lihat foto ini panas dingin k... |
 
-### Mengecek Duplicated Values<a class="anchor" id="chapter1_2_1"></a>
+### Mengecek Duplicated Values
 
 Mengecek keberadaan data yang berduplikasi.
 
@@ -491,7 +483,7 @@ train_text = clean_up(train.text.values)
 test_text = clean_up(test.text.values)
 ```
 
-### Mengekstrack Feature dari Text<a class="anchor" id="chapter1_2_2"></a>
+### Mengekstrack Feature dari Text
 
 Mengekstrack feature seperti `URL`, `Hashtag`, `Tag`, dan `Emoji` dari text untuk melihat informasi dan frekuensi kemunculannya dalam setiap kelas pada data
 
@@ -588,7 +580,7 @@ FE.get_table('emojis', return_prop = True)
 
 Karena jumlah data yang cukup kecil dan sepertinya setiap feature memiliki informasi yang cukup berpengaruh terhadap kelasnya, kami memutuskan untuk tidak menghapus satupun feature yang ada.
 
-### Masking Feature (Encode)<a class="anchor" id="chapter1_2_3"></a>
+### Masking Feature (Encode)
 
 Masking feature pada text. Feauture yang sudah di `.fit` pada data sebelumnya, proses ini dilakukan karena pada feature ini terdapat peletakan tanda baca yang random / tidak beraturan, sedangkan pada proses berikutnya akan dilakukan penormalisasian tanda baca sehingga akan mengganggu proses tersebut. Maka dari itu perlu dilakukan masking agar proses normalisasi kalimat berjalan dengan lancar.
 
@@ -615,7 +607,7 @@ train_text = FE.encode(train_text)    # Train
 test_text = FE_test.encode(test_text) # Test
 ```
 
-### Normalisasi Tanda Baca<a class="anchor" id="chapter1_2_4"></a>
+### Normalisasi Tanda Baca
 
 Melakukan normalisasi tanda baca pada text. Karena banyak peletakan tanda baca yang salah pada text yang akan mengganggu `tokenizer` dalam melakukan segmentasi pada kalimat.
 
@@ -658,7 +650,7 @@ train_text = normalize(train_text) # Train
 test_text = normalize(test_text)   # Test
 ```
 
-### Decode & Menghapus Tanda Baca<a class="anchor" id="chapter1_2_5"></a>
+### Decode & Menghapus Tanda Baca
 
 Men-Decode (mengembalikan feature) serta menghapus tanda baca yang ada pada text.
 
@@ -690,7 +682,7 @@ test_text = FE_test.decode(test_text) # Test
 test_text = remove_punc(test_text, string.punctuation)
 ```
 
-### De-Emojized<a class="anchor" id="chapter1_2_6"></a>
+### De-Emojized
 
 Mengubah kode emoji yang ada pada text menjadi kata kata yang dapat dimengerti.
 
@@ -718,7 +710,7 @@ train_text = deemojized(train_text) # Train
 test_text = deemojized(test_text)   # Test
 ```
 
-### Mengecek Kata yang Misspell (typo)<a class="anchor" id="chapter1_2_7"></a>
+### Mengecek Kata yang Misspell (typo)
 
 Mengecek kata-kata yang misspell atau typo serta kata - kata singkatan.
 
@@ -800,7 +792,7 @@ train_text = spellchecker.transform(train_text) # Train
 test_text = spellchecker.transform(test_text)   # Test
 ```
 
-### Memhapus Kata yang Kurang Penting & Stopwords<a class="anchor" id="chapter1_2_8"></a>
+### Memhapus Kata yang Kurang Penting & Stopwords
 
 Menghapus kata - kata yang kurang penting seperti kata yang hanya terdiri dari 1 karakter dan Stopwords. Untuk Stopwords kami menggabungkan stopwords bahasa Indonesia dari `Spacy` dan `Sastrawi` serta bahasa Inggris dari `Spacy`.
 
@@ -862,7 +854,7 @@ for i in [0, 803, 1002]:
     gunung dieng salatiga lihat gn fuji jepang pegunungan alpen eropa gn dieng salatiga indonesia suhu 9°c
     --------------------------------------------------------------------------------
 
-# Explorasi Data<a class="anchor" id="chapter2"></a>
+# Explorasi Data
 
 Melakukan explorasi pada data untuk mendapatkan informasi - informasi lebih jauh dari data.
 
@@ -906,7 +898,7 @@ train['tanggal'] = train['tanggal'].apply(FixMonth)
 train['tanggal'] = pd.to_datetime(train['tanggal'])
 ```
 
-## Mengecek Frekuensi Setiap Kelas<a class="anchor" id="chapter2_1"></a>
+## Mengecek Frekuensi Setiap Kelas
 
 Menegecek frekuensi tiap kelasnya pada data.
 
@@ -933,7 +925,7 @@ fig_1.show()
 
 Dapat dilihat bahwa kelas 1 (`Hoax`) jauh lebih banyak dari kelas 0 (`Bukan Hoax`) atau terdapat `imbalance class` pada data. Untuk penanganannya kami menggunakan `Stratify` saat melakukan `Cross Validation` sehingga proporsi pada subset `latih` dan pada subset `validasi` sama.
 
-## Melihat Sebaran Kelas per Waktunya<a class="anchor" id="chapter2_2"></a>
+## Melihat Sebaran Kelas per Waktunya
 
 Melihat sebaran kelas perwaktunya.
 
@@ -987,7 +979,7 @@ Ditinjau dari grafik diatas bahwa:
 1. 53% dari keseluruhan data berasal dari tahun 2019 - 2020
 2. 95% data pada tahun 2019 - 2020 adalah Hoax
 
-### Mengecek Kata - Kata yang Muncul Perkelasnya<a class="anchor" id="chapter2_3"></a>
+### Mengecek Kata - Kata yang Muncul Perkelasnya
 
 Mengecek frekuensi kata - kata yang muncul berdasarkan kelasnya.
 
@@ -1100,7 +1092,7 @@ plt.show()
 
 ![png](output_102_0.png)
 
-# Pemodelan<a class="anchor" id="chapter3"></a>
+# Pemodelan
 
 Membuat model untuk memprediksi kelas `0` (`tidak hoax`) dan kelas `1` (`hoax`) pada data test.
 
@@ -1133,7 +1125,7 @@ print("REPLICAS: ", strategy.num_replicas_in_sync)
     Running on TPU  grpc://10.0.0.2:8470
     REPLICAS:  8
 
-## Pemodelan Data Gambar (EfficientNet)<a class="anchor" id="chapter3_1"></a>
+## Pemodelan Data Gambar (EfficientNet)
 
 Model yang digunakan untuk data gambar yaitu pretrained Deep Learning model yang cukup popular yaitu `EfficientNet`. `EfficientNet` digunakan karena kemampuannya yang cukup mengesankan dalam mengklasifikasi data gambar pada `ImageNet`.
 
@@ -1409,7 +1401,7 @@ tf.tpu.experimental.initialize_tpu_system(tpu)
 
     <tensorflow.python.tpu.topology.Topology at 0x7ff9cb254190>
 
-## Pemodelan Data Teks (BERT)<a class="anchor" id="chapter3_2"></a>
+## Pemodelan Data Teks (BERT)
 
 BERT(Bidirectional Encoder Representations from Transformers) adalah pretrained model karya Jacob Devlin, Ming-Wei Chang, Kenton Lee dan Kristina Toutanova. Model ini berupa transformator dua arah yang telah dilatih sebelumnya.
 
@@ -1750,17 +1742,17 @@ fig.show()
 
 ![png](output_158_0.png)
 
-# Ensemble<a class="anchor" id="chapter4"></a>
+# Ensemble
 
 > Ensemble is methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
 
-Untuk mendapatkan hasil yang lebih baik kami melakukan `ensembling` pada hasil prediksi model kami. Hasil model yang di `ensembling` adalah hasil peramalan data test pada model `EfficientNetB7` dan model `Bert` pada fold `3` dan `6`. Metode ensemble yang digunakan adalah dengan mengambil rata - rata probabilitas dari hasil prediksian ketiga model tersebut.<a class="anchor" id="chapter4_1"></a>
+Untuk mendapatkan hasil yang lebih baik kami melakukan `ensembling` pada hasil prediksi model kami. Hasil model yang di `ensembling` adalah hasil peramalan data test pada model `EfficientNetB7` dan model `Bert` pada fold `3` dan `6`. Metode ensemble yang digunakan adalah dengan mengambil rata - rata probabilitas dari hasil prediksian ketiga model tersebut.
 
 ```python
 ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3
 ```
 
-## Mencari Threshold<a class="anchor" id="chapter4_2"></a>
+## Mencari Threshold
 
 > The decision for converting a predicted probability or scoring into a class label is governed by a parameter referred to as the “threshold” The default value for the threshold is 0.5 for normalized predicted probabilities or scores in the range between 0 or 1.
 
@@ -1809,7 +1801,7 @@ hasil.head()
 hasil.to_csv('Catatan Cakrawala BDC - Ensemble.csv', index = False)
 ```
 
-# Kesimpulan & Saran<a class="anchor" id="chapter5"></a>
+# Kesimpulan & Saran
 
 ## Kesimpulan
 

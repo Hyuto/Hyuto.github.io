@@ -7,10 +7,17 @@ import "katex/dist/katex.min.css";
 
 const components = {
   div: props => {
-    if (props.className !== undefined)
-      if (props.className.includes("math-display")) {
-        return <TeX block math={props.children} />;
+    if (props.className !== undefined) {
+      if (props.className.includes("math-display")) return <TeX block math={props.children} />;
+      else if (props.className.includes("tabbed-images")) {
+        console.log(
+          props.children.filter(e => {
+            if (e !== "\n  ") return true;
+            return false;
+          })
+        );
       }
+    }
     return <div {...props} />;
   },
   span: props => {

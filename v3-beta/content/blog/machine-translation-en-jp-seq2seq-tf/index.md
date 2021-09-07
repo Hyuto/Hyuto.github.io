@@ -27,19 +27,6 @@ So in this notebook we're going to build English to Japanese machine translation
 
 that's the interesting part of it and so it'll be little complicated to process. So let's get started.
 
-# Table Of Content
-
-1. Load Dataset
-2. Text Preprocessing
-   - English misspell handling
-   - Segmenting Japanese words
-   - Add BOS and EOS to train sentences
-3. Word Tokenizing
-   - Word Cloud
-4. Build & Train Model
-5. Scoring Bleu
-6. Test with Some Raw Input
-
 ## Install some tools
 
 1. Sacreblue for calculate BLEU score
@@ -406,8 +393,6 @@ plt.close(fig2)
 
 !rm -rf ./font
 ```
-
-## WordCloud
 
 **English**
 

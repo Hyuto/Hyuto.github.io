@@ -7,6 +7,7 @@ import Layout from "components/layout";
 import Seo from "components/seo";
 import ScrollToTop from "components/scroll-up";
 import MdXLayout from "components/markdown/markdown";
+import TableContent from "components/table-content/table-content";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
 import { FaLongArrowAltRight } from "@react-icons/all-files/fa/FaLongArrowAltRight";
@@ -24,6 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <TableContent headings={post.headings} />
       <ScrollToTop />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
@@ -113,6 +115,9 @@ export const pageQuery = graphql`
         tags
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      headings {
+        value
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {
