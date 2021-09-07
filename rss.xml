@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 03 Sep 2021 16:43:11 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Sep 2021 06:26:43 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
                         &lt;div&gt;
                           &lt;h2&gt;Digit Recognizer&lt;/h2&gt;
                           &lt;p&gt;MNIST Digit Recognizer using Tensorflow.js&lt;/p&gt;
@@ -34,7 +34,9 @@ return function MDXContent(_ref) {
     mdxType: &quot;MDXLayout&quot;
   }), mdx(&quot;p&quot;, null, &quot;Notebook ini adalah script yang kelompok &quot;, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;Catatan Cakrawala&quot;), &quot; gunakan pada saat mengikuti lomba\nBDC Satria Data 2020 yang di selenggarakan oleh IPB dan PUSPRESNAS.&quot;), mdx(&quot;h2&quot;, null, &quot;Author&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Catatan Cakrawala&quot;), &quot; gunakan pada saat mengikuti lomba\nBDC Satria Data 2020 yang di selenggarakan oleh IPB dan PUSPRESNAS.&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;author&quot;
+  }, &quot;Author&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, mdx(&quot;a&quot;, {
     parentName: &quot;li&quot;,
@@ -49,7 +51,9 @@ return function MDXContent(_ref) {
   }, mdx(&quot;a&quot;, {
     parentName: &quot;li&quot;,
     &quot;href&quot;: &quot;https://www.linkedin.com/in/wahyu-setianto/&quot;
-  }, &quot;Wahyu Setianto&quot;))), mdx(&quot;h2&quot;, null, &quot;Running Environment&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Wahyu Setianto&quot;))), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;running-environment&quot;
+  }, &quot;Running Environment&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, &quot;Platform : Kaggle&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
@@ -87,7 +91,9 @@ return function MDXContent(_ref) {
   }, &quot;Catatan Cakrawala Model&quot;), &quot; &quot;, &quot;[Optional]&quot;), mdx(&quot;td&quot;, {
     parentName: &quot;tr&quot;,
     &quot;align&quot;: &quot;left&quot;
-  }, &quot;Model terbaik yang telah di train tim Catatan Cakrawala&quot;)))), mdx(&quot;h3&quot;, null, &quot;Note&quot;), mdx(&quot;p&quot;, null, &quot;Github repository : &quot;, mdx(&quot;a&quot;, {
+  }, &quot;Model terbaik yang telah di train tim Catatan Cakrawala&quot;)))), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;note&quot;
+  }, &quot;Note&quot;), mdx(&quot;p&quot;, null, &quot;Github repository : &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://github.com/Hyuto/BDC-Satria-Data&quot;
   }, &quot;BDC-Satria-Data&quot;)), mdx(&quot;p&quot;, null, &quot;Notebook ini adalah notebook yang kami run di &quot;, mdx(&quot;a&quot;, {
@@ -98,38 +104,21 @@ return function MDXContent(_ref) {
     &quot;href&quot;: &quot;https://www.kaggle.com/wahyusetianto/bdc-main-notebook&quot;
   }, &quot;Catatan Cakrawala Notebook - BDC Satria Data&quot;)), mdx(&quot;p&quot;, null, &quot;P.S. Jangan lupa untuk &quot;, mdx(&quot;em&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;upvote&quot;), &quot; \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, null, &quot;BDC - Satria Data 2020&quot;), mdx(&quot;h2&quot;, null, &quot;Daftar Isi&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, mdx(&quot;a&quot;, {
-    parentName: &quot;li&quot;,
-    &quot;href&quot;: &quot;#chapter1&quot;
-  }, &quot;Preprocessing Data&quot;)), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, mdx(&quot;a&quot;, {
-    parentName: &quot;li&quot;,
-    &quot;href&quot;: &quot;#chapter2&quot;
-  }, &quot;Explorasi Data&quot;)), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, mdx(&quot;a&quot;, {
-    parentName: &quot;li&quot;,
-    &quot;href&quot;: &quot;#chapter3&quot;
-  }, &quot;Pemodelan&quot;)), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, mdx(&quot;a&quot;, {
-    parentName: &quot;li&quot;,
-    &quot;href&quot;: &quot;#chapter4&quot;
-  }, &quot;Ensemble&quot;)), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, mdx(&quot;a&quot;, {
-    parentName: &quot;li&quot;,
-    &quot;href&quot;: &quot;#chapter5&quot;
-  }, &quot;Kesimpulan &amp; Saran&quot;))), mdx(&quot;h2&quot;, null, &quot;Task&quot;), mdx(&quot;p&quot;, null, &quot;Mendeteksi apakah suatu berita adalah hoax atau bukan hoax (&quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;upvote&quot;), &quot; \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;bdc---satria-data-2020&quot;
+  }, &quot;BDC - Satria Data 2020&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;task&quot;
+  }, &quot;Task&quot;), mdx(&quot;p&quot;, null, &quot;Mendeteksi apakah suatu berita adalah hoax atau bukan hoax (&quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;Binary Classification&quot;), &quot;).&quot;), mdx(&quot;h2&quot;, null, &quot;Data&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Binary Classification&quot;), &quot;).&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;data&quot;
+  }, &quot;Data&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, &quot;Data Gambar&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
-  }, &quot;Data Text (judul dan narasi berita)&quot;)), mdx(&quot;h2&quot;, null, &quot;First Things First&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Data Text (judul dan narasi berita)&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;first-things-first&quot;
+  }, &quot;First Things First&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, &quot;Install &amp; Load Library&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
@@ -140,10 +129,11 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Install Package yang Dibutuhkan\n!pip install -q --upgrade pip\n!pip install -q efficientnet  # EfficientNet\n!pip -q install sastrawi      # Santrawi\n\n# Imports\nimport os, random, re, string, emoji\nfrom timeit import default_timer\nfrom tqdm.notebook import tqdm\n\n# Kaggle Datasets for checking GCS\nfrom kaggle_datasets import KaggleDatasets\n\n# Scientific tools\nimport numpy as np\nimport pandas as pd\n\n# Plotting tools\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.style.use(\&quot;seaborn-notebook\&quot;)\n\n# Interactive\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\n# Image processing\nfrom PIL import Image\nfrom skimage.transform import rotate\n\n# Tensorflow and Keras\nimport tensorflow as tf\nfrom tensorflow.keras.preprocessing.image import load_img, img_to_array\n\n# Scikit Learn\nfrom sklearn.utils import shuffle\nfrom sklearn.metrics import *\nfrom sklearn.model_selection import *\nfrom sklearn.feature_extraction.text import CountVectorizer\n\n# SEED ALL\nSEED = 42\n\nos.environ[&apos;PYTHONHASHSEED&apos;] = str(SEED)\nrandom.seed(SEED)\nnp.random.seed(SEED)\n\nos.environ[&apos;TF_DETERMINISTIC_OPS&apos;] = str(SEED)\ntf.random.set_seed(SEED)\n\n# GCS PATH\nGCS_PATH = KaggleDatasets().get_gcs_path(&apos;data-bdc&apos;)\n\n# Out\nprint(f&apos;Using Tensorflow Version       : {tf.__version__}&apos;)\nprint(f&apos;Google Cloud Storage Data Path : {GCS_PATH}&apos;)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Using Tensorflow Version       : 2.2.0\nGoogle Cloud Storage Data Path : gs://kds-7a3b4bb00789754aa5925da7c7a9217df698684ced337b42a9790257\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Preprocessing Data&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing data sebelum diolah&quot;), mdx(&quot;h3&quot;, null, &quot;Load Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Load dataset ke memory&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Using Tensorflow Version       : 2.2.0\nGoogle Cloud Storage Data Path : gs://kds-7a3b4bb00789754aa5925da7c7a9217df698684ced337b42a9790257\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;preprocessing-data&quot;
+  }, &quot;Preprocessing Data&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing data sebelum diolah&quot;), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;load-dataset&quot;
+  }, &quot;Load Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Load dataset ke memory&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;train = pd.read_excel(&apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Latih/Data Latih BDC.xlsx&apos;)\ntest = pd.read_excel(&apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Uji/Data Uji BDC.xlsx&apos;)\ntrain.head()\n&quot;)), mdx(&quot;table&quot;, null, mdx(&quot;thead&quot;, {
@@ -270,22 +260,24 @@ return function MDXContent(_ref) {
   }, &quot;Kadrun kalo lihat foto ini panas dingin . .&quot;), mdx(&quot;td&quot;, {
     parentName: &quot;tr&quot;,
     &quot;align&quot;: null
-  }, &quot;681.jpg&quot;)))), mdx(&quot;h2&quot;, null, &quot;Download Fungsi Tambahan&quot;), mdx(&quot;p&quot;, null, &quot;Mendownload fungsi yang sudah dibuat dari responsitory kami.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;681.jpg&quot;)))), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;download-fungsi-tambahan&quot;
+  }, &quot;Download Fungsi Tambahan&quot;), mdx(&quot;p&quot;, null, &quot;Mendownload fungsi yang sudah dibuat dari responsitory kami.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;!wget -q https://raw.githubusercontent.com/Hyuto/BDC-Satria-Data/master/Preprocess%20code/RPU.py\n!wget -q https://raw.githubusercontent.com/Hyuto/BDC-Satria-Data/master/Preprocess%20code/Preprocess.py\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Data Gambar&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing pada data gambar&quot;), mdx(&quot;h3&quot;, null, &quot;Sesuaikan Path data gambar&quot;), mdx(&quot;p&quot;, null, &quot;Menyesuaikan direktori data gambar&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;!wget -q https://raw.githubusercontent.com/Hyuto/BDC-Satria-Data/master/Preprocess%20code/RPU.py\n!wget -q https://raw.githubusercontent.com/Hyuto/BDC-Satria-Data/master/Preprocess%20code/Preprocess.py\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;data-gambar&quot;
+  }, &quot;Data Gambar&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing pada data gambar&quot;), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;sesuaikan-path-data-gambar&quot;
+  }, &quot;Sesuaikan Path data gambar&quot;), mdx(&quot;p&quot;, null, &quot;Menyesuaikan direktori data gambar&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Train &amp; Test Image PATH\nTRAIN_PATH = &apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Latih/File Gambar Data Latih/&apos;\nTEST_PATH = &apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Uji/File Gambar Data Uji/&apos;\n&quot;)), mdx(&quot;p&quot;, null, &quot;tambahkan Path ke nama file gambar&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to nama file\nTRAIN_IMG = [TRAIN_PATH + x for x in train[&apos;nama file gambar&apos;].values]\nTEST_IMG = [TEST_PATH + x for x in test[&apos;nama file gambar&apos;].values]\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Checking Missing File&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_1_1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengecek apakah ada file yang hilang / tidak bisa terbaca pada direktori gambar.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Apply to nama file\nTRAIN_IMG = [TRAIN_PATH + x for x in train[&apos;nama file gambar&apos;].values]\nTEST_IMG = [TEST_PATH + x for x in test[&apos;nama file gambar&apos;].values]\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;checking-missing-file&quot;
+  }, &quot;Checking Missing File&quot;), mdx(&quot;p&quot;, null, &quot;Mengecek apakah ada file yang hilang / tidak bisa terbaca pada direktori gambar.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;def check_missing(files, return_missing_ID = True):\n    \&quot;\&quot;\&quot;\n    Mengecek keberadaan data gambar berdasarkan direktori\n    \&quot;\&quot;\&quot;\n    missing = []\n    for file in files:\n        if not os.path.isfile(file):\n            missing.append(file)\n    print(f&apos;[INFO] Missing {len(missing)} file&apos;)\n    if return_missing_ID:\n        return sorted([int(x.split(&apos;/&apos;)[-1][:-4]) for x in missing])\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -312,7 +304,9 @@ return function MDXContent(_ref) {
   }, &quot;# Apply to train DF\nfor Id, filename in fixed_missing_train:\n    index = train.ID.tolist().index(Id)\n    train.loc[index, &apos;nama file gambar&apos;] = filename\n\n# Apply to test DF\nfor Id, filename in fixed_missing_test:\n    index = test.ID.tolist().index(Id)\n    test.loc[index, &apos;nama file gambar&apos;] = filename\n&quot;)), mdx(&quot;p&quot;, null, &quot;Spesifikasi ulang nama file gambar&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;TRAIN_X = [TRAIN_PATH + x for x in train[&apos;nama file gambar&apos;].values if x != &apos;404&apos;]\nTRAIN_y = train.label.values\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Menampilkan Data Gambar&quot;), mdx(&quot;p&quot;, null, &quot;Menampilkan beberapa data gambar yang ada&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;TRAIN_X = [TRAIN_PATH + x for x in train[&apos;nama file gambar&apos;].values if x != &apos;404&apos;]\nTRAIN_y = train.label.values\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;menampilkan-data-gambar&quot;
+  }, &quot;Menampilkan Data Gambar&quot;), mdx(&quot;p&quot;, null, &quot;Menampilkan beberapa data gambar yang ada&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;def read_and_resize(path):\n    \&quot;\&quot;\&quot;\n    Read &amp; Resize data gambar\n    \&quot;\&quot;\&quot;\n    img = Image.open(path)\n    img.resize((256, 256), Image.ANTIALIAS)\n    return img\n\ndef show_images(list_dir, label, load_image = read_and_resize, seed = SEED):\n    \&quot;\&quot;\&quot;\n    Menampilkan Gambar Secara acak berdasarkan kelasnya\n    masing - masing sebanyak 5 buah.\n    \&quot;\&quot;\&quot;\n    random.seed(seed)\n    data_0 = random.sample([x for x in zip(list_dir, label) if x[1] == 0], 5)\n    data_1 = random.sample([x for x in zip(list_dir, label) if x[1] == 1], 5)\n    fig, axes = plt.subplots(2, 5, figsize = (20, 10))\n    for i in range(2):\n        if i == 0:\n            data = data_0\n        else:\n            data = data_1\n        for j in range(5):\n            img = load_image(data[j][0])\n            axes[i, j].imshow(img)\n            axes[i, j].set_title(f&apos;Label : {data[j][1]}&apos;, fontsize = 14)\n            axes[i, j].axis(&apos;off&apos;)\n    fig.tight_layout()\n    plt.show()\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -370,10 +364,9 @@ return function MDXContent(_ref) {
     &quot;decoding&quot;: &quot;async&quot;
   }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;Dapat dilihat gambar memiliki resolusi yang &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;berbeda - beda&quot;), &quot;.&quot;), mdx(&quot;h3&quot;, null, &quot;Preprocess and Resizing&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_1_2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Untuk mengatasi data gambar dengan resolusi yang berbeda - beda maka dilakukan dengan metode croping pada bagian &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;berbeda - beda&quot;), &quot;.&quot;), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;preprocess-and-resizing&quot;
+  }, &quot;Preprocess and Resizing&quot;), mdx(&quot;p&quot;, null, &quot;Untuk mengatasi data gambar dengan resolusi yang berbeda - beda maka dilakukan dengan metode croping pada bagian &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;center&quot;), &quot; gambar dan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -433,10 +426,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, null, &quot;Image Augmentation&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_1_3&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Karena data yang ada tidak seimbang maka perlu dilakukan penambahan data. Metode yang digunakan untuk menambahkan data yaitu augmentasi data gambar pada kelas yang sedikit dengan melakukan &quot;, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;image-augmentation&quot;
+  }, &quot;Image Augmentation&quot;), mdx(&quot;p&quot;, null, &quot;Karena data yang ada tidak seimbang maka perlu dilakukan penambahan data. Metode yang digunakan untuk menambahkan data yaitu augmentasi data gambar pada kelas yang sedikit dengan melakukan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;random rotation&quot;), &quot;.&quot;), mdx(&quot;p&quot;, null, &quot;Metode Augmentasi yang digunakan.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
@@ -549,10 +541,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, null, &quot;Up Sampling Data&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_1_4&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengapply Preprocess &amp; Augmentasi ke data gambar dan menyimpan gambar pada direktori baru.\nMenggunakan Fungsi tambahan yang sudah di download pada file &quot;, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;up-sampling-data&quot;
+  }, &quot;Up Sampling Data&quot;), mdx(&quot;p&quot;, null, &quot;Mengapply Preprocess &amp; Augmentasi ke data gambar dan menyimpan gambar pada direktori baru.\nMenggunakan Fungsi tambahan yang sudah di download pada file &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;RPU.py&quot;)), mdx(&quot;p&quot;, null, &quot;Fungsi akan mengembalikan List direktori gambar dan juga labelnya.&quot;), mdx(&quot;p&quot;, null, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -565,10 +556,9 @@ return function MDXContent(_ref) {
     parentName: &quot;p&quot;
   }, &quot;GCS&quot;), &quot; (lokal direktori).&quot;), mdx(&quot;p&quot;, null, &quot;Note : Up Sample data pada Notebook ini didapatkan dengan command berikut&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;!python RPU.py &apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Latih/File Gambar Data Latih/&apos; \\\n                SIZE:512 TEST_SIZE:0.15 UP_SAMPLES:0.5-1-2 UP_SAMPLE_CLASS:0\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Data Text&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing pada data text.&quot;), mdx(&quot;p&quot;, null, &quot;Load fungsi pada file &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;!python RPU.py &apos;../input/data-bdc/Data BDC - Satria Data 2020/Data Latih/File Gambar Data Latih/&apos; \\\n                SIZE:512 TEST_SIZE:0.15 UP_SAMPLES:0.5-1-2 UP_SAMPLE_CLASS:0\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;data-text&quot;
+  }, &quot;Data Text&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan preprocessing pada data text.&quot;), mdx(&quot;p&quot;, null, &quot;Load fungsi pada file &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;Preprocess.py&quot;), &quot; terlebih dahulu&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -726,10 +716,9 @@ return function MDXContent(_ref) {
   }, &quot;681.jpg&quot;), mdx(&quot;td&quot;, {
     parentName: &quot;tr&quot;,
     &quot;align&quot;: null
-  }, &quot;foto kadrun kalo lihat foto ini panas dingin k...&quot;)))), mdx(&quot;h3&quot;, null, &quot;Mengecek Duplicated Values&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengecek keberadaan data yang berduplikasi.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;foto kadrun kalo lihat foto ini panas dingin k...&quot;)))), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;mengecek-duplicated-values&quot;
+  }, &quot;Mengecek Duplicated Values&quot;), mdx(&quot;p&quot;, null, &quot;Mengecek keberadaan data yang berduplikasi.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;train[train.duplicated(subset=[&apos;text&apos;], keep=False)]\n&quot;)), mdx(&quot;table&quot;, null, mdx(&quot;thead&quot;, {
@@ -906,10 +895,9 @@ return function MDXContent(_ref) {
   }, &quot;def clean_up(arr):\n    r\&quot;\&quot;\&quot;\n    Cleanup \\n and lowering text\n    \&quot;\&quot;\&quot;\n    for i in range(len(arr)):\n        arr[i] = arr[i].lower()\n        arr[i] = re.sub(&apos;\\n&apos;, &apos; &apos;, arr[i])\n        arr[i] = &apos; &apos;.join(arr[i].split())\n    return arr\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Init text\ntrain_text = clean_up(train.text.values)\ntest_text = clean_up(test.text.values)\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Mengekstrack Feature dari Text&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengekstrack feature seperti &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;# Init text\ntrain_text = clean_up(train.text.values)\ntest_text = clean_up(test.text.values)\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;mengekstrack-feature-dari-text&quot;
+  }, &quot;Mengekstrack Feature dari Text&quot;), mdx(&quot;p&quot;, null, &quot;Mengekstrack feature seperti &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;URL&quot;), &quot;, &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -1789,20 +1777,18 @@ return function MDXContent(_ref) {
     &quot;align&quot;: &quot;right&quot;
   }, &quot;1.000000&quot;)))), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;71 rows \xD7 5 columns\n&quot;)), mdx(&quot;p&quot;, null, &quot;Karena jumlah data yang cukup kecil dan sepertinya setiap feature memiliki informasi yang cukup berpengaruh terhadap kelasnya, kami memutuskan untuk tidak menghapus satupun feature yang ada.&quot;), mdx(&quot;h3&quot;, null, &quot;Masking Feature (Encode)&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_3&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Masking feature pada text. Feauture yang sudah di &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;71 rows \xD7 5 columns\n&quot;)), mdx(&quot;p&quot;, null, &quot;Karena jumlah data yang cukup kecil dan sepertinya setiap feature memiliki informasi yang cukup berpengaruh terhadap kelasnya, kami memutuskan untuk tidak menghapus satupun feature yang ada.&quot;), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;masking-feature-encode&quot;
+  }, &quot;Masking Feature (Encode)&quot;), mdx(&quot;p&quot;, null, &quot;Masking feature pada text. Feauture yang sudah di &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;.fit&quot;), &quot; pada data sebelumnya, proses ini dilakukan karena pada feature ini terdapat peletakan tanda baca yang random / tidak beraturan, sedangkan pada proses berikutnya akan dilakukan penormalisasian tanda baca sehingga akan mengganggu proses tersebut. Maka dari itu perlu dilakukan masking agar proses normalisasi kalimat berjalan dengan lancar.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;# Contoh\nWebsite Google adalah http://google.com/\nTrending #MosiTidakPercaya\n@jokowi adalah presiden RI\nLucu \uD83D\uDE02\n\n# Encode\nWebsite Google adalah MASKURLS1MASK\nTrending MASKHASHTAGS1MASK\nMASKTAGS1MASK adalah presiden RI\nLucu MASKEMOJIS1MASK\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Build Mask Code\nFE.build_mask_code(0)\nFE_test.build_mask_code(0)\n# Apply to data\ntrain_text = FE.encode(train_text)    # Train\ntest_text = FE_test.encode(test_text) # Test\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Normalisasi Tanda Baca&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_4&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melakukan normalisasi tanda baca pada text. Karena banyak peletakan tanda baca yang salah pada text yang akan mengganggu &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;# Build Mask Code\nFE.build_mask_code(0)\nFE_test.build_mask_code(0)\n# Apply to data\ntrain_text = FE.encode(train_text)    # Train\ntest_text = FE_test.encode(test_text) # Test\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;normalisasi-tanda-baca&quot;
+  }, &quot;Normalisasi Tanda Baca&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan normalisasi tanda baca pada text. Karena banyak peletakan tanda baca yang salah pada text yang akan mengganggu &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;tokenizer&quot;), &quot; dalam melakukan segmentasi pada kalimat.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
@@ -1815,10 +1801,9 @@ return function MDXContent(_ref) {
   }, &quot;def normalize(array):\n    \&quot;\&quot;\&quot;\n    Normalize text\n    \&quot;\&quot;\&quot;\n    punc, arr = string.punctuation, array.copy()\n    for i in range(len(arr)):\n        temp = list(arr[i])\n        for j in range(1, len(temp) - 1):\n            if (temp[j] in punc) and not\\\n            all([x in string.digits for x in [temp[j-1], temp[j+1]]]):\n                temp[j] = &apos; &apos; + temp[j] + &apos; &apos;\n            elif (temp[j] in string.ascii_lowercase) and (temp[j + 1] \\\n            in string.digits or temp[j + 1] in string.punctuation):\n                temp[j] += &apos; &apos;\n        arr[i] = &apos;&apos;.join(temp)\n        arr[i] = &apos; &apos;.join(arr[i].split())\n    return arr\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to text\ntrain_text = normalize(train_text) # Train\ntest_text = normalize(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Decode &amp; Menghapus Tanda Baca&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_5&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Men-Decode (mengembalikan feature) serta menghapus tanda baca yang ada pada text.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Apply to text\ntrain_text = normalize(train_text) # Train\ntest_text = normalize(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;decode--menghapus-tanda-baca&quot;
+  }, &quot;Decode &amp; Menghapus Tanda Baca&quot;), mdx(&quot;p&quot;, null, &quot;Men-Decode (mengembalikan feature) serta menghapus tanda baca yang ada pada text.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;# Contoh\nWebsite Google adalah MASKURLS1MASK\n\n# Decode\nWebsite Google adalah http://google.com/\n\n# Remove Punctuation\nWebsite Google adalah httpgooglecom\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -1826,10 +1811,9 @@ return function MDXContent(_ref) {
   }, &quot;def remove_punc(arr, punc_):\n    \&quot;\&quot;\&quot;\n    Remove string punctuation\n    \&quot;\&quot;\&quot;\n    return asarray([x.translate(str.maketrans(&apos;&apos;, &apos;&apos;, punc_))\n                    for x in arr])\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to data\ntrain_text = FE.decode(train_text)    # Train\ntrain_text = remove_punc(train_text, string.punctuation)\ntest_text = FE_test.decode(test_text) # Test\ntest_text = remove_punc(test_text, string.punctuation)\n&quot;)), mdx(&quot;h3&quot;, null, &quot;De-Emojized&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_6&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengubah kode emoji yang ada pada text menjadi kata kata yang dapat dimengerti.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Apply to data\ntrain_text = FE.decode(train_text)    # Train\ntrain_text = remove_punc(train_text, string.punctuation)\ntest_text = FE_test.decode(test_text) # Test\ntest_text = remove_punc(test_text, string.punctuation)\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;de-emojized&quot;
+  }, &quot;De-Emojized&quot;), mdx(&quot;p&quot;, null, &quot;Mengubah kode emoji yang ada pada text menjadi kata kata yang dapat dimengerti.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;\uD83D\uDE4F -&gt; folded hands\n\uD83D\uDE03 -&gt; grinning face with big eyes\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -1837,10 +1821,9 @@ return function MDXContent(_ref) {
   }, &quot;def deemojized(arr):\n    \&quot;\&quot;\&quot;\n    De Emojized text\n    \&quot;\&quot;\&quot;\n    for i in range(len(arr)):\n        arr[i] = emoji.demojize(arr[i])\n        arr[i] = re.sub(&apos;:&apos;, &apos; &apos;, arr[i])\n        arr[i] = re.sub(&apos;_&apos;, &apos; &apos;, arr[i])\n        arr[i] = &apos; &apos;.join(arr[i].split())\n    return arr\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to data\ntrain_text = deemojized(train_text) # Train\ntest_text = deemojized(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Mengecek Kata yang Misspell (typo)&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_7&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengecek kata-kata yang misspell atau typo serta kata - kata singkatan.&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;# Apply to data\ntrain_text = deemojized(train_text) # Train\ntest_text = deemojized(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;mengecek-kata-yang-misspell-typo&quot;
+  }, &quot;Mengecek Kata yang Misspell (typo)&quot;), mdx(&quot;p&quot;, null, &quot;Mengecek kata-kata yang misspell atau typo serta kata - kata singkatan.&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Membangun Vocabulary&quot;, mdx(&quot;br&quot;, null), &quot;\nMembangun Vocabulary dari data untuk di cek secara &quot;, mdx(&quot;strong&quot;, {
     parentName: &quot;li&quot;
@@ -2132,10 +2115,9 @@ return function MDXContent(_ref) {
   }, &quot;Transform&quot;), &quot; untuk apply pada data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to Data\ntrain_text = spellchecker.transform(train_text) # Train\ntest_text = spellchecker.transform(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Memhapus Kata yang Kurang Penting &amp; Stopwords&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter1_2_8&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Menghapus kata - kata yang kurang penting seperti kata yang hanya terdiri dari 1 karakter dan Stopwords. Untuk Stopwords kami menggabungkan stopwords bahasa Indonesia dari &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;# Apply to Data\ntrain_text = spellchecker.transform(train_text) # Train\ntest_text = spellchecker.transform(test_text)   # Test\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;memhapus-kata-yang-kurang-penting--stopwords&quot;
+  }, &quot;Memhapus Kata yang Kurang Penting &amp; Stopwords&quot;), mdx(&quot;p&quot;, null, &quot;Menghapus kata - kata yang kurang penting seperti kata yang hanya terdiri dari 1 karakter dan Stopwords. Untuk Stopwords kami menggabungkan stopwords bahasa Indonesia dari &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;Spacy&quot;), &quot; dan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2155,10 +2137,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;for i in [0, 803, 1002]:\n    print(f\&quot;Actual : \\n{train.text.values[i]}\\n\\nPreprocessed : \\n{train_text[i]}\&quot;)\n    print(&apos;&apos;.rjust(80, &apos;-&apos;))\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Actual :\npemakaian masker menyebabkan penyakit legionnaires a caller to a radio talk show recently shared that his wife was hospitalized n told she had covid n only a couple of days left to live . a doctor friend suggested she be tested for legionnaires disease because she wore the same mask every day all day long . turns out it was legionnaires disease from the moisture n bacteria in her mask . she was given antibiotics n within two days was better . what if these \u2018spikes\u2019 in covid are really something else due to \u2018mask induced infections\u2019 .??\uD83E\uDD14\uD83E\uDD14\uD83E\uDD14\n\nPreprocessed :\npemakaian masker menyebabkan penyakit legionnaires caller radio talk recently shared wife hospitalized told covid couple days left live doctor friend suggested tested legionnaires disease wore mask day day long turns legionnaires disease moisture bacteria mask given antibiotics days better spikes covid mask induced infections thinking face thinking face thinking face\n--------------------------------------------------------------------------------\nActual :\nkk dan nik anda bisa dipakai orang lain, waspadalah! bingung kan? speechless lah. . https://www.jpnn.com/kemenpan/news/kk-dan-nik-anda-bisa-dipakai-orang-lain-waspadalah?page=1\n\nPreprocessed :\nkk nik dipakai orang waspadalah bingung speechless httpswwwjpnncomkemenpannewskkdannikandabisadipakaioranglainwaspadalahpage1\n--------------------------------------------------------------------------------\nActual :\nini gunung dieng salatiga lihat baik2..ini bukan gn.fuji.di jepang\u2026bukan juga pegunungan alpen di eropa\u2026tapi ini gn.dieng salatiga\u2026indonesia..suhu -9\xB0c.\n\nPreprocessed :\ngunung dieng salatiga lihat gn fuji jepang pegunungan alpen eropa gn dieng salatiga indonesia suhu 9\xB0c\n--------------------------------------------------------------------------------\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Explorasi Data&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melakukan explorasi pada data untuk mendapatkan informasi - informasi lebih jauh dari data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Actual :\npemakaian masker menyebabkan penyakit legionnaires a caller to a radio talk show recently shared that his wife was hospitalized n told she had covid n only a couple of days left to live . a doctor friend suggested she be tested for legionnaires disease because she wore the same mask every day all day long . turns out it was legionnaires disease from the moisture n bacteria in her mask . she was given antibiotics n within two days was better . what if these \u2018spikes\u2019 in covid are really something else due to \u2018mask induced infections\u2019 .??\uD83E\uDD14\uD83E\uDD14\uD83E\uDD14\n\nPreprocessed :\npemakaian masker menyebabkan penyakit legionnaires caller radio talk recently shared wife hospitalized told covid couple days left live doctor friend suggested tested legionnaires disease wore mask day day long turns legionnaires disease moisture bacteria mask given antibiotics days better spikes covid mask induced infections thinking face thinking face thinking face\n--------------------------------------------------------------------------------\nActual :\nkk dan nik anda bisa dipakai orang lain, waspadalah! bingung kan? speechless lah. . https://www.jpnn.com/kemenpan/news/kk-dan-nik-anda-bisa-dipakai-orang-lain-waspadalah?page=1\n\nPreprocessed :\nkk nik dipakai orang waspadalah bingung speechless httpswwwjpnncomkemenpannewskkdannikandabisadipakaioranglainwaspadalahpage1\n--------------------------------------------------------------------------------\nActual :\nini gunung dieng salatiga lihat baik2..ini bukan gn.fuji.di jepang\u2026bukan juga pegunungan alpen di eropa\u2026tapi ini gn.dieng salatiga\u2026indonesia..suhu -9\xB0c.\n\nPreprocessed :\ngunung dieng salatiga lihat gn fuji jepang pegunungan alpen eropa gn dieng salatiga indonesia suhu 9\xB0c\n--------------------------------------------------------------------------------\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;explorasi-data&quot;
+  }, &quot;Explorasi Data&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan explorasi pada data untuk mendapatkan informasi - informasi lebih jauh dari data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;train.info()\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -2181,10 +2162,9 @@ return function MDXContent(_ref) {
   }, &quot;def FixMonth(text):\n    \&quot;\&quot;\&quot;\n    Fungsi untuk merubah kata &apos;Okt&apos; menjadi &apos;Oct&apos; dan &apos;Agu&apos; menjadi &apos;Aug&apos;\n    \&quot;\&quot;\&quot;\n    if type(text) == str:\n        if &apos;Okt&apos; in text: return text[:3]+&apos;Oct&apos;+text[6:]\n        else: return text[:3]+&apos;Aug&apos;+text[6:]\n    else:\n        return text\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Apply to data\ntrain[&apos;tanggal&apos;] = train[&apos;tanggal&apos;].apply(FixMonth)\ntrain[&apos;tanggal&apos;] = pd.to_datetime(train[&apos;tanggal&apos;])\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Mengecek Frekuensi Setiap Kelas&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter2_1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Menegecek frekuensi tiap kelasnya pada data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Apply to data\ntrain[&apos;tanggal&apos;] = train[&apos;tanggal&apos;].apply(FixMonth)\ntrain[&apos;tanggal&apos;] = pd.to_datetime(train[&apos;tanggal&apos;])\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;mengecek-frekuensi-setiap-kelas&quot;
+  }, &quot;Mengecek Frekuensi Setiap Kelas&quot;), mdx(&quot;p&quot;, null, &quot;Menegecek frekuensi tiap kelasnya pada data.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;fig_1 = go.Figure(go.Pie(labels=[&apos;Bukan Hoax&apos;, &apos;Hoax&apos;],\n                       values=train.groupby(&apos;label&apos;).size().values,\n                       textinfo=&apos;percent+label+value&apos;,\n                       textfont_color=&apos;#ffffff&apos;,\n                       marker_colors=[&apos;#0db7c5&apos;,&apos;#d03850&apos;])\n               )\nfig_1.update_layout(\n    title={\n        &apos;text&apos;: \&quot;Frekuensi Perkelasnya\&quot;,\n        &apos;y&apos;:0.93,\n        &apos;x&apos;:0.5,\n        &apos;font_size&apos;:23},\n    width=550, height=550\n)\n\nfig_1.show()\n&quot;)), mdx(PieChart, {
@@ -2203,10 +2183,9 @@ return function MDXContent(_ref) {
     parentName: &quot;p&quot;
   }, &quot;latih&quot;), &quot; dan pada subset &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;validasi&quot;), &quot; sama.&quot;), mdx(&quot;h2&quot;, null, &quot;Melihat Sebaran Kelas per Waktunya&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter2_2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Melihat sebaran kelas perwaktunya.&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;validasi&quot;), &quot; sama.&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;melihat-sebaran-kelas-per-waktunya&quot;
+  }, &quot;Melihat Sebaran Kelas per Waktunya&quot;), mdx(&quot;p&quot;, null, &quot;Melihat sebaran kelas perwaktunya.&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Membuat kolom baru untuk menyimpan tahun &amp; bulan&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
@@ -2222,10 +2201,9 @@ return function MDXContent(_ref) {
     parentName: &quot;ol&quot;
   }, &quot;53% dari keseluruhan data berasal dari tahun 2019 - 2020&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
-  }, &quot;95% data pada tahun 2019 - 2020 adalah Hoax&quot;)), mdx(&quot;h3&quot;, null, &quot;Mengecek Kata - Kata yang Muncul Perkelasnya&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter2_3&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Mengecek frekuensi kata - kata yang muncul berdasarkan kelasnya.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;95% data pada tahun 2019 - 2020 adalah Hoax&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;mengecek-kata---kata-yang-muncul-perkelasnya&quot;
+  }, &quot;Mengecek Kata - Kata yang Muncul Perkelasnya&quot;), mdx(&quot;p&quot;, null, &quot;Mengecek frekuensi kata - kata yang muncul berdasarkan kelasnya.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;def find_words(texts, label, builder = CountVectorizer(min_df=3, max_df=0.9,\n                                                       ngram_range=(1,2))):\n    \&quot;\&quot;\&quot;\n    Memeriksa kalimat berdasarkan kelasnya untuk membuat vocab\n    \&quot;\&quot;\&quot;\n    builder.fit(texts)\n    n_class, res = len(set(label)), {}\n    for i in tqdm(range(len(texts))):\n        for vocab in texts[i].split():\n            if vocab in builder.vocabulary_:\n                if vocab not in res:\n                    res[vocab] = [0] * n_class + [0]\n                res[vocab][label[i]] += 1\n                res[vocab][-1] += 1\n    df = pd.DataFrame({&apos;kata&apos; : list(res.keys())})\n    for i in range(n_class):\n        df[f&apos;Kelas_{i}&apos;] = [res[x][i] for x in res]\n    df[&apos;Frekuensi&apos;] = [res[x][-1] for x in res]\n    return df.sort_values(by = [&apos;Frekuensi&apos;], ascending = False).reset_index(drop=True)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -2642,10 +2620,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, null, &quot;Pemodelan&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter3&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Membuat model untuk memprediksi kelas &quot;, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;pemodelan&quot;
+  }, &quot;Pemodelan&quot;), mdx(&quot;p&quot;, null, &quot;Membuat model untuk memprediksi kelas &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;0&quot;), &quot; (&quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2653,15 +2630,16 @@ return function MDXContent(_ref) {
     parentName: &quot;p&quot;
   }, &quot;1&quot;), &quot; (&quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;hoax&quot;), &quot;) pada data test.&quot;), mdx(&quot;h2&quot;, null, &quot;Accelerator Detection&quot;), mdx(&quot;p&quot;, null, &quot;Menggunakan GPU atau TPU dari Kaggle sebagai Accelerator.&quot;), mdx(&quot;p&quot;, null, &quot;Note : Pastikan untuk menyalakan GPU / TPU sebagai Accelator, untuk effisiensi waktu pelatihan model.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;hoax&quot;), &quot;) pada data test.&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;accelerator-detection&quot;
+  }, &quot;Accelerator Detection&quot;), mdx(&quot;p&quot;, null, &quot;Menggunakan GPU atau TPU dari Kaggle sebagai Accelerator.&quot;), mdx(&quot;p&quot;, null, &quot;Note : Pastikan untuk menyalakan GPU / TPU sebagai Accelator, untuk effisiensi waktu pelatihan model.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;try:\n    tpu = tf.distribute.cluster_resolver.TPUClusterResolver()\n    print(&apos;Running on TPU &apos;, tpu.master())\nexcept ValueError:\n    tpu = None\n\nif tpu:\n    tf.config.experimental_connect_to_cluster(tpu)\n    tf.tpu.experimental.initialize_tpu_system(tpu)\n    strategy = tf.distribute.experimental.TPUStrategy(tpu)\n    BATCH_SIZE = 16 * strategy.num_replicas_in_sync\nelse:\n    strategy = tf.distribute.get_strategy()\n    BATCH_SIZE = 32 * strategy.num_replicas_in_sync\n\nAUTO = tf.data.experimental.AUTOTUNE\nprint(\&quot;REPLICAS: \&quot;, strategy.num_replicas_in_sync)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Running on TPU  grpc://10.0.0.2:8470\nREPLICAS:  8\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Pemodelan Data Gambar (EfficientNet)&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter3_1&quot;
-  })), mdx(&quot;p&quot;, null, &quot;Model yang digunakan untuk data gambar yaitu pretrained Deep Learning model yang cukup popular yaitu &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;Running on TPU  grpc://10.0.0.2:8470\nREPLICAS:  8\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;pemodelan-data-gambar-efficientnet&quot;
+  }, &quot;Pemodelan Data Gambar (EfficientNet)&quot;), mdx(&quot;p&quot;, null, &quot;Model yang digunakan untuk data gambar yaitu pretrained Deep Learning model yang cukup popular yaitu &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;EfficientNet&quot;), &quot;. &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2724,7 +2702,9 @@ return function MDXContent(_ref) {
   }, &quot;noise-student&quot;), &quot;.&quot;), mdx(&quot;p&quot;, null, &quot;Published Paper : &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://arxiv.org/abs/1905.11946&quot;
-  }, &quot;EfficientNet&quot;)), mdx(&quot;h3&quot;, null, &quot;Load Image Data - TF Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Load data gambar ke bentuk Tensor lalu alokasikan ke TF Dataset untuk effisiensi memori. Data gambar yang digunakan adalah data hasil upsampling dengan menggunakan augmentasi pada kelas &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;EfficientNet&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;load-image-data---tf-dataset&quot;
+  }, &quot;Load Image Data - TF Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Load data gambar ke bentuk Tensor lalu alokasikan ke TF Dataset untuk effisiensi memori. Data gambar yang digunakan adalah data hasil upsampling dengan menggunakan augmentasi pada kelas &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;0&quot;), &quot; sebesar &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2744,7 +2724,9 @@ return function MDXContent(_ref) {
   }, &quot;TF Dataset&quot;), &quot;.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# TF Train Dataset\ntrain_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((TRAIN_X_, TRAIN_y_))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .cache()\n    .repeat()\n    .shuffle(1024)\n    .batch(BATCH_SIZE)\n    .prefetch(AUTO)\n)\n\n# TF Valid Dataset\nvalid_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((VAL_X, VAL_y))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .batch(BATCH_SIZE)\n    .cache()\n    .prefetch(AUTO)\n)\n\n# TF Test Dataset\ntest_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((TEST_X))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .batch(BATCH_SIZE)\n)\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Membuat Model&quot;), mdx(&quot;p&quot;, null, &quot;Membuat model yang akan digunakan. Berikut adalah arsitektur model yang akan digunakan.&quot;), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
+  }, &quot;# TF Train Dataset\ntrain_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((TRAIN_X_, TRAIN_y_))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .cache()\n    .repeat()\n    .shuffle(1024)\n    .batch(BATCH_SIZE)\n    .prefetch(AUTO)\n)\n\n# TF Valid Dataset\nvalid_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((VAL_X, VAL_y))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .batch(BATCH_SIZE)\n    .cache()\n    .prefetch(AUTO)\n)\n\n# TF Test Dataset\ntest_dataset = (\n    tf.data.Dataset\n    .from_tensor_slices((TEST_X))\n    .map(decode_image, num_parallel_calls=AUTO)\n    .batch(BATCH_SIZE)\n)\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;membuat-model&quot;
+  }, &quot;Membuat Model&quot;), mdx(&quot;p&quot;, null, &quot;Membuat model yang akan digunakan. Berikut adalah arsitektur model yang akan digunakan.&quot;), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
     &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
     &quot;style&quot;: {
@@ -2807,7 +2789,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;with strategy.scope():\n    model = Make_EfficientNet_model()\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Downloading data from https://github.com/qubvel/efficientnet/releases/download/v0.0.1/efficientnet-b7_noisy-student_notop.h5\n258072576/258068648 [==============================] - 4s 0us/step\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Training Model&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan pelatihan terhadap model dari data train. Pelatihan dilakukan dengan ketentuan:&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Downloading data from https://github.com/qubvel/efficientnet/releases/download/v0.0.1/efficientnet-b7_noisy-student_notop.h5\n258072576/258068648 [==============================] - 4s 0us/step\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;training-model&quot;
+  }, &quot;Training Model&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan pelatihan terhadap model dari data train. Pelatihan dilakukan dengan ketentuan:&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;EPOCHS = 10\nSTEPS_PER_EPOCHS = len(TRAIN_X_) // BATCH_SIZE:128 (Jika menggunakan TPU)\n&quot;)), mdx(&quot;p&quot;, null, &quot;Pelatihan dilakukan dengan memperhatikan nilai dari &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -2877,9 +2861,13 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, null, &quot;Load weights model&quot;), mdx(&quot;p&quot;, null, &quot;Load &quot;, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;load-weights-model&quot;
+  }, &quot;Load weights model&quot;), mdx(&quot;p&quot;, null, &quot;Load &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;weights&quot;), &quot; terbaik yang telah disimpan.&quot;), mdx(&quot;h4&quot;, null, &quot;Note :&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;weights&quot;), &quot; terbaik yang telah disimpan.&quot;), mdx(&quot;h4&quot;, {
+    &quot;id&quot;: &quot;note-&quot;
+  }, &quot;Note :&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, &quot;Untuk mendapatkan hasil yang sama dengan yang di submit pada website &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;li&quot;
@@ -2896,7 +2884,9 @@ return function MDXContent(_ref) {
   }, &quot;di sini&quot;))), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# model.load_weights(&apos;EfficientNetB7_best_model.h5&apos;)\nmodel.load_weights(&apos;../input/modelku/Image Model/200%_best_model.h5&apos;) # Jika menggunakan Model kami\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Memprediksi dan Mengevaluasi Data&quot;), mdx(&quot;p&quot;, null, &quot;Memprediksi data train dan data valid lalu dilakukan pengevaluasian untuk melihat kebaikan model.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# model.load_weights(&apos;EfficientNetB7_best_model.h5&apos;)\nmodel.load_weights(&apos;../input/modelku/Image Model/200%_best_model.h5&apos;) # Jika menggunakan Model kami\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;memprediksi-dan-mengevaluasi-data&quot;
+  }, &quot;Memprediksi dan Mengevaluasi Data&quot;), mdx(&quot;p&quot;, null, &quot;Memprediksi data train dan data valid lalu dilakukan pengevaluasian untuk melihat kebaikan model.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Valid\nval_pred = model.predict(np.concatenate([x for x, y in valid_dataset], axis=0))\nval_pred_classes = np.array(val_pred.flatten() &gt;= .5, dtype = &apos;int&apos;)\n&quot;)), mdx(&quot;p&quot;, null, &quot;Mengevaluasi model dengan &quot;, mdx(&quot;inlineCode&quot;, {
@@ -2961,7 +2951,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, null, &quot;Memprediksi Data Test&quot;), mdx(&quot;p&quot;, null, &quot;Menggunakan model untuk memprediksi &quot;, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;memprediksi-data-test&quot;
+  }, &quot;Memprediksi Data Test&quot;), mdx(&quot;p&quot;, null, &quot;Menggunakan model untuk memprediksi &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;test dataset&quot;), &quot;.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -2971,10 +2963,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;K.clear_session()\ntf.tpu.experimental.initialize_tpu_system(tpu)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;&lt;tensorflow.python.tpu.topology.Topology at 0x7ff9cb254190&gt;\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Pemodelan Data Teks (BERT)&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter3_2&quot;
-  })), mdx(&quot;p&quot;, null, &quot;BERT(Bidirectional Encoder Representations from Transformers) adalah pretrained model karya Jacob Devlin, Ming-Wei Chang, Kenton Lee dan Kristina Toutanova. Model ini berupa transformator dua arah yang telah dilatih sebelumnya.&quot;), mdx(&quot;p&quot;, null, &quot;Published Paper : &quot;, mdx(&quot;a&quot;, {
+  }, &quot;&lt;tensorflow.python.tpu.topology.Topology at 0x7ff9cb254190&gt;\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;pemodelan-data-teks-bert&quot;
+  }, &quot;Pemodelan Data Teks (BERT)&quot;), mdx(&quot;p&quot;, null, &quot;BERT(Bidirectional Encoder Representations from Transformers) adalah pretrained model karya Jacob Devlin, Ming-Wei Chang, Kenton Lee dan Kristina Toutanova. Model ini berupa transformator dua arah yang telah dilatih sebelumnya.&quot;), mdx(&quot;p&quot;, null, &quot;Published Paper : &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://arxiv.org/abs/1810.04805&quot;
   }, &quot;BERT&quot;)), mdx(&quot;p&quot;, null, &quot;Bert yang digunakan pada notebook ini adalah &quot;, mdx(&quot;inlineCode&quot;, {
@@ -2987,12 +2978,16 @@ return function MDXContent(_ref) {
   }, &quot;di sini&quot;)), mdx(&quot;p&quot;, null, &quot;Load Transformers terlebih dahulu&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;from transformers import *\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Load Bert Tokenizer&quot;), mdx(&quot;p&quot;, null, &quot;Load Bert Tokenizer dari library &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;from transformers import *\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;load-bert-tokenizer&quot;
+  }, &quot;Load Bert Tokenizer&quot;), mdx(&quot;p&quot;, null, &quot;Load Bert Tokenizer dari library &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;transformers&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;model_name=&apos;cahya/bert-base-indonesian-522M&apos;\ntokenizer = BertTokenizer.from_pretrained(model_name)\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Encode Teks&quot;), mdx(&quot;p&quot;, null, &quot;Data teks akan di encode menjadi 3 tipe untuk input kedalam model.&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;model_name=&apos;cahya/bert-base-indonesian-522M&apos;\ntokenizer = BertTokenizer.from_pretrained(model_name)\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;encode-teks&quot;
+  }, &quot;Encode Teks&quot;), mdx(&quot;p&quot;, null, &quot;Data teks akan di encode menjadi 3 tipe untuk input kedalam model.&quot;), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
   }, &quot;input ids adalah ID / nomor yang merepresentasikan kata&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
@@ -3003,7 +2998,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;index = random.randint(0, len(train_text))\nencode = tokenizer.encode_plus(train_text[index], return_attention_mask = True,\n                               return_token_type_ids=True)\nprint(&apos;Actual : &apos;)\nprint(train_text[index])\nprint(&apos;&apos;.rjust(80, &apos;-&apos;))\nprint(&apos;Token IDS : &apos;)\nprint(encode[\&quot;input_ids\&quot;])\nprint(&apos;&apos;.rjust(80, &apos;-&apos;))\nprint(&apos;Attention Mask : &apos;)\nprint(encode[&apos;attention_mask&apos;])\nprint(&apos;&apos;.rjust(80, &apos;-&apos;))\nprint(&apos;Token Type IDS : &apos;)\nprint(encode[&apos;token_type_ids&apos;])\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Actual :\njokowi ahok bagikan amplop berisi uang beras warga cilincing jokowi ikutan sembako amplop ahok cilincing\n--------------------------------------------------------------------------------\nToken IDS :\n[3, 15071, 29708, 28939, 2688, 9155, 3709, 3714, 2111, 3167, 23190, 1010, 5398, 15071, 3821, 1487, 4461, 9745, 2688, 9155, 29708, 23190, 1010, 5398, 1]\n--------------------------------------------------------------------------------\nAttention Mask :\n[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]\n--------------------------------------------------------------------------------\nToken Type IDS :\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Mengecek Sequence Terpanjang&quot;), mdx(&quot;p&quot;, null, &quot;Karena panjang dari data teks tidak sama. Maka perlu di lakukan padding untuk menyamakan panjang dari sequance.&quot;), mdx(&quot;p&quot;, null, &quot;Contoh:&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Actual :\njokowi ahok bagikan amplop berisi uang beras warga cilincing jokowi ikutan sembako amplop ahok cilincing\n--------------------------------------------------------------------------------\nToken IDS :\n[3, 15071, 29708, 28939, 2688, 9155, 3709, 3714, 2111, 3167, 23190, 1010, 5398, 15071, 3821, 1487, 4461, 9745, 2688, 9155, 29708, 23190, 1010, 5398, 1]\n--------------------------------------------------------------------------------\nAttention Mask :\n[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]\n--------------------------------------------------------------------------------\nToken Type IDS :\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;mengecek-sequence-terpanjang&quot;
+  }, &quot;Mengecek Sequence Terpanjang&quot;), mdx(&quot;p&quot;, null, &quot;Karena panjang dari data teks tidak sama. Maka perlu di lakukan padding untuk menyamakan panjang dari sequance.&quot;), mdx(&quot;p&quot;, null, &quot;Contoh:&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;jokowi ahok bagikan =&gt; Encode IDS =&gt; [3, 15071, 29708] =&gt; Padding to 5 =&gt; [3, 15071, 29708, 0, 0]\n&quot;)), mdx(&quot;p&quot;, null, &quot;Untuk melakukan padding perlu dicari sequence terpanjang pada data sebagai acuannya.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -3066,7 +3063,9 @@ return function MDXContent(_ref) {
   }, &quot;max_len = 250\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;def regular_encode(texts, tokenizer = tokenizer, maxlen=max_len):\n    \&quot;\&quot;\&quot;\n    Encoding data teks\n    \&quot;\&quot;\&quot;\n    enc_di = tokenizer.batch_encode_plus(\n        texts,\n        return_attention_masks=True,\n        return_token_type_ids=True,\n        pad_to_max_length=True,\n        max_length=maxlen\n    )\n\n    return {x : np.asarray(enc_di[x]) for x in enc_di}\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Membuat Model&quot;), mdx(&quot;p&quot;, null, &quot;Membuat model yang digunakan untuk memprediksi data teks, berikut adalah arsitekturnya&quot;), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
+  }, &quot;def regular_encode(texts, tokenizer = tokenizer, maxlen=max_len):\n    \&quot;\&quot;\&quot;\n    Encoding data teks\n    \&quot;\&quot;\&quot;\n    enc_di = tokenizer.batch_encode_plus(\n        texts,\n        return_attention_masks=True,\n        return_token_type_ids=True,\n        pad_to_max_length=True,\n        max_length=maxlen\n    )\n\n    return {x : np.asarray(enc_di[x]) for x in enc_di}\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;membuat-model-1&quot;
+  }, &quot;Membuat Model&quot;), mdx(&quot;p&quot;, null, &quot;Membuat model yang digunakan untuk memprediksi data teks, berikut adalah arsitekturnya&quot;), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
     &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
     &quot;style&quot;: {
@@ -3119,7 +3118,9 @@ return function MDXContent(_ref) {
   }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;def build_model(transformer, loss=&apos;binary_crossentropy&apos;, max_len=max_len):\n    input_ids = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=\&quot;input_ids\&quot;)\n    attention_mask = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=&apos;attention_mask&apos;)\n    token_type_ids = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=&apos;token_type_ids&apos;)\n\n    sequence_output, pooled_output = transformer([input_ids, attention_mask, token_type_ids])\n    cls_token = sequence_output[:, 0, :]\n    x = L.Dropout(0.3)(cls_token)\n    out = L.Dense(1, activation=&apos;sigmoid&apos;)(x)\n\n    model = tf.keras.Model(inputs=[input_ids, attention_mask, token_type_ids], outputs=out)\n    model.compile(Adam(lr=3e-5), loss=loss, metrics=[&apos;accuracy&apos;])\n\n    return model\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Cross Validation&quot;), mdx(&quot;p&quot;, null, &quot;Metode yang digunakan untuk CV adalah &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;def build_model(transformer, loss=&apos;binary_crossentropy&apos;, max_len=max_len):\n    input_ids = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=\&quot;input_ids\&quot;)\n    attention_mask = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=&apos;attention_mask&apos;)\n    token_type_ids = tf.keras.Input(shape=(max_len,), dtype=tf.int32, name=&apos;token_type_ids&apos;)\n\n    sequence_output, pooled_output = transformer([input_ids, attention_mask, token_type_ids])\n    cls_token = sequence_output[:, 0, :]\n    x = L.Dropout(0.3)(cls_token)\n    out = L.Dense(1, activation=&apos;sigmoid&apos;)(x)\n\n    model = tf.keras.Model(inputs=[input_ids, attention_mask, token_type_ids], outputs=out)\n    model.compile(Adam(lr=3e-5), loss=loss, metrics=[&apos;accuracy&apos;])\n\n    return model\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;cross-validation&quot;
+  }, &quot;Cross Validation&quot;), mdx(&quot;p&quot;, null, &quot;Metode yang digunakan untuk CV adalah &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;StratifiedKflod&quot;), &quot;. Metode ini digunakan untuk mengatasi kelas pada data yang imbalance. &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -3398,7 +3399,9 @@ return function MDXContent(_ref) {
   }, &quot;1&quot;), mdx(&quot;td&quot;, {
     parentName: &quot;tr&quot;,
     &quot;align&quot;: &quot;center&quot;
-  }, &quot;1&quot;)))), mdx(&quot;h3&quot;, null, &quot;Train &amp; Evaluate Model&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;1&quot;)))), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;train--evaluate-model&quot;
+  }, &quot;Train &amp; Evaluate Model&quot;), mdx(&quot;p&quot;, null, &quot;Melakukan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;training&quot;), &quot; pada train data. Train dilakukan pada &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -3531,10 +3534,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, null, &quot;Ensemble&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter4&quot;
-  })), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;ensemble&quot;
+  }, &quot;Ensemble&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
   }, &quot;Ensemble is methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.&quot;)), mdx(&quot;p&quot;, null, &quot;Untuk mendapatkan hasil yang lebih baik kami melakukan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -3548,16 +3550,12 @@ return function MDXContent(_ref) {
     parentName: &quot;p&quot;
   }, &quot;3&quot;), &quot; dan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;6&quot;), &quot;. Metode ensemble yang digunakan adalah dengan mengambil rata - rata probabilitas dari hasil prediksian ketiga model tersebut.&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter4_1&quot;
-  })), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;6&quot;), &quot;. Metode ensemble yang digunakan adalah dengan mengambil rata - rata probabilitas dari hasil prediksian ketiga model tersebut.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Mencari Threshold&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter4_2&quot;
-  })), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
+  }, &quot;ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;mencari-threshold&quot;
+  }, &quot;Mencari Threshold&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
   }, &quot;The decision for converting a predicted probability or scoring into a class label is governed by a parameter referred to as the \u201Cthreshold\u201D The default value for the threshold is 0.5 for normalized predicted probabilities or scores in the range between 0 or 1.&quot;)), mdx(&quot;p&quot;, null, &quot;Kami mendapatkan beberapa indikasi bahwa untuk mendapatkan hasil yang lebih baik perlu dilakukan penggeseran terhadap tresholdnya:&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
@@ -3638,7 +3636,9 @@ return function MDXContent(_ref) {
     parentName: &quot;p&quot;
   }, &quot;0.65&quot;), &quot; sebagai &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;threshold&quot;), &quot;-nya.&quot;), mdx(&quot;h2&quot;, null, &quot;Membuat Submission&quot;), mdx(&quot;p&quot;, null, &quot;Membuat Submission File.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;threshold&quot;), &quot;-nya.&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;membuat-submission&quot;
+  }, &quot;Membuat Submission&quot;), mdx(&quot;p&quot;, null, &quot;Membuat Submission File.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;test[&apos;prediksi&apos;] = np.array(ensemble &gt; .65, dtype = &apos;int&apos;)\nsubmission_temp = pd.read_csv(&apos;../input/data-bdc/Submission Template.csv&apos;)[[&apos;ID&apos;]]\nhasil = submission_temp.merge(test[[&apos;ID&apos;, &apos;prediksi&apos;]], on = &apos;ID&apos;)\nhasil.head()\n&quot;)), mdx(&quot;table&quot;, null, mdx(&quot;thead&quot;, {
@@ -3696,16 +3696,19 @@ return function MDXContent(_ref) {
   }, &quot;1&quot;)))), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;hasil.to_csv(&apos;Catatan Cakrawala BDC - Ensemble.csv&apos;, index = False)\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Kesimpulan &amp; Saran&quot;, mdx(&quot;a&quot;, {
-    className: &quot;anchor&quot;,
-    id: &quot;chapter5&quot;
-  })), mdx(&quot;h2&quot;, null, &quot;Kesimpulan&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;hasil.to_csv(&apos;Catatan Cakrawala BDC - Ensemble.csv&apos;, index = False)\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;kesimpulan--saran&quot;
+  }, &quot;Kesimpulan &amp; Saran&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;kesimpulan&quot;
+  }, &quot;Kesimpulan&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Data memiliki frekuensi kelas yang &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;li&quot;
   }, &quot;tidak berimbang&quot;), &quot; sehingga perlu di perhatikan saat pembuatan model&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
-  }, &quot;Dengan menggukan model yang kami buat didapatkan hasil yang cukup baik dengan f1 score 94 % namun memerlukan komputasi yang cukup berat dan biaya yang mahal untuk ukuran data yang tidak terlalu besar.&quot;)), mdx(&quot;h2&quot;, null, &quot;Saran&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Dengan menggukan model yang kami buat didapatkan hasil yang cukup baik dengan f1 score 94 % namun memerlukan komputasi yang cukup berat dan biaya yang mahal untuk ukuran data yang tidak terlalu besar.&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;saran&quot;
+  }, &quot;Saran&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Jika memungkinkan diperlukan &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;li&quot;
@@ -3753,35 +3756,53 @@ return function MDXContent(_ref) {
     &quot;href&quot;: &quot;https://www.kaggle.com/wahyusetianto/cnn-keras-cv-0-996-tpu&quot;
   }, &quot;CNN Keras CV - 0.996 [TPU]&quot;)), mdx(&quot;p&quot;, null, &quot;P.S. Don&apos;t forget to &quot;, mdx(&quot;em&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;upvote&quot;), &quot; if you like it \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, null, &quot;Overview&quot;), mdx(&quot;p&quot;, null, &quot;This kernel is on purpose to build model for MNIST digits dataset. In this kernel we&apos;re gonna do some preprocessing then make augmentation datagen so our model didn&apos;t train on the same image data, then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for test dataset and by the end we&apos;re gonna do ensembles for the prediction.&quot;), mdx(&quot;h1&quot;, null, &quot;Web App&quot;), mdx(&quot;p&quot;, null, &quot;You can visit my web app for the live prediction by the best model trained on this kernel run on Tensorflow.js &quot;, mdx(&quot;a&quot;, {
+  }, &quot;upvote&quot;), &quot; if you like it \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;overview&quot;
+  }, &quot;Overview&quot;), mdx(&quot;p&quot;, null, &quot;This kernel is on purpose to build model for MNIST digits dataset. In this kernel we&apos;re gonna do some preprocessing then make augmentation datagen so our model didn&apos;t train on the same image data, then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for test dataset and by the end we&apos;re gonna do ensembles for the prediction.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;web-app&quot;
+  }, &quot;Web App&quot;), mdx(&quot;p&quot;, null, &quot;You can visit my web app for the live prediction by the best model trained on this kernel run on Tensorflow.js &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://hyuto.github.io/showcase/digit-recognizer/&quot;
-  }, &quot;Digit Recognizer&quot;), &quot;.&quot;), mdx(&quot;h1&quot;, null, &quot;Train on TPU!!&quot;), mdx(&quot;p&quot;, null, &quot;why? Because it&apos;s &quot;, mdx(&quot;strong&quot;, {
+  }, &quot;Digit Recognizer&quot;), &quot;.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;train-on-tpu&quot;
+  }, &quot;Train on TPU!!&quot;), mdx(&quot;p&quot;, null, &quot;why? Because it&apos;s &quot;, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
   }, &quot;faster&quot;), &quot;. While people usually train on GPU for image related things, in this notebook we try to do things on TPU and see how it affect the Accuracy.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;import random\nimport numpy as np\nimport pandas as pd\nfrom timeit import default_timer\nfrom sklearn.model_selection import KFold\n\n# Plot\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Tensorflow and Keras\nimport tensorflow as tf\nfrom tensorflow import keras\nimport tensorflow.keras.backend as K\nfrom tensorflow.keras.utils import to_categorical\nfrom tensorflow.keras.models import Sequential, load_model\nfrom tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D\nfrom tensorflow.keras.layers import MaxPool2D, BatchNormalization\nfrom tensorflow.keras.preprocessing.image import ImageDataGenerator\nfrom tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint\n\nprint(f&apos;Using Tensorflow Version : {tf.__version__}&apos;)\nprint(f&apos;Using Keras Version      : {keras.__version__}&apos;)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Using Tensorflow Version : 2.2.0\nUsing Keras Version      : 2.3.0-tf\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Load the Data&quot;), mdx(&quot;p&quot;, null, &quot;Load the MNIST data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Using Tensorflow Version : 2.2.0\nUsing Keras Version      : 2.3.0-tf\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;load-the-data&quot;
+  }, &quot;Load the Data&quot;), mdx(&quot;p&quot;, null, &quot;Load the MNIST data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;train = pd.read_csv(&apos;../input/digit-recognizer/train.csv&apos;)\ntest = pd.read_csv(&apos;../input/digit-recognizer/test.csv&apos;)\ntrain.head()\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;5 rows \xD7 785 columns\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Preprocess&quot;), mdx(&quot;h2&quot;, null, &quot;1. Specifying X and y&quot;), mdx(&quot;p&quot;, null, &quot;for y we need to encode to one hot vector. In keras we have function &quot;, mdx(&quot;inlineCode&quot;, {
+  }, &quot;5 rows \xD7 785 columns\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;preprocess&quot;
+  }, &quot;Preprocess&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;1-specifying-x-and-y&quot;
+  }, &quot;1. Specifying X and y&quot;), mdx(&quot;p&quot;, null, &quot;for y we need to encode to one hot vector. In keras we have function &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;to_categorical&quot;), &quot; for this.&quot;), mdx(&quot;p&quot;, null, &quot;Example :&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;y = [1, 0, 4]\nto_categorical(y)\n\n# Output:\n[\n [0,1,0,0,0], # 1\n [1,0,0,0,0], # 0\n [0,0,0,0,1], # 4\n]\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Specifying X and y\nX = train.drop([&apos;label&apos;], axis = 1)\ny = to_categorical(train[&apos;label&apos;].values) # To Categorical y\n&quot;)), mdx(&quot;h2&quot;, null, &quot;2. Normalizing Images&quot;), mdx(&quot;p&quot;, null, &quot;Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Specifying X and y\nX = train.drop([&apos;label&apos;], axis = 1)\ny = to_categorical(train[&apos;label&apos;].values) # To Categorical y\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;2-normalizing-images&quot;
+  }, &quot;2. Normalizing Images&quot;), mdx(&quot;p&quot;, null, &quot;Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Normalize\nX = X / 255.0\nX_test = test / 255.0\n&quot;)), mdx(&quot;h2&quot;, null, &quot;3. Reshape&quot;), mdx(&quot;p&quot;, null, &quot;Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Normalize\nX = X / 255.0\nX_test = test / 255.0\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;3-reshape&quot;
+  }, &quot;3. Reshape&quot;), mdx(&quot;p&quot;, null, &quot;Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Reshape Array\nX = X.values.reshape(-1, 28, 28, 1)\nX_test = X_test.values.reshape(-1, 28, 28, 1)\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Let&apos;s take a look at our data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;# Reshape Array\nX = X.values.reshape(-1, 28, 28, 1)\nX_test = X_test.values.reshape(-1, 28, 28, 1)\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;lets-take-a-look-at-our-data&quot;
+  }, &quot;Let&apos;s take a look at our data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;fig, axes = plt.subplots(ncols=10, nrows=5, figsize = (13, 7))\ninit = 0\nfor i in range(5):\n    j = 0\n    for k in range(2):\n        ind = random.choices(train.label[train.label == init].index, k = 5)\n        init += 1\n        while j &lt; len(ind):\n            axes[i, k*5 + j].imshow(X[ind[j]][:,:,0], cmap=plt.cm.binary)\n            axes[i, k*5 + j].axis(&apos;off&apos;)\n            j += 1\n        j = 0\nfig.tight_layout()\nplt.show()\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
@@ -3834,7 +3855,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;as you can see there some nice &amp; bad hand written digits number at our dataset.&quot;), mdx(&quot;h1&quot;, null, &quot;Data Augmentation&quot;), mdx(&quot;p&quot;, null, &quot;we currently have about 42000 image data, let&apos;s multiply that value by doing some soft augmentation.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;as you can see there some nice &amp; bad hand written digits number at our dataset.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;data-augmentation&quot;
+  }, &quot;Data Augmentation&quot;), mdx(&quot;p&quot;, null, &quot;we currently have about 42000 image data, let&apos;s multiply that value by doing some soft augmentation.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;datagen = ImageDataGenerator(rotation_range=10,\n                             zoom_range = 0.10,\n                             width_shift_range=0.1,\n                             height_shift_range=0.1)\n&quot;)), mdx(&quot;p&quot;, null, &quot;let&apos;s take a look on our Augmentation datagen&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -3893,7 +3916,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, null, &quot;Build CNN Model&quot;), mdx(&quot;p&quot;, null, &quot;The CNN&apos;s in this kernel follow LeNet5&apos;s design on &quot;, mdx(&quot;a&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;build-cnn-model&quot;
+  }, &quot;Build CNN Model&quot;), mdx(&quot;p&quot;, null, &quot;The CNN&apos;s in this kernel follow LeNet5&apos;s design on &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://www.kaggle.com/cdeotte&quot;
   }, &quot;Chris Deotte&quot;), &quot; kernel &quot;, mdx(&quot;a&quot;, {
@@ -3902,13 +3927,17 @@ return function MDXContent(_ref) {
   }, &quot;here&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;def build_model():\n    model = Sequential()\n    model.add(Conv2D(32, kernel_size = 3, activation=&apos;relu&apos;,\n                     input_shape = (28, 28, 1)))\n    model.add(BatchNormalization())\n    model.add(Conv2D(32, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(32, kernel_size = 5, strides=2, padding=&apos;same&apos;,\n                     activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Dropout(0.4))\n\n    model.add(Conv2D(64, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(64, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(64, kernel_size = 5, strides=2, padding=&apos;same&apos;,\n                     activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Dropout(0.4))\n\n    model.add(Conv2D(128, kernel_size = 4, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Flatten())\n    model.add(Dropout(0.4))\n    model.add(Dense(10, activation=&apos;softmax&apos;))\n\n    model.compile(optimizer=\&quot;adam\&quot;, loss=\&quot;categorical_crossentropy\&quot;,\n                  metrics=[\&quot;accuracy\&quot;])\n\n    return model\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Detect and Instantiate TPU Distribution Strategy&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;def build_model():\n    model = Sequential()\n    model.add(Conv2D(32, kernel_size = 3, activation=&apos;relu&apos;,\n                     input_shape = (28, 28, 1)))\n    model.add(BatchNormalization())\n    model.add(Conv2D(32, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(32, kernel_size = 5, strides=2, padding=&apos;same&apos;,\n                     activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Dropout(0.4))\n\n    model.add(Conv2D(64, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(64, kernel_size = 3, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Conv2D(64, kernel_size = 5, strides=2, padding=&apos;same&apos;,\n                     activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Dropout(0.4))\n\n    model.add(Conv2D(128, kernel_size = 4, activation=&apos;relu&apos;))\n    model.add(BatchNormalization())\n    model.add(Flatten())\n    model.add(Dropout(0.4))\n    model.add(Dense(10, activation=&apos;softmax&apos;))\n\n    model.compile(optimizer=\&quot;adam\&quot;, loss=\&quot;categorical_crossentropy\&quot;,\n                  metrics=[\&quot;accuracy\&quot;])\n\n    return model\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;detect-and-instantiate-tpu-distribution-strategy&quot;
+  }, &quot;Detect and Instantiate TPU Distribution Strategy&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# detect and init the TPU\ntpu = tf.distribute.cluster_resolver.TPUClusterResolver()\ntf.config.experimental_connect_to_cluster(tpu)\ntf.tpu.experimental.initialize_tpu_system(tpu)\n\n# instantiate a distribution strategy\ntpu_strategy = tf.distribute.experimental.TPUStrategy(tpu)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Config\nEPOCHS = 45\nBATCH_SIZE = 16 * tpu_strategy.num_replicas_in_sync\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Training&quot;), mdx(&quot;p&quot;, null, &quot;Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use &quot;, mdx(&quot;span&quot;, {
+  }, &quot;# Config\nEPOCHS = 45\nBATCH_SIZE = 16 * tpu_strategy.num_replicas_in_sync\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;training&quot;
+  }, &quot;Training&quot;), mdx(&quot;p&quot;, null, &quot;Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use &quot;, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
     &quot;className&quot;: &quot;math math-inline&quot;
   }, &quot;f(x) = 0.001 \\times 0.95^x&quot;), &quot; for our LR Scheduler and do Checkpoint at &quot;, mdx(&quot;strong&quot;, {
@@ -3929,7 +3958,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# Init\nscores, History = [], []\npred = np.zeros(shape = (len(test), 10))\n\n# CV\ncv = KFold(n_splits=15, shuffle = True, random_state = 42)\nfor fold, (train_index, val_index) in enumerate(cv.split(X)):\n    start = default_timer()\n    # Clear Session\n    K.clear_session()\n    tf.tpu.experimental.initialize_tpu_system(tpu)\n\n    # Splitting\n    X_train , y_train = X[train_index], y[train_index]\n    X_val, y_val = X[val_index], y[val_index]\n\n    # Augmentation\n    Train_x, Train_y = None, None\n    batch = 0\n    for x_batch, y_batch in datagen.flow(X_train, y_train,\n                                         batch_size=BATCH_SIZE):\n        if batch == 0:\n            Train_x, Train_y = x_batch, y_batch\n        elif batch &gt;= X.shape[0] // BATCH_SIZE:\n            break\n        else:\n            Train_x = np.concatenate((Train_x, x_batch))\n            Train_y = np.concatenate((Train_y, y_batch))\n        batch += 1\n\n    # Model\n    with tpu_strategy.scope():\n        model = build_model()\n\n    # Callbacks\n    annealer = LearningRateScheduler(lambda x: 1e-3 * 0.95 ** x) # LR\n    sv = ModelCheckpoint(f&apos;Model Fold {fold}.h5&apos;, monitor=&apos;val_accuracy&apos;,\n                         save_best_only=True, mode=&apos;max&apos;)\n\n    # Training\n    history = model.fit(Train_x, Train_y, batch_size = BATCH_SIZE,\n                        epochs = EPOCHS, verbose = 0, callbacks=[annealer, sv],\n                        steps_per_epoch = X_train.shape[0]//BATCH_SIZE,\n                        validation_data = (X_val, y_val))\n    History.append(history.history)\n\n    # Load best model\n    model = load_model(f&apos;Model Fold {fold}.h5&apos;)\n\n    # Evaluate\n    score = model.evaluate(X_val, y_val, verbose = 0)[1]\n    scores.append(score)\n\n    # Making Prediction\n    pred += model.predict(X_test)\n\n    time = round(default_timer() - start, 4)\n    print(f&apos;[INFO] Fold {fold + 1} val_accuracy : {round(score, 4)} - Time : {time} s&apos;)\n\nprint()\nprint(f&apos;[INFO] Mean CV scores : {round(sum(scores)/len(scores), 4)}&apos;)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;[INFO] Fold 1 val_accuracy : 0.9961 - Time : 168.7797 s\n[INFO] Fold 2 val_accuracy : 0.9957 - Time : 173.7161 s\n[INFO] Fold 3 val_accuracy : 0.9986 - Time : 178.845 s\n[INFO] Fold 4 val_accuracy : 0.9957 - Time : 174.5829 s\n[INFO] Fold 5 val_accuracy : 0.9946 - Time : 173.8493 s\n[INFO] Fold 6 val_accuracy : 0.9979 - Time : 175.585 s\n[INFO] Fold 7 val_accuracy : 0.9964 - Time : 176.5861 s\n[INFO] Fold 8 val_accuracy : 0.9968 - Time : 177.6894 s\n[INFO] Fold 9 val_accuracy : 0.995 - Time : 179.8059 s\n[INFO] Fold 10 val_accuracy : 0.9943 - Time : 176.4369 s\n[INFO] Fold 11 val_accuracy : 0.9939 - Time : 182.6052 s\n[INFO] Fold 12 val_accuracy : 0.9961 - Time : 177.0005 s\n[INFO] Fold 13 val_accuracy : 0.995 - Time : 180.026 s\n[INFO] Fold 14 val_accuracy : 0.9954 - Time : 179.1445 s\n[INFO] Fold 15 val_accuracy : 0.9975 - Time : 175.2097 s\n\n[INFO] Mean CV scores : 0.9959\n&quot;)), mdx(&quot;p&quot;, null, &quot;And so we&apos;ve got really great CV score there. Let&apos;s check the Training History.&quot;), mdx(&quot;h1&quot;, null, &quot;History&quot;), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
+  }, &quot;[INFO] Fold 1 val_accuracy : 0.9961 - Time : 168.7797 s\n[INFO] Fold 2 val_accuracy : 0.9957 - Time : 173.7161 s\n[INFO] Fold 3 val_accuracy : 0.9986 - Time : 178.845 s\n[INFO] Fold 4 val_accuracy : 0.9957 - Time : 174.5829 s\n[INFO] Fold 5 val_accuracy : 0.9946 - Time : 173.8493 s\n[INFO] Fold 6 val_accuracy : 0.9979 - Time : 175.585 s\n[INFO] Fold 7 val_accuracy : 0.9964 - Time : 176.5861 s\n[INFO] Fold 8 val_accuracy : 0.9968 - Time : 177.6894 s\n[INFO] Fold 9 val_accuracy : 0.995 - Time : 179.8059 s\n[INFO] Fold 10 val_accuracy : 0.9943 - Time : 176.4369 s\n[INFO] Fold 11 val_accuracy : 0.9939 - Time : 182.6052 s\n[INFO] Fold 12 val_accuracy : 0.9961 - Time : 177.0005 s\n[INFO] Fold 13 val_accuracy : 0.995 - Time : 180.026 s\n[INFO] Fold 14 val_accuracy : 0.9954 - Time : 179.1445 s\n[INFO] Fold 15 val_accuracy : 0.9975 - Time : 175.2097 s\n\n[INFO] Mean CV scores : 0.9959\n&quot;)), mdx(&quot;p&quot;, null, &quot;And so we&apos;ve got really great CV score there. Let&apos;s check the Training History.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;history&quot;
+  }, &quot;History&quot;), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
   }, &quot;Validation Loss&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
@@ -4033,7 +4064,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, null, &quot;Ensembleing Predictions&quot;), mdx(&quot;p&quot;, null, mdx(&quot;inlineCode&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;ensembleing-predictions&quot;
+  }, &quot;Ensembleing Predictions&quot;), mdx(&quot;p&quot;, null, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
   }, &quot;np.argmax&quot;), &quot; through the prediction to get the number of class&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -4088,7 +4121,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h2&quot;, null, &quot;Let&apos;s check some of our prediction&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;lets-check-some-of-our-prediction&quot;
+  }, &quot;Let&apos;s check some of our prediction&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;fig, axes = plt.subplots(ncols=10, nrows=5, figsize = (13, 7))\ninit = 0\nfor i in range(5):\n    j = 0\n    for k in range(2):\n        ind = random.choices(test.index, k = 5)\n        init += 1\n        while j &lt; len(ind):\n            axes[i, k*5 + j].imshow(X_test[ind[j]][:,:,0], cmap=plt.cm.binary)\n            axes[i, k*5 + j].set_title(f&apos;Prediction : {pred[ind][j]}&apos;, fontsize = 11)\n            axes[i, k*5 + j].axis(&apos;off&apos;)\n            j += 1\n        j = 0\nfig.tight_layout()\nplt.show()\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
@@ -4141,7 +4176,9 @@ return function MDXContent(_ref) {
     },
     &quot;loading&quot;: &quot;lazy&quot;,
     &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;looks like our models really doing good for predicting test data&quot;), mdx(&quot;h1&quot;, null, &quot;Conclusions&quot;), mdx(&quot;p&quot;, null, &quot;Based on our CV scores it&apos;s lower than &quot;, mdx(&quot;a&quot;, {
+  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;looks like our models really doing good for predicting test data&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;conclusions&quot;
+  }, &quot;Conclusions&quot;), mdx(&quot;p&quot;, null, &quot;Based on our CV scores it&apos;s lower than &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://www.kaggle.com/cdeotte&quot;
   }, &quot;Chris Deotte&quot;), &quot; kernel &quot;, mdx(&quot;a&quot;, {
@@ -4149,7 +4186,9 @@ return function MDXContent(_ref) {
     &quot;href&quot;: &quot;https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist&quot;
   }, &quot;here&quot;), &quot; with 0.99757 on validation accuracy on the same model architecture. So here&apos;s the point:&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
-  }, &quot;GPU do better job in this task &quot;, &quot;[Expected]&quot;, &quot; while TPU give you lower accuracy but faster since we&apos;d train 15 CNNs model on 45 epochs in less than one hour.&quot;)), mdx(&quot;h1&quot;, null, &quot;References&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;GPU do better job in this task &quot;, &quot;[Expected]&quot;, &quot; while TPU give you lower accuracy but faster since we&apos;d train 15 CNNs model on 45 epochs in less than one hour.&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;references&quot;
+  }, &quot;References&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;25 Million Images! &quot;, &quot;[0.99757]&quot;, &quot; MNIST &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;li&quot;,
@@ -4201,37 +4240,17 @@ return function MDXContent(_ref) {
     &quot;href&quot;: &quot;https://www.kaggle.com/wahyusetianto/machine-translation-en-jp-seq2seq-tf&quot;
   }, &quot;Machine Translation EN-JP Seq2Seq Tensorflow&quot;)), mdx(&quot;p&quot;, null, &quot;P.S. Don&apos;t forget to &quot;, mdx(&quot;em&quot;, {
     parentName: &quot;p&quot;
-  }, &quot;upvote&quot;), &quot; if you like it \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, null, &quot;English - Japanese Machine Translation&quot;), mdx(&quot;p&quot;, null, &quot;So in this notebook we&apos;re going to build English to Japanese machine translation, Japanese text contains lots of unique words because they have 3 type of it:&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;upvote&quot;), &quot; if you like it \uD83D\uDE0A.&quot;), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;english---japanese-machine-translation&quot;
+  }, &quot;English - Japanese Machine Translation&quot;), mdx(&quot;p&quot;, null, &quot;So in this notebook we&apos;re going to build English to Japanese machine translation, Japanese text contains lots of unique words because they have 3 type of it:&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Kanji&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Katakana&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
-  }, &quot;Hiragana&quot;)), mdx(&quot;p&quot;, null, &quot;that&apos;s the interesting part of it and so it&apos;ll be little complicated to process. So let&apos;s get started.&quot;), mdx(&quot;h1&quot;, null, &quot;Table Of Content&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Load Dataset&quot;), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Text Preprocessing&quot;, mdx(&quot;ul&quot;, {
-    parentName: &quot;li&quot;
-  }, mdx(&quot;li&quot;, {
-    parentName: &quot;ul&quot;
-  }, &quot;English misspell handling&quot;), mdx(&quot;li&quot;, {
-    parentName: &quot;ul&quot;
-  }, &quot;Segmenting Japanese words&quot;), mdx(&quot;li&quot;, {
-    parentName: &quot;ul&quot;
-  }, &quot;Add BOS and EOS to train sentences&quot;))), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Word Tokenizing&quot;, mdx(&quot;ul&quot;, {
-    parentName: &quot;li&quot;
-  }, mdx(&quot;li&quot;, {
-    parentName: &quot;ul&quot;
-  }, &quot;Word Cloud&quot;))), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Build &amp; Train Model&quot;), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Scoring Bleu&quot;), mdx(&quot;li&quot;, {
-    parentName: &quot;ol&quot;
-  }, &quot;Test with Some Raw Input&quot;)), mdx(&quot;h2&quot;, null, &quot;Install some tools&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;Hiragana&quot;)), mdx(&quot;p&quot;, null, &quot;that&apos;s the interesting part of it and so it&apos;ll be little complicated to process. So let&apos;s get started.&quot;), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;install-some-tools&quot;
+  }, &quot;Install some tools&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;Sacreblue for calculate BLEU score&quot;), mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
@@ -4244,7 +4263,9 @@ return function MDXContent(_ref) {
   }, &quot;!pip -q install sacrebleu\n!pip -q install googletrans\n!pip -q install tensorflow-addons --upgrade\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;import random, re, string, itertools, timeit, sacrebleu\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom tqdm.notebook import tqdm\nfrom IPython.display import display, clear_output\nfrom sklearn.model_selection import train_test_split\n\n# Tensorflow &amp; Keras\nimport tensorflow as tf\nimport tensorflow_addons as tfa\nimport tensorflow.keras.backend as K\nfrom tensorflow.keras.layers import Input, Dense, LSTM, LSTMCell\nfrom tensorflow.keras.layers import Embedding, Bidirectional\nfrom tensorflow.keras.models import Model\nfrom tensorflow.keras.preprocessing.text import Tokenizer\nfrom tensorflow.keras.preprocessing.sequence import pad_sequences\nfrom tensorflow.keras.losses import SparseCategoricalCrossentropy\nfrom tensorflow.keras.optimizers import Adam\n\n# Japanese Word Tokenizer\nfrom janome.tokenizer import Tokenizer as janome_tokenizer\n\nplt.style.use(&apos;seaborn-pastel&apos;)\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Here we use 55463 en-jp corpus from &quot;, mdx(&quot;a&quot;, {
+  }, &quot;import random, re, string, itertools, timeit, sacrebleu\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom tqdm.notebook import tqdm\nfrom IPython.display import display, clear_output\nfrom sklearn.model_selection import train_test_split\n\n# Tensorflow &amp; Keras\nimport tensorflow as tf\nimport tensorflow_addons as tfa\nimport tensorflow.keras.backend as K\nfrom tensorflow.keras.layers import Input, Dense, LSTM, LSTMCell\nfrom tensorflow.keras.layers import Embedding, Bidirectional\nfrom tensorflow.keras.models import Model\nfrom tensorflow.keras.preprocessing.text import Tokenizer\nfrom tensorflow.keras.preprocessing.sequence import pad_sequences\nfrom tensorflow.keras.losses import SparseCategoricalCrossentropy\nfrom tensorflow.keras.optimizers import Adam\n\n# Japanese Word Tokenizer\nfrom janome.tokenizer import Tokenizer as janome_tokenizer\n\nplt.style.use(&apos;seaborn-pastel&apos;)\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;dataset&quot;
+  }, &quot;Dataset&quot;), mdx(&quot;p&quot;, null, &quot;Here we use 55463 en-jp corpus from &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;http://www.manythings.org/bilingual/&quot;
   }, &quot;ManyThings.org Bilingual Sentence Pairs&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -4257,7 +4278,11 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;data = []\n\nf1 = open(&apos;./jpn.txt&apos;, &apos;r&apos;)\ndata += [x.rstrip().lower().split(&apos;\\t&apos;)[:2] for x in tqdm(f1.readlines())]\nf1.close()\n\nprint(f&apos;Loaded {len(data)} Sentences&apos;)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Loaded 53594 Sentences\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Text Preprocessing&quot;), mdx(&quot;h3&quot;, null, &quot;Handling misspell words &amp; Clearing Punctuation&quot;), mdx(&quot;p&quot;, null, &quot;we&apos;re gonna change the misspell words in english sentences and clearing punctuation from text.&quot;), mdx(&quot;p&quot;, null, &quot;\&quot;aren&apos;t my english bad?\&quot; -&gt; \&quot;are not my english bad\&quot;&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Loaded 53594 Sentences\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;text-preprocessing&quot;
+  }, &quot;Text Preprocessing&quot;), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;handling-misspell-words--clearing-punctuation&quot;
+  }, &quot;Handling misspell words &amp; Clearing Punctuation&quot;), mdx(&quot;p&quot;, null, &quot;we&apos;re gonna change the misspell words in english sentences and clearing punctuation from text.&quot;), mdx(&quot;p&quot;, null, &quot;\&quot;aren&apos;t my english bad?\&quot; -&gt; \&quot;are not my english bad\&quot;&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;mispell_dict = {\n    \&quot;aren&apos;t\&quot; : \&quot;are not\&quot;,\n    \&quot;can&apos;t\&quot; : \&quot;cannot\&quot;,\n    \&quot;couldn&apos;t\&quot; : \&quot;could not\&quot;,\n    \&quot;didn&apos;t\&quot; : \&quot;did not\&quot;,\n    \&quot;doesn&apos;t\&quot; : \&quot;does not\&quot;,\n    \&quot;don&apos;t\&quot; : \&quot;do not\&quot;,\n    \&quot;hadn&apos;t\&quot; : \&quot;had not\&quot;,\n    \&quot;hasn&apos;t\&quot; : \&quot;has not\&quot;,\n    \&quot;haven&apos;t\&quot; : \&quot;have not\&quot;,\n    \&quot;he&apos;d\&quot; : \&quot;he would\&quot;,\n    \&quot;he&apos;ll\&quot; : \&quot;he will\&quot;,\n    \&quot;he&apos;s\&quot; : \&quot;he is\&quot;,\n    \&quot;i&apos;d\&quot; : \&quot;i would\&quot;,\n    \&quot;i&apos;d\&quot; : \&quot;i had\&quot;,\n    \&quot;i&apos;ll\&quot; : \&quot;i will\&quot;,\n    \&quot;i&apos;m\&quot; : \&quot;i am\&quot;,\n    \&quot;isn&apos;t\&quot; : \&quot;is not\&quot;,\n    \&quot;it&apos;s\&quot; : \&quot;it is\&quot;,\n    \&quot;it&apos;ll\&quot;:\&quot;it will\&quot;,\n    \&quot;i&apos;ve\&quot; : \&quot;i have\&quot;,\n    \&quot;let&apos;s\&quot; : \&quot;let us\&quot;,\n    \&quot;mightn&apos;t\&quot; : \&quot;might not\&quot;,\n    \&quot;mustn&apos;t\&quot; : \&quot;must not\&quot;,\n    \&quot;shan&apos;t\&quot; : \&quot;shall not\&quot;,\n    \&quot;she&apos;d\&quot; : \&quot;she would\&quot;,\n    \&quot;she&apos;ll\&quot; : \&quot;she will\&quot;,\n    \&quot;she&apos;s\&quot; : \&quot;she is\&quot;,\n    \&quot;shouldn&apos;t\&quot; : \&quot;should not\&quot;,\n    \&quot;that&apos;s\&quot; : \&quot;that is\&quot;,\n    \&quot;there&apos;s\&quot; : \&quot;there is\&quot;,\n    \&quot;they&apos;d\&quot; : \&quot;they would\&quot;,\n    \&quot;they&apos;ll\&quot; : \&quot;they will\&quot;,\n    \&quot;they&apos;re\&quot; : \&quot;they are\&quot;,\n    \&quot;they&apos;ve\&quot; : \&quot;they have\&quot;,\n    \&quot;we&apos;d\&quot; : \&quot;we would\&quot;,\n    \&quot;we&apos;re\&quot; : \&quot;we are\&quot;,\n    \&quot;weren&apos;t\&quot; : \&quot;were not\&quot;,\n    \&quot;we&apos;ve\&quot; : \&quot;we have\&quot;,\n    \&quot;what&apos;ll\&quot; : \&quot;what will\&quot;,\n    \&quot;what&apos;re\&quot; : \&quot;what are\&quot;,\n    \&quot;what&apos;s\&quot; : \&quot;what is\&quot;,\n    \&quot;what&apos;ve\&quot; : \&quot;what have\&quot;,\n    \&quot;where&apos;s\&quot; : \&quot;where is\&quot;,\n    \&quot;who&apos;d\&quot; : \&quot;who would\&quot;,\n    \&quot;who&apos;ll\&quot; : \&quot;who will\&quot;,\n    \&quot;who&apos;re\&quot; : \&quot;who are\&quot;,\n    \&quot;who&apos;s\&quot; : \&quot;who is\&quot;,\n    \&quot;who&apos;ve\&quot; : \&quot;who have\&quot;,\n    \&quot;won&apos;t\&quot; : \&quot;will not\&quot;,\n    \&quot;wouldn&apos;t\&quot; : \&quot;would not\&quot;,\n    \&quot;you&apos;d\&quot; : \&quot;you would\&quot;,\n    \&quot;you&apos;ll\&quot; : \&quot;you will\&quot;,\n    \&quot;you&apos;re\&quot; : \&quot;you are\&quot;,\n    \&quot;you&apos;ve\&quot; : \&quot;you have\&quot;,\n    \&quot;&apos;re\&quot;: \&quot; are\&quot;,\n    \&quot;wasn&apos;t\&quot;: \&quot;was not\&quot;,\n    \&quot;we&apos;ll\&quot;:\&quot; will\&quot;,\n    \&quot;didn&apos;t\&quot;: \&quot;did not\&quot;,\n    \&quot;tryin&apos;\&quot;:\&quot;trying\&quot;\n}\n\nmispell_re = re.compile(&apos;(%s)&apos; % &apos;|&apos;.join(mispell_dict.keys()))\n\ndef preprocess(text) -&gt; str:\n    def replace(match):\n        return mispell_dict[match.group(0)]\n\n    text = mispell_re.sub(replace, text)\n    return text\n&quot;)), mdx(&quot;p&quot;, null, &quot;Japanese words have their own punctuation like \u3010this\u3011&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -4266,7 +4291,9 @@ return function MDXContent(_ref) {
   }, &quot;# Adding Japanese Punctuation\nstring.punctuation += &apos;\u3001\u3002\u3010\u3011\u300C\u300D\u300E\u300F\u2026\u30FB\u303D\uFF08\uFF09\u301C\uFF1F\uFF01\uFF61\uFF1A\uFF64\uFF1B\uFF65&apos;\n\nCP = lambda x : x.translate(str.maketrans(&apos;&apos;, &apos;&apos;, string.punctuation))\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;data = [x for x in data if len(x) == 2]\n\neng_data = [CP(preprocess(x[0])) for x in data]\njpn_data = [CP(x[1]) for x in data]\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Segmenting Japanese Sentences&quot;), mdx(&quot;p&quot;, null, &quot;Unlike english sentence we can tokenize it by splitting words with space just like this,&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;data = [x for x in data if len(x) == 2]\n\neng_data = [CP(preprocess(x[0])) for x in data]\njpn_data = [CP(x[1]) for x in data]\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;segmenting-japanese-sentences&quot;
+  }, &quot;Segmenting Japanese Sentences&quot;), mdx(&quot;p&quot;, null, &quot;Unlike english sentence we can tokenize it by splitting words with space just like this,&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
   }, &quot;&apos;This is english or i think so&apos;.split()\n\nOutput:\n[&apos;This&apos;, &apos;is&apos;, &apos;english&apos;, &apos;or&apos;, &apos;i&apos;, &apos;think&apos;, &apos;so&apos;]\n&quot;)), mdx(&quot;p&quot;, null, &quot;but in Japanese we can&apos;t do it that way. Here we gonna use Janome Tokenizer to segmenting Japanese sentence and adding space to it so Keras Tokenizer can handle it.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
@@ -4284,10 +4311,14 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;eng_train, eng_test, jpn_train, jpn_test = \\\ntrain_test_split(eng_data, jpn_data, test_size = 0.04, random_state = 42)\n\nprint(f\&quot;Splitting to {len(eng_train)} Train data and \\\n{len(eng_test)} Test data\&quot;)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;Splitting to 51450 Train data and 2144 Test data\n&quot;)), mdx(&quot;h3&quot;, null, &quot;Add BOS and EOS&quot;), mdx(&quot;p&quot;, null, &quot;We put BOS \&quot;Begin of Sequence\&quot; and EOS \u201CEnd of Sequence\&quot; to help our decoder recognize begin and end of a sequence.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;Splitting to 51450 Train data and 2144 Test data\n&quot;)), mdx(&quot;h3&quot;, {
+    &quot;id&quot;: &quot;add-bos-and-eos&quot;
+  }, &quot;Add BOS and EOS&quot;), mdx(&quot;p&quot;, null, &quot;We put BOS \&quot;Begin of Sequence\&quot; and EOS \u201CEnd of Sequence\&quot; to help our decoder recognize begin and end of a sequence.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;eng_train = [&apos;bos &apos;+ x + &apos; eos&apos; for x in eng_train + [&apos;unk unk unk&apos;]]\njpn_train = [&apos;bos &apos;+ x + &apos; eos&apos; for x in jpn_train + [&apos;unk unk unk&apos;]]\n\neng_val = [&apos;bos &apos;+ x + &apos; eos&apos; for x in eng_test]\njpn_val = [&apos;bos &apos;+ x + &apos; eos&apos; for x in jpn_test]\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Word Tokenizing&quot;), mdx(&quot;p&quot;, null, &quot;Here we use Tokenizer API from Keras to make vocabulary and tokenizing our data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;eng_train = [&apos;bos &apos;+ x + &apos; eos&apos; for x in eng_train + [&apos;unk unk unk&apos;]]\njpn_train = [&apos;bos &apos;+ x + &apos; eos&apos; for x in jpn_train + [&apos;unk unk unk&apos;]]\n\neng_val = [&apos;bos &apos;+ x + &apos; eos&apos; for x in eng_test]\njpn_val = [&apos;bos &apos;+ x + &apos; eos&apos; for x in jpn_test]\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;word-tokenizing&quot;
+  }, &quot;Word Tokenizing&quot;), mdx(&quot;p&quot;, null, &quot;Here we use Tokenizer API from Keras to make vocabulary and tokenizing our data&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;# English Tokenizer\nen_tokenizer = Tokenizer(filters=&apos;&apos;)\nen_tokenizer.fit_on_texts(eng_train)\n\n# Japannese Tokenizer\njp_tokenizer = Tokenizer(filters=&apos;&apos;)\njp_tokenizer.fit_on_texts(jpn_train)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -4295,7 +4326,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;print(f&apos;English vocab size   :&apos;, len(en_tokenizer.word_index) - 3)\nprint(f&apos;Japanese vocab size  :&apos;, len(jp_tokenizer.word_index) - 3)\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;English vocab size   : 9646\nJapanese vocab size  : 14403\n&quot;)), mdx(&quot;h2&quot;, null, &quot;Word Cloud&quot;), mdx(&quot;p&quot;, null, &quot;What comes when doing NLP? It&apos;s Word Cloud. Let&apos;s do it for our vocab.&quot;), mdx(&quot;p&quot;, null, &quot;Font : &quot;, mdx(&quot;a&quot;, {
+  }, &quot;English vocab size   : 9646\nJapanese vocab size  : 14403\n&quot;)), mdx(&quot;h2&quot;, {
+    &quot;id&quot;: &quot;word-cloud&quot;
+  }, &quot;Word Cloud&quot;), mdx(&quot;p&quot;, null, &quot;What comes when doing NLP? It&apos;s Word Cloud. Let&apos;s do it for our vocab.&quot;), mdx(&quot;p&quot;, null, &quot;Font : &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;p&quot;,
     &quot;href&quot;: &quot;https://www.google.com/get/noto/&quot;
   }, &quot;Google Noto Fonts&quot;), &quot; -&gt; Noto Sans CJK JP&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
@@ -4306,7 +4339,7 @@ return function MDXContent(_ref) {
   }, &quot;--2020-08-19 01:53:52--  https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip\nResolving noto-website-2.storage.googleapis.com (noto-website-2.storage.googleapis.com)... 172.217.204.128, 2607:f8b0:400c:c15::80\nConnecting to noto-website-2.storage.googleapis.com (noto-website-2.storage.googleapis.com)|172.217.204.128|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 121096772 (115M) [application/zip]\nSaving to: \u2018NotoSansCJKjp-hinted.zip\u2019\n\nNotoSansCJKjp-hinte 100%[===================&gt;] 115.49M  53.3MB/s    in 2.2s\n\n2020-08-19 01:53:54 (53.3 MB/s) - \u2018NotoSansCJKjp-hinted.zip\u2019 saved [121096772/121096772]\n\n--2020-08-19 01:53:55--  https://raw.githubusercontent.com/Hyuto/NMT-TF-Seq2seq-EN-JP/master/Japan.jpg\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.200.133\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.200.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 3976 (3.9K) [image/jpeg]\nSaving to: \u2018Japan.jpg\u2019\n\nJapan.jpg           100%[===================&gt;]   3.88K  --.-KB/s    in 0s\n\n2020-08-19 01:53:55 (46.7 MB/s) - \u2018Japan.jpg\u2019 saved [3976/3976]\n\n--2020-08-19 01:53:56--  https://raw.githubusercontent.com/Hyuto/NMT-TF-Seq2seq-EN-JP/master/English.png\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.200.133\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.200.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 303684 (297K) [image/png]\nSaving to: \u2018English.png\u2019\n\nEnglish.png         100%[===================&gt;] 296.57K  --.-KB/s    in 0.1s\n\n2020-08-19 01:53:56 (2.18 MB/s) - \u2018English.png\u2019 saved [303684/303684]\n\nArchive:  NotoSansCJKjp-hinted.zip\n  inflating: ./font/LICENSE_OFL.txt\n  inflating: ./font/NotoSansCJKjp-Black.otf\n  inflating: ./font/NotoSansCJKjp-Bold.otf\n  inflating: ./font/NotoSansCJKjp-DemiLight.otf\n  inflating: ./font/NotoSansCJKjp-Light.otf\n  inflating: ./font/NotoSansCJKjp-Medium.otf\n  inflating: ./font/NotoSansCJKjp-Regular.otf\n  inflating: ./font/NotoSansCJKjp-Thin.otf\n  inflating: ./font/NotoSansMonoCJKjp-Bold.otf\n  inflating: ./font/NotoSansMonoCJKjp-Regular.otf\n  inflating: ./font/README\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;from wordcloud import WordCloud, ImageColorGenerator\nfrom PIL import Image\n\ndef get_words(arr):\n    keys = list(arr.keys())\n    count = list(arr.values())\n    return &apos; &apos;.join([x for _,x in sorted(zip(count, keys), reverse = True)][2:])\n\ndef transform(arr):\n    for i in range(len(arr)):\n        for j in range(len(arr[i])):\n            if not any(arr[i][j]):\n                arr[i][j] = np.array([225, 225, 225, 225])\n    return arr\n\nfont_path = &apos;./font/NotoSansCJKjp-Light.otf&apos;\n\n\nmask = &apos;./English.png&apos;\nmask = np.array(Image.open(mask))\nmask = transform(mask)\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(en_tokenizer.word_counts).title()\nwc = WordCloud(background_color=\&quot;white\&quot;, max_words=2000, random_state=42,\n               width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig1, ax1 = plt.subplots(figsize=(20,15))\nax1.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax1.axis(\&quot;off\&quot;)\n\nmask = &apos;./Japan.jpg&apos;\nmask = np.array(Image.open(mask))\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(jp_tokenizer.word_counts).title()\nwc = WordCloud(collocations=False, background_color=\&quot;white\&quot;, mode=\&quot;RGBA\&quot;,\n               max_words=6000, font_path=font_path, contour_width=1,\n               scale=5, max_font_size = 50, relative_scaling=0.5,\n               random_state=42, width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig2, ax2 = plt.subplots(figsize=(20,15))\nax2.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax2.axis(\&quot;off\&quot;)\n\nfig1.savefig(&apos;WC_English.png&apos;)\nfig2.savefig(&apos;WC_Japanese.png&apos;)\nplt.close(fig1)\nplt.close(fig2)\n\n!rm -rf ./font\n&quot;)), mdx(&quot;h2&quot;, null, &quot;WordCloud&quot;), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
+  }, &quot;from wordcloud import WordCloud, ImageColorGenerator\nfrom PIL import Image\n\ndef get_words(arr):\n    keys = list(arr.keys())\n    count = list(arr.values())\n    return &apos; &apos;.join([x for _,x in sorted(zip(count, keys), reverse = True)][2:])\n\ndef transform(arr):\n    for i in range(len(arr)):\n        for j in range(len(arr[i])):\n            if not any(arr[i][j]):\n                arr[i][j] = np.array([225, 225, 225, 225])\n    return arr\n\nfont_path = &apos;./font/NotoSansCJKjp-Light.otf&apos;\n\n\nmask = &apos;./English.png&apos;\nmask = np.array(Image.open(mask))\nmask = transform(mask)\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(en_tokenizer.word_counts).title()\nwc = WordCloud(background_color=\&quot;white\&quot;, max_words=2000, random_state=42,\n               width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig1, ax1 = plt.subplots(figsize=(20,15))\nax1.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax1.axis(\&quot;off\&quot;)\n\nmask = &apos;./Japan.jpg&apos;\nmask = np.array(Image.open(mask))\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(jp_tokenizer.word_counts).title()\nwc = WordCloud(collocations=False, background_color=\&quot;white\&quot;, mode=\&quot;RGBA\&quot;,\n               max_words=6000, font_path=font_path, contour_width=1,\n               scale=5, max_font_size = 50, relative_scaling=0.5,\n               random_state=42, width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig2, ax2 = plt.subplots(figsize=(20,15))\nax2.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax2.axis(\&quot;off\&quot;)\n\nfig1.savefig(&apos;WC_English.png&apos;)\nfig2.savefig(&apos;WC_Japanese.png&apos;)\nplt.close(fig1)\nplt.close(fig2)\n\n!rm -rf ./font\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
   }, &quot;English&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
@@ -4477,7 +4510,9 @@ return function MDXContent(_ref) {
   }, &quot;Maximum length of English sequences is  49\nMaximum length of Japanese sequences is 54\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# Padding Sequences\ndata_en = pad_sequences(data_en, padding=&apos;post&apos;, maxlen = max_en)\ndata_jp = pad_sequences(data_jp, padding=&apos;post&apos;, maxlen = max_jp)\n\nval_en = pad_sequences(val_en, padding=&apos;post&apos;, maxlen = max_en)\nval_jp = pad_sequences(val_jp, padding=&apos;post&apos;, maxlen = max_jp)\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Build &amp; Train Model&quot;), mdx(&quot;p&quot;, null, &quot;Now it&apos;s the time brace yourself.&quot;), mdx(&quot;p&quot;, null, &quot;We&apos;ll build model based on Seq2seq approaches with Attention optimization.&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
+  }, &quot;# Padding Sequences\ndata_en = pad_sequences(data_en, padding=&apos;post&apos;, maxlen = max_en)\ndata_jp = pad_sequences(data_jp, padding=&apos;post&apos;, maxlen = max_jp)\n\nval_en = pad_sequences(val_en, padding=&apos;post&apos;, maxlen = max_en)\nval_jp = pad_sequences(val_jp, padding=&apos;post&apos;, maxlen = max_jp)\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;build--train-model&quot;
+  }, &quot;Build &amp; Train Model&quot;), mdx(&quot;p&quot;, null, &quot;Now it&apos;s the time brace yourself.&quot;), mdx(&quot;p&quot;, null, &quot;We&apos;ll build model based on Seq2seq approaches with Attention optimization.&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
   }, &quot;Seq2Seq is a method of encoder-decoder based machine translation that maps an input of sequence to an output of sequence with a tag and attention value. The idea is to use 2 RNN that will work together with a special token and trying to predict the next state sequence from the previous sequence.&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
     parentName: &quot;p&quot;,
@@ -4550,7 +4585,9 @@ return function MDXContent(_ref) {
   }, &quot;def loss_function(y_pred, y):\n    #shape of y [batch_size, ty]\n    #shape of y_pred [batch_size, Ty, output_vocab_size]\n    sparsecategoricalcrossentropy = SparseCategoricalCrossentropy(from_logits=True,\n                                                                  reduction=&apos;none&apos;)\n    loss = sparsecategoricalcrossentropy(y_true=y, y_pred=y_pred)\n    mask = tf.logical_not(tf.math.equal(y,0))   #output 0 for y=0 else output 1\n    mask = tf.cast(mask, dtype=loss.dtype)\n    loss = mask * loss\n    loss = tf.reduce_mean(loss)\n    return loss\n\n@tf.function\ndef train_step(input_batch, output_batch, encoder_initial_cell_state):\n    # initialize loss = 0\n    loss = 0\n    with tf.GradientTape() as tape:\n        encoder_emb_inp = encoderNetwork.encoder_embedding(input_batch)\n        a, a_tx, c_tx = encoderNetwork.encoder_rnnlayer(encoder_emb_inp,\n                                                        initial_state = encoder_initial_cell_state)\n\n        # [last step activations,last memory_state] of\n        # encoder passed as input to decoder Network\n\n        # Prepare correct Decoder input &amp; output sequence data\n        decoder_input = output_batch[:,:-1] # ignore eos\n        # compare logits with timestepped +1 version of decoder_input\n        decoder_output = output_batch[:,1:] #ignore bos\n\n        # Decoder Embeddings\n        decoder_emb_inp = decoderNetwork.decoder_embedding(decoder_input)\n\n        # Setting up decoder memory from encoder output\n        # and Zero State for AttentionWrapperState\n        decoderNetwork.attention_mechanism.setup_memory(a)\n        decoder_initial_state = decoderNetwork.build_decoder_initial_state(BATCH_SIZE,\n                                                                           encoder_state=[a_tx, c_tx],\n                                                                           Dtype=tf.float32)\n\n        # BasicDecoderOutput\n        outputs, _, _ = decoderNetwork.decoder(decoder_emb_inp,initial_state=decoder_initial_state,\n                                               sequence_length=BATCH_SIZE*[Ty-1])\n\n        logits = outputs.rnn_output\n\n        # Calculate loss\n        loss = loss_function(logits, decoder_output)\n\n    # Returns the list of all layer variables / weights.\n    variables = encoderNetwork.trainable_variables + decoderNetwork.trainable_variables\n    # differentiate loss wrt variables\n    gradients = tape.gradient(loss, variables)\n\n    # grads_and_vars \u2013 List of(gradient, variable) pairs.\n    grads_and_vars = zip(gradients,variables)\n    optimizer.apply_gradients(grads_and_vars)\n    return loss\n\n@tf.function\ndef evaluate(input_batch, output_batch, encoder_initial_cell_state):\n    loss = 0\n    encoder_emb_inp = encoderNetwork.encoder_embedding(input_batch)\n    a, a_tx, c_tx = encoderNetwork.encoder_rnnlayer(encoder_emb_inp,\n                                                    initial_state =encoder_initial_cell_state)\n    decoder_input = output_batch[:,:-1]\n    decoder_output = output_batch[:,1:]\n    decoder_emb_inp = decoderNetwork.decoder_embedding(decoder_input)\n    decoderNetwork.attention_mechanism.setup_memory(a)\n    decoder_initial_state = decoderNetwork.build_decoder_initial_state(BATCH_SIZE,\n                                                                       encoder_state=[a_tx, c_tx],\n                                                                       Dtype=tf.float32)\n    outputs, _, _ = decoderNetwork.decoder(decoder_emb_inp,initial_state=decoder_initial_state,\n                                           sequence_length=BATCH_SIZE*[Ty-1])\n    logits = outputs.rnn_output\n    loss = loss_function(logits, decoder_output)\n    return loss\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;# RNN LSTM hidden and memory state initializer\ndef initialize_initial_state():\n    return [tf.zeros((BATCH_SIZE, rnn_units)), tf.zeros((BATCH_SIZE, rnn_units))]\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Calculating BLEU Score&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
+  }, &quot;# RNN LSTM hidden and memory state initializer\ndef initialize_initial_state():\n    return [tf.zeros((BATCH_SIZE, rnn_units)), tf.zeros((BATCH_SIZE, rnn_units))]\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;calculating-bleu-score&quot;
+  }, &quot;Calculating BLEU Score&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
   }, &quot;BLEU (bilingual evaluation understudy) is an algorithm for evaluating the quality of text which has been machine-translated from one natural language to another. Quality is considered to be the correspondence between a machine&apos;s output and that of a human: \&quot;the closer a machine translation is to a professional human translation, the better it is\&quot;. - Wikipedia&quot;)), mdx(&quot;p&quot;, null, &quot;BLEU is a metric for evaluating a generated sentence to a reference sentence.\nA perfect match results in a score of 1.0, whereas a perfect mismatch results in a score of 0.0.&quot;), mdx(&quot;p&quot;, null, &quot;So now we&apos;re going to define our translation function &amp; calculate the BLEU score for test data at the end of every epoch while training. Note that test data is sentences that our tokenizer didn&apos;t train with, so there must be some words that our tokenizer didn&apos;t know.\nI&apos;m currently working to fix this issue. Based on keras Tokenizer API it have &quot;, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -4743,7 +4780,9 @@ return function MDXContent(_ref) {
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;for i in range(7,16):\n    print(\&quot;English Sentence:\&quot;)\n    print(eng_test[i])\n    print(\&quot;\\nJapanese Translation:\&quot;)\n    print(best_prediction[i])\n    print(\&quot;\\nJapanese Reference:\&quot;)\n    print(jpn_test[i])\n    print(&apos;&apos;.ljust(60, &apos;-&apos;))\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;
-  }, &quot;English Sentence:\nin september there are just a few people here and there on the beach\n\nJapanese Translation:\n\uFF19 \u6642 \u306B \u306F \u3053\u3053 \u306B \u4ED6 \u306E \u4EBA \u304C \u4F4F\u3093 \u3067 \u3044 \u306A\u3044 \u4EBA \u304C \u305D\u306E \u30D3\u30FC\u30C1 \u3067 \u4ED6 \u306E \u4EBA\u9054 \u304C \u6B8B\u308A \u306E \u3082\u3068 \u3092 \u3042\u3061\u3089 \u306B \u5EFA\u8A2D \u898B \u305F\n\nJapanese Reference:\n\uFF19\u6708 \u306E \u6D77 \u306F \u4EBA \u304C \u307E\u3070\u3089 \u3060 \u306D\n------------------------------------------------------------\nEnglish Sentence:\nwhile you are young you should read a lot\n\nJapanese Translation:\n\u82E5\u3044 \u9803 \u306F \u8AAD\u307F \u7D42\u308F\u3063 \u305F\u3089 \u3044\u3044 \u3088\n\nJapanese Reference:\n\u82E5\u3044 \u3046\u3061 \u306B \u305F\u304F\u3055\u3093 \u306E \u672C \u3092 \u8AAD\u3080 \u3079\u304D \u3060\n------------------------------------------------------------\nEnglish Sentence:\nhere i come\n\nJapanese Translation:\n\u3053\u3053 \u306B \u6765 \u305F \u306E\n\nJapanese Reference:\n\u3044\u307E \u884C\u304D \u307E\u3059\n------------------------------------------------------------\nEnglish Sentence:\nonce you have decided when you will be coming let me know\n\nJapanese Translation:\n\u6765\u308B \u304B \u541B \u306B \u306F \u9023\u7D61 \u3092 \u8A00\u3063 \u3066 \u304D \u305F \u3088\n\nJapanese Reference:\n\u3044\u3064 \u6765\u308B \u304B \u6C7A\u307E\u3063 \u305F\u3089 \u6559\u3048 \u3066\n------------------------------------------------------------\nEnglish Sentence:\nhe jumped on the train\n\nJapanese Translation:\n\u5F7C \u306F \u96FB\u8ECA \u306B \u65D7 \u3092 \u98DB\u3073\u8D8A\u3048 \u305F\n\nJapanese Reference:\n\u5F7C \u306F \u96FB\u8ECA \u306B \u98DB\u3073\u4E57\u3063 \u305F\n------------------------------------------------------------\nEnglish Sentence:\nhe passed away yesterday\n\nJapanese Translation:\n\u5F7C \u306F \u6628\u65E5 \u4EA1\u304F\u306A\u3063 \u305F\n\nJapanese Reference:\n\u5F7C \u306F \u6628\u65E5 \u304A \u4EA1\u304F\u306A\u308A \u306B \u306A\u308A \u307E\u3057 \u305F\n------------------------------------------------------------\nEnglish Sentence:\ni had no other choice\n\nJapanese Translation:\n\u4ED6 \u306B \u9078\u629E\u80A2 \u304C \u306A\u304B\u3063 \u305F\n\nJapanese Reference:\n\u4ED6 \u306B \u624B \u304C \u306A\u304B\u3063 \u305F \u306E \u3060\n------------------------------------------------------------\nEnglish Sentence:\nare you good at bowling\n\nJapanese Translation:\n\u30DC\u30FC\u30EA\u30F3\u30B0 \u306F \u5F97\u610F \u3067\u3059 \u304B\n\nJapanese Reference:\n\u30DC\u30A6\u30EA\u30F3\u30B0 \u306F \u5F97\u610F\n------------------------------------------------------------\nEnglish Sentence:\nit is strange that you do not know anything about that matter\n\nJapanese Translation:\n\u305D\u308C \u306B\u3064\u3044\u3066 \u4F55 \u3082 \u77E5\u3089 \u306A\u3044 \u3053\u3068 \u304C \u306A\u3044 \u3068\u3044\u3046 \u3053\u3068 \u306F \u5909 \u3060\n\nJapanese Reference:\n\u3042\u306A\u305F \u304C \u305D\u306E \u3053\u3068 \u306B\u3064\u3044\u3066 \u4F55 \u3082 \u77E5\u3089 \u306A\u3044 \u306E \u306F \u5909 \u3060\n------------------------------------------------------------\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Test with Some Raw Input&quot;), mdx(&quot;p&quot;, null, &quot;Yeay now let&apos;s play with &quot;, mdx(&quot;strong&quot;, {
+  }, &quot;English Sentence:\nin september there are just a few people here and there on the beach\n\nJapanese Translation:\n\uFF19 \u6642 \u306B \u306F \u3053\u3053 \u306B \u4ED6 \u306E \u4EBA \u304C \u4F4F\u3093 \u3067 \u3044 \u306A\u3044 \u4EBA \u304C \u305D\u306E \u30D3\u30FC\u30C1 \u3067 \u4ED6 \u306E \u4EBA\u9054 \u304C \u6B8B\u308A \u306E \u3082\u3068 \u3092 \u3042\u3061\u3089 \u306B \u5EFA\u8A2D \u898B \u305F\n\nJapanese Reference:\n\uFF19\u6708 \u306E \u6D77 \u306F \u4EBA \u304C \u307E\u3070\u3089 \u3060 \u306D\n------------------------------------------------------------\nEnglish Sentence:\nwhile you are young you should read a lot\n\nJapanese Translation:\n\u82E5\u3044 \u9803 \u306F \u8AAD\u307F \u7D42\u308F\u3063 \u305F\u3089 \u3044\u3044 \u3088\n\nJapanese Reference:\n\u82E5\u3044 \u3046\u3061 \u306B \u305F\u304F\u3055\u3093 \u306E \u672C \u3092 \u8AAD\u3080 \u3079\u304D \u3060\n------------------------------------------------------------\nEnglish Sentence:\nhere i come\n\nJapanese Translation:\n\u3053\u3053 \u306B \u6765 \u305F \u306E\n\nJapanese Reference:\n\u3044\u307E \u884C\u304D \u307E\u3059\n------------------------------------------------------------\nEnglish Sentence:\nonce you have decided when you will be coming let me know\n\nJapanese Translation:\n\u6765\u308B \u304B \u541B \u306B \u306F \u9023\u7D61 \u3092 \u8A00\u3063 \u3066 \u304D \u305F \u3088\n\nJapanese Reference:\n\u3044\u3064 \u6765\u308B \u304B \u6C7A\u307E\u3063 \u305F\u3089 \u6559\u3048 \u3066\n------------------------------------------------------------\nEnglish Sentence:\nhe jumped on the train\n\nJapanese Translation:\n\u5F7C \u306F \u96FB\u8ECA \u306B \u65D7 \u3092 \u98DB\u3073\u8D8A\u3048 \u305F\n\nJapanese Reference:\n\u5F7C \u306F \u96FB\u8ECA \u306B \u98DB\u3073\u4E57\u3063 \u305F\n------------------------------------------------------------\nEnglish Sentence:\nhe passed away yesterday\n\nJapanese Translation:\n\u5F7C \u306F \u6628\u65E5 \u4EA1\u304F\u306A\u3063 \u305F\n\nJapanese Reference:\n\u5F7C \u306F \u6628\u65E5 \u304A \u4EA1\u304F\u306A\u308A \u306B \u306A\u308A \u307E\u3057 \u305F\n------------------------------------------------------------\nEnglish Sentence:\ni had no other choice\n\nJapanese Translation:\n\u4ED6 \u306B \u9078\u629E\u80A2 \u304C \u306A\u304B\u3063 \u305F\n\nJapanese Reference:\n\u4ED6 \u306B \u624B \u304C \u306A\u304B\u3063 \u305F \u306E \u3060\n------------------------------------------------------------\nEnglish Sentence:\nare you good at bowling\n\nJapanese Translation:\n\u30DC\u30FC\u30EA\u30F3\u30B0 \u306F \u5F97\u610F \u3067\u3059 \u304B\n\nJapanese Reference:\n\u30DC\u30A6\u30EA\u30F3\u30B0 \u306F \u5F97\u610F\n------------------------------------------------------------\nEnglish Sentence:\nit is strange that you do not know anything about that matter\n\nJapanese Translation:\n\u305D\u308C \u306B\u3064\u3044\u3066 \u4F55 \u3082 \u77E5\u3089 \u306A\u3044 \u3053\u3068 \u304C \u306A\u3044 \u3068\u3044\u3046 \u3053\u3068 \u306F \u5909 \u3060\n\nJapanese Reference:\n\u3042\u306A\u305F \u304C \u305D\u306E \u3053\u3068 \u306B\u3064\u3044\u3066 \u4F55 \u3082 \u77E5\u3089 \u306A\u3044 \u306E \u306F \u5909 \u3060\n------------------------------------------------------------\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;test-with-some-raw-input&quot;
+  }, &quot;Test with Some Raw Input&quot;), mdx(&quot;p&quot;, null, &quot;Yeay now let&apos;s play with &quot;, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
   }, &quot;our&quot;), &quot; Machine Translation with some raw input. We&apos;ll cross check the prediction from MT with Google Translate API to translate it back to english and see how bad &quot;, mdx(&quot;strong&quot;, {
     parentName: &quot;p&quot;
@@ -4758,7 +4797,9 @@ return function MDXContent(_ref) {
   }, &quot;English Sentence:\ni love you\n\nJapanese Translation:\n\u611B\u3057 \u3066\u308B \u3088\n\nEnglish Translation from prediction [GoogleTranslate]:\nI love you\n------------------------------------------------------------\nEnglish Sentence:\ni am sorry\n\nJapanese Translation:\n\u3059\u307F\u307E\u305B\u3093\n\nEnglish Translation from prediction [GoogleTranslate]:\nExcuse me\n------------------------------------------------------------\nEnglish Sentence:\nhello\n\nJapanese Translation:\n\u3082\u3057\u3082\u3057\n\nEnglish Translation from prediction [GoogleTranslate]:\nHello\n------------------------------------------------------------\nEnglish Sentence:\nthank you\n\nJapanese Translation:\n\u3042\u308A\u304C\u3068\u3046 \u3054\u3056\u3044 \u307E\u3059\n\nEnglish Translation from prediction [GoogleTranslate]:\nThank you\n------------------------------------------------------------\nEnglish Sentence:\nis there something i can help?\n\nJapanese Translation:\n\u4F55 \u304B \u624B\u4F1D\u3048\u308B \u3082\u306E \u304C \u3042\u308B \u306E\n\nEnglish Translation from prediction [GoogleTranslate]:\nThere is something to help\n------------------------------------------------------------\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;import pickle\n\nwith open(&apos;en_tokenizer.pickle&apos;, &apos;wb&apos;) as handle:\n    pickle.dump(en_tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)\nhandle.close()\n\nwith open(&apos;jp_tokenizer.pickle&apos;, &apos;wb&apos;) as handle:\n    pickle.dump(jp_tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)\nhandle.close()\n&quot;)), mdx(&quot;h1&quot;, null, &quot;Reference&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
+  }, &quot;import pickle\n\nwith open(&apos;en_tokenizer.pickle&apos;, &apos;wb&apos;) as handle:\n    pickle.dump(en_tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)\nhandle.close()\n\nwith open(&apos;jp_tokenizer.pickle&apos;, &apos;wb&apos;) as handle:\n    pickle.dump(jp_tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)\nhandle.close()\n&quot;)), mdx(&quot;h1&quot;, {
+    &quot;id&quot;: &quot;reference&quot;
+  }, &quot;Reference&quot;), mdx(&quot;ol&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ol&quot;
   }, &quot;TensorFlow Addons Networks : Sequence-to-Sequence NMT with Attention Mechanism &quot;, mdx(&quot;a&quot;, {
     parentName: &quot;li&quot;,
