@@ -12,15 +12,15 @@ Kaggle Notebook : [CNN Keras CV - 0.996 [TPU]](https://www.kaggle.com/wahyusetia
 
 P.S. Don't forget to _upvote_ if you like it 😊.
 
-# Overview
+## Overview
 
 This kernel is on purpose to build model for MNIST digits dataset. In this kernel we're gonna do some preprocessing then make augmentation datagen so our model didn't train on the same image data, then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for test dataset and by the end we're gonna do ensembles for the prediction.
 
-# Web App
+## Web App
 
 You can visit my web app for the live prediction by the best model trained on this kernel run on Tensorflow.js [Digit Recognizer](https://hyuto.github.io/showcase/digit-recognizer/).
 
-# Train on TPU!!
+## Train on TPU!!
 
 why? Because it's **faster**. While people usually train on GPU for image related things, in this notebook we try to do things on TPU and see how it affect the Accuracy.
 
@@ -53,7 +53,7 @@ print(f'Using Keras Version      : {keras.__version__}')
     Using Tensorflow Version : 2.2.0
     Using Keras Version      : 2.3.0-tf
 
-# Load the Data
+## Load the Data
 
 Load the MNIST data
 
@@ -65,9 +65,9 @@ train.head()
 
     5 rows × 785 columns
 
-# Preprocess
+## Preprocess
 
-## 1. Specifying X and y
+### Specifying X and y
 
 for y we need to encode to one hot vector. In keras we have function `to_categorical` for this.
 
@@ -91,7 +91,7 @@ X = train.drop(['label'], axis = 1)
 y = to_categorical(train['label'].values) # To Categorical y
 ```
 
-## 2. Normalizing Images
+### Normalizing Images
 
 Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.
 
@@ -101,7 +101,7 @@ X = X / 255.0
 X_test = test / 255.0
 ```
 
-## 3. Reshape
+### Reshape
 
 Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.
 
@@ -111,7 +111,7 @@ X = X.values.reshape(-1, 28, 28, 1)
 X_test = X_test.values.reshape(-1, 28, 28, 1)
 ```
 
-## Let's take a look at our data
+### Let's take a look at our data
 
 ```python
 fig, axes = plt.subplots(ncols=10, nrows=5, figsize = (13, 7))
@@ -134,7 +134,7 @@ plt.show()
 
 as you can see there some nice & bad hand written digits number at our dataset.
 
-# Data Augmentation
+## Data Augmentation
 
 we currently have about 42000 image data, let's multiply that value by doing some soft augmentation.
 
@@ -168,7 +168,7 @@ AUG_test(X[0], y[0])
 
 ![png](output_18_0.png)
 
-# Build CNN Model
+## Build CNN Model
 
 The CNN's in this kernel follow LeNet5's design on [Chris Deotte](https://www.kaggle.com/cdeotte) kernel [here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist)
 
@@ -206,7 +206,7 @@ def build_model():
     return model
 ```
 
-# Detect and Instantiate TPU Distribution Strategy
+## Detect and Instantiate TPU Distribution Strategy
 
 ```python
 # detect and init the TPU
@@ -224,7 +224,7 @@ EPOCHS = 45
 BATCH_SIZE = 16 * tpu_strategy.num_replicas_in_sync
 ```
 
-# Training
+## Training
 
 Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use $f(x) = 0.001 \times 0.95^x$ for our LR Scheduler and do Checkpoint at **best _val_acc_** score.
 
@@ -314,7 +314,7 @@ print(f'[INFO] Mean CV scores : {round(sum(scores)/len(scores), 4)}')
 
 And so we've got really great CV score there. Let's check the Training History.
 
-# History
+## History
 
 **Validation Loss**
 
@@ -324,7 +324,7 @@ And so we've got really great CV score there. Let's check the Training History.
 
 ![val-accuracy](./val_accuracy.png)
 
-# Ensembleing Predictions
+## Ensembleing Predictions
 
 `np.argmax` through the prediction to get the number of class
 
@@ -364,13 +364,13 @@ plt.show()
 
 looks like our models really doing good for predicting test data
 
-# Conclusions
+## Conclusions
 
 Based on our CV scores it's lower than [Chris Deotte](https://www.kaggle.com/cdeotte) kernel [here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist) with 0.99757 on validation accuracy on the same model architecture. So here's the point:
 
 > GPU do better job in this task [Expected] while TPU give you lower accuracy but faster since we'd train 15 CNNs model on 45 epochs in less than one hour.
 
-# References
+## References
 
 1. 25 Million Images! [0.99757] MNIST [Link](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist)
 1. Introduction to CNN Keras - 0.997 (top 6%) [Link](https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6)

@@ -118,7 +118,7 @@ print(f'Google Cloud Storage Data Path : {GCS_PATH}')
     Using Tensorflow Version       : 2.2.0
     Google Cloud Storage Data Path : gs://kds-7a3b4bb00789754aa5925da7c7a9217df698684ced337b42a9790257
 
-# Preprocessing Data
+## Preprocessing Data
 
 Melakukan preprocessing data sebelum diolah
 
@@ -140,7 +140,7 @@ train.head()
 | 550 | 1     | 2020-07-08 00:00:00 | ini bukan politik, tapi kenyataan Pak Jokowi b... | Maaf Mas2 dan Mbak2, ini bukan politik, tapi k... | 550.png          |
 | 681 | 1     | 2020-06-24 00:00:00 | Foto Kadrun kalo lihat foto ini panas dingin      | Kadrun kalo lihat foto ini panas dingin . .       | 681.jpg          |
 
-## Download Fungsi Tambahan
+### Download Fungsi Tambahan
 
 Mendownload fungsi yang sudah dibuat dari responsitory kami.
 
@@ -171,7 +171,7 @@ TRAIN_IMG = [TRAIN_PATH + x for x in train['nama file gambar'].values]
 TEST_IMG = [TEST_PATH + x for x in test['nama file gambar'].values]
 ```
 
-## Checking Missing File
+### Checking Missing File
 
 Mengecek apakah ada file yang hilang / tidak bisa terbaca pada direktori gambar.
 
@@ -854,7 +854,7 @@ for i in [0, 803, 1002]:
     gunung dieng salatiga lihat gn fuji jepang pegunungan alpen eropa gn dieng salatiga indonesia suhu 9°c
     --------------------------------------------------------------------------------
 
-# Explorasi Data
+## Explorasi Data
 
 Melakukan explorasi pada data untuk mendapatkan informasi - informasi lebih jauh dari data.
 
@@ -898,7 +898,7 @@ train['tanggal'] = train['tanggal'].apply(FixMonth)
 train['tanggal'] = pd.to_datetime(train['tanggal'])
 ```
 
-## Mengecek Frekuensi Setiap Kelas
+### Mengecek Frekuensi Setiap Kelas
 
 Menegecek frekuensi tiap kelasnya pada data.
 
@@ -925,7 +925,7 @@ fig_1.show()
 
 Dapat dilihat bahwa kelas 1 (`Hoax`) jauh lebih banyak dari kelas 0 (`Bukan Hoax`) atau terdapat `imbalance class` pada data. Untuk penanganannya kami menggunakan `Stratify` saat melakukan `Cross Validation` sehingga proporsi pada subset `latih` dan pada subset `validasi` sama.
 
-## Melihat Sebaran Kelas per Waktunya
+### Melihat Sebaran Kelas per Waktunya
 
 Melihat sebaran kelas perwaktunya.
 
@@ -1092,11 +1092,11 @@ plt.show()
 
 ![png](output_102_0.png)
 
-# Pemodelan
+## Pemodelan
 
 Membuat model untuk memprediksi kelas `0` (`tidak hoax`) dan kelas `1` (`hoax`) pada data test.
 
-## Accelerator Detection
+### Accelerator Detection
 
 Menggunakan GPU atau TPU dari Kaggle sebagai Accelerator.
 
@@ -1742,7 +1742,7 @@ fig.show()
 
 ![png](output_158_0.png)
 
-# Ensemble
+## Ensemble
 
 > Ensemble is methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
 
@@ -1801,14 +1801,14 @@ hasil.head()
 hasil.to_csv('Catatan Cakrawala BDC - Ensemble.csv', index = False)
 ```
 
-# Kesimpulan & Saran
+## Kesimpulan & Saran
 
-## Kesimpulan
+### Kesimpulan
 
 1. Data memiliki frekuensi kelas yang `tidak berimbang` sehingga perlu di perhatikan saat pembuatan model
 2. Dengan menggukan model yang kami buat didapatkan hasil yang cukup baik dengan f1 score 94 % namun memerlukan komputasi yang cukup berat dan biaya yang mahal untuk ukuran data yang tidak terlalu besar.
 
-## Saran
+### Saran
 
 1. Jika memungkinkan diperlukan `penambahan data` pada label bukan hoax agar frekuensi setiap kelas pada data tidak berbanding cukup jauh
 2. Menggunakan model `multimodal` karena hasil pada ensembel model gambar dan model teks menunjukkan hasil yang lebih baik.

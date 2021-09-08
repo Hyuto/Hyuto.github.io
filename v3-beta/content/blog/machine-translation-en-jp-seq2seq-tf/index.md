@@ -68,7 +68,7 @@ from janome.tokenizer import Tokenizer as janome_tokenizer
 plt.style.use('seaborn-pastel')
 ```
 
-# Dataset
+## Dataset
 
 Here we use 55463 en-jp corpus from [ManyThings.org Bilingual Sentence Pairs](http://www.manythings.org/bilingual/)
 
@@ -107,7 +107,7 @@ print(f'Loaded {len(data)} Sentences')
 
     Loaded 53594 Sentences
 
-# Text Preprocessing
+## Text Preprocessing
 
 ### Handling misspell words & Clearing Punctuation
 
@@ -260,7 +260,7 @@ eng_val = ['bos '+ x + ' eos' for x in eng_test]
 jpn_val = ['bos '+ x + ' eos' for x in jpn_test]
 ```
 
-# Word Tokenizing
+## Word Tokenizing
 
 Here we use Tokenizer API from Keras to make vocabulary and tokenizing our data
 
@@ -462,7 +462,7 @@ val_en = pad_sequences(val_en, padding='post', maxlen = max_en)
 val_jp = pad_sequences(val_jp, padding='post', maxlen = max_jp)
 ```
 
-# Build & Train Model
+## Build & Train Model
 
 Now it's the time brace yourself.
 
@@ -516,7 +516,7 @@ val_dataset = (tf.data.Dataset.from_tensor_slices((val_en, val_jp))
 Let's define our based Seq2Seq Model
 
 ```python
-#ENCODER
+# ENCODER
 class EncoderNetwork(tf.keras.Model):
     def __init__(self,input_vocab_size,embedding_dims, rnn_units ):
         super().__init__()
@@ -525,7 +525,7 @@ class EncoderNetwork(tf.keras.Model):
         self.encoder_rnnlayer = LSTM(rnn_units,return_sequences=True,
                                      return_state=True )
 
-#DECODER
+# DECODER
 class DecoderNetwork(tf.keras.Model):
     def __init__(self,output_vocab_size, embedding_dims, rnn_units):
         super().__init__()
@@ -662,7 +662,7 @@ def initialize_initial_state():
     return [tf.zeros((BATCH_SIZE, rnn_units)), tf.zeros((BATCH_SIZE, rnn_units))]
 ```
 
-# Calculating BLEU Score
+## Calculating BLEU Score
 
 > BLEU (bilingual evaluation understudy) is an algorithm for evaluating the quality of text which has been machine-translated from one natural language to another. Quality is considered to be the correspondence between a machine's output and that of a human: "the closer a machine translation is to a professional human translation, the better it is". - Wikipedia
 
@@ -970,7 +970,7 @@ for i in range(7,16):
     あなた が その こと について 何 も 知ら ない の は 変 だ
     ------------------------------------------------------------
 
-# Test with Some Raw Input
+## Test with Some Raw Input
 
 Yeay now let's play with **our** Machine Translation with some raw input. We'll cross check the prediction from MT with Google Translate API to translate it back to english and see how bad **our** MT is :).
 
@@ -1053,7 +1053,7 @@ with open('jp_tokenizer.pickle', 'wb') as handle:
 handle.close()
 ```
 
-# Reference
+## Reference
 
 1. TensorFlow Addons Networks : Sequence-to-Sequence NMT with Attention Mechanism [Link](https://www.tensorflow.org/addons/tutorials/networks_seq2seq_nmt)
 2. seq2seq (Sequence to Sequence) Model for Deep Learning with PyTorch [Link](https://www.guru99.com/seq2seq-model.html)

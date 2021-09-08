@@ -3,20 +3,13 @@ import TeX from "@matejmazur/react-katex";
 import { MDXProvider } from "@mdx-js/react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { responsiveTable, language as langStyle } from "./markdown.module.scss";
+import TabbedImages from "components/tabbed-images/tabbed-images";
 import "katex/dist/katex.min.css";
 
 const components = {
   div: props => {
     if (props.className !== undefined) {
       if (props.className.includes("math-display")) return <TeX block math={props.children} />;
-      else if (props.className.includes("tabbed-images")) {
-        console.log(
-          props.children.filter(e => {
-            if (e !== "\n  ") return true;
-            return false;
-          })
-        );
-      }
     }
     return <div {...props} />;
   },
@@ -63,6 +56,7 @@ const components = {
       </Highlight>
     );
   },
+  TabbedImages,
 };
 
 const MdXLayout = ({ children }) => {

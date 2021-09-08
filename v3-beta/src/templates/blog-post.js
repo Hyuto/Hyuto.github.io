@@ -116,7 +116,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
-      headings {
+      headings(depth: h2) {
         value
       }
     }
