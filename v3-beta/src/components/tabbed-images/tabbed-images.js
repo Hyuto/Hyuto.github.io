@@ -1,43 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useLocation } from "@reach/router";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as style from "./ti.module.scss";
 
 const TabbedImages = ({ names }) => {
-  const location = useLocation();
+  const location = useLocation().pathname.split("/").join("");
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { extension: { eq: "png" } }) {
         edges {
           node {
             relativeDirectory
-            childrenImageSharp {
-              fluid(maxWidth: 630) {
-                ...GatsbyImageSharpFluid
-                originalName
-              }
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
+            name
+            extension
           }
         }
       }
     }
   `);
-  const dir = location.pathname.split("/").join("");
   const images = data.allFile.edges.filter(e => {
     if (
-      e.node.relativeDirectory === dir &&
-      names.includes(e.node.childrenImageSharp[0].fluid.originalName)
+      e.node.relativeDirectory === location &&
+      names.includes(e.node.name + `.${e.node.extension}`)
     ) {
       return true;
     }
     return false;
   });
+  const [selected, setSelected] = useState(0);
 
   return (
-    <div>
-      {images.map(e => {
-        return <Img fluid={e.node.childrenImageSharp[0].fluid} />;
-      })}
+    <div className={style.tiWrapper}>
+      <div className={style.nav}>
+        {images.map((e, index) => {
+          return (
+            <button key={`nav-${e.node.name}`} onClick={() => setSelected(index)}>
+              {e.node.name.split("_").join(" ")}
+            </button>
+          );
+        })}
+      </div>
+      <div>
+        <GatsbyImage
+          key={images[selected].node.name}
+          image={images[selected].node.childImageSharp.gatsbyImageData}
+          alt={images[selected].node.name}
+        />
+      </div>
     </div>
   );
 };

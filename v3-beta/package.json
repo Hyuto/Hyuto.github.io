@@ -14,7 +14,6 @@
     "@tensorflow/tfjs": "^3.8.0",
     "chart.js": "^3.5.1",
     "gatsby": "^3.11.1",
-    "gatsby-image": "^3.11.0",
     "gatsby-plugin-disqus": "^1.2.3",
     "gatsby-plugin-feed": "^3.11.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
