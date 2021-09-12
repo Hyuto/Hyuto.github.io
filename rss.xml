@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Sep 2021 16:38:11 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hyuto's Blog]]></title><description><![CDATA[Wahyu Setianto Personal Blog.]]></description><link>https://Hyuto.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Sep 2021 16:44:17 GMT</lastBuildDate><item><title><![CDATA[Digit Recognizer]]></title><description><![CDATA[MNIST Digit Recognizer using Tensorflow.js]]></description><link>https://Hyuto.github.io/showcase/digit-recognizer</link><guid isPermaLink="false">https://Hyuto.github.io/showcase/digit-recognizer</guid><pubDate>Sun, 10 Jan 2021 03:00:00 GMT</pubDate><content:encoded>
                         &lt;div&gt;
                           &lt;h2&gt;Digit Recognizer&lt;/h2&gt;
                           &lt;p&gt;MNIST Digit Recognizer using Tensorflow.js&lt;/p&gt;
@@ -3737,6 +3737,15 @@ var _frontmatter = {
   &quot;description&quot;: &quot;Building MNIST Digit Classifier Model Using Keras, Tensorflow, and TPU&quot;,
   &quot;tags&quot;: &quot;classification, tensorflow, tpu, image, python&quot;
 };
+
+var makeShortcode = function makeShortcode(name) {
+  return function MDXDefaultShortcode(props) {
+    console.warn(&quot;Component &quot; + name + &quot; was not imported, exported, or provided by MDXProvider as global scope&quot;);
+    return mdx(&quot;div&quot;, props);
+  };
+};
+
+var TabbedImages = makeShortcode(&quot;TabbedImages&quot;);
 var layoutProps = {
   _frontmatter: _frontmatter
 };
@@ -3960,111 +3969,10 @@ return function MDXContent(_ref) {
     parentName: &quot;pre&quot;
   }, &quot;[INFO] Fold 1 val_accuracy : 0.9961 - Time : 168.7797 s\n[INFO] Fold 2 val_accuracy : 0.9957 - Time : 173.7161 s\n[INFO] Fold 3 val_accuracy : 0.9986 - Time : 178.845 s\n[INFO] Fold 4 val_accuracy : 0.9957 - Time : 174.5829 s\n[INFO] Fold 5 val_accuracy : 0.9946 - Time : 173.8493 s\n[INFO] Fold 6 val_accuracy : 0.9979 - Time : 175.585 s\n[INFO] Fold 7 val_accuracy : 0.9964 - Time : 176.5861 s\n[INFO] Fold 8 val_accuracy : 0.9968 - Time : 177.6894 s\n[INFO] Fold 9 val_accuracy : 0.995 - Time : 179.8059 s\n[INFO] Fold 10 val_accuracy : 0.9943 - Time : 176.4369 s\n[INFO] Fold 11 val_accuracy : 0.9939 - Time : 182.6052 s\n[INFO] Fold 12 val_accuracy : 0.9961 - Time : 177.0005 s\n[INFO] Fold 13 val_accuracy : 0.995 - Time : 180.026 s\n[INFO] Fold 14 val_accuracy : 0.9954 - Time : 179.1445 s\n[INFO] Fold 15 val_accuracy : 0.9975 - Time : 175.2097 s\n\n[INFO] Mean CV scores : 0.9959\n&quot;)), mdx(&quot;p&quot;, null, &quot;And so we&apos;ve got really great CV score there. Let&apos;s check the Training History.&quot;), mdx(&quot;h2&quot;, {
     &quot;id&quot;: &quot;history&quot;
-  }, &quot;History&quot;), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
-    parentName: &quot;p&quot;
-  }, &quot;Validation Loss&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;630px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/7422a0fae641ba551fdb715a86950450/302a4/val_loss.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;66.45569620253164%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6klEQVQ4y6WT6XLbMAyE+/7Pl2mnmTpObEuWdVKUeJP6OmTiK/1ZaDArQOAKJBc/tm0jW0qJGOMThhCoqoqmaajruriUkrym1MSIDwHnPVeeH1cyrTXeW7TVxPhF+oXZM3n2EofPXCZR68K5rgkh3gnzR2sdwa/088DV4hZv796GglvaCO6ed9rStS0hhscOI84HZnGhOb5gQsQ6y+rXUpjdmETIxxEiRodCTAS1Kuq6Kt3fCLeUMNYyjzXt20/25z3VNDAukk4PaK24TAOHYUKsK51U9Iumyy4Fp9PpmTCmiDWWufmg3/3i+L6jb2uOh4pDfeHSCY6XE+00Fx+1RAjJOE5oZVm1IT5uOZ9h7nDpBGL3G3Vq8E2F37/Svu2o397xQ4MbWmxfE9oTrs1YMR//YLUipvSw5W3D5i3Pgu5jz9icmcaJrukZ63e61xfmpkUeT4yHM2JYmMeJZRRoKQnelKaeZGONwbgVoUbMuuD1gl0EVgqMNqyjQA0dS98hhwEjJ8wqUKIlOkP4TqiNIeVnSyxWYkKOIyZa/OaxUWOdLj91waDtijES7RTO2387zMIO/lO41ltccEU6zjuMM0Xsyip89CUXiuBTWet9uN/y4+j54G9TkW6YbhPyHb2/1z+N3jX4X8s8fwHNYfM7HIlj8gAAAABJRU5ErkJggg==&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;val-loss&quot;,
-    &quot;title&quot;: &quot;val-loss&quot;,
-    &quot;src&quot;: &quot;/static/7422a0fae641ba551fdb715a86950450/f058b/val_loss.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/7422a0fae641ba551fdb715a86950450/c26ae/val_loss.png 158w&quot;, &quot;/static/7422a0fae641ba551fdb715a86950450/6bdcf/val_loss.png 315w&quot;, &quot;/static/7422a0fae641ba551fdb715a86950450/f058b/val_loss.png 630w&quot;, &quot;/static/7422a0fae641ba551fdb715a86950450/40601/val_loss.png 945w&quot;, &quot;/static/7422a0fae641ba551fdb715a86950450/302a4/val_loss.png 1080w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 630px) 100vw, 630px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
-    parentName: &quot;p&quot;
-  }, &quot;Validation Accuracy&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;630px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/db083aad0563651af90980c4e8ae20ae/302a4/val_accuracy.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;66.45569620253164%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABvklEQVQ4y6WTfW/bIBCH+/2/1/6vlqzNqrROHWNTNzZ2/AIY8DPZmb1kq6pNOwkh7uDh7vhxN44jk4UQ8N6vYzKlFEmSkOc5QghkJpFSrnuC/3Vm4dwtsL7v1+DgB6yzs18Pmt52OO/Qg6E1DdYNc8z6YU3EOXcL1EYTxoANlqavZ6AJlt5pjLOoqqY4lVRlRVXX1FWJqgvObYWzw1rVCrTGoE1LISV921PKE+9RTHmUiOeEUki65IU2OdIcj9THhDKNOb1G6LPCh6nk8QpoLUWakWy3iO1X5GaD2n0jftzwdP+FU/ZEkew57B+QMqJMXxCHHad4h+kafAhXGY4jRhvqvCJ9vCc/PCOi7+yTPbGMyfN3RPKCUA2yUhSlQrWat6Ihywt64wh/lGwH+ipHRA9kqiBTJXlV4kbQNnCuW856YKrMmECYE4H6rGm7Du9/exRjLZV6pcgjpm5YH+CihLk3zgbGn326uC6z7luyNL19lElDxhicNzRdO9+8+D8bk02tepPyVjYTXWs9X9oYz7+YtoY0yz7QodZzH7Ud5uAi1s/mOZGuJRWCYQFef71pY/gL0Efgm6+3LP7XJs4PIm3zZreLK4cAAAAASUVORK5CYII=&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;val-accuracy&quot;,
-    &quot;title&quot;: &quot;val-accuracy&quot;,
-    &quot;src&quot;: &quot;/static/db083aad0563651af90980c4e8ae20ae/f058b/val_accuracy.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/db083aad0563651af90980c4e8ae20ae/c26ae/val_accuracy.png 158w&quot;, &quot;/static/db083aad0563651af90980c4e8ae20ae/6bdcf/val_accuracy.png 315w&quot;, &quot;/static/db083aad0563651af90980c4e8ae20ae/f058b/val_accuracy.png 630w&quot;, &quot;/static/db083aad0563651af90980c4e8ae20ae/40601/val_accuracy.png 945w&quot;, &quot;/static/db083aad0563651af90980c4e8ae20ae/302a4/val_accuracy.png 1080w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 630px) 100vw, 630px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;h2&quot;, {
+  }, &quot;History&quot;), mdx(TabbedImages, {
+    names: [&quot;val_loss.png&quot;, &quot;val_accuracy.png&quot;],
+    mdxType: &quot;TabbedImages&quot;
+  }), mdx(&quot;h2&quot;, {
     &quot;id&quot;: &quot;ensembleing-predictions&quot;
   }, &quot;Ensembleing Predictions&quot;), mdx(&quot;p&quot;, null, mdx(&quot;inlineCode&quot;, {
     parentName: &quot;p&quot;
@@ -4218,6 +4126,15 @@ var _frontmatter = {
   &quot;description&quot;: &quot;Machine Translation English to Japanese using Seq2Seq &amp; Tensorflow 2&quot;,
   &quot;tags&quot;: &quot;nlp, nmt, tensorflow, seq2seq, python&quot;
 };
+
+var makeShortcode = function makeShortcode(name) {
+  return function MDXDefaultShortcode(props) {
+    console.warn(&quot;Component &quot; + name + &quot; was not imported, exported, or provided by MDXProvider as global scope&quot;);
+    return mdx(&quot;div&quot;, props);
+  };
+};
+
+var TabbedImages = makeShortcode(&quot;TabbedImages&quot;);
 var layoutProps = {
   _frontmatter: _frontmatter
 };
@@ -4339,111 +4256,10 @@ return function MDXContent(_ref) {
   }, &quot;--2020-08-19 01:53:52--  https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip\nResolving noto-website-2.storage.googleapis.com (noto-website-2.storage.googleapis.com)... 172.217.204.128, 2607:f8b0:400c:c15::80\nConnecting to noto-website-2.storage.googleapis.com (noto-website-2.storage.googleapis.com)|172.217.204.128|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 121096772 (115M) [application/zip]\nSaving to: \u2018NotoSansCJKjp-hinted.zip\u2019\n\nNotoSansCJKjp-hinte 100%[===================&gt;] 115.49M  53.3MB/s    in 2.2s\n\n2020-08-19 01:53:54 (53.3 MB/s) - \u2018NotoSansCJKjp-hinted.zip\u2019 saved [121096772/121096772]\n\n--2020-08-19 01:53:55--  https://raw.githubusercontent.com/Hyuto/NMT-TF-Seq2seq-EN-JP/master/Japan.jpg\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.200.133\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.200.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 3976 (3.9K) [image/jpeg]\nSaving to: \u2018Japan.jpg\u2019\n\nJapan.jpg           100%[===================&gt;]   3.88K  --.-KB/s    in 0s\n\n2020-08-19 01:53:55 (46.7 MB/s) - \u2018Japan.jpg\u2019 saved [3976/3976]\n\n--2020-08-19 01:53:56--  https://raw.githubusercontent.com/Hyuto/NMT-TF-Seq2seq-EN-JP/master/English.png\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.200.133\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.200.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 303684 (297K) [image/png]\nSaving to: \u2018English.png\u2019\n\nEnglish.png         100%[===================&gt;] 296.57K  --.-KB/s    in 0.1s\n\n2020-08-19 01:53:56 (2.18 MB/s) - \u2018English.png\u2019 saved [303684/303684]\n\nArchive:  NotoSansCJKjp-hinted.zip\n  inflating: ./font/LICENSE_OFL.txt\n  inflating: ./font/NotoSansCJKjp-Black.otf\n  inflating: ./font/NotoSansCJKjp-Bold.otf\n  inflating: ./font/NotoSansCJKjp-DemiLight.otf\n  inflating: ./font/NotoSansCJKjp-Light.otf\n  inflating: ./font/NotoSansCJKjp-Medium.otf\n  inflating: ./font/NotoSansCJKjp-Regular.otf\n  inflating: ./font/NotoSansCJKjp-Thin.otf\n  inflating: ./font/NotoSansMonoCJKjp-Bold.otf\n  inflating: ./font/NotoSansMonoCJKjp-Regular.otf\n  inflating: ./font/README\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
-  }, &quot;from wordcloud import WordCloud, ImageColorGenerator\nfrom PIL import Image\n\ndef get_words(arr):\n    keys = list(arr.keys())\n    count = list(arr.values())\n    return &apos; &apos;.join([x for _,x in sorted(zip(count, keys), reverse = True)][2:])\n\ndef transform(arr):\n    for i in range(len(arr)):\n        for j in range(len(arr[i])):\n            if not any(arr[i][j]):\n                arr[i][j] = np.array([225, 225, 225, 225])\n    return arr\n\nfont_path = &apos;./font/NotoSansCJKjp-Light.otf&apos;\n\n\nmask = &apos;./English.png&apos;\nmask = np.array(Image.open(mask))\nmask = transform(mask)\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(en_tokenizer.word_counts).title()\nwc = WordCloud(background_color=\&quot;white\&quot;, max_words=2000, random_state=42,\n               width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig1, ax1 = plt.subplots(figsize=(20,15))\nax1.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax1.axis(\&quot;off\&quot;)\n\nmask = &apos;./Japan.jpg&apos;\nmask = np.array(Image.open(mask))\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(jp_tokenizer.word_counts).title()\nwc = WordCloud(collocations=False, background_color=\&quot;white\&quot;, mode=\&quot;RGBA\&quot;,\n               max_words=6000, font_path=font_path, contour_width=1,\n               scale=5, max_font_size = 50, relative_scaling=0.5,\n               random_state=42, width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig2, ax2 = plt.subplots(figsize=(20,15))\nax2.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax2.axis(\&quot;off\&quot;)\n\nfig1.savefig(&apos;WC_English.png&apos;)\nfig2.savefig(&apos;WC_Japanese.png&apos;)\nplt.close(fig1)\nplt.close(fig2)\n\n!rm -rf ./font\n&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
-    parentName: &quot;p&quot;
-  }, &quot;English&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;630px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/925d8b9db09014ceb7735de6722223fc/07a9c/WC_English.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;75.31645569620254%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACg0lEQVQ4y3WUe1PaUBDF/f5fojPtdOpM31qtDxQReQfQJAQSEhIICAQIT5WQhF8HrA62sH/cvbsze2bvPbtnj7+2XC75z7akdtlL/d5msFj4zD2PMAzx/YCQJU+TGaNml8Dz8D0P7/GR+fQB31sQLBYEfvBav/J7q+MlMRpPqVlNalYL+75Lr9Ul8/WcXCSNKWu0iiWMeA5XNbAydyjnSSYd5xVsDbjZYdsZYDXuKWsWomYhRFLkLrPkErfoQonCp2MK+7+pZ0TUsySp71fULYcw3NFhtzek1uhyq1hkZZPEWZqb4wSxwziVwyiZ9weopzd0FAMzXyZ/LWK2x+vv2QroDkbUzBaKZiOW60iKxfX+KZfvftLNSpg3ecq/rhjIGj3FQDmK0Tdbb5+8Ceg4LpJUparbFAsVBNEgmy2TjwrYxQpWPE/16IpZUWYmV3goyPTkCsFuUmbcNx3seoe61SZ9kSN+lECNCXRiWTo5kV6pSldSsW417EKZe6mynoqtgEN3REfRGZhNnHYfJZpDu0jzpFvoHw+QTxKMW11aJZ22VqcqlKnlxN1j8+AOcSSVodFgvGI8r9BMFQlVHf3DD5InWe4EjXHbwRCr2GqdiqjhBxuksAH4NJkyUHT6moXbaNOIC6T3zximb+l8OyEVKRCLyYjXRUoFDUPSMXSbxS6WZ30XRzMZmk06RpPI5yhnX2IYgkI9mka+SHOXlJHzJWqqQdOyMavmesO2Ak6cAbZSxVAMZMXk/EYikdcQFYuWM+Dh6ZHpbMZoPGYynTCdTXHd4RZSnqO1X+2vt1gwn88JA58g8J8LlkvCIFjf1w0s3wrKG3F4FZblboX5V402md1k+Q9clGHGV8oF9gAAAABJRU5ErkJggg==&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;wc-english&quot;,
-    &quot;title&quot;: &quot;wc-english&quot;,
-    &quot;src&quot;: &quot;/static/925d8b9db09014ceb7735de6722223fc/f058b/WC_English.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/925d8b9db09014ceb7735de6722223fc/c26ae/WC_English.png 158w&quot;, &quot;/static/925d8b9db09014ceb7735de6722223fc/6bdcf/WC_English.png 315w&quot;, &quot;/static/925d8b9db09014ceb7735de6722223fc/f058b/WC_English.png 630w&quot;, &quot;/static/925d8b9db09014ceb7735de6722223fc/40601/WC_English.png 945w&quot;, &quot;/static/925d8b9db09014ceb7735de6722223fc/78612/WC_English.png 1260w&quot;, &quot;/static/925d8b9db09014ceb7735de6722223fc/07a9c/WC_English.png 1440w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 630px) 100vw, 630px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, mdx(&quot;strong&quot;, {
-    parentName: &quot;p&quot;
-  }, &quot;Japanese&quot;)), mdx(&quot;p&quot;, null, mdx(&quot;span&quot;, {
-    parentName: &quot;p&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-wrapper&quot;,
-    &quot;style&quot;: {
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;display&quot;: &quot;block&quot;,
-      &quot;marginLeft&quot;: &quot;auto&quot;,
-      &quot;marginRight&quot;: &quot;auto&quot;,
-      &quot;maxWidth&quot;: &quot;630px&quot;
-    }
-  }, &quot;\n      &quot;, mdx(&quot;a&quot;, {
-    parentName: &quot;span&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-link&quot;,
-    &quot;href&quot;: &quot;/static/97526e703f2d47eceebc07ee03968a2e/07a9c/WC_Japanese.png&quot;,
-    &quot;style&quot;: {
-      &quot;display&quot;: &quot;block&quot;
-    },
-    &quot;target&quot;: &quot;_blank&quot;,
-    &quot;rel&quot;: &quot;noopener&quot;
-  }, &quot;\n    &quot;, mdx(&quot;span&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-background-image&quot;,
-    &quot;style&quot;: {
-      &quot;paddingBottom&quot;: &quot;75.31645569620254%&quot;,
-      &quot;position&quot;: &quot;relative&quot;,
-      &quot;bottom&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;,
-      &quot;backgroundImage&quot;: &quot;url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAAA70lEQVQ4y62UDQuCMBiE/f+/LaikKCvsO/qiaE6duu1iA0Pi3VzQCzIQ9+yOuxmBGK31Z22f7nvfRKFAEk4cEPlgXahL8bfqfoVKkRtd9p3AdoPMS4jzHeX2ZNcmy0m1/ZalRMM4sukKbDjDazBFNllCHK+QpQi33H6gRIVicwSLE2TxwoL5fA02mqO6Pcmg/MC6QZHuweIFeLIBn6UWzMYJ6sfrd4UmDHG5W5Cxa5QZYJEeoKqabIQT+FHZSAswMJ6ska92NhiqTsEpa6lsOPWTQRals6+9ln1do8ofrtBz9XTI1etQSWDfTyLCn+cNu5Sfjc744QQAAAAASUVORK5CYII=&apos;)&quot;,
-      &quot;backgroundSize&quot;: &quot;cover&quot;,
-      &quot;display&quot;: &quot;block&quot;
-    }
-  }), &quot;\n  &quot;, mdx(&quot;img&quot;, {
-    parentName: &quot;a&quot;,
-    &quot;className&quot;: &quot;gatsby-resp-image-image&quot;,
-    &quot;alt&quot;: &quot;wc-japanese&quot;,
-    &quot;title&quot;: &quot;wc-japanese&quot;,
-    &quot;src&quot;: &quot;/static/97526e703f2d47eceebc07ee03968a2e/f058b/WC_Japanese.png&quot;,
-    &quot;srcSet&quot;: [&quot;/static/97526e703f2d47eceebc07ee03968a2e/c26ae/WC_Japanese.png 158w&quot;, &quot;/static/97526e703f2d47eceebc07ee03968a2e/6bdcf/WC_Japanese.png 315w&quot;, &quot;/static/97526e703f2d47eceebc07ee03968a2e/f058b/WC_Japanese.png 630w&quot;, &quot;/static/97526e703f2d47eceebc07ee03968a2e/40601/WC_Japanese.png 945w&quot;, &quot;/static/97526e703f2d47eceebc07ee03968a2e/78612/WC_Japanese.png 1260w&quot;, &quot;/static/97526e703f2d47eceebc07ee03968a2e/07a9c/WC_Japanese.png 1440w&quot;],
-    &quot;sizes&quot;: &quot;(max-width: 630px) 100vw, 630px&quot;,
-    &quot;style&quot;: {
-      &quot;width&quot;: &quot;100%&quot;,
-      &quot;height&quot;: &quot;100%&quot;,
-      &quot;margin&quot;: &quot;0&quot;,
-      &quot;verticalAlign&quot;: &quot;middle&quot;,
-      &quot;position&quot;: &quot;absolute&quot;,
-      &quot;top&quot;: &quot;0&quot;,
-      &quot;left&quot;: &quot;0&quot;
-    },
-    &quot;loading&quot;: &quot;lazy&quot;,
-    &quot;decoding&quot;: &quot;async&quot;
-  }), &quot;\n  &quot;), &quot;\n    &quot;)), mdx(&quot;p&quot;, null, &quot;now let&apos;s transform our train sentences to sequences.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
+  }, &quot;from wordcloud import WordCloud, ImageColorGenerator\nfrom PIL import Image\n\ndef get_words(arr):\n    keys = list(arr.keys())\n    count = list(arr.values())\n    return &apos; &apos;.join([x for _,x in sorted(zip(count, keys), reverse = True)][2:])\n\ndef transform(arr):\n    for i in range(len(arr)):\n        for j in range(len(arr[i])):\n            if not any(arr[i][j]):\n                arr[i][j] = np.array([225, 225, 225, 225])\n    return arr\n\nfont_path = &apos;./font/NotoSansCJKjp-Light.otf&apos;\n\n\nmask = &apos;./English.png&apos;\nmask = np.array(Image.open(mask))\nmask = transform(mask)\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(en_tokenizer.word_counts).title()\nwc = WordCloud(background_color=\&quot;white\&quot;, max_words=2000, random_state=42,\n               width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig1, ax1 = plt.subplots(figsize=(20,15))\nax1.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax1.axis(\&quot;off\&quot;)\n\nmask = &apos;./Japan.jpg&apos;\nmask = np.array(Image.open(mask))\nimage_colors = ImageColorGenerator(mask)\nwords = get_words(jp_tokenizer.word_counts).title()\nwc = WordCloud(collocations=False, background_color=\&quot;white\&quot;, mode=\&quot;RGBA\&quot;,\n               max_words=6000, font_path=font_path, contour_width=1,\n               scale=5, max_font_size = 50, relative_scaling=0.5,\n               random_state=42, width=mask.shape[1], height=mask.shape[0])\nwc = wc.generate(words)\nfig2, ax2 = plt.subplots(figsize=(20,15))\nax2.imshow(wc.recolor(color_func=image_colors), interpolation=&apos;bilinear&apos;)\nax2.axis(\&quot;off\&quot;)\n\nfig1.savefig(&apos;WC_English.png&apos;)\nfig2.savefig(&apos;WC_Japanese.png&apos;)\nplt.close(fig1)\nplt.close(fig2)\n\n!rm -rf ./font\n&quot;)), mdx(TabbedImages, {
+    names: [&quot;WC_English.png&quot;, &quot;WC_Japanese.png&quot;],
+    mdxType: &quot;TabbedImages&quot;
+  }), mdx(&quot;p&quot;, null, &quot;now let&apos;s transform our train sentences to sequences.&quot;), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
     parentName: &quot;pre&quot;,
     &quot;className&quot;: &quot;language-python&quot;
   }, &quot;def Sequences(texts, tokenizer):\n    res = []\n    for text in texts:\n        seq = []\n        for w in text.split():\n            try:\n                seq.append(tokenizer.word_index[w])\n            except:\n                seq.append(tokenizer.word_index[&apos;unk&apos;])\n        res.append(seq)\n    return res\n&quot;)), mdx(&quot;pre&quot;, null, mdx(&quot;code&quot;, {
