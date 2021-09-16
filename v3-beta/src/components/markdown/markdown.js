@@ -10,6 +10,8 @@ const components = {
   div: props => {
     if (props.className !== undefined) {
       if (props.className.includes("math-display")) return <TeX block math={props.children} />;
+      if (props.className.includes("tabbed"))
+        return <TabbedImages>{props.children.filter(e => typeof e !== "string")}</TabbedImages>;
     }
     return <div {...props} />;
   },
@@ -56,7 +58,6 @@ const components = {
       </Highlight>
     );
   },
-  TabbedImages,
 };
 
 const MdXLayout = ({ children }) => {
