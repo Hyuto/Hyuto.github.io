@@ -127,14 +127,14 @@ module.exports = {
             serialize: ({ query: { site, allMdx, allShowcaseJson } }) => {
               const feeds = [];
 
-              allMdx.nodes.forEach(node => {
+              allMdx.edges.forEach(edge => {
                 feeds.push(
-                  Object.assign({}, node.frontmatter, {
-                    description: node.excerpt,
-                    date: node.frontmatter.date,
-                    url: site.siteMetadata.siteUrl + node.fields.slug,
-                    guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    custom_elements: [{ "content:encoded": node.body }],
+                  Object.assign({}, edge.node.frontmatter, {
+                    description: edge.node.excerpt,
+                    date: edge.node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                    custom_elements: [{ "content:encoded": edge.node.html }],
                   })
                 );
               });
@@ -172,15 +172,17 @@ module.exports = {
                 allMdx(
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
-                  nodes {
-                    excerpt
-                    body
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        title
+                        date
+                      }
                     }
                   }
                 }
@@ -215,7 +217,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
