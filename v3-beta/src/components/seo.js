@@ -11,6 +11,7 @@ const Seo = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -42,7 +43,31 @@ const Seo = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `blog`,
+        },
+        {
+          property: `og:url`,
+          content: site.siteMetadata?.siteUrl,
+        },
+        {
+          property: `og:site_name`,
+          content: site.siteMetadata?.title,
+        },
+        {
+          property: `twitter:site`,
+          content: site.siteMetadata?.siteUrl,
+        },
+        {
+          property: `twitter:site`,
+          content: site.siteMetadata?.siteUrl,
+        },
+        {
+          property: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          property: `twitter:title`,
+          content: title,
         },
       ].concat(meta)}
     />

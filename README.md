@@ -18,4 +18,4 @@ Although it's written on `Typescript` and `Sass` :).
 
 ### `v.3.0` [Running]
 
-Using `gatsby.js` with [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) template
+Using `Gatsby.js` with [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) template

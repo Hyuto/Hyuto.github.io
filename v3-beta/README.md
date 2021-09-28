@@ -6,4 +6,3 @@ Framework : `Gatsby.js`
 
 1. Move all `css` to `scss`
 2. Show language in list posts `index.js`
-3. Make clickable TOC on mobile view
