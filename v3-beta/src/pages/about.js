@@ -6,13 +6,13 @@ import Layout from "components/layout";
 import Seo from "components/seo";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaKaggle } from "@react-icons/all-files/fa/FaKaggle";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import * as style from "style/about.module.scss";
 
 const About = ({ data, location }) => {
   const author = data.site.siteMetadata?.author.name;
-  const github = data.site.siteMetadata?.github;
   const social = data.site.siteMetadata?.social;
 
   return (
@@ -35,8 +35,13 @@ const About = ({ data, location }) => {
           <h3>{author}</h3>
           <div className={style.social}>
             <li key="github">
-              <a href={github.link}>
+              <a href={social.github.link}>
                 <FaGithub size={25} />{" "}
+              </a>
+            </li>
+            <li key="kaggle">
+              <a href={social.kaggle.link}>
+                <FaKaggle size={25} />{" "}
               </a>
             </li>
             <li key="linkedin">
@@ -53,7 +58,7 @@ const About = ({ data, location }) => {
         </div>
         <div className={style.desc}>
           <p>
-            Third year student at the State University of Jakarta majoring in statistics. As a
+            Final year student at the State University of Jakarta majoring in statistics. As a
             statistics student I have a lot of experience in processing data to gain insights and
             solve problems. I have deep experience in Python and R and few other programming
             language like Javascript and C++. I love building deep learning models to solve a
@@ -80,17 +85,17 @@ export const AboutQuery = graphql`
         author {
           name
         }
-        github {
-          username
-          link
-        }
         social {
+          github {
+            link
+          }
+          kaggle {
+            link
+          }
           linkedin {
-            username
             link
           }
           instagram {
-            username
             link
           }
         }

@@ -65,7 +65,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       author: Author
       siteUrl: String
       social: Social
-      github: SocialMedia
     }
 
     type Author {
@@ -74,6 +73,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
+      github: SocialMedia
+      kaggle: SocialMedia
       instagram: SocialMedia
       linkedin: SocialMedia
     }

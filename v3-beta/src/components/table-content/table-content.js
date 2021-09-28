@@ -17,20 +17,20 @@ const TableContent = ({ headings }) => {
   useEffect(() => {
     if (visible !== null) {
       const toggleVisibility = () => {
-        if (window.screen.width >= 1350) setVisibility(true);
+        if (window.screen.width >= 1240) setVisibility(true);
         else setVisibility(false);
       };
       window.addEventListener("resize", toggleVisibility);
       return () => window.removeEventListener("resize", toggleVisibility);
-    } else setVisibility(window.screen.width >= 1300);
+    } else setVisibility(window.screen.width >= 1240);
   }, [visible]);
 
   return (
     <>
       {headings && headings.length > 0 && (
-        <div className={style.wrapper}>
+        <div className={style.wrapper} style={{ padding: visible ? "10px" : "0px" }}>
           <div className={style.hamburger}>
-            <Hamburger size={20} />
+            <Hamburger toggled={visible} toggle={setVisibility} size={20} rounded />
           </div>
           {visible && (
             <div className={style.main}>

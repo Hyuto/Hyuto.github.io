@@ -3,15 +3,14 @@
   top: 7;
   right: 0;
   margin-right: 25px;
-  padding: 10px;
   z-index: 1000;
   border: 2px solid black;
   border-radius: 10px;
 
   .hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: none;
+    padding: 0;
+    margin: 0;
   }
 
   .main {
@@ -54,6 +53,21 @@
         border-radius: 20px;
         border: 3px solid ghostwhite;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .wrapper {
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    .hamburger {
+      display: flex;
+      justify-content: center;
     }
   }
 }

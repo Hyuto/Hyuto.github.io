@@ -7,11 +7,15 @@ module.exports = {
     },
     description: `Wahyu Setianto Personal Blog.`,
     siteUrl: `https://Hyuto.github.io/`,
-    github: {
-      username: `Hyuto`,
-      link: `https://github.com/Hyuto`,
-    },
     social: {
+      github: {
+        username: `Hyuto`,
+        link: `https://github.com/Hyuto`,
+      },
+      kaggle: {
+        username: `wahyusetianto`,
+        link: `https://www.kaggle.com/wahyusetianto`,
+      },
       instagram: {
         username: `hyuto_`,
         link: `https://www.instagram.com/hyuto_/`,
@@ -217,7 +221,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
