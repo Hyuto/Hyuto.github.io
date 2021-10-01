@@ -93,6 +93,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      lang: String
       tags: String
     }
 

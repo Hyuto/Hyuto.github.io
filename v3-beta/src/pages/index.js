@@ -18,6 +18,7 @@ const BlogIndex = ({ data, location }) => {
         title: blog.frontmatter.title || blog.fields.slug,
         slug: blog.fields.slug,
         link: blog.fields.slug,
+        lang: blog.frontmatter.lang,
         date: blog.frontmatter.date,
         description: blog.frontmatter.description || blog.excerpt,
         tags: blog.frontmatter.tags.split(", ").sort(),
@@ -81,7 +82,7 @@ const BlogIndex = ({ data, location }) => {
                     itemScope
                     itemType="http://schema.org/Article"
                   >
-                    <header>
+                    <header style={{ marginBottom: `12px` }}>
                       <h2 style={{ lineHeight: "1.4" }}>
                         {post.tipe === "showcase" ? (
                           <span
@@ -107,9 +108,26 @@ const BlogIndex = ({ data, location }) => {
                         }}
                         itemProp="description"
                       />
-                      <small>{post.date}</small>
+                      <small style={{ marginTop: `5px` }}>
+                        {post.tipe === "blog" ? (
+                          <span>
+                            <span
+                              style={{
+                                padding: `3px`,
+                                color: `white`,
+                                backgroundColor: `black`,
+                                borderRadius: `3px`,
+                              }}
+                            >
+                              {post.lang.toUpperCase()}
+                            </span>
+                            {"  "}
+                          </span>
+                        ) : null}
+                        {post.date}
+                      </small>
                     </section>
-                    <div style={{ marginTop: "10px" }}>
+                    <div style={{ marginTop: "5px" }}>
                       <small>
                         <FaTags />{" "}
                         {post.tags.map((e, index) => {
@@ -160,8 +178,9 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
-          title
           description
+          lang
+          title
           tags
         }
       }
