@@ -136,6 +136,10 @@ const BlogIndex = ({ data, location }) => {
                               <button
                                 className="tags-button"
                                 onClick={() => (!tags.includes(e) ? setTags([...tags, e]) : null)}
+                                style={{
+                                  textDecoration:
+                                    tags.length !== 0 && tags.includes(e) ? "underline" : "none",
+                                }}
                               >
                                 {e}
                               </button>
