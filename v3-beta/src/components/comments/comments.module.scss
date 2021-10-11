@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+
+  button {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    background-color: #282a36;
+    border: 2px solid #282a36;
+    font-weight: 500;
+    margin: 3px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+      background-color: white;
+      border: 2px solid #282a36;
+    }
+  }
+}

@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import { Link, graphql } from "gatsby";
-import { Disqus } from "gatsby-plugin-disqus";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Bio from "components/bio";
 import Layout from "components/layout";
 import Seo from "components/seo";
 import ScrollToTop from "components/scroll-up";
+import Comments from "components/comments/comments";
 import MdXLayout from "components/markdown/markdown";
 import TableContent from "components/table-content/table-content";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
@@ -86,13 +86,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </Link>
       </nav>
       <hr style={{ margin: "25px 0" }}></hr>
-      <Disqus
-        config={{
-          url: location.href,
-          identifier: location.key,
-          title: post.frontmatter.title,
-        }}
-      />
+      <Comments url={location.href} identifier={location.key} title={post.frontmatter.title} />
     </Layout>
   );
 };
