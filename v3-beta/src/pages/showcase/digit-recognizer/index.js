@@ -3,7 +3,7 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 import { Bar } from "react-chartjs-2";
 import { isMobile } from "react-device-detect";
 import * as tf from "@tensorflow/tfjs";
-import Layout from "components/showcase/layout";
+import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
 import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
@@ -19,14 +19,10 @@ const DigitRecognizer = ({ location }) => {
   });
 
   const preprocess = img => {
-    // convert the image data to a tensor
     const tensor = tf.browser.fromPixels(img, 1);
-    // resize to 28 X 28
     const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
-    // Normalize the image
     const offset = tf.scalar(255.0);
     const normalized = resized.div(offset);
-    // Add a dimension to get a batch shape
     const batched = normalized.expandDims();
     return batched.toFloat();
   };

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
-import Seo from "../seo";
-import * as style from "./layout.module.scss";
+import Seo from "components/seo";
+import * as style from "style/showcase.module.scss";
 
 const Layout = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`

@@ -48,6 +48,7 @@ module.exports = {
         style: `${__dirname}/src/style`,
         showcase: `${__dirname}/content/showcase`,
         components: `${__dirname}/src/components`,
+        templates: `${__dirname}/src/templates`,
       },
     },
     {
