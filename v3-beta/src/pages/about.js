@@ -8,7 +8,6 @@ import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaKaggle } from "@react-icons/all-files/fa/FaKaggle";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import * as style from "style/about.module.scss";
 
 const About = ({ data, location }) => {
@@ -47,11 +46,6 @@ const About = ({ data, location }) => {
             <li key="linkedin">
               <a href={social.linkedin.link}>
                 <FaLinkedin size={25} />
-              </a>
-            </li>
-            <li key="instagram">
-              <a href={social.instagram.link}>
-                <FaInstagramSquare size={25} />
               </a>
             </li>
           </div>
@@ -93,9 +87,6 @@ export const AboutQuery = graphql`
             link
           }
           linkedin {
-            link
-          }
-          instagram {
             link
           }
         }
