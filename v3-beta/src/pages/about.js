@@ -59,6 +59,11 @@ const About = ({ data, location }) => {
             problems. I'm interested on Data Science and Web Development
           </p>
         </div>
+        <div className={style.cv}>
+          <a href="./CV_Wahyu.pdf" target="_blank">
+            View my resume
+          </a>
+        </div>
       </div>
       <Link to="/">
         <span>
