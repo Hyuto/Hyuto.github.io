@@ -34,7 +34,7 @@ const TableContent = ({ headings }) => {
           </div>
           {visible && (
             <div className={style.main}>
-              <div className={style.title}>Table of Contents</div>
+              <div className={style.title}>On this page</div>
               <div className={style.list}>
                 {data.map((e, index) => {
                   return (
