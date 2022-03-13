@@ -7,27 +7,27 @@ import TabbedImages from "components/tabbed-images/tabbed-images";
 import "katex/dist/katex.min.css";
 
 const components = {
-  div: props => {
+  div: (props) => {
     if (props.className !== undefined) {
       if (props.className.includes("math-display")) return <TeX block math={props.children} />;
       if (props.className.includes("tabbed"))
-        return <TabbedImages>{props.children.filter(e => typeof e !== "string")}</TabbedImages>;
+        return <TabbedImages>{props.children.filter((e) => typeof e !== "string")}</TabbedImages>;
     }
     return <div {...props} />;
   },
-  span: props => {
+  span: (props) => {
     if (props.className.includes("math-inline")) {
       return <TeX math={props.children} />;
     }
     return <span {...props} />;
   },
-  th: props => <th {...props} align="center"></th>,
-  table: props => (
+  th: (props) => <th {...props} align="center"></th>,
+  table: (props) => (
     <div className={responsiveTable}>
       <table {...props}>{props.children}</table>
     </div>
   ),
-  inlineCode: props => <code {...props} className="language-text"></code>,
+  inlineCode: (props) => <code {...props} className="language-text"></code>,
   code: ({ children, className }) => {
     const language = className !== undefined ? className.replace(/language-/, "") : "text";
 

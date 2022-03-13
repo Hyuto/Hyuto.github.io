@@ -49,6 +49,11 @@
     "use-query-params": "^1.2.3"
   },
   "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-mdx": "^1.16.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.3",
     "gatsby-plugin-root-import": "^2.0.7",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.24",
     "prettier": "2.3.2"
@@ -58,18 +63,16 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hyuto/Hyuto.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"content/**/*.{js,jsx,ts,tsx,md,mdx}\""
   }
 }

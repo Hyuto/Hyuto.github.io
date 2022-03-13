@@ -11,7 +11,7 @@ const SADetector = () => {
   const [loading, setLoading] = useState(false);
   const chart = useRef(null);
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     await fetch("https://hyuto-blog.herokuapp.com/sa-corona/", {
@@ -23,12 +23,12 @@ const SADetector = () => {
       },
       body: JSON.stringify({ words: words }),
     })
-      .then(content => content.json())
-      .then(content => {
+      .then((content) => content.json())
+      .then((content) => {
         setLoading(false);
         setPrediction(content);
       })
-      .catch(error => {
+      .catch((error) => {
         setLoading(false);
         alert("Error : Can't send request to the server.");
         console.log(error);
@@ -56,7 +56,7 @@ const SADetector = () => {
               <textarea
                 className={style.words}
                 value={words}
-                onChange={e => setWords(e.target.value)}
+                onChange={(e) => setWords(e.target.value)}
               ></textarea>
             </form>
             <div className={style.chart}>
@@ -106,7 +106,7 @@ const SADetector = () => {
           <div className={style.btnWrapper}>
             <button onClick={onSubmit}>Submit</button>
             <button
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 setWords("");
                 setPrediction({ class: null, proba: null });

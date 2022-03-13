@@ -18,7 +18,7 @@ const DigitRecognizer = ({ location }) => {
     pred: "",
   });
 
-  const preprocess = img => {
+  const preprocess = (img) => {
     const tensor = tf.browser.fromPixels(img, 1);
     const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
     const offset = tf.scalar(255.0);
@@ -31,7 +31,7 @@ const DigitRecognizer = ({ location }) => {
     const loadModel = async () =>
       await tf.loadLayersModel(`${location.origin}/model/digit-recognizer/model.json`);
 
-    loadModel().then(e => {
+    loadModel().then((e) => {
       setModel(e);
       setLoading("ready");
       if (isMobile) tf.setBackend("cpu");
@@ -120,10 +120,10 @@ const DigitRecognizer = ({ location }) => {
         <div className={style.button}>
           <button
             className={loading === "loading" ? style.loading : null}
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
               if (loading === "ready") {
-                canvas.current.exportImage().then(e => {
+                canvas.current.exportImage().then((e) => {
                   const img = new Image();
                   img.src = e;
 
@@ -142,7 +142,7 @@ const DigitRecognizer = ({ location }) => {
           </button>
           <button
             className={loading === "loading" ? style.loading : null}
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
               if (loading === "ready") {
                 canvas.current.clearCanvas();

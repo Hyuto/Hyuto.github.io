@@ -3,7 +3,7 @@ import Hamburger from "hamburger-react";
 import * as style from "./table-content.module.scss";
 
 const TableContent = ({ headings }) => {
-  const data = headings.map(e => {
+  const data = headings.map((e) => {
     const lower = e.value.toLowerCase();
     const punctless = lower.replace(/[.,'/#!$%^&*;:{}=_`~()]/g, "");
     return {

@@ -12,7 +12,7 @@ import * as rssStyle from "style/br-icon.module.scss";
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts] = useState([
-    ...data.allMdx.nodes.map(blog => {
+    ...data.allMdx.nodes.map((blog) => {
       return {
         tipe: "blog",
         title: blog.frontmatter.title || blog.fields.slug,
@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
         tags: blog.frontmatter.tags.split(", ").sort(),
       };
     }),
-    ...data.allShowcaseJson.edges.map(showcase => {
+    ...data.allShowcaseJson.edges.map((showcase) => {
       return {
         tipe: "showcase",
         title: showcase.node.title,
@@ -41,7 +41,7 @@ const BlogIndex = ({ data, location }) => {
 
   useEffect(() => {
     if (tags.length !== 0) {
-      setPostfiltered(posts.filter(e => tags.every(val => e.tags.includes(val))));
+      setPostfiltered(posts.filter((e) => tags.every((val) => e.tags.includes(val))));
     } else setPostfiltered(posts);
   }, [tags, posts]);
 
@@ -51,10 +51,10 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       <div className="filter">
         {tags.length !== 0
-          ? tags.map(e => (
+          ? tags.map((e) => (
               <span key={e}>
                 <FaWindowClose
-                  onClick={() => setTags(tags.filter(element => (element !== e ? true : false)))}
+                  onClick={() => setTags(tags.filter((element) => (element !== e ? true : false)))}
                   style={{ cursor: "pointer" }}
                 />
                 {" " + e}
@@ -74,7 +74,7 @@ const BlogIndex = ({ data, location }) => {
                 ? -1
                 : 0
             )
-            .map(post => {
+            .map((post) => {
               return (
                 <li key={post.slug}>
                   <article

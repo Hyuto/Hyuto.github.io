@@ -62,7 +62,7 @@ const About = ({ data, location }) => {
             statistics student I have a lot of experience in processing data to gain insights and
             solve problems. I have deep experience in Python and R and few other programming
             language like Javascript and C++. I love building deep learning models to solve a
-            problems. I'm interested on Data Science and Web Development
+            problems. I&apos;m interested on Data Science and Web Development
           </p>
         </div>
       </div>
