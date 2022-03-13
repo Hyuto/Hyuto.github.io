@@ -33,9 +33,9 @@ const Layout = ({ title, description, children }) => {
       <main>{children}</main>
       <footer className={style.footer}>
         <strong>
-          © {data.site.siteMetadata?.author.name} {new Date().getFullYear()}
+          © {data.site.siteMetadata?.author.name.toLowerCase()} {new Date().getFullYear()}
         </strong>
-        , Built with
+        , built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby.js </a>
         and {"\u2764"}

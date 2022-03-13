@@ -8,7 +8,6 @@ import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaKaggle } from "@react-icons/all-files/fa/FaKaggle";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import * as style from "style/about.module.scss";
 
 const About = ({ data, location }) => {
@@ -49,11 +48,6 @@ const About = ({ data, location }) => {
                 <FaLinkedin size={25} />
               </a>
             </li>
-            <li key="instagram">
-              <a href={social.instagram.link}>
-                <FaInstagramSquare size={25} />
-              </a>
-            </li>
           </div>
         </div>
         <div className={style.desc}>
@@ -64,6 +58,11 @@ const About = ({ data, location }) => {
             language like Javascript and C++. I love building deep learning models to solve a
             problems. I&apos;m interested on Data Science and Web Development
           </p>
+        </div>
+        <div className={style.cv}>
+          <a href="./CV_Wahyu.pdf" target="_blank">
+            View my resume
+          </a>
         </div>
       </div>
       <Link to="/">
@@ -93,9 +92,6 @@ export const AboutQuery = graphql`
             link
           }
           linkedin {
-            link
-          }
-          instagram {
             link
           }
         }

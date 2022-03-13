@@ -9,19 +9,12 @@ module.exports = {
     siteUrl: `https://Hyuto.github.io/`,
     social: {
       github: {
-        username: `Hyuto`,
         link: `https://github.com/Hyuto`,
       },
       kaggle: {
-        username: `wahyusetianto`,
         link: `https://www.kaggle.com/wahyusetianto`,
       },
-      instagram: {
-        username: `hyuto_`,
-        link: `https://www.instagram.com/hyuto_/`,
-      },
       linkedin: {
-        username: `Wahyu Setianto`,
         link: `https://www.linkedin.com/in/wahyu-setianto/`,
       },
     },

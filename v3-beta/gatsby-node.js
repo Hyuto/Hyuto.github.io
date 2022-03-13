@@ -75,12 +75,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Social {
       github: SocialMedia
       kaggle: SocialMedia
-      instagram: SocialMedia
       linkedin: SocialMedia
     }
 
     type SocialMedia {
-      username: String
       link: String
     }
 
