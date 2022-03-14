@@ -1,0 +1,63 @@
+.YOLOWrapper {
+  .title {
+    text-align: center;
+    margin: 10px;
+    h2 {
+      margin: 5px;
+      padding: 0;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: small;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btnWrapper {
+      margin: 5px 0;
+
+      * {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        border: 2px solid black;
+        font-weight: 500;
+        margin: 3px 5px;
+        padding: 7px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          color: black;
+          background-color: white;
+          border: 2px solid black;
+        }
+      }
+    }
+
+    .prediction {
+      text-align: center;
+      font-weight: 600;
+      margin: 10px;
+    }
+  }
+}

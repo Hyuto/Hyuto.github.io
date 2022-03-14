@@ -1,0 +1,7 @@
+{
+  "slug": "digit-recognizer",
+  "title": "Digit Recognizer",
+  "description": "MNIST Digit Recognizer using Tensorflow.js",
+  "date": "2021-01-10T10:00:00",
+  "tags": ["tensorflow.js", "image", "classification", "javascript"]
+}

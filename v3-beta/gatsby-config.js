@@ -39,7 +39,7 @@ module.exports = {
       options: {
         main: `${__dirname}/src`,
         style: `${__dirname}/src/style`,
-        showcase: `${__dirname}/content/showcase`,
+        showcase: `${__dirname}/src/content/showcase`,
         components: `${__dirname}/src/components`,
         templates: `${__dirname}/src/templates`,
       },
@@ -48,14 +48,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/src/content/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `showcase`,
-        path: `${__dirname}/content/showcase`,
+        path: `${__dirname}/src/content/showcase`,
       },
     },
     {

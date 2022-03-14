@@ -11,7 +11,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@react-icons/all-files": "^4.1.0",
-    "@tensorflow/tfjs": "^3.8.0",
+    "@tensorflow/tfjs": "^3.14.0",
     "chart.js": "^3.5.1",
     "gatsby": "^3.11.1",
     "gatsby-plugin-disqus": "^1.2.3",
@@ -73,6 +73,6 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"content/**/*.{js,jsx,ts,tsx,md,mdx}\""
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,md,mdx}\""
   }
 }

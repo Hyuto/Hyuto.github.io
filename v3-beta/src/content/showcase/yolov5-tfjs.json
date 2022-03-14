@@ -1,0 +1,7 @@
+{
+  "slug": "yolov5-tfjs",
+  "title": "Object Detection using YOLOv5",
+  "description": "Object Detection Application using YOLOv5 and Tensorflow.js",
+  "date": "2022-03-01T10:00:00",
+  "tags": ["tensorflow.js", "object detection", "javascript"]
+}

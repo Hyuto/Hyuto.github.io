@@ -8,7 +8,7 @@ import Loader from "components/loader/loader";
 import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
 
-const DigitRecognizer = ({ location }) => {
+const DigitRecognizer = () => {
   const [model, setModel] = useState(null);
   const [loading, setLoading] = useState("loading");
   const canvas = useRef(null);
@@ -29,7 +29,7 @@ const DigitRecognizer = ({ location }) => {
 
   useEffect(() => {
     const loadModel = async () =>
-      await tf.loadLayersModel(`${location.origin}/model/digit-recognizer/model.json`);
+      await tf.loadLayersModel(`${window.location.origin}/model/digit-recognizer/model.json`);
 
     loadModel().then((e) => {
       setModel(e);
@@ -37,7 +37,7 @@ const DigitRecognizer = ({ location }) => {
       if (isMobile) tf.setBackend("cpu");
       else tf.setBackend("webgl");
     });
-  }, [location]);
+  }, []);
 
   return (
     <Layout title={metadata.title} description={metadata.description}>
