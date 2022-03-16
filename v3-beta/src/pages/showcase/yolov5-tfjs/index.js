@@ -2,15 +2,22 @@ import React, { useState, useEffect, useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
+import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
 import labels from "./labels.json";
 import metadata from "showcase/yolov5-tfjs.json";
 import * as style from "./yolov5-tfjs.module.scss";
 
+tf.enableProdMode();
+
 const YOLOv5OD = () => {
   const [model, setModel] = useState(null);
   const [webcam, setWebcam] = useState("close");
+  const [lcimage, setLCImage] = useState("close");
   const [loading, setLoading] = useState("loading");
+  const [threshold, setThreshold] = useState(0.35);
   const [aniId, setAniId] = useState(null);
+  const inputImage = useRef(null);
+  const imageRef = useRef(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -20,7 +27,7 @@ const YOLOv5OD = () => {
         .getUserMedia({
           audio: false,
           video: {
-            facingMode: "user",
+            facingMode: "environment",
           },
         })
         .then((stream) => {
@@ -41,37 +48,41 @@ const YOLOv5OD = () => {
     } else alert("Please open Webcam first!");
   };
 
-  const renderPrediction = (boxes_data, scores_data, classes_data, valid_detections_data) => {
+  const renderPrediction = (boxes_data, scores_data, classes_data) => {
     const ctx = canvasRef.current.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); //clean canvas
 
-    const font = "11px sans-serif";
+    const font = `18px sans-serif`;
     ctx.font = font;
     ctx.textBaseline = "top";
 
-    for (let i = 0; i < valid_detections_data; ++i) {
-      let [x1, y1, x2, y2] = boxes_data.slice(i * 4, (i + 1) * 4);
-      x1 *= canvasRef.current.width;
-      x2 *= canvasRef.current.width;
-      y1 *= canvasRef.current.height;
-      y2 *= canvasRef.current.height;
-      const width = x2 - x1;
-      const height = y2 - y1;
-      const klass = labels[classes_data[i]];
-      const score = scores_data[i].toFixed(2);
+    for (let i = 0; i < scores_data.length; ++i) {
+      if (scores_data[i] > threshold) {
+        let [x1, y1, x2, y2] = boxes_data.slice(i * 4, (i + 1) * 4);
+        x1 *= canvasRef.current.width;
+        x2 *= canvasRef.current.width;
+        y1 *= canvasRef.current.height;
+        y2 *= canvasRef.current.height;
+        const width = x2 - x1;
+        const height = y2 - y1;
+        const klass = labels[classes_data[i]];
+        const score = (scores_data[i] * 100).toFixed(1);
 
-      // Draw the bounding box.
-      ctx.strokeStyle = "#00FFFF";
-      ctx.lineWidth = 2;
-      ctx.strokeRect(x1, y1, width, height);
+        // Draw the bounding box.
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x1, y1, width, height);
 
-      // Draw the label background.
-      ctx.fillStyle = "#00FFFF";
-      const textWidth = ctx.measureText(klass + ":" + score).width;
-      const textHeight = parseInt(font, 10); // base 10
-      ctx.fillRect(x1, y1, textWidth + 4, textHeight + 4);
-      ctx.fillStyle = "#000000";
-      ctx.fillText(klass + ":" + score, x1, y1);
+        // Draw the label background.
+        ctx.fillStyle = "#00FF00";
+        const textWidth = ctx.measureText(klass + " - " + score + "%").width;
+        const textHeight = parseInt(font, 10); // base 10
+        ctx.fillRect(x1 - 1, y1 - (textHeight + 2), textWidth + 2, textHeight + 2);
+
+        // Draw labels
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(klass + " - " + score + "%", x1 - 1, y1 - (textHeight + 2));
+      }
     }
   };
 
@@ -86,28 +97,56 @@ const YOLOv5OD = () => {
     });
 
     model.executeAsync(input).then((res) => {
-      const [boxes, scores, classes, valid_detections] = res;
+      const [boxes, scores, classes] = res.slice(0, 3);
       const boxes_data = boxes.dataSync();
       const scores_data = scores.dataSync();
       const classes_data = classes.dataSync();
-      const valid_detections_data = valid_detections.dataSync()[0];
-      renderPrediction(boxes_data, scores_data, classes_data, valid_detections_data);
+      renderPrediction(boxes_data, scores_data, classes_data);
       tf.dispose(res);
     });
 
-    const reqId = requestAnimationFrame(() => {
-      detectFrame();
-    });
+    const reqId = requestAnimationFrame(detectFrame);
     setAniId(reqId);
     tf.engine().endScope();
   };
 
-  useEffect(() => {
-    tf.loadGraphModel(`${window.location.origin}/model/yolov5n_web_model/model.json`).then((e) => {
-      setModel(e);
-      setLoading("ready");
-      tf.setBackend("webgl");
+  const detectImage = () => {
+    tf.engine().startScope();
+    let [modelWidth, modelHeight] = model.inputs[0].shape.slice(1, 3);
+    const input = tf.tidy(() => {
+      return tf.image
+        .resizeBilinear(tf.browser.fromPixels(imageRef.current), [modelWidth, modelHeight])
+        .div(255.0)
+        .expandDims(0);
     });
+
+    model.executeAsync(input).then((res) => {
+      const [boxes, scores, classes] = res.slice(0, 3);
+      const boxes_data = boxes.dataSync();
+      const scores_data = scores.dataSync();
+      const classes_data = classes.dataSync();
+      renderPrediction(boxes_data, scores_data, classes_data);
+      tf.dispose(res);
+    });
+    tf.engine().endScope();
+  };
+
+  useEffect(() => {
+    tf.loadGraphModel(`${window.location.origin}/model/yolov5n_web_model/model.json`).then(
+      (yolov5) => {
+        // Warmup the model before using real data.
+        yolov5.executeAsync(tf.zeros(yolov5.inputs[0].shape)).then((warmupResult) => {
+          warmupResult.forEach((element) => {
+            element.dataSync();
+          });
+          tf.dispose(warmupResult);
+
+          setModel(yolov5);
+          setLoading("ready");
+          tf.setBackend("webgl");
+        });
+      }
+    );
   }, []);
 
   return (
@@ -127,23 +166,70 @@ const YOLOv5OD = () => {
               muted
               ref={videoRef}
             />
+            <img style={{ display: lcimage === "open" ? "block" : "none" }} ref={imageRef} />
             <canvas
+              width={852}
+              height={480}
               style={{
-                display: webcam === "open" ? "block" : "none",
+                display: webcam === "open" || lcimage === "open" ? "block" : "none",
                 position: "absolute",
                 top: "0",
                 left: "0",
               }}
               ref={canvasRef}
             />
+            {lcimage === "open" ? (
+              <FaWindowClose
+                size={30}
+                color="black"
+                className={style.close}
+                onClick={() => {
+                  const ctx = canvasRef.current.getContext("2d");
+                  const src = imageRef.current.src;
+                  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                  inputImage.current.value = "";
+                  imageRef.current.src = "";
+                  window.URL.revokeObjectURL(src);
+                  setLCImage("close");
+                }}
+              />
+            ) : null}
           </div>
           <div className={style.btnWrapper}>
+            <input
+              type="file"
+              ref={inputImage}
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const ctx = canvasRef.current.getContext("2d");
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                const f = e.target.files[0];
+                const src = window.URL.createObjectURL(f);
+
+                if (imageRef.current.src === "") window.URL.revokeObjectURL(imageRef.current.src);
+                imageRef.current.src = src;
+                imageRef.current.onload = function () {
+                  detectImage();
+                  setLCImage("open");
+                };
+              }}
+            />
             <button
-              disabled={loading === "loading"}
+              disabled={webcam === "open"}
+              onClick={() => {
+                inputImage.current.click();
+              }}
+            >
+              Open Local Image
+            </button>
+
+            <button
+              disabled={lcimage === "open"}
               onClick={() => {
                 if (webcam === "close") {
                   openWebcam();
-                  videoRef.current.onloadedmetadata = (e) => {
+                  videoRef.current.onloadedmetadata = () => {
                     detectFrame();
                   };
                 } else {

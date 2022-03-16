@@ -8,6 +8,8 @@ import Loader from "components/loader/loader";
 import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
 
+tf.enableProdMode();
+
 const DigitRecognizer = () => {
   const [model, setModel] = useState(null);
   const [loading, setLoading] = useState("loading");
