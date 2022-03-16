@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
+import "@tensorflow/tfjs-backend-webgl";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
 import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
@@ -10,11 +11,11 @@ import * as style from "./yolov5-tfjs.module.scss";
 tf.enableProdMode();
 
 const YOLOv5OD = () => {
+  const threshold = 0.35;
   const [model, setModel] = useState(null);
   const [webcam, setWebcam] = useState("close");
   const [lcimage, setLCImage] = useState("close");
   const [loading, setLoading] = useState("loading");
-  const [threshold, setThreshold] = useState(0.35);
   const [aniId, setAniId] = useState(null);
   const inputImage = useRef(null);
   const imageRef = useRef(null);
@@ -34,6 +35,9 @@ const YOLOv5OD = () => {
           window.localStream = stream;
           videoRef.current.srcObject = stream;
           setWebcam("open");
+          videoRef.current.onloadedmetadata = () => {
+            detectFrame();
+          };
         });
     } else alert("Can't open Webcam!");
   };
@@ -86,31 +90,33 @@ const YOLOv5OD = () => {
     }
   };
 
-  const detectFrame = () => {
-    tf.engine().startScope();
-    let [modelWidth, modelHeight] = model.inputs[0].shape.slice(1, 3);
-    const input = tf.tidy(() => {
-      return tf.image
-        .resizeBilinear(tf.browser.fromPixels(videoRef.current), [modelWidth, modelHeight])
-        .div(255.0)
-        .expandDims(0);
-    });
+  const detectFrame = async () => {
+    if (videoRef.current.srcObject) {
+      tf.engine().startScope();
+      let [modelWidth, modelHeight] = model.inputs[0].shape.slice(1, 3);
+      const input = tf.tidy(() => {
+        return tf.image
+          .resizeBilinear(tf.browser.fromPixels(videoRef.current), [modelWidth, modelHeight])
+          .div(255.0)
+          .expandDims(0);
+      });
 
-    model.executeAsync(input).then((res) => {
-      const [boxes, scores, classes] = res.slice(0, 3);
-      const boxes_data = boxes.dataSync();
-      const scores_data = scores.dataSync();
-      const classes_data = classes.dataSync();
-      renderPrediction(boxes_data, scores_data, classes_data);
-      tf.dispose(res);
-    });
+      await model.executeAsync(input).then((res) => {
+        const [boxes, scores, classes] = res.slice(0, 3);
+        const boxes_data = boxes.dataSync();
+        const scores_data = scores.dataSync();
+        const classes_data = classes.dataSync();
+        renderPrediction(boxes_data, scores_data, classes_data);
+        tf.dispose(res);
+      });
 
-    const reqId = requestAnimationFrame(detectFrame);
-    setAniId(reqId);
-    tf.engine().endScope();
+      const reqId = requestAnimationFrame(detectFrame);
+      setAniId(reqId);
+      tf.engine().endScope();
+    }
   };
 
-  const detectImage = () => {
+  const detectImage = async () => {
     tf.engine().startScope();
     let [modelWidth, modelHeight] = model.inputs[0].shape.slice(1, 3);
     const input = tf.tidy(() => {
@@ -120,7 +126,7 @@ const YOLOv5OD = () => {
         .expandDims(0);
     });
 
-    model.executeAsync(input).then((res) => {
+    await model.executeAsync(input).then((res) => {
       const [boxes, scores, classes] = res.slice(0, 3);
       const boxes_data = boxes.dataSync();
       const scores_data = scores.dataSync();
@@ -135,15 +141,16 @@ const YOLOv5OD = () => {
     tf.loadGraphModel(`${window.location.origin}/model/yolov5n_web_model/model.json`).then(
       (yolov5) => {
         // Warmup the model before using real data.
-        yolov5.executeAsync(tf.zeros(yolov5.inputs[0].shape)).then((warmupResult) => {
+        const dummyInput = tf.ones(yolov5.inputs[0].shape);
+        yolov5.executeAsync(dummyInput).then((warmupResult) => {
           warmupResult.forEach((element) => {
             element.dataSync();
           });
           tf.dispose(warmupResult);
+          tf.dispose(dummyInput);
 
           setModel(yolov5);
           setLoading("ready");
-          tf.setBackend("webgl");
         });
       }
     );
@@ -166,10 +173,14 @@ const YOLOv5OD = () => {
               muted
               ref={videoRef}
             />
-            <img style={{ display: lcimage === "open" ? "block" : "none" }} ref={imageRef} />
+            <img
+              style={{ display: lcimage === "open" ? "block" : "none" }}
+              src="#"
+              ref={imageRef}
+            />
             <canvas
-              width={852}
-              height={480}
+              width={640}
+              height={360}
               style={{
                 display: webcam === "open" || lcimage === "open" ? "block" : "none",
                 position: "absolute",
@@ -178,22 +189,19 @@ const YOLOv5OD = () => {
               }}
               ref={canvasRef}
             />
-            {lcimage === "open" ? (
-              <FaWindowClose
-                size={30}
-                color="black"
-                className={style.close}
-                onClick={() => {
-                  const ctx = canvasRef.current.getContext("2d");
-                  const src = imageRef.current.src;
-                  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                  inputImage.current.value = "";
-                  imageRef.current.src = "";
-                  window.URL.revokeObjectURL(src);
-                  setLCImage("close");
-                }}
-              />
-            ) : null}
+            <FaWindowClose
+              size={30}
+              color="black"
+              className={style.close}
+              style={{ display: lcimage === "open" ? "block" : "none" }}
+              onClick={() => {
+                const ctx = canvasRef.current.getContext("2d");
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                inputImage.current.value = "";
+                imageRef.current.src = "#";
+                setLCImage("close");
+              }}
+            />
           </div>
           <div className={style.btnWrapper}>
             <input
@@ -202,17 +210,16 @@ const YOLOv5OD = () => {
               accept="image/*"
               style={{ display: "none" }}
               onChange={(e) => {
-                const ctx = canvasRef.current.getContext("2d");
-                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                const f = e.target.files[0];
-                const src = window.URL.createObjectURL(f);
-
-                if (imageRef.current.src === "") window.URL.revokeObjectURL(imageRef.current.src);
-                imageRef.current.src = src;
-                imageRef.current.onload = function () {
-                  detectImage();
+                if (e.target.files[0] !== null) {
+                  const f = e.target.files[0];
+                  const src = window.URL.createObjectURL(f);
+                  imageRef.current.src = src;
                   setLCImage("open");
-                };
+                  imageRef.current.onload = () => {
+                    detectImage();
+                    window.URL.revokeObjectURL(src);
+                  };
+                }
               }}
             />
             <button
@@ -229,9 +236,6 @@ const YOLOv5OD = () => {
               onClick={() => {
                 if (webcam === "close") {
                   openWebcam();
-                  videoRef.current.onloadedmetadata = () => {
-                    detectFrame();
-                  };
                 } else {
                   cancelAnimationFrame(aniId);
                   setAniId(null);

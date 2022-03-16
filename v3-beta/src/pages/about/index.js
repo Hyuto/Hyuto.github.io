@@ -8,7 +8,7 @@ import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaKaggle } from "@react-icons/all-files/fa/FaKaggle";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import * as style from "style/about.module.scss";
+import * as style from "./about.module.scss";
 
 const About = ({ data, location }) => {
   const author = data.site.siteMetadata?.author.name;
@@ -25,7 +25,7 @@ const About = ({ data, location }) => {
             className={style.profilePic}
             layout="fixed"
             formats={["png"]}
-            src="../images/profile-pic.png"
+            src="../../images/profile-pic.png"
             height={200}
             width={200}
             quality={80}

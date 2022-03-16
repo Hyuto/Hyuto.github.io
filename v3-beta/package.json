@@ -70,7 +70,7 @@
   "scripts": {
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "start": "gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0 -p 8000",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,md,mdx}\""
