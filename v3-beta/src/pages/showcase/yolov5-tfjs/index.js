@@ -54,9 +54,9 @@ const YOLOv5OD = () => {
 
   const renderPrediction = (boxes_data, scores_data, classes_data) => {
     const ctx = canvasRef.current.getContext("2d");
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); //clean canvas
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); // Clean canvas
 
-    const font = `18px sans-serif`;
+    const font = "16px sans-serif";
     ctx.font = font;
     ctx.textBaseline = "top";
 
@@ -139,13 +139,10 @@ const YOLOv5OD = () => {
 
   useEffect(() => {
     tf.loadGraphModel(`${window.location.origin}/model/yolov5n_web_model/model.json`).then(
-      (yolov5) => {
+      async (yolov5) => {
         // Warmup the model before using real data.
         const dummyInput = tf.ones(yolov5.inputs[0].shape);
-        yolov5.executeAsync(dummyInput).then((warmupResult) => {
-          warmupResult.forEach((element) => {
-            element.dataSync();
-          });
+        await yolov5.executeAsync(dummyInput).then((warmupResult) => {
           tf.dispose(warmupResult);
           tf.dispose(dummyInput);
 
@@ -183,9 +180,6 @@ const YOLOv5OD = () => {
               height={360}
               style={{
                 display: webcam === "open" || lcimage === "open" ? "block" : "none",
-                position: "absolute",
-                top: "0",
-                left: "0",
               }}
               ref={canvasRef}
             />

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import * as tf from "@tensorflow/tfjs";
+import "@tensorflow/tfjs-backend-webgl";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import { Bar } from "react-chartjs-2";
-import { isMobile } from "react-device-detect";
-import * as tf from "@tensorflow/tfjs";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
-import * as style from "./digit-recognizer.module.scss";
 import metadata from "showcase/digit-recognizer.json";
+import * as style from "./digit-recognizer.module.scss";
 
 tf.enableProdMode();
 
@@ -20,25 +20,36 @@ const DigitRecognizer = () => {
     pred: "",
   });
 
-  const preprocess = (img) => {
-    const tensor = tf.browser.fromPixels(img, 1);
-    const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
-    const offset = tf.scalar(255.0);
-    const normalized = resized.div(offset);
-    const batched = normalized.expandDims();
-    return batched.toFloat();
+  const detectImage = (img) => {
+    tf.engine().startScope();
+    const input = tf.tidy(() => {
+      // Get grayscale from image and do some preprocessing
+      return tf.image
+        .resizeBilinear(tf.browser.fromPixels(img, 1), [28, 28])
+        .div(255.0)
+        .expandDims()
+        .toFloat();
+    }); // Tensor: [1, 28, 28, 1]
+    const out = model.predict(input); // Get prediction
+    setChartdata({
+      pred: `${out.argMax(1).arraySync()[0]}`,
+      prob: [...out.arraySync()[0]],
+    });
+    tf.dispose(out); // Disposes tensor to free up memory
+    tf.engine().endScope();
   };
 
   useEffect(() => {
-    const loadModel = async () =>
-      await tf.loadLayersModel(`${window.location.origin}/model/digit-recognizer/model.json`);
-
-    loadModel().then((e) => {
-      setModel(e);
-      setLoading("ready");
-      if (isMobile) tf.setBackend("cpu");
-      else tf.setBackend("webgl");
-    });
+    tf.loadLayersModel(`${window.location.origin}/model/digit-recognizer/model.json`).then(
+      (net) => {
+        // Warmup the model before using real data.
+        tf.tidy(() => {
+          net.predict(tf.ones([28, 28, 1]).expandDims());
+        });
+        setModel(net);
+        setLoading("ready");
+      }
+    );
   }, []);
 
   return (
@@ -121,38 +132,31 @@ const DigitRecognizer = () => {
         </div>
         <div className={style.button}>
           <button
+            disabled={loading === "loading"}
             className={loading === "loading" ? style.loading : null}
-            onClick={(e) => {
-              e.preventDefault();
-              if (loading === "ready") {
-                canvas.current.exportImage().then((e) => {
-                  const img = new Image();
-                  img.src = e;
-
-                  img.onload = () => {
-                    const out = model.predict(preprocess(img));
-                    setChartdata({
-                      pred: `${out.argMax(1).arraySync()[0]}`,
-                      prob: out.arraySync()[0],
-                    });
-                  };
-                });
-              }
+            onClick={() => {
+              // Export canvas to image
+              canvas.current.exportImage().then((canvasImg) => {
+                const img = new Image();
+                img.src = canvasImg;
+                img.onload = () => {
+                  // Detect image when loaded
+                  detectImage(img);
+                };
+              });
             }}
           >
             predict
           </button>
           <button
+            disabled={loading === "loading"}
             className={loading === "loading" ? style.loading : null}
-            onClick={(e) => {
-              e.preventDefault();
-              if (loading === "ready") {
-                canvas.current.clearCanvas();
-                setChartdata({
-                  pred: "",
-                  prob: Array(10).fill(0),
-                });
-              }
+            onClick={() => {
+              canvas.current.clearCanvas();
+              setChartdata({
+                pred: "",
+                prob: Array(10).fill(0),
+              });
             }}
           >
             clear
