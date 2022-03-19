@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
 import { useQueryParam, ArrayParam, withDefault } from "use-query-params";
-import Bio from "components/bio";
-import Layout from "components/layout";
-import Seo from "components/seo";
 import { FaTags } from "@react-icons/all-files/fa/FaTags";
 import { FaRssSquare } from "@react-icons/all-files/fa/FaRssSquare";
 import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
+import Bio from "components/bio";
+import Layout from "components/layout";
+import Seo from "components/seo";
 import * as rssStyle from "style/br-icon.module.scss";
 
 const BlogIndex = ({ data, location }) => {
@@ -17,7 +17,7 @@ const BlogIndex = ({ data, location }) => {
         tipe: "blog",
         title: blog.frontmatter.title || blog.fields.slug,
         slug: blog.fields.slug,
-        link: blog.fields.slug,
+        link: `blog${blog.fields.slug}`,
         lang: blog.frontmatter.lang,
         date: blog.frontmatter.date,
         description: blog.frontmatter.description || blog.excerpt,
