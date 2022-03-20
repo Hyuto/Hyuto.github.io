@@ -68,27 +68,33 @@
 
       button {
         text-decoration: none;
-        color: white;
-        background-color: black;
-        border: 2px solid black;
         font-weight: 500;
         margin: 3px 5px;
         padding: 7px;
         border-radius: 5px;
         cursor: pointer;
+        border: 2px solid black;
+      }
+
+      .nonActive {
+        color: white;
+        background-color: black;
 
         &:hover {
           color: black;
           background-color: white;
-          border: 2px solid black;
         }
 
         &:disabled {
           cursor: context-menu;
           color: white;
           background-color: grey;
-          border: 2px solid black;
         }
+      }
+
+      .Active {
+        color: black;
+        background-color: white;
       }
     }
 

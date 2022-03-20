@@ -68,7 +68,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.md`, `.mdx`],
+        extensions: [`.mdx`],
         remarkPlugins: [require("remark-math")],
         gatsbyRemarkPlugins: [
           {

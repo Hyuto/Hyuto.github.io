@@ -4,6 +4,7 @@ import "@tensorflow/tfjs-backend-webgl";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
 import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
+import { AiFillSetting } from "@react-icons/all-files/ai/AiFillSetting";
 import labels from "./labels.json";
 import metadata from "showcase/yolov5-tfjs.json";
 import * as style from "./yolov5-tfjs.module.scss";
@@ -11,11 +12,12 @@ import * as style from "./yolov5-tfjs.module.scss";
 tf.enableProdMode();
 
 const YOLOv5OD = () => {
-  const threshold = 0.35;
+  const [threshold, setThreshold] = useState(0.35);
   const [model, setModel] = useState(null);
   const [webcam, setWebcam] = useState("close");
   const [lcimage, setLCImage] = useState("close");
   const [loading, setLoading] = useState("loading");
+  const [settings, setSettings] = useState("close");
   const [aniId, setAniId] = useState(null);
   const inputImage = useRef(null);
   const imageRef = useRef(null);
@@ -218,6 +220,7 @@ const YOLOv5OD = () => {
             />
             <button
               disabled={webcam === "open"}
+              className={style.nonActive}
               onClick={() => {
                 inputImage.current.click();
               }}
@@ -227,6 +230,7 @@ const YOLOv5OD = () => {
 
             <button
               disabled={lcimage === "open"}
+              className={webcam === "open" ? style.Active : style.nonActive}
               onClick={() => {
                 if (webcam === "close") {
                   openWebcam();
@@ -239,6 +243,33 @@ const YOLOv5OD = () => {
             >
               {webcam === "open" ? "Close" : "Open"} Webcam
             </button>
+            <button
+              className={settings === "open" ? style.Active : style.nonActive}
+              onClick={() => {
+                setSettings(settings === "open" ? "close" : "open");
+              }}
+            >
+              <AiFillSetting />
+            </button>
+          </div>
+          <div
+            style={{ display: settings === "open" ? "block" : "none" }}
+            className={style.settings}
+          >
+            <div className={style.title}>Settings</div>
+            <div className={style.content}>
+              <input
+                type="number"
+                name="threshold"
+                min="0"
+                max="1"
+                value={threshold}
+                onChange={(e) => {
+                  if (e.target.valueAsNumber > 0 && e.target.valueAsNumber < 1)
+                    setThreshold(e.target.valueAsNumber);
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
