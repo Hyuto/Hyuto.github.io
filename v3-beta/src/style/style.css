@@ -371,3 +371,36 @@ body::-webkit-scrollbar-thumb {
 .tags-button:hover {
   text-decoration: underline;
 }
+
+#multiselectContainerReact {
+  margin-bottom: 10px;
+  font-size: calc(8px + 0.5vw);
+  min-width: 200px;
+  max-width: 500px;
+}
+
+#multiselectContainerReact .search-wrapper {
+  background-color: white;
+  max-width: 500px;
+}
+
+#multiselectContainerReact > .singleSelect {
+  padding: 0;
+}
+
+#multiselectContainerReact .singleChip {
+  margin: 3px 0;
+}
+
+#multiselectContainerReact .highlight {
+  background-color: black;
+}
+
+#multiselectContainerReact .option:hover {
+  background-color: black;
+}
+
+#multiselectContainerReact .optionContainer {
+  max-height: 100px;
+  list-style-type: none;
+}

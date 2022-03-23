@@ -2,6 +2,7 @@
   .title {
     text-align: center;
     margin: 10px;
+
     h2 {
       margin: 5px;
       padding: 0;
@@ -10,6 +11,11 @@
     p {
       margin: 5px 0;
       font-size: small;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
     }
   }
 

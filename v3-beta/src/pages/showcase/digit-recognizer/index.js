@@ -59,7 +59,16 @@ const DigitRecognizer = () => {
           <h2>Digit Recognizer</h2>
           <p>
             Using Tensorflow.js to predict handdrawing digits. Model trained on 42.000 MNIST data +
-            Augmentation with 99.62% of accuracy
+            Augmentation with 99.62% of accuracy{" "}
+            <strong>
+              <a
+                href="https://github.com/Hyuto/Hyuto.github.io/tree/master/v3-beta/src/pages/showcase/digit-recognizer"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Source Code
+              </a>
+            </strong>
           </p>
         </div>
         <div className={style.content}>

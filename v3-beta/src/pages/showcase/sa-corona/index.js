@@ -44,7 +44,13 @@ const SADetector = () => {
             Sentiment detector using SVM trained with Indonesian twitter dataset on corona focused
             topic.{" "}
             <strong>
-              <a href="https://github.com/Hyuto/Analisis-Sentimen-Corona-DKI-Jakarta">Repository</a>
+              <a
+                href="https://github.com/Hyuto/Analisis-Sentimen-Corona-DKI-Jakarta"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Repository
+              </a>
             </strong>
           </p>
         </div>

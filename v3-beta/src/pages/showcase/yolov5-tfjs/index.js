@@ -1,24 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
 import "@tensorflow/tfjs-backend-webgl";
-import Layout from "templates/showcase";
-import Loader from "components/loader/loader";
+import Multiselect from "multiselect-react-dropdown";
 import { FaWindowClose } from "@react-icons/all-files/fa/FaWindowClose";
 import { AiFillSetting } from "@react-icons/all-files/ai/AiFillSetting";
+import Layout from "templates/showcase";
+import Loader from "components/loader/loader";
 import labels from "./labels.json";
 import metadata from "showcase/yolov5-tfjs.json";
 import * as style from "./yolov5-tfjs.module.scss";
 
 tf.enableProdMode();
+const modelOption = [
+  { value: "yolov5n", label: "YOLOv5n - lighter model" },
+  { value: "yolov5s", label: "YOLOv5s" },
+];
+const labelsOption = labels.map((element) => {
+  return { value: element, label: element.charAt(0).toUpperCase() + element.slice(1) };
+});
 
 const YOLOv5OD = () => {
-  const [threshold, setThreshold] = useState(0.35);
   const [model, setModel] = useState(null);
   const [webcam, setWebcam] = useState("close");
   const [lcimage, setLCImage] = useState("close");
   const [loading, setLoading] = useState("loading");
   const [settings, setSettings] = useState("close");
   const [aniId, setAniId] = useState(null);
+  const [threshold, setThreshold] = useState({ value: 0.35, changed: false });
+  const [modelName, setModelName] = useState("yolov5n");
+  const [find, setFind] = useState([]);
+  const inputNumber = useRef(null);
   const inputImage = useRef(null);
   const imageRef = useRef(null);
   const videoRef = useRef(null);
@@ -63,7 +74,14 @@ const YOLOv5OD = () => {
     ctx.textBaseline = "top";
 
     for (let i = 0; i < scores_data.length; ++i) {
-      if (scores_data[i] > threshold) {
+      if (scores_data[i] > threshold.value) {
+        const klass = labels[classes_data[i]];
+        const score = (scores_data[i] * 100).toFixed(1);
+
+        if (find.length > 0 && find.every((e) => e.value !== klass)) {
+          continue;
+        }
+
         let [x1, y1, x2, y2] = boxes_data.slice(i * 4, (i + 1) * 4);
         x1 *= canvasRef.current.width;
         x2 *= canvasRef.current.width;
@@ -71,8 +89,6 @@ const YOLOv5OD = () => {
         y2 *= canvasRef.current.height;
         const width = x2 - x1;
         const height = y2 - y1;
-        const klass = labels[classes_data[i]];
-        const score = (scores_data[i] * 100).toFixed(1);
 
         // Draw the bounding box.
         ctx.strokeStyle = "#00FF00";
@@ -140,7 +156,8 @@ const YOLOv5OD = () => {
   };
 
   useEffect(() => {
-    tf.loadGraphModel(`${window.location.origin}/model/yolov5n_web_model/model.json`).then(
+    setLoading("loading");
+    tf.loadGraphModel(`${window.location.origin}/model/${modelName}_web_model/model.json`).then(
       async (yolov5) => {
         // Warmup the model before using real data.
         const dummyInput = tf.ones(yolov5.inputs[0].shape);
@@ -153,14 +170,25 @@ const YOLOv5OD = () => {
         });
       }
     );
-  }, []);
+  }, [modelName]);
 
   return (
     <Layout title={metadata.title} description={metadata.description}>
       <div className={style.YOLOWrapper}>
         <div className={style.title}>
           <h2>{metadata.title}</h2>
-          <p>{metadata.description}</p>
+          <p>
+            {metadata.description}{" "}
+            <strong>
+              <a
+                href="https://github.com/Hyuto/Hyuto.github.io/tree/master/v3-beta/src/pages/showcase/yolov5-tfjs"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Source Code
+              </a>
+            </strong>
+          </p>
         </div>
         <div className={style.content}>
           <Loader style={{ display: loading === "ready" ? "none" : null }}>Loading model...</Loader>
@@ -258,15 +286,82 @@ const YOLOv5OD = () => {
           >
             <div className={style.title}>Settings</div>
             <div className={style.content}>
-              <input
-                type="number"
-                name="threshold"
-                min="0"
-                max="1"
-                value={threshold}
-                onChange={(e) => {
-                  if (e.target.valueAsNumber > 0 && e.target.valueAsNumber < 1)
-                    setThreshold(e.target.valueAsNumber);
+              <p>
+                <strong>Threshold</strong> :{" "}
+                <input
+                  type="number"
+                  name="threshold"
+                  defaultValue={threshold.value}
+                  ref={inputNumber}
+                  disabled={webcam === "open"}
+                  onChange={(e) => {
+                    if (e.target.valueAsNumber !== threshold.value)
+                      setThreshold({ value: threshold.value, changed: true });
+                    else setThreshold({ value: threshold.value, changed: false });
+                  }}
+                />{" "}
+                {threshold.changed ? (
+                  <button
+                    disabled={webcam === "open"}
+                    onClick={() => {
+                      if (
+                        inputNumber.current.valueAsNumber > 0 &&
+                        inputNumber.current.valueAsNumber < 1
+                      )
+                        setThreshold({ value: inputNumber.current.valueAsNumber, changed: false });
+                      else {
+                        alert("Threshold value must have value between 0 and 1!");
+                        setThreshold({ value: threshold.value, changed: false });
+                        inputNumber.current.value = threshold.value;
+                      }
+                    }}
+                  >
+                    Update
+                  </button>
+                ) : null}
+              </p>
+              <div className={style.contentTitle}>Model</div>
+              <Multiselect
+                customCloseIcon={<></>}
+                disable={webcam === "open"}
+                options={modelOption}
+                displayValue="label"
+                selectedValues={modelOption.filter((element) => element.value === modelName)}
+                onSelect={(_, selectedItem) => {
+                  if (selectedItem.value !== modelName) {
+                    model.dispose();
+                    tf.dispose(model);
+                    setModelName(selectedItem.value);
+                  }
+                }}
+                singleSelect
+                style={{
+                  option: {
+                    margin: "0",
+                  },
+                }}
+              />
+              <div className={style.contentTitle}>Specific Detection</div>
+              <Multiselect
+                options={labelsOption}
+                displayValue="label"
+                showArrow={true}
+                selectedValues={find}
+                selectionLimit={10}
+                disable={webcam === "open"}
+                onSelect={(selectedList) => {
+                  if (selectedList !== find) setFind(selectedList);
+                }}
+                onRemove={(selectedList) => {
+                  if (selectedList !== find) setFind(selectedList);
+                }}
+                style={{
+                  chips: {
+                    backgroundColor: "black",
+                  },
+                  option: {
+                    margin: "0",
+                  },
                 }}
               />
             </div>

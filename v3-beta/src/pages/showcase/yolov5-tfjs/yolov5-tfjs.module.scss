@@ -2,13 +2,15 @@
   .title {
     text-align: center;
     margin: 10px;
+
     h2 {
       margin: 5px;
       padding: 0;
     }
 
     p {
-      margin: 5px 0;
+      margin: 0;
+      margin-top: 10px;
       font-size: small;
     }
 
@@ -69,7 +71,7 @@
       button {
         text-decoration: none;
         font-weight: 500;
-        margin: 3px 5px;
+        margin: 3px;
         padding: 7px;
         border-radius: 5px;
         cursor: pointer;
@@ -98,10 +100,64 @@
       }
     }
 
-    .prediction {
-      text-align: center;
-      font-weight: 600;
-      margin: 10px;
+    .settings {
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .title {
+        margin: 10px 0;
+        font-size: medium;
+        font-weight: 700;
+      }
+
+      .content {
+        p {
+          margin: 3px 0;
+          font-size: 14px;
+
+          input {
+            max-width: 50px;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid grey;
+            border-radius: 5px;
+          }
+
+          button {
+            text-decoration: none;
+            padding: 2px;
+            border-radius: 3px;
+            cursor: pointer;
+            border: 2px solid black;
+            color: white;
+            background-color: black;
+
+            &:hover {
+              color: black;
+              background-color: white;
+            }
+
+            &:disabled {
+              cursor: context-menu;
+              color: white;
+              background-color: grey;
+            }
+          }
+        }
+
+        .contentTitle {
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: 800;
+        }
+      }
     }
   }
 }
