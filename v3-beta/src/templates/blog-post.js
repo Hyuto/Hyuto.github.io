@@ -1,6 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { FaHome } from "@react-icons/all-files/fa/FaHome";
+import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
+import { FaLongArrowAltRight } from "@react-icons/all-files/fa/FaLongArrowAltRight";
+import { FaTags } from "@react-icons/all-files/fa/FaTags";
 import Bio from "components/bio";
 import Layout from "components/layout";
 import Seo from "components/seo";
@@ -8,10 +12,6 @@ import ScrollToTop from "components/scroll-up";
 import Comments from "components/comments/comments";
 import MdXLayout from "components/markdown/markdown";
 import TableContent from "components/table-content/table-content";
-import { FaHome } from "@react-icons/all-files/fa/FaHome";
-import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
-import { FaLongArrowAltRight } from "@react-icons/all-files/fa/FaLongArrowAltRight";
-import { FaTags } from "@react-icons/all-files/fa/FaTags";
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx;
@@ -64,7 +64,7 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li
             style={{
-              padding: `0 5px`,
+              padding: `0 4px`,
             }}
           >
             {previous && (
@@ -73,7 +73,11 @@ const BlogPostTemplate = ({ data, location }) => {
               </Link>
             )}
           </li>
-          <li>
+          <li
+            style={{
+              padding: `0 4px`,
+            }}
+          >
             {next && (
               <Link to={`/blog${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} <FaLongArrowAltRight />
@@ -110,7 +114,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
-      headings(depth: h2) {
+      headings {
+        depth
         value
       }
     }
