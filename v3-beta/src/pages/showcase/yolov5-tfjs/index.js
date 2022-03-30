@@ -23,7 +23,7 @@ const YOLOv5OD = () => {
   const [model, setModel] = useState(null);
   const [webcam, setWebcam] = useState("close");
   const [lcimage, setLCImage] = useState("close");
-  const [loading, setLoading] = useState("loading");
+  const [loading, setLoading] = useState({ state: "loading", progress: 0 });
   const [settings, setSettings] = useState("close");
   const [aniId, setAniId] = useState(null);
   const [threshold, setThreshold] = useState({ value: 0.35, changed: false });
@@ -156,20 +156,22 @@ const YOLOv5OD = () => {
   };
 
   useEffect(() => {
-    setLoading("loading");
-    tf.loadGraphModel(`${window.location.origin}/model/${modelName}_web_model/model.json`).then(
-      async (yolov5) => {
-        // Warmup the model before using real data.
-        const dummyInput = tf.ones(yolov5.inputs[0].shape);
-        await yolov5.executeAsync(dummyInput).then((warmupResult) => {
-          tf.dispose(warmupResult);
-          tf.dispose(dummyInput);
+    setLoading({ state: "loading", progress: 0 });
+    tf.loadGraphModel(`${window.location.origin}/model/${modelName}_web_model/model.json`, {
+      onProgress: (fractions) => {
+        setLoading({ state: "loading", progress: fractions });
+      },
+    }).then(async (yolov5) => {
+      // Warmup the model before using real data.
+      const dummyInput = tf.ones(yolov5.inputs[0].shape);
+      await yolov5.executeAsync(dummyInput).then((warmupResult) => {
+        tf.dispose(warmupResult);
+        tf.dispose(dummyInput);
 
-          setModel(yolov5);
-          setLoading("ready");
-        });
-      }
-    );
+        setModel(yolov5);
+        setLoading({ state: "ready", progress: 1 });
+      });
+    });
   }, [modelName]);
 
   return (
@@ -191,7 +193,9 @@ const YOLOv5OD = () => {
           </p>
         </div>
         <div className={style.content}>
-          <Loader style={{ display: loading === "ready" ? "none" : null }}>Loading model...</Loader>
+          <Loader style={{ display: loading.state === "ready" ? "none" : null }}>
+            Loading model... {(loading.progress * 100).toFixed(2)}%
+          </Loader>
           <div className={style.main}>
             <video
               style={{ display: webcam === "open" ? "block" : "none" }}

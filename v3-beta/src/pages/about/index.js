@@ -2,12 +2,12 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import Layout from "components/layout";
-import Seo from "components/seo";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaKaggle } from "@react-icons/all-files/fa/FaKaggle";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import Layout from "components/layout";
+import Seo from "components/seo";
 import * as style from "./about.module.scss";
 
 const About = ({ data, location }) => {

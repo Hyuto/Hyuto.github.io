@@ -12,7 +12,7 @@ tf.enableProdMode();
 
 const DigitRecognizer = () => {
   const [model, setModel] = useState(null);
-  const [loading, setLoading] = useState("loading");
+  const [loading, setLoading] = useState({ state: "loading", progress: 0 });
   const canvas = useRef(null);
   const chart = useRef(null);
   const [chartdata, setChartdata] = useState({
@@ -40,16 +40,18 @@ const DigitRecognizer = () => {
   };
 
   useEffect(() => {
-    tf.loadLayersModel(`${window.location.origin}/model/digit-recognizer/model.json`).then(
-      (net) => {
-        // Warmup the model before using real data.
-        tf.tidy(() => {
-          net.predict(tf.ones([28, 28, 1]).expandDims());
-        });
-        setModel(net);
-        setLoading("ready");
-      }
-    );
+    tf.loadLayersModel(`${window.location.origin}/model/digit-recognizer/model.json`, {
+      onProgress: (fractions) => {
+        setLoading({ state: "loading", progress: fractions });
+      },
+    }).then((net) => {
+      // Warmup the model before using real data.
+      tf.tidy(() => {
+        net.predict(tf.ones([28, 28, 1]).expandDims());
+      });
+      setModel(net);
+      setLoading({ state: "ready", progress: 1 });
+    });
   }, []);
 
   return (
@@ -72,7 +74,9 @@ const DigitRecognizer = () => {
           </p>
         </div>
         <div className={style.content}>
-          <Loader style={{ display: loading === "ready" ? "none" : null }}>Loading model...</Loader>
+          <Loader style={{ display: loading.state === "ready" ? "none" : null }}>
+            Loading model... {(loading.progress * 100).toFixed(2)}%
+          </Loader>
           <ReactSketchCanvas
             className={style.canvas}
             style={{
@@ -141,8 +145,8 @@ const DigitRecognizer = () => {
         </div>
         <div className={style.button}>
           <button
-            disabled={loading === "loading"}
-            className={loading === "loading" ? style.loading : null}
+            disabled={loading.state === "loading"}
+            className={loading.state === "loading" ? style.loading : null}
             onClick={() => {
               // Export canvas to image
               canvas.current.exportImage().then((canvasImg) => {
@@ -158,8 +162,8 @@ const DigitRecognizer = () => {
             predict
           </button>
           <button
-            disabled={loading === "loading"}
-            className={loading === "loading" ? style.loading : null}
+            disabled={loading.state === "loading"}
+            className={loading.state === "loading" ? style.loading : null}
             onClick={() => {
               canvas.current.clearCanvas();
               setChartdata({
