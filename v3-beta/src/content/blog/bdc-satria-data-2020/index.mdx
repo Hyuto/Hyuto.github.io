@@ -1,15 +1,25 @@
 ---
 title: Hoax Classification - BDC Satria Data 2020
 date: "2020-10-17T00:28:47"
-description: Hoax Classification Team Catatan Cakrawala Pada BDC Satria Data 2020
+description: Hoax Classification tim Catatan Cakrawala pada lomba Big Data Competition - Satria Data 2020
 lang: id
 tags: nlp, classification, tensorflow, python
 ---
 
 import { BarChart, PieChart } from "./plot-bdc";
 
-Notebook ini adalah script yang kelompok **Catatan Cakrawala** gunakan pada saat mengikuti lomba
-BDC Satria Data 2020 yang di selenggarakan oleh IPB dan PUSPRESNAS.
+[![Github](https://img.shields.io/badge/Github-black?logo=github)](https://github.com/Hyuto/BDC-Satria-Data)
+[![kaggle](https://img.shields.io/badge/Kaggle-blue?logo=kaggle)](https://www.kaggle.com/wahyusetianto/bdc-main-notebook)
+
+Beberapa bulan yang lalu penulis dan teman - teman yang tergabung dalam tim **Catatan Cakrawala**
+mengikuti lomba `Big Data Competition` di acara `Satria Data 2020` yang diselenggarakan oleh _PUSPRESNAS_
+yang bekerjasama dengan _IPB University_. _Alhamdulillah_ kami mendapatkan posisi kedua dalam lomba
+tersebut. Dapat berpartisipasi bahkan dapat menjadi juara adalah pengalaman yang sangat berkesan bagi
+penulis, walaupun belum dapat keluar sebagai juara utama penulis mendapatkan banyak pembelajaran dan
+pengalaman yang berkesan.
+
+Berikut ini adalah kode dan langkah - langkah yang kelompok **Catatan Cakrawala** gunakan pada saat
+mengikuti lomba `BDC Satria Data 2020`.
 
 ## Author
 
@@ -21,34 +31,22 @@ BDC Satria Data 2020 yang di selenggarakan oleh IPB dan PUSPRESNAS.
 
 - Platform : Kaggle
 - Accelerator : TPU
-- Dataset
 
 | Data                                                                                               | Keterangan                                                                 |
 | :------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
 | <a href="https://www.kaggle.com/wahyusetianto/data-bdc">BDC - Satria Data Catatan Cakrawala</a>    | Data original dan data yang telah di preprocess oleh tim Catatan Cakrawala |
 | <a href="https://www.kaggle.com/pencarikebahagiaan/modelku">Catatan Cakrawala Model</a> [Optional] | Model terbaik yang telah di train tim Catatan Cakrawala                    |
 
-### Note
+## Overview
 
-Github repository : [BDC-Satria-Data](https://github.com/Hyuto/BDC-Satria-Data)
-
-Notebook ini adalah notebook yang kami run di [kaggle](https://www.kaggle.com/), jika anda ingin
-mencoba running notebook ini dengan environment yang sama dengan yang kami gunakan kunjungi link berikut
-
-Kaggle Notebook : [Catatan Cakrawala Notebook - BDC Satria Data](https://www.kaggle.com/wahyusetianto/bdc-main-notebook)
-
-P.S. Jangan lupa untuk _upvote_ 😊.
-
-# BDC - Satria Data 2020
-
-## Task
-
-Mendeteksi apakah suatu berita adalah hoax atau bukan hoax (`Binary Classification`).
-
-## Data
-
-- Data Gambar
-- Data Text (judul dan narasi berita)
+Melakukan pendeteksian apakah suatu berita adalah hoax atau bukan hoax (_binary classification_).
+Data merupakan berita yang di crawl dari website [turnbackhoax.id](http://turnbackhoax.id/) yang
+berupa teks dan juga gambar. Data kemudian dipreproses dan di*fit* ke model. Model yang digunakan
+untuk data teks adalah _BERT_ dan untuk data gambar digunakan model _EfficientNet_. Setelah di*fit*
+kemudian model digunakan untuk melakukan pemrediksian terhadap data test. hasil prediksi dari kedua
+model kemudian diensembel untuk mendapatkan hasil yang maksimal. Dari hasil ensembel yang berupa
+peluang akan ditetapkan nilai _threshold_ kemudia nilai tersebut digunakan untuk menentukan apakah
+hasil prediksi(peluang) masuk ke kelas `0` atau `1`.
 
 ## First Things First
 
@@ -60,7 +58,7 @@ Mendeteksi apakah suatu berita adalah hoax atau bukan hoax (`Binary Classificati
 # Install Package yang Dibutuhkan
 !pip install -q --upgrade pip
 !pip install -q efficientnet  # EfficientNet
-!pip -q install sastrawi      # Santrawi
+!pip -q install sastrawi      # Sastrawi
 
 # Imports
 import os, random, re, string, emoji

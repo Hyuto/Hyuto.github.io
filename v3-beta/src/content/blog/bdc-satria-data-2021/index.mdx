@@ -1,0 +1,65 @@
+---
+title: Gender Classification & Age Detection - BDC Satria Data 2021
+date: "2021-12-01T10:00:00"
+description: Gender Classification dan Age Detection pada lomba Big Data Competition - Satria Data 2021
+lang: id
+tags: image, classification, tensorflow, python
+---
+
+[![Github](https://img.shields.io/badge/Github-black?logo=github)](https://github.com/Hyuto/bdc-2021)
+
+Beberapa bulan yang lalu penulis dan teman - teman yang tergabung dalam sebuah tim mengikuti lomba
+`Big Data Competition` di acara `Satria Data 2021` yang diselenggarakan oleh _PUSPRESNAS_
+yang bekerjasama dengan _IPB University_. Ini merupakan kali kedua penulis mengikuti lomba
+`BDC - Satria Data`, dengan susunan tim yang sedikit berbeda dan task yang berbeda juga penulis
+mendapatkan banyak pengalaman dan ilmu dari lomba tersebut. Meskipun belum diberikan rezeki untuk
+menjadi juara _Alhamdulillah_ tim kami berhasil melaju sampai babak final.
+
+Berikut ini adalah kode dan langkah - langkah yang tim kami gunakan pada saat mengikuti lomba
+`BDC Satria Data 2021`.
+
+## Author
+
+- [Naufal Zhafran Albaqi](https://www.linkedin.com/in/naufal-zhafran-albaqi-95360b184/)
+- [Muhammad Amanda](https://www.linkedin.com/in/muhammadamanda/)
+- [Wahyu Setianto](https://www.linkedin.com/in/wahyu-setianto/)
+
+## Running Environment
+
+- Platform : Kaggle
+- Accelerator : GPU `NVIDIA TESLA P100`
+
+## Dataset
+
+Dataset hasil preprocessing dan augmentasi dapat diakses lewat platform berikut.
+
+[![Github](https://img.shields.io/badge/Github-black?logo=github)](https://github.com/Hyuto/bdc-2021/tree/master/data)
+[![kaggle](https://img.shields.io/badge/Kaggle-blue?logo=kaggle)](https://www.kaggle.com/wahyusetianto/bdc-2021)
+
+# Gender Classification
+
+Pada tahap penyisihan kami ditugaskan untuk melakukan pengklasifikasian terhadap _gender_ seseorang
+didalam foto (_binary classification_). Data yang disediakan merupakan data gambar dengan ukuran dan
+resolusi yang berbeda sehingga merupakan tantangan tersendiri untuk melakukan _data preprocessing_.
+Pada data yang disediakan juga terdapat beberapa gambar yang memiliki lebih dari satu orang di
+dalamnya sehingga menurut tim kami cukup sulit jika membersihkan data secara otomatis dan perlu
+dilakukan _manual filtering_ untuk meningkatkan kualitas data sebelum dilatih kedalam model. Kami
+juga melakukan proses _augmentasi_ sehingga data semakin banyak dan lebih banyak yang dapat
+dipelajari oleh model. Model yang digunakan oleh tim kami dalam menyelesaikan masalah ini adalah
+_tensorflow custom_ model dengan arsitektur 5 `convolution layer` yang dipadukan dengan
+`max pooling layer` dan ditutup dengan `dense layer` berkativasi _sigmoid_. Ditahap akhir untuk
+meningkatkan kualitas prediksi kami melakukan _ensembel_ terhadap hasil prediksi 5 model yang
+dilatih dengan data yang berbeda (menggunakan `StratifiedKfold`).
+
+# Age Detection
+
+Pada tahap semifinal kami ditugaskan untuk melakukan pendeteksian terhadap umur seseorang didalam
+foto (_regression_). Data yang disediakan merupakan data gambar yang sama pada tahap penyisihan.
+Pada tahap _data preprocessing_ kami melakukan hal yang cukup sama seperti pada tahap penyisihan
+namun pada tahap _maual filtering_ sedikit lebih diketatkan. Model yang digunakan oleh tim kami
+dalam menyelesaikan masalah ini adalah _tensorflow custom_ model dengan arsitektur 6
+`convolution layer` yang dipadukan dengan `max pooling layer` dan `batch normalization`, kami
+menginkan model yang lebih besar dan lebih dalam dari model yang digunakan pada tahap penyisihan.
+Kemudian, ditutup dengan `dense layer` berkativasi _linear_. Sama seperti tahap penyisihan kami
+melakukan _ensembel_ terhadap hasil prediksi 3 model yang dilatih dengan data yang berbeda
+(menggunakan `StratifiedKfold`) untuk meningkatkan kualitas prediksi.
