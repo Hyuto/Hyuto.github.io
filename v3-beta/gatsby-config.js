@@ -27,6 +27,7 @@ module.exports = {
     `gatsby-transformer-json`,
     "gatsby-plugin-use-query-params",
     `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -214,7 +215,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
