@@ -1,113 +1,115 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-hr{
-   border: 1px solid #f1f1f1;
-   margin-bottom: 25px;
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
 }
 
-.Canvas{
-    padding: 12px;
-    margin: 0px auto;
-    display: table;
+.Canvas {
+  padding: 12px;
+  margin: 0px auto;
+  display: table;
 }
 
-canvas{
-    margin-right: 8px;
+canvas {
+  margin-right: 8px;
 }
 
-.table{
-    width: 300px;
-    float: left;
-    padding-bottom: 10px;
-    max-width: 50%;
-  }
+.table {
+  width: 300px;
+  float: left;
+  padding-bottom: 10px;
+  max-width: 50%;
+}
 
-.Button{
-    margin: 0px auto;
-    display: table;
-    padding: 12px 20px;
-    font-size: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
+.Button {
+  margin: 0px auto;
+  display: table;
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 .Button:hover {
-    opacity:1;
+  opacity: 1;
 }
 
 #overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
-    cursor: pointer;
-  }
-  
-#text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-  }
-
-#title{
-    text-align: center;
-    font-size: 71px;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
 }
 
-#para{
-    font-size: 25px;
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
-p{
-    margin: 10px;
-    padding: 0px;
+#title {
+  text-align: center;
+  font-size: 71px;
 }
 
-#table-header{
-    background-color: #4CAF50;
+#para {
+  font-size: 25px;
 }
-  
+
+p {
+  margin: 10px;
+  padding: 0px;
+}
+
+#table-header {
+  background-color: #4caf50;
+}
+
 #myChart {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
-#canvas-title{
-    padding-left: 0px;
-    text-align: center; 
-    font-size: 20px;
+#canvas-title {
+  padding-left: 0px;
+  text-align: center;
+  font-size: 20px;
 }
 
-.insideWrapper{ 
-    width:100%; height:100%; 
-    position:relative;
+.insideWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.coveredCanvas{ 
-    position:absolute; 
-    top:0px; left:0px;
-    border:1px solid #000000;
+.coveredCanvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #000000;
 }
 
-#coveringImage{ 
-    display: none;
-    border:1px solid #000000;
+#coveringImage {
+  display: none;
+  border: 1px solid #000000;
 }
