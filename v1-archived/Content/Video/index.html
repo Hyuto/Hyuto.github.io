@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="Video.css">
-    <title>Webcam Stream</title>
+  <link rel="stylesheet" type="text/css" href="./Video.css" />
+  <title>Webcam Stream</title>
 </head>
-
 <body>
-    <div id="container">
-        <video autoplay="false" id="videoElement">
-        
-        </video>
-    </div>
+  <div id="container">
+    <video autoplay="false" id="videoElement"></video>
+  </div>
 
-    <div class="Tombol">
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
-    </div>
+  <div class="Tombol">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </div>
 
-    <p id="Size"></p>
-    
-    <script type="text/javascript" src="Video.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-    <script type="text/javascript" src="../../static/js/firebase.js"></script>
+  <p id="Size"></p>
 
-    <script>
-        var firebaseConfig = Connect();
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+  <script type="text/javascript" src="./Video.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+  <script type="text/javascript" src="../../static/js/firebase.js"></script>
+
+  <script>
+    var firebaseConfig = Connect();
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>

@@ -1,0 +1,60 @@
+@import 'view';
+
+section{
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .box{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 400px;
+        max-height: 400px;
+
+        h1{
+            margin: 5px 0;
+            line-height: 30px;
+
+            a{
+                color: black;
+            }
+        }
+
+        div{
+            margin: 5px 0;
+            width: 100%;
+
+            img{
+                width: 80%;
+            }
+
+            p{
+                margin: 10px 0;
+            }
+
+            a{
+                font-size: 14px;
+                color: white;
+                background-color: $special-color;
+                padding: 8px;
+                border-radius: 5px;
+            }
+
+            a:hover{
+                background-color: $main-color;
+            }
+
+            @media(max-width:600px) {
+                a:active{
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+}

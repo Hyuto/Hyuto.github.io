@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import * as style from "./table-content.module.scss";
 
 const TableContent = ({ headings }) => {
+  // Todo Using tableContents
   const data = headings
     .filter((e) => e.depth <= 2) // filter only h1 and h2
     .map((e) => {

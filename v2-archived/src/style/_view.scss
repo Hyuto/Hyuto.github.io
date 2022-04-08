@@ -1,0 +1,132 @@
+@import 'utilities';
+@import 'loader';
+
+html{
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+}
+
+@media(max-width: 1300px){
+    .container{
+        margin: auto 20px;
+    }
+}
+
+body{
+    background-color: $third-color;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    position: relative;
+    color: white;
+    background-color: $main-color;
+    text-align: center;
+    padding-bottom: 20px;
+    width: 100%;
+    cursor: context-menu;
+
+    h1{
+        font-size: 40px;
+        line-height: 4rem;
+        padding: 20px 20px 10px 20px;
+    }
+
+    small{
+        color: $special-color;
+        font-size: 15px;
+        padding: 9px;
+        background-color: $attachment-2-color;
+        border-radius: 5px;
+    }
+}
+
+nav{
+    background-color: $attachment-color;
+    width: 100%;
+    padding: 5px 0;
+    margin-bottom: 10px;
+
+    .container{
+        text-align: left;
+
+        .content{
+            display: flex;
+        }
+
+        .small-view{
+            display: none;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        a{
+            list-style-type: none;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: 550;
+            color: white;
+        }
+
+        .hamburger{
+            width: 20px;
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+    
+            .layer{
+                width: 100%;
+                margin: 3px 0;
+                padding: 2px 0;
+                background-color: white;
+                cursor: pointer;
+            }
+        }
+
+        a:hover, .hamburger:hover{
+            background-color: $secondary-color;
+        }
+    
+        @media(max-width: 600px){
+            .small-view{
+                display: flex;
+            }
+
+            .content{
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#nav-move{
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+footer{
+    color: white;
+    background-color: $attachment-2-color;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 10px;
+    cursor: context-menu;
+
+    p{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
