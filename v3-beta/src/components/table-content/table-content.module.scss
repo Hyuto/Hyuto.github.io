@@ -28,7 +28,20 @@
       font-size: 14px;
       max-height: 210px;
       overflow-y: auto;
-      list-style-type: none;
+
+      ol {
+        margin: 0;
+        padding-left: 10px;
+
+        li {
+          list-style-position: inside;
+          margin: 0;
+        }
+      }
+
+      .firstOL {
+        padding: 0;
+      }
 
       a {
         cursor: pointer;

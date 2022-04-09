@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <TableContent headings={post.headings} />
+      <TableContent tableContents={post.tableOfContents} />
       <ScrollToTop />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
@@ -114,10 +114,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
-      headings {
-        depth
-        value
-      }
+      tableOfContents(maxDepth: 2)
     }
     previous: mdx(id: { eq: $previousPostId }) {
       fields {
