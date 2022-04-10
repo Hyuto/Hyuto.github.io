@@ -121,6 +121,10 @@ pre[class*="language-"] {
   cursor: help;
 }
 
+pre[class*="language-text"] {
+  max-height: 1000px;
+}
+
 pre[class*="language-"]::-webkit-scrollbar {
   height: 15px;
 }
