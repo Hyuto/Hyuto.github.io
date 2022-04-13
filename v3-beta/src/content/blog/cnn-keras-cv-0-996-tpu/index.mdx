@@ -6,8 +6,8 @@ lang: en
 tags: classification, tensorflow, tpu, image, python
 ---
 
-This notebook is basically my notebook run on [kaggle](https://www.kaggle.com/) so if you want to try
-and run the code with same environment as mine go to link bellow.
+This notebook is basically my notebook run on [kaggle](https://www.kaggle.com/) so if you want to
+try and run the code with same environment as mine go to link bellow.
 
 Kaggle Notebook : [CNN Keras CV - 0.996 [TPU]](https://www.kaggle.com/wahyusetianto/cnn-keras-cv-0-996-tpu)
 
@@ -15,15 +15,20 @@ P.S. Don't forget to _upvote_ if you like it 😊.
 
 ## Overview
 
-This kernel is on purpose to build model for MNIST digits dataset. In this kernel we're gonna do some preprocessing then make augmentation datagen so our model didn't train on the same image data, then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for test dataset and by the end we're gonna do ensembles for the prediction.
+This kernel is on purpose to build model for MNIST digits dataset. In this kernel we're gonna do
+some preprocessing then make augmentation datagen so our model didn't train on the same image data,
+then at each of our model(here we use 15 folds so there will be 15 models) to make prediction for
+test dataset and by the end we're gonna do ensembles for the prediction.
 
 ## Web App
 
-You can visit my web app for the live prediction by the best model trained on this kernel run on Tensorflow.js [Digit Recognizer](https://hyuto.github.io/showcase/digit-recognizer/).
+You can visit my web app for the live prediction by the best model trained on this kernel run on
+Tensorflow.js [Digit Recognizer](https://hyuto.github.io/showcase/digit-recognizer/).
 
 ## Train on TPU!!
 
-why? Because it's **faster**. While people usually train on GPU for image related things, in this notebook we try to do things on TPU and see how it affect the Accuracy.
+why? Because it's **faster**. While people usually train on GPU for image related things, in this
+notebook we try to do things on TPU and see how it affect the Accuracy.
 
 ```python
 import random
@@ -94,7 +99,8 @@ y = to_categorical(train['label'].values) # To Categorical y
 
 ### Normalizing Images
 
-Data normalization is an important step to ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network.
+Data normalization is an important step to ensures that each input parameter (pixel, in this case)
+has a similar data distribution. This makes convergence faster while training the network.
 
 ```python
 # Normalize
@@ -104,7 +110,8 @@ X_test = test / 255.0
 
 ### Reshape
 
-Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784 values. We reshape all data to 28x28x1 3D matrices.
+Train and test images (28px x 28px) has been stock into pandas. Dataframe as 1D vectors of 784
+values. We reshape all data to 28x28x1 3D matrices.
 
 ```python
 # Reshape Array
@@ -171,7 +178,8 @@ AUG_test(X[0], y[0])
 
 ## Build CNN Model
 
-The CNN's in this kernel follow LeNet5's design on [Chris Deotte](https://www.kaggle.com/cdeotte) kernel [here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist)
+The CNN's in this kernel follow LeNet5's design on [Chris Deotte](https://www.kaggle.com/cdeotte)
+kernel [here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist)
 
 ```python
 def build_model():
@@ -227,9 +235,13 @@ BATCH_SIZE = 16 * tpu_strategy.num_replicas_in_sync
 
 ## Training
 
-Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we use $f(x) = 0.001 \times 0.95^x$ for our LR Scheduler and do Checkpoint at **best _val_acc_** score.
+Here we use Kfold CV to split our data by 15 and build model at each fold. At the callbacks we
+use $f(x) = 0.001 \times 0.95^x$ for our LR Scheduler and do Checkpoint at **best _val_acc_** score.
 
-Note that Tensorflow distribution strategy haven't supported `ImageDataGenerator` by this [issue](https://github.com/tensorflow/tensorflow/issues/34346) so instead use that at `fit_generator` we just have to extract Augmentation data by looping through and done training by `fit`.
+Note that Tensorflow distribution strategy haven't supported `ImageDataGenerator` by this
+[issue](https://github.com/tensorflow/tensorflow/issues/34346) so instead use that at
+`fit_generator` we just have to extract Augmentation data by looping through and done training
+by `fit`.
 
 ```python
 # Init
@@ -364,7 +376,9 @@ looks like our models really doing good for predicting test data
 
 ## Conclusions
 
-Based on our CV scores it's lower than [Chris Deotte](https://www.kaggle.com/cdeotte) kernel [here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist) with 0.99757 on validation accuracy on the same model architecture. So here's the point:
+Based on our CV scores it's lower than [Chris Deotte](https://www.kaggle.com/cdeotte) kernel
+[here](https://www.kaggle.com/cdeotte/25-million-images-0-99757-mnist) with 0.99757 on validation
+accuracy on the same model architecture. So here's the point:
 
 > GPU do better job in this task [Expected] while TPU give you lower accuracy but faster since we'd train 15 CNNs model on 45 epochs in less than one hour.
 

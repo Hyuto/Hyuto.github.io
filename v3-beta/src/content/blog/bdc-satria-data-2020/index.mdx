@@ -12,11 +12,11 @@ import { BarChart, PieChart } from "./plot-bdc";
 [![kaggle](https://img.shields.io/badge/Kaggle-blue?logo=kaggle)](https://www.kaggle.com/wahyusetianto/bdc-main-notebook)
 
 Beberapa bulan yang lalu penulis dan teman - teman yang tergabung dalam tim **Catatan Cakrawala**
-mengikuti lomba `Big Data Competition` di acara `Satria Data 2020` yang diselenggarakan oleh _PUSPRESNAS_
-yang bekerjasama dengan _IPB University_. _Alhamdulillah_ kami mendapatkan posisi kedua dalam lomba
-tersebut. Dapat berpartisipasi bahkan dapat menjadi juara adalah pengalaman yang sangat berkesan bagi
-penulis, walaupun belum dapat keluar sebagai juara utama penulis mendapatkan banyak pembelajaran dan
-pengalaman yang berkesan.
+mengikuti lomba `Big Data Competition` di acara `Satria Data 2020` yang diselenggarakan oleh
+_PUSPRESNAS_ yang bekerjasama dengan _IPB University_. _Alhamdulillah_ kami mendapatkan posisi kedua
+dalam lomba tersebut. Dapat berpartisipasi bahkan dapat menjadi juara adalah pengalaman yang sangat
+berkesan bagi penulis, walaupun belum dapat keluar sebagai juara utama penulis mendapatkan banyak
+pembelajaran dan pengalaman yang berkesan.
 
 Berikut ini adalah kode dan langkah - langkah yang kelompok **Catatan Cakrawala** gunakan pada saat
 mengikuti lomba `BDC Satria Data 2020`.
@@ -208,7 +208,9 @@ missing_test
 
     [690192, 693499]
 
-Terdapat 9 file gambar pada data train dan 2 file gambar pada data test yang hilang. Hal ini diduga karena nama file berbeda pada direktori gambar dengan nama file yang ada pada dataframe. Maka dari itu kami melakukan pengecekan nama file pada direktori gambar dengan menyamakan `ID`-nya.
+Terdapat 9 file gambar pada data train dan 2 file gambar pada data test yang hilang. Hal ini diduga
+karena nama file berbeda pada direktori gambar dengan nama file yang ada pada dataframe. Maka dari
+itu kami melakukan pengecekan nama file pada direktori gambar dengan menyamakan `ID`-nya.
 
 ```python
 def fixing_extensions(missing, path):
@@ -303,7 +305,8 @@ Dapat dilihat gambar memiliki resolusi yang `berbeda - beda`.
 
 ### Preprocess and Resizing
 
-Untuk mengatasi data gambar dengan resolusi yang berbeda - beda maka dilakukan dengan metode croping pada bagian `center` gambar dan `resizing` gambar tersebut ke ukuran yang di tetapkan.
+Untuk mengatasi data gambar dengan resolusi yang berbeda - beda maka dilakukan dengan metode
+croping pada bagian `center` gambar dan `resizing` gambar tersebut ke ukuran yang di tetapkan.
 
 ```python
 def load_and_preprocess_image(path: str, size = [256, 256]):
@@ -329,7 +332,9 @@ show_images(TRAIN_X, TRAIN_y, load_and_preprocess_image)
 
 ### Image Augmentation
 
-Karena data yang ada tidak seimbang maka perlu dilakukan penambahan data. Metode yang digunakan untuk menambahkan data yaitu augmentasi data gambar pada kelas yang sedikit dengan melakukan `random rotation`.
+Karena data yang ada tidak seimbang maka perlu dilakukan penambahan data. Metode yang digunakan
+untuk menambahkan data yaitu augmentasi data gambar pada kelas yang sedikit dengan melakukan
+`random rotation`.
 
 Metode Augmentasi yang digunakan.
 
@@ -405,7 +410,9 @@ Atau bisa juga menggunakan shell
 !python RPU.py PATH SIZE TEST_SIZE UP_SAMPLES UP_SAMPLE_CLASS
 ```
 
-Namun pada kernel ini tidak akan di gunakan fungsi tersebut. Melaikan menggunakan hasil dari fungsi tersebut, karena kernel ini di run pada TPU & TPU tidak dapat membaca file diluar dari `GCS` (lokal direktori).
+Namun pada kernel ini tidak akan di gunakan fungsi tersebut. Melaikan menggunakan hasil dari fungsi
+tersebut, karena kernel ini di run pada TPU & TPU tidak dapat membaca file diluar dari
+`GCS` (lokal direktori).
 
 Note : Up Sample data pada Notebook ini didapatkan dengan command berikut
 
@@ -424,7 +431,8 @@ Load fungsi pada file `Preprocess.py` terlebih dahulu
 from Preprocess import *
 ```
 
-Pada notebook ini pengolahan data text dilakukan menggunakan `judul` dan `narasi`, sehingga perlu dilakukan penyatuan kolom `judul` dan kolom `narasi` dipisahkan dengan spasi.
+Pada notebook ini pengolahan data text dilakukan menggunakan `judul` dan `narasi`, sehingga perlu
+dilakukan penyatuan kolom `judul` dan kolom `narasi` dipisahkan dengan spasi.
 
 ```python
 train['text'] = (train['judul'] + ' ' + train['narasi']).apply(lambda x : x.lower())
@@ -484,7 +492,8 @@ test_text = clean_up(test.text.values)
 
 ### Mengekstrack Feature dari Text
 
-Mengekstrack feature seperti `URL`, `Hashtag`, `Tag`, dan `Emoji` dari text untuk melihat informasi dan frekuensi kemunculannya dalam setiap kelas pada data
+Mengekstrack feature seperti `URL`, `Hashtag`, `Tag`, dan `Emoji` dari text untuk melihat informasi
+dan frekuensi kemunculannya dalam setiap kelas pada data
 
 ```python
 %%time
@@ -577,11 +586,16 @@ FE.get_table('emojis', return_prop = True)
 
     71 rows × 5 columns
 
-Karena jumlah data yang cukup kecil dan sepertinya setiap feature memiliki informasi yang cukup berpengaruh terhadap kelasnya, kami memutuskan untuk tidak menghapus satupun feature yang ada.
+Karena jumlah data yang cukup kecil dan sepertinya setiap feature memiliki informasi yang cukup
+berpengaruh terhadap kelasnya, kami memutuskan untuk tidak menghapus satupun feature yang ada.
 
 ### Masking Feature (Encode)
 
-Masking feature pada text. Feauture yang sudah di `.fit` pada data sebelumnya, proses ini dilakukan karena pada feature ini terdapat peletakan tanda baca yang random / tidak beraturan, sedangkan pada proses berikutnya akan dilakukan penormalisasian tanda baca sehingga akan mengganggu proses tersebut. Maka dari itu perlu dilakukan masking agar proses normalisasi kalimat berjalan dengan lancar.
+Masking feature pada text. Feauture yang sudah di `.fit` pada data sebelumnya, proses ini dilakukan
+karena pada feature ini terdapat peletakan tanda baca yang random / tidak beraturan, sedangkan pada
+proses berikutnya akan dilakukan penormalisasian tanda baca sehingga akan mengganggu proses
+tersebut. Maka dari itu perlu dilakukan masking agar proses normalisasi kalimat berjalan dengan
+lancar.
 
 ```
 # Contoh
@@ -608,7 +622,8 @@ test_text = FE_test.encode(test_text) # Test
 
 ### Normalisasi Tanda Baca
 
-Melakukan normalisasi tanda baca pada text. Karena banyak peletakan tanda baca yang salah pada text yang akan mengganggu `tokenizer` dalam melakukan segmentasi pada kalimat.
+Melakukan normalisasi tanda baca pada text. Karena banyak peletakan tanda baca yang salah pada text
+yang akan mengganggu `tokenizer` dalam melakukan segmentasi pada kalimat.
 
 ```
 # Contoh
@@ -765,10 +780,12 @@ vocab[:30].style.hide_index()
 |   zurina    |   19972    |
 |    zumi     |   19971    |
 
-Dapat dilihat dari tabel diatas bahwa data terdiri dari beberapa bahasa karena terdapat beberapa kata yang bukan berasal dari bahasa Indonesia seperti `ﾟﾏﾻ`, `加油jiayou`, `হয়`, `সল`, dll.
+Dapat dilihat dari tabel diatas bahwa data terdiri dari beberapa bahasa karena terdapat beberapa
+kata yang bukan berasal dari bahasa Indonesia seperti `ﾟﾏﾻ`, `加油jiayou`, `হয়`, `সল`, dll.
 
 2. Mengeksport Vocabulary <br />
-   Mengeksport vocabulary telah dibangun kedalam file `.txt` untuk dapat dilakukan pengecekan secara manual terhadap kata-kata tersebut.
+   Mengeksport vocabulary telah dibangun kedalam file `.txt` untuk dapat dilakukan pengecekan
+   secara manual terhadap kata-kata tersebut.
 
 ```
 f = open("vocab.txt", "w")
@@ -776,7 +793,10 @@ f.write(" \n".join(sorted(vocab.Vocab.values)))
 f.close()
 ```
 
-Selanjutnya, mengimport file yang berisi kata - kata yang telah di cek secara manual lalu mengapikasikannya pada data text menggunakan kelas `SpellChecker`, fitting didapat dilakukan pada file yang diinginkan atau dapat menggunakan file yang telah di benarkan oleh tim Catatan Cakrawala dengan mengisikan `cc-hand-fixed` pada saat fitting class.
+Selanjutnya, mengimport file yang berisi kata - kata yang telah di cek secara manual lalu
+mengapikasikannya pada data text menggunakan kelas `SpellChecker`, fitting didapat dilakukan pada
+file yang diinginkan atau dapat menggunakan file yang telah di benarkan oleh tim Catatan Cakrawala
+dengan mengisikan `cc-hand-fixed` pada saat fitting class.
 
 ```python
 spellchecker = SpellChecker()
@@ -793,7 +813,9 @@ test_text = spellchecker.transform(test_text)   # Test
 
 ### Memhapus Kata yang Kurang Penting & Stopwords
 
-Menghapus kata - kata yang kurang penting seperti kata yang hanya terdiri dari 1 karakter dan Stopwords. Untuk Stopwords kami menggabungkan stopwords bahasa Indonesia dari `Spacy` dan `Sastrawi` serta bahasa Inggris dari `Spacy`.
+Menghapus kata - kata yang kurang penting seperti kata yang hanya terdiri dari 1 karakter dan
+Stopwords. Untuk Stopwords kami menggabungkan stopwords bahasa Indonesia dari `Spacy` dan
+`Sastrawi` serta bahasa Inggris dari `Spacy`.
 
 ```python
 from spacy.lang.id.stop_words import STOP_WORDS as ID
@@ -877,7 +899,9 @@ train.info()
     dtypes: int64(3), object(5)
     memory usage: 264.4+ KB
 
-Merubah tipe pada kolom tanggal menjadi `datetime`. Kolom tanggal tidak dapat langsung dirubah tipe datanya menjadi `datetime` dikarenakan ada nya beberapa element yang mengandung kata `Okt` dan `Agu` sehingga harus diubah menjadi `Oct` dan `Aug`
+Merubah tipe pada kolom tanggal menjadi `datetime`. Kolom tanggal tidak dapat langsung dirubah tipe
+datanya menjadi `datetime` dikarenakan ada nya beberapa element yang mengandung kata `Okt` dan
+`Agu` sehingga harus diubah menjadi `Oct` dan `Aug`
 
 ```python
 def FixMonth(text):
@@ -922,7 +946,9 @@ fig_1.show()
 
 <PieChart />
 
-Dapat dilihat bahwa kelas 1 (`Hoax`) jauh lebih banyak dari kelas 0 (`Bukan Hoax`) atau terdapat `imbalance class` pada data. Untuk penanganannya kami menggunakan `Stratify` saat melakukan `Cross Validation` sehingga proporsi pada subset `latih` dan pada subset `validasi` sama.
+Dapat dilihat bahwa kelas 1 (`Hoax`) jauh lebih banyak dari kelas 0 (`Bukan Hoax`) atau terdapat
+`imbalance class` pada data. Untuk penanganannya kami menggunakan `Stratify` saat melakukan
+`Cross Validation` sehingga proporsi pada subset `latih` dan pada subset `validasi` sama.
 
 ### Melihat Sebaran Kelas per Waktunya
 
@@ -1024,7 +1050,8 @@ words.head(10)
 |   covid   |   24    |   342   |    366    | 0.934426 |
 |   china   |   33    |   324   |    357    | 0.907563 |
 
-Berikut adalah Barplot untuk kata - kata pada kelas `1` yang mempunyai frekuensi kumunculan lebih dari kelas `0`.
+Berikut adalah Barplot untuk kata - kata pada kelas `1` yang mempunyai frekuensi kumunculan lebih
+dari kelas `0`.
 
 ```python
 _1 = words[(words['Kelas_1'] > words['Kelas_0'])]
@@ -1058,7 +1085,8 @@ plt.show()
 
 ![png](output_98_0.png)
 
-Berikut adalah Barplot untuk kata - kata pada kelas `0` yang mempunyai frekuensi kumunculan lebih dari kelas `1`.
+Berikut adalah Barplot untuk kata - kata pada kelas `0` yang mempunyai frekuensi kumunculan lebih
+dari kelas `1`.
 
 ```python
 _0 = words[(words['Kelas_0'] > words['Kelas_1'])]
@@ -1126,17 +1154,22 @@ print("REPLICAS: ", strategy.num_replicas_in_sync)
 
 ## Pemodelan Data Gambar (EfficientNet)
 
-Model yang digunakan untuk data gambar yaitu pretrained Deep Learning model yang cukup popular yaitu `EfficientNet`. `EfficientNet` digunakan karena kemampuannya yang cukup mengesankan dalam mengklasifikasi data gambar pada `ImageNet`.
+Model yang digunakan untuk data gambar yaitu pretrained Deep Learning model yang cukup popular
+yaitu `EfficientNet`. `EfficientNet` digunakan karena kemampuannya yang cukup mengesankan dalam
+mengklasifikasi data gambar pada `ImageNet`.
 
 ![params](./params.png)
 
-Model yang akan digunakan pada notebook ini untuk data gambar adalah `EfficientNetB7` dengan weight `noise-student`.
+Model yang akan digunakan pada notebook ini untuk data gambar adalah `EfficientNetB7` dengan
+weight `noise-student`.
 
 Published Paper : [EfficientNet](https://arxiv.org/abs/1905.11946)
 
 ### Load Image Data - TF Dataset
 
-Load data gambar ke bentuk Tensor lalu alokasikan ke TF Dataset untuk effisiensi memori. Data gambar yang digunakan adalah data hasil upsampling dengan menggunakan augmentasi pada kelas `0` sebesar `200%`.
+Load data gambar ke bentuk Tensor lalu alokasikan ke TF Dataset untuk effisiensi memori. Data
+gambar yang digunakan adalah data hasil upsampling dengan menggunakan augmentasi pada kelas `0`
+sebesar `200%`.
 
 ```python
 # Train Dataset
@@ -1279,7 +1312,9 @@ EPOCHS = 10
 STEPS_PER_EPOCHS = len(TRAIN_X_) // BATCH_SIZE:128 (Jika menggunakan TPU)
 ```
 
-Pelatihan dilakukan dengan memperhatikan nilai dari `val_accuracy`, `epoch` yang memiliki nilai `val_accuracy` terbaik akan disave `weights` - nya dan akan di load pada saat melakukan evaluasi dan prediksi nantinya.
+Pelatihan dilakukan dengan memperhatikan nilai dari `val_accuracy`, `epoch` yang memiliki nilai
+`val_accuracy` terbaik akan disave `weights` - nya dan akan di load pada saat melakukan evaluasi
+dan prediksi nantinya.
 
 ```python
 # Config
@@ -1341,8 +1376,10 @@ Load `weights` terbaik yang telah disimpan.
 
 #### Note :
 
-- Untuk mendapatkan hasil yang sama dengan yang di submit pada website `BDC - Satria Data` bisa menggunakan `weights` yang telah kami simpan [disini](https://www.kaggle.com/pencarikebahagiaan/modelku).
-- Untuk melihat proses training menggunakan data dengan kriteria Up-Sampling lainnya untuk perbandingan silahkan kunjugi notebook pada responsitory kami [di sini](https://github.com/Hyuto/BDC-Satria-Data/tree/master/Notebooks)
+- Untuk mendapatkan hasil yang sama dengan yang di submit pada website `BDC - Satria Data` bisa
+  menggunakan `weights` yang telah kami simpan [disini](https://www.kaggle.com/pencarikebahagiaan/modelku).
+- Untuk melihat proses training menggunakan data dengan kriteria Up-Sampling lainnya untuk
+  perbandingan silahkan kunjugi notebook pada responsitory kami [di sini](https://github.com/Hyuto/BDC-Satria-Data/tree/master/Notebooks)
 
 ```python
 # model.load_weights('EfficientNetB7_best_model.h5')
@@ -1402,11 +1439,15 @@ tf.tpu.experimental.initialize_tpu_system(tpu)
 
 ## Pemodelan Data Teks (BERT)
 
-BERT(Bidirectional Encoder Representations from Transformers) adalah pretrained model karya Jacob Devlin, Ming-Wei Chang, Kenton Lee dan Kristina Toutanova. Model ini berupa transformator dua arah yang telah dilatih sebelumnya.
+BERT(Bidirectional Encoder Representations from Transformers) adalah pretrained model karya Jacob
+Devlin, Ming-Wei Chang, Kenton Lee dan Kristina Toutanova. Model ini berupa transformator dua arah
+yang telah dilatih sebelumnya.
 
 Published Paper : [BERT](https://arxiv.org/abs/1810.04805)
 
-Bert yang digunakan pada notebook ini adalah `bert-base-indonesian` buatan `Cahya Wirawan` yang berupa pre-trained BERT-base model pada 522MB data wikipedia indonesia dengan vocabulary sebesar 32.000. Keterangan lebih lanjut bisa dibaca [di sini](https://huggingface.co/cahya/bert-base-indonesian-522M)
+Bert yang digunakan pada notebook ini adalah `bert-base-indonesian` buatan `Cahya Wirawan` yang
+berupa pre-trained BERT-base model pada 522MB data wikipedia indonesia dengan vocabulary sebesar
+32.000. Keterangan lebih lanjut bisa dibaca [di sini](https://huggingface.co/cahya/bert-base-indonesian-522M)
 
 Load Transformers terlebih dahulu
 
@@ -1462,7 +1503,8 @@ print(encode['token_type_ids'])
 
 ### Mengecek Sequence Terpanjang
 
-Karena panjang dari data teks tidak sama. Maka perlu di lakukan padding untuk menyamakan panjang dari sequance.
+Karena panjang dari data teks tidak sama. Maka perlu di lakukan padding untuk menyamakan panjang
+dari sequance.
 
 Contoh:
 
@@ -1482,7 +1524,9 @@ plt.show()
 
 ![png](output_144_0.png)
 
-Dari grafik diatas didapatkan kesimpulan bahwa panjang sequence data tersebar pada rentang 0 - 220 yang memusat pada rentang 0 - 100. Maka dari itu akan digunakan `250` sebagai acuan maximum dari panjang sequencenya
+Dari grafik diatas didapatkan kesimpulan bahwa panjang sequence data tersebar pada rentang 0 - 220
+yang memusat pada rentang 0 - 100. Maka dari itu akan digunakan `250` sebagai acuan maximum dari
+panjang sequencenya
 
 ```python
 max_len = 250
@@ -1529,7 +1573,10 @@ def build_model(transformer, loss='binary_crossentropy', max_len=max_len):
 
 ### Cross Validation
 
-Metode yang digunakan untuk CV adalah `StratifiedKflod`. Metode ini digunakan untuk mengatasi kelas pada data yang imbalance. `StratifiedKfold` ini tidak jauh berbeda dengan `Kfold` hanya pada saat pembagian menjadi data train dan data valid, proporsi masing masing kelas tetap sama pada kedua data tersebut.
+Metode yang digunakan untuk CV adalah `StratifiedKflod`. Metode ini digunakan untuk mengatasi kelas
+pada data yang imbalance. `StratifiedKfold` ini tidak jauh berbeda dengan `Kfold` hanya pada saat
+pembagian menjadi data train dan data valid, proporsi masing masing kelas tetap sama pada kedua
+data tersebut.
 
 ![SKfold](./StratifiedKfold.png)
 
@@ -1560,14 +1607,18 @@ folding.head()
 
 ### Train & Evaluate Model
 
-Melakukan `training` pada train data. Train dilakukan pada `fold 3` & `fold 6` karena kedua fold tersebut memberikan nilai akurasi yang cukup baik dari model pada `fold` lainnya. Training memiliki konfihurasi sebagai berikut:
+Melakukan `training` pada train data. Train dilakukan pada `fold 3` & `fold 6` karena kedua fold
+tersebut memberikan nilai akurasi yang cukup baik dari model pada `fold` lainnya. Training memiliki
+konfihurasi sebagai berikut:
 
 ```
 epochs = 15
 steps_per_epoch = len(x_train)//BATCH_SIZE:128 (jika menggunakann TPU)
 ```
 
-Training dilakukan dengan memperhatikan nilai `val_accuracy` pada setiap epochnya. Epoch dengan score `val_accuracy` tertinggi akan di save `weight` - nya untuk diload saat melakukan evaluasi dan pemrediksian terhadap data test.
+Training dilakukan dengan memperhatikan nilai `val_accuracy` pada setiap epochnya. Epoch dengan
+score `val_accuracy` tertinggi akan di save `weight` - nya untuk diload saat melakukan evaluasi dan
+pemrediksian terhadap data test.
 
 ```python
 # Init
@@ -1745,7 +1796,10 @@ fig.show()
 
 > Ensemble is methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
 
-Untuk mendapatkan hasil yang lebih baik kami melakukan `ensembling` pada hasil prediksi model kami. Hasil model yang di `ensembling` adalah hasil peramalan data test pada model `EfficientNetB7` dan model `Bert` pada fold `3` dan `6`. Metode ensemble yang digunakan adalah dengan mengambil rata - rata probabilitas dari hasil prediksian ketiga model tersebut.
+Untuk mendapatkan hasil yang lebih baik kami melakukan `ensembling` pada hasil prediksi model kami.
+Hasil model yang di `ensembling` adalah hasil peramalan data test pada model `EfficientNetB7` dan
+model `Bert` pada fold `3` dan `6`. Metode ensemble yang digunakan adalah dengan mengambil rata -
+rata probabilitas dari hasil prediksian ketiga model tersebut.
 
 ```python
 ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3
@@ -1755,12 +1809,18 @@ ensemble = (EfficientNet_pred.flatten() + scores_test[0] + scores_test[1]) / 3
 
 > The decision for converting a predicted probability or scoring into a class label is governed by a parameter referred to as the “threshold” The default value for the threshold is 0.5 for normalized predicted probabilities or scores in the range between 0 or 1.
 
-Kami mendapatkan beberapa indikasi bahwa untuk mendapatkan hasil yang lebih baik perlu dilakukan penggeseran terhadap tresholdnya:
+Kami mendapatkan beberapa indikasi bahwa untuk mendapatkan hasil yang lebih baik perlu dilakukan
+penggeseran terhadap tresholdnya:
 
 1. Kelas pada label yang tidak berimbang<br />
-   Kelas `0` pada label memiliki frekuensi yang sangat kecil, berbeda jauh jika dibandingkan dengan pada kelas `1`. Kami menduga hal ini berpengaruh terhadap berat masing - masing kelas pada saat dilakukan pemodelan `tidak sama`.
+   Kelas `0` pada label memiliki frekuensi yang sangat kecil, berbeda jauh jika dibandingkan dengan
+   pada kelas `1`. Kami menduga hal ini berpengaruh terhadap berat masing - masing kelas pada saat
+   dilakukan pemodelan `tidak sama`.
 2. Nilai loss dan akurasi yang berbanding lurus pada saat training<br />
-   Pada saat training kami mendapatkan ketika `val_loss` (validation loss) menaik `val_accuracy` juga tetap menaik untuk beberapa saat. Hal ini cukup aneh karena seharusnya ketika nilai loss menaik maka nilai akurasi menurun. Hal ini membawa kami pada kesimpulan bahwa `threshold`-nya perlu untuk dirubah.
+   Pada saat training kami mendapatkan ketika `val_loss` (validation loss) menaik `val_accuracy`
+   juga tetap menaik untuk beberapa saat. Hal ini cukup aneh karena seharusnya ketika nilai loss
+   menaik maka nilai akurasi menurun. Hal ini membawa kami pada kesimpulan bahwa `threshold`-nya
+   perlu untuk dirubah.
 
 Mengecek distribusi peluang `ensemble`
 
@@ -1804,12 +1864,17 @@ hasil.to_csv('Catatan Cakrawala BDC - Ensemble.csv', index = False)
 
 ### Kesimpulan
 
-1. Data memiliki frekuensi kelas yang `tidak berimbang` sehingga perlu di perhatikan saat pembuatan model
-2. Dengan menggukan model yang kami buat didapatkan hasil yang cukup baik dengan f1 score 94 % namun memerlukan komputasi yang cukup berat dan biaya yang mahal untuk ukuran data yang tidak terlalu besar.
+1. Data memiliki frekuensi kelas yang `tidak berimbang` sehingga perlu di perhatikan saat
+   pembuatan model
+2. Dengan menggukan model yang kami buat didapatkan hasil yang cukup baik dengan f1 score 94 %
+   namun memerlukan komputasi yang cukup berat dan biaya yang mahal untuk ukuran data yang tidak
+   terlalu besar.
 
 ### Saran
 
-1. Jika memungkinkan diperlukan `penambahan data` pada label bukan hoax agar frekuensi setiap kelas pada data tidak berbanding cukup jauh
-2. Menggunakan model `multimodal` karena hasil pada ensembel model gambar dan model teks menunjukkan hasil yang lebih baik.
+1. Jika memungkinkan diperlukan `penambahan data` pada label bukan hoax agar frekuensi setiap kelas
+   pada data tidak berbanding cukup jauh
+2. Menggunakan model `multimodal` karena hasil pada ensembel model gambar dan model teks
+   menunjukkan hasil yang lebih baik.
 
 © Catatan Cakrawala 2020

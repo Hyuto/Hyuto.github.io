@@ -27,7 +27,8 @@ contains lots of unique words because they have 3 type of it:
 2. Katakana
 3. Hiragana
 
-that's the interesting part of it and so it'll be little complicated to process. So let's get started.
+that's the interesting part of it and so it'll be little complicated to process.
+So let's get started.
 
 ## Install some tools
 
@@ -217,7 +218,8 @@ Output:
 ['This', 'is', 'english', 'or', 'i', 'think', 'so']
 ```
 
-but in Japanese we can't do it that way. Here we gonna use Janome Tokenizer to segmenting Japanese sentence and adding space to it so Keras Tokenizer can handle it.
+but in Japanese we can't do it that way. Here we gonna use Janome Tokenizer to segmenting Japanese
+sentence and adding space to it so Keras Tokenizer can handle it.
 
 ```python
 # Initialize Janome Tokenizer
@@ -252,7 +254,8 @@ print(f"Splitting to {len(eng_train)} Train data and \
 
 ### Add BOS and EOS
 
-We put BOS "Begin of Sequence" and EOS “End of Sequence" to help our decoder recognize begin and end of a sequence.
+We put BOS "Begin of Sequence" and EOS “End of Sequence" to help our decoder recognize begin
+and end of a sequence.
 
 ```python
 eng_train = ['bos '+ x + ' eos' for x in eng_train + ['unk unk unk']]
@@ -437,7 +440,8 @@ plt.show()
 
 ![png](output_32_0.png)
 
-based on the distplot English sentences contains about 20 - 40 words while Japanese have more wider range.
+based on the distplot English sentences contains about 20 - 40 words while Japanese have
+more wider range.
 
 Let's check their max length
 
@@ -668,10 +672,14 @@ def initialize_initial_state():
 BLEU is a metric for evaluating a generated sentence to a reference sentence.
 A perfect match results in a score of 1.0, whereas a perfect mismatch results in a score of 0.0.
 
-So now we're going to define our translation function & calculate the BLEU score for test data at the end of every epoch while training. Note that test data is sentences that our tokenizer didn't train with, so there must be some words that our tokenizer didn't know.
-I'm currently working to fix this issue. Based on keras Tokenizer API it have `oov_token` for handling this but i'm not sure.
+So now we're going to define our translation function & calculate the BLEU score for test data at
+the end of every epoch while training. Note that test data is sentences that our tokenizer didn't
+train with, so there must be some words that our tokenizer didn't know. I'm currently working to
+fix this issue. Based on keras Tokenizer API it have `oov_token` for handling this but i'm not sure.
 
-For now i'm handling this by adding `unk` in train dataset so the tokenizer can read it, and then when coming to translation if there is word that our tokenizer don't know i'll set it by index of `unk` not very eficient but it works.
+For now i'm handling this by adding `unk` in train dataset so the tokenizer can read it, and then
+when coming to translation if there is word that our tokenizer don't know i'll set it by index of
+`unk` not very eficient but it works.
 
 ```python
 # Translate
@@ -971,7 +979,9 @@ for i in range(7,16):
 
 ## Test with Some Raw Input
 
-Yeay now let's play with **our** Machine Translation with some raw input. We'll cross check the prediction from MT with Google Translate API to translate it back to english and see how bad **our** MT is :).
+Yeay now let's play with **our** Machine Translation with some raw input. We'll cross check the
+prediction from MT with Google Translate API to translate it back to english and see how
+bad **our** MT is :).
 
 ```python
 from googletrans import Translator
