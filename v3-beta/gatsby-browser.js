@@ -10,3 +10,5 @@ import "./src/style/style.css";
 
 // Highlighting for code blocks
 import "./src/style/prism-theme.css";
+
+export { wrapPageElement, shouldUpdateScroll } from "./src/components/query-params-handler";

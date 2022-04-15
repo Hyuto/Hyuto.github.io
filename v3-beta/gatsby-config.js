@@ -25,7 +25,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-remark-images`,
     `gatsby-transformer-json`,
-    "gatsby-plugin-use-query-params",
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
