@@ -12,6 +12,7 @@ const PieChart = () => {
       },
     ],
   };
+
   return (
     <div style={{ marginBottom: "32px" }}>
       <Pie

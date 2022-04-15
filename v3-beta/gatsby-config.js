@@ -70,7 +70,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`],
-        remarkPlugins: [require("remark-math")],
+        remarkPlugins: [import("remark-math")],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -106,7 +106,7 @@ module.exports = {
         shortname: `hyuto`,
       },
     },
-    {
+    /* {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -137,6 +137,8 @@ module.exports = {
                   })
                 );
               });
+
+              console.log(feeds);
 
               allShowcaseJson.edges.forEach((edge) => {
                 feeds.push({
@@ -202,7 +204,7 @@ module.exports = {
           },
         ],
       },
-    },
+    }, */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
