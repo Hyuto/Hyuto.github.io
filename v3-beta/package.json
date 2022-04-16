@@ -1,14 +1,17 @@
 {
   "name": "Hyuto.github.io",
   "description": "Repo for Hyuto's Blog",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Wahyu Setianto",
   "bugs": {
     "url": "https://github.com/Hyuto/Hyuto.github.io/issues"
   },
   "homepage": "https://hyuto.github.io/",
   "keywords": [
-    "gatsby"
+    "blog",
+    "gatsby",
+    "react",
+    "tensorflowfjs"
   ],
   "license": "0BSD",
   "repository": {
@@ -57,7 +60,7 @@
     "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
     "react-sketch-canvas": "^6.1.5",
-    "remark-math": "^5.1.1",
+    "remark-math": "3.0.1",
     "sass": "^1.50.0",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13",
