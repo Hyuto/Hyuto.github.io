@@ -105,7 +105,7 @@ module.exports = {
         shortname: `hyuto`,
       },
     },
-    /* {
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -123,43 +123,28 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx, allShowcaseJson } }) => {
-              const feeds = [];
-
-              allMdx.edges.forEach((edge) => {
-                feeds.push(
-                  Object.assign({}, edge.node.frontmatter, {
-                    description: edge.node.excerpt,
+              const contents = [
+                ...allMdx.edges.map((edge) => {
+                  return {
+                    title: edge.node.frontmatter.title,
                     date: edge.node.frontmatter.date,
+                    description: edge.node.excerpt,
                     url: site.siteMetadata.siteUrl + `/blog${edge.node.fields.slug}`,
                     guid: site.siteMetadata.siteUrl + `/blog${edge.node.fields.slug}`,
-                    custom_elements: [{ "content:encoded": edge.node.html }],
-                  })
-                );
-              });
+                  };
+                }),
+                ...allShowcaseJson.edges.map((edge) => {
+                  return {
+                    title: edge.node.title,
+                    date: edge.node.date,
+                    description: edge.node.description,
+                    url: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
+                    guid: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
+                  };
+                }),
+              ];
 
-              console.log(feeds);
-
-              allShowcaseJson.edges.forEach((edge) => {
-                feeds.push({
-                  title: edge.node.title,
-                  date: edge.node.date,
-                  description: edge.node.description,
-                  url: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
-                  guid: site.siteMetadata.siteUrl + `/showcase/${edge.node.slug}`,
-                  custom_elements: [
-                    {
-                      "content:encoded": `
-                        <div>
-                          <h2>${edge.node.title}</h2>
-                          <p>${edge.node.description}</p>
-                        </div>
-                      `,
-                    },
-                  ],
-                });
-              });
-
-              return feeds.sort((a, b) =>
+              return contents.sort((a, b) =>
                 Date.parse(a.date) < Date.parse(b.date)
                   ? 1
                   : Date.parse(b.date) < Date.parse(a.date)
@@ -200,10 +185,11 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "Hyuto's Blog Contents",
           },
         ],
       },
-    }, */
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

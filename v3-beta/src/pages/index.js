@@ -38,8 +38,6 @@ const BlogIndex = ({ data, location }) => {
   ]);
   const [tags, setTags] = useQueryParam("tags", withDefault(ArrayParam, []));
   const [postFiltered, setPostfiltered] = useState(posts);
-  const searchParams = getSearchParams();
-  console.log(searchParams);
 
   useEffect(() => {
     if (tags.length !== 0) {
