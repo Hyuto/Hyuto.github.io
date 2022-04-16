@@ -1,9 +1,20 @@
 import React, { useState, useRef } from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
 import metadata from "showcase/sa-corona.json";
 import * as style from "./sa-corona.module.scss";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const SADetector = () => {
   const [words, setWords] = useState("");
@@ -91,18 +102,14 @@ const SADetector = () => {
                   },
                   responsive: true,
                   scales: {
-                    xAxes: [
-                      {
-                        ticks: {
-                          beginAtZero: true,
-                        },
+                    x: {
+                      ticks: {
+                        beginAtZero: true,
                       },
-                    ],
-                    yAxes: [
-                      {
-                        stacked: true,
-                      },
-                    ],
+                    },
+                    y: {
+                      stacked: true,
+                    },
                   },
                 }}
                 ref={chart}
