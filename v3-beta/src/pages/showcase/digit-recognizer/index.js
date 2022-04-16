@@ -2,6 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
 import "@tensorflow/tfjs-backend-webgl";
 import { ReactSketchCanvas } from "react-sketch-canvas";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
 import Layout from "templates/showcase";
 import Loader from "components/loader/loader";
@@ -9,6 +18,7 @@ import metadata from "showcase/digit-recognizer.json";
 import * as style from "./digit-recognizer.module.scss";
 
 tf.enableProdMode();
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const DigitRecognizer = () => {
   const [model, setModel] = useState(null);
@@ -122,18 +132,14 @@ const DigitRecognizer = () => {
                 },
                 responsive: true,
                 scales: {
-                  xAxes: [
-                    {
-                      ticks: {
-                        beginAtZero: true,
-                      },
+                  x: {
+                    ticks: {
+                      beginAtZero: true,
                     },
-                  ],
-                  yAxes: [
-                    {
-                      stacked: true,
-                    },
-                  ],
+                  },
+                  y: {
+                    stacked: true,
+                  },
                 },
               }}
               ref={chart}
