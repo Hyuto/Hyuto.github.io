@@ -18,4 +18,7 @@ module.exports = {
     "react/prop-types": 0,
     "prettier/prettier": ["error"],
   },
+  globals: {
+    ort: true,
+  },
 };
