@@ -10908,6 +10908,11 @@ sass@^1.50.0:
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
+sastrawijs@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/sastrawijs/-/sastrawijs-1.0.4.tgz#3bbf92c0b4e211b4a1b419009ed544d83cad1591"
+  integrity sha512-bH342m3UgDWGKcUxGI0Q8A4TUTVNb1KMSVBcpz4RvPKtnVoi490/5dkRvUY+I3r7Vqf4f8T4pJKoFdxPe7usQw==
+
 sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"

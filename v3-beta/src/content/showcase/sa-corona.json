@@ -3,5 +3,5 @@
   "title": "Sentiment Detector [ID]",
   "description": "Sentiment detector built with focused corona topic dataset using SVM",
   "date": "2020-09-12T12:00:00",
-  "tags": ["scikit-learn", "svm", "classification", "nlp"]
+  "tags": ["scikit-learn", "svm", "classification", "nlp", "tf-idf", "onnx", "javascript"]
 }

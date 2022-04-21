@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,8 +8,10 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { Stemmer, Tokenizer } from "sastrawijs";
 import { Bar } from "react-chartjs-2";
 import Layout from "templates/showcase";
+import ORTLoader from "components/ort-loader";
 import Loader from "components/loader/loader";
 import metadata from "showcase/sa-corona.json";
 import * as style from "./sa-corona.module.scss";
@@ -18,42 +20,71 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const SADetector = () => {
   const [words, setWords] = useState("");
-  const [prediction, setPrediction] = useState({ class: null, probability: [0, 0] });
-  const [loading, setLoading] = useState(false);
+  const [prediction, setPrediction] = useState({ class: null, probability: [0, 0, 0] });
+  const [loading, setLoading] = useState({ state: true, message: "Loading onnxruntime-web..." });
+  const [model, setModel] = useState(null);
+  const [dependencies, setDependencies] = useState("loading");
   const chart = useRef(null);
+  const labels = ["Negatif", "Netral", "Positif"];
+  const stemmer = new Stemmer();
+  const tokenizer = new Tokenizer();
+
+  const preprocess = (words) => {
+    const tokens = tokenizer.tokenize(words);
+    return tokens.map((word) => stemmer.stem(word)).join(" ");
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    await fetch("https://hyuto-blog.herokuapp.com/sa-corona/", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ words: words }),
-    })
-      .then((content) => content.json())
-      .then((content) => {
-        setLoading(false);
-        setPrediction(content);
-      })
-      .catch((error) => {
-        setLoading(false);
-        alert("Error : Can't send request to the server.");
-        console.log(error);
-      });
+    if (words === "") alert("Please input words!");
+    else if (model) {
+      const input = new ort.Tensor("string", [preprocess(words)], [1, 1]);
+      console.log(input);
+      await model
+        .run({ words: input })
+        .then((results) => {
+          setPrediction({
+            class: labels[results.label.data[0]],
+            probability: Array.from(results.probabilities.data),
+          });
+        })
+        .catch((error) => {
+          alert("Failed to predict!.");
+          console.error(error);
+        });
+    } else alert("Model isn't loaded!");
   };
+
+  useEffect(async () => {
+    if (dependencies === "loaded" && model === null) {
+      setLoading({ state: true, message: "Loading model..." });
+      try {
+        const session = await ort.InferenceSession.create(
+          `${window.location.origin}/model/sa-model/model.onnx`
+        );
+
+        // warmup model
+        const input = new ort.Tensor("string", ["jokowi cebong"], [1, 1]);
+        await session.run({ words: input });
+        setModel(session);
+      } catch (e) {
+        console.error(e);
+        alert("Can't load model!");
+      }
+      setLoading({ state: false, message: "" });
+    }
+  }, [dependencies]);
 
   return (
     <Layout title={metadata.title} description={metadata.description}>
+      <ORTLoader setLoad={setDependencies} />
       <div className={style.SADWrapper}>
         <div className={style.title}>
           <h2>{metadata.title}</h2>
           <p>
-            Sentiment detector using SVM trained with Indonesian twitter dataset on corona focused
-            topic.{" "}
+            Sentiment detector using TF-IDF and SVM trained with Indonesian twitter dataset on
+            corona focused topic live in browser powered by <code>onnxruntime-web</code> with{" "}
+            <code>wasm</code> backend.{" "}
             <strong>
               <a
                 href="https://github.com/Hyuto/Analisis-Sentimen-Corona-DKI-Jakarta"
@@ -66,7 +97,7 @@ const SADetector = () => {
           </p>
         </div>
         <div className={style.content}>
-          <Loader style={{ display: loading ? "inherit" : "none" }}>Sending to server...</Loader>
+          <Loader style={{ display: loading.state ? "inherit" : "none" }}>{loading.message}</Loader>
           <div className={style.main}>
             <form className={style.form}>
               <div className={style.title}>Words</div>
@@ -79,7 +110,7 @@ const SADetector = () => {
             <div className={style.chart}>
               <Bar
                 data={{
-                  labels: ["Negatif", "Netral", "Positif"],
+                  labels: labels,
                   datasets: [
                     {
                       label: "# Probabilitiy",

@@ -11,6 +11,14 @@
     p {
       margin: 5px 0;
       font-size: small;
+      max-width: 700px;
+
+      code {
+        padding: 1px 2px;
+        background-color: black;
+        color: white;
+        border-radius: 2px;
+      }
     }
 
     a {
