@@ -1,0 +1,30 @@
+/*!
+ * 
+ *   Mon Sep 06 2021 22:45:41 GMT-0500 (Central Daylight Time)
+ *   Accessible NProgress, (c) 2021 Nicholas Mackey - http://nmackey.com/accessible-nprogress
+ *   @license MIT
+ *
+ */
+
+/*!
+ * Chart.js v3.7.1
+ * https://www.chartjs.org
+ * (c) 2022 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*! ./styles.css */
+
+/*! ./util */
+
+/*!*********************!*\
+          !*** ./src/util.js ***!
+          \*********************/
+
+/*!**********************!*\
+          !*** ./src/index.js ***!
+          \**********************/
+
+/*!************************!*\
+          !*** ./src/styles.css ***!
+          \************************/
