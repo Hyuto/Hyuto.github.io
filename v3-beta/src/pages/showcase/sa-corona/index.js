@@ -39,7 +39,6 @@ const SADetector = () => {
     if (words === "") alert("Please input words!");
     else if (model) {
       const input = new ort.Tensor("string", [preprocess(words)], [1, 1]);
-      console.log(input);
       await model
         .run({ words: input })
         .then((results) => {
