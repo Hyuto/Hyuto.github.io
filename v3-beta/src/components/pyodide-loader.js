@@ -15,6 +15,10 @@ const PyodideLoader = ({ setLoad }) => {
               console.log("pyodide loaded!");
               setLoad("loaded");
             };
+          } else if (loadPyodide) {
+            // if something goes wrong e.g addedTags === null
+            console.log("pyodide loaded!");
+            setLoad("loaded");
           }
         }}
       />

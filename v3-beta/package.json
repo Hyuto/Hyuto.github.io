@@ -3,27 +3,12 @@
   "description": "Repo for Hyuto's Blog",
   "version": "3.1.0",
   "author": "Wahyu Setianto",
-  "bugs": {
-    "url": "https://github.com/Hyuto/Hyuto.github.io/issues"
-  },
-  "homepage": "https://hyuto.github.io/",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "react",
-    "tensorflowfjs"
-  ],
-  "license": "0BSD",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hyuto/Hyuto.github.io.git"
-  },
   "scripts": {
     "build": "gatsby build",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "start": "gatsby develop -H 0.0.0.0 -p 8000",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
+    "serve": "gatsby serve",
+    "start": "gatsby develop -H 0.0.0.0 -p 8000",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
   "dependencies": {
@@ -76,5 +61,20 @@
     "gatsby-plugin-root-import": "^2.0.8",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "prettier": "^2.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Hyuto/Hyuto.github.io/issues"
+  },
+  "homepage": "https://hyuto.github.io/",
+  "keywords": [
+    "blog",
+    "gatsby",
+    "react",
+    "tensorflowfjs"
+  ],
+  "license": "0BSD",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyuto/Hyuto.github.io.git"
   }
 }

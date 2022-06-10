@@ -20,5 +20,6 @@ module.exports = {
   },
   globals: {
     ort: true,
+    loadPyodide: true,
   },
 };

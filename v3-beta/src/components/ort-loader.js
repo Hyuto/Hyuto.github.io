@@ -15,6 +15,10 @@ const ORTLoader = ({ setLoad }) => {
               console.log("onnxruntime-web loaded!");
               setLoad("loaded");
             };
+          } else if (ort) {
+            // if something goes wrong e.g addedTags === null
+            console.log("onnxruntime-web loaded!");
+            setLoad("loaded");
           }
         }}
       />
