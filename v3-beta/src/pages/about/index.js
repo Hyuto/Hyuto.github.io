@@ -52,11 +52,12 @@ const About = ({ data, location }) => {
         </div>
         <div className={style.desc}>
           <p>
-            Final year student at the State University of Jakarta majoring in statistics. As a
-            statistics student I have a lot of experience in processing data to gain insights and
-            solve problems. I have deep experience in Python and R and few other programming
-            language like Javascript and C++. I love building deep learning models to solve a
-            problems. I&apos;m interested on Data Science and Web Development
+            I am a Data Enthusiast who has a deep interest in data field. I believe with decision
+            made based on data can have more impact in solving problems in real world. I have a lot
+            of experience in processing data to gain insight and solve problems with various method
+            (such as machine learning, deep learning, nlp, etc.). I have deep knowledge on several
+            data analysis tools such as Python and R. I am also interested in web development to
+            create a website as a hobby.
           </p>
         </div>
         <div className={style.cv}>
